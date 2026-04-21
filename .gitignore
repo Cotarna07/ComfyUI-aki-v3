@@ -1,0 +1,25 @@
+# Track only agent-owned zones and fixed instruction entry points.
+*
+
+!/.gitignore
+!/.github/
+!/.github/copilot-instructions.md
+!/AGENTS.md
+!/CLAUDE.md
+!/agent-skills/
+!/agent-skills/**
+!/agent-projects/
+!/agent-projects/**
+!/comfyui_skill_utils.py
+!/download_models.py
+!/generate_video.py
+
+# Ignore common project-local Python noise inside agent-owned project folders.
+agent-projects/**/.git/
+agent-projects/**/.venv/
+agent-projects/**/__pycache__/
+agent-projects/**/.pytest_cache/
+agent-projects/**/.mypy_cache/
+agent-projects/**/.ruff_cache/
+agent-projects/**/build/
+agent-projects/**/dist/

@@ -1,0 +1,477 @@
+{
+  "version": 1,
+  "model_root": "D:/ComfyUI-Models",
+  "output_root": "D:/ComfyUI-aki-v3/generated_videos",
+  "learning_tracks": {
+    "beginner": {
+      "focus": "先掌握直接生成、视频后处理和结构理解。",
+      "skills": [
+        "wan22_t2v_fast",
+        "video_upscale_gan_api",
+        "video_stitch_api",
+        "lotus_depth_map_api"
+      ]
+    },
+    "intermediate": {
+      "focus": "再进入受控视频生成和图像编辑。",
+      "skills": [
+        "wan22_i2v_api",
+        "ltx2_t2v_api",
+        "ltx2_i2v_api",
+        "ltx2_canny_to_video_api",
+        "ltx2_depth_to_video_api",
+        "ltx2_pose_to_video_api",
+        "qwen_image_edit_api",
+        "qwen_image_inpaint_api",
+        "qwen_image_outpaint_api"
+      ]
+    },
+    "advanced": {
+      "focus": "最后学习多模态理解、视频修补和 3D 生成。",
+      "skills": [
+        "wan_vace_api",
+        "ltx2_v2v_detailer_api",
+        "video_caption_gemini_api",
+        "image_caption_gemini_api",
+        "prompt_enhance_api",
+        "hunyuan3d_image_to_model_api"
+      ]
+    }
+  },
+  "packs": {
+    "wan22_t2v_fast": {
+      "description": "Wan 2.2 text-to-video Lightx2v 4-step pack",
+      "models": [
+        {
+          "name": "umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+          "directory": "text_encoders",
+          "url": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+          "description": "Wan text encoder"
+        },
+        {
+          "name": "wan_2.1_vae.safetensors",
+          "directory": "vae",
+          "url": "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/vae/wan_2.1_vae.safetensors",
+          "description": "Wan VAE"
+        },
+        {
+          "name": "wan2.2_t2v_high_noise_14B_fp8_scaled.safetensors",
+          "directory": "diffusion_models",
+          "url": "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/diffusion_models/wan2.2_t2v_high_noise_14B_fp8_scaled.safetensors",
+          "description": "Wan 2.2 T2V high-noise UNet"
+        },
+        {
+          "name": "wan2.2_t2v_low_noise_14B_fp8_scaled.safetensors",
+          "directory": "diffusion_models",
+          "url": "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/diffusion_models/wan2.2_t2v_low_noise_14B_fp8_scaled.safetensors",
+          "description": "Wan 2.2 T2V low-noise UNet"
+        },
+        {
+          "name": "wan2.2_t2v_lightx2v_4steps_lora_v1.1_high_noise.safetensors",
+          "directory": "loras",
+          "url": "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/loras/wan2.2_t2v_lightx2v_4steps_lora_v1.1_high_noise.safetensors",
+          "description": "Wan 2.2 T2V high-noise Lightx2v LoRA"
+        },
+        {
+          "name": "wan2.2_t2v_lightx2v_4steps_lora_v1.1_low_noise.safetensors",
+          "directory": "loras",
+          "url": "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/loras/wan2.2_t2v_lightx2v_4steps_lora_v1.1_low_noise.safetensors",
+          "description": "Wan 2.2 T2V low-noise Lightx2v LoRA"
+        }
+      ]
+    },
+    "wan22_i2v_fast": {
+      "description": "Wan 2.2 image-to-video Lightx2v 4-step pack",
+      "models": [
+        {
+          "name": "umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+          "directory": "text_encoders",
+          "url": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+          "description": "Wan text encoder"
+        },
+        {
+          "name": "wan_2.1_vae.safetensors",
+          "directory": "vae",
+          "url": "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/vae/wan_2.1_vae.safetensors",
+          "description": "Wan VAE"
+        },
+        {
+          "name": "wan2.2_i2v_high_noise_14B_fp8_scaled.safetensors",
+          "directory": "diffusion_models",
+          "url": "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/diffusion_models/wan2.2_i2v_high_noise_14B_fp8_scaled.safetensors",
+          "description": "Wan 2.2 I2V high-noise UNet"
+        },
+        {
+          "name": "wan2.2_i2v_low_noise_14B_fp8_scaled.safetensors",
+          "directory": "diffusion_models",
+          "url": "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/diffusion_models/wan2.2_i2v_low_noise_14B_fp8_scaled.safetensors",
+          "description": "Wan 2.2 I2V low-noise UNet"
+        },
+        {
+          "name": "wan2.2_i2v_lightx2v_4steps_lora_v1_high_noise.safetensors",
+          "directory": "loras",
+          "url": "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/loras/wan2.2_i2v_lightx2v_4steps_lora_v1_high_noise.safetensors",
+          "description": "Wan 2.2 I2V high-noise Lightx2v LoRA"
+        },
+        {
+          "name": "wan2.2_i2v_lightx2v_4steps_lora_v1_low_noise.safetensors",
+          "directory": "loras",
+          "url": "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/loras/wan2.2_i2v_lightx2v_4steps_lora_v1_low_noise.safetensors",
+          "description": "Wan 2.2 I2V low-noise Lightx2v LoRA"
+        }
+      ]
+    }
+  },
+  "skills": {
+    "wan22_t2v_fast": {
+      "type": "builtin",
+      "mode": "text-to-video",
+      "automation": "direct",
+      "builder": "wan22_t2v_fast",
+      "model_pack": "wan22_t2v_fast",
+      "source_workflow": "ComfyUI/blueprints/Text to Video (Wan 2.2).json",
+      "required_inputs": [
+        "prompt"
+      ],
+      "optional_inputs": [
+        "negative_prompt",
+        "width",
+        "height",
+        "length",
+        "fps",
+        "seed"
+      ]
+    },
+    "wan22_i2v_api": {
+      "type": "api_workflow",
+      "mode": "image-to-video",
+      "automation": "export-api-once",
+      "model_pack": "wan22_i2v_fast",
+      "source_workflow": "ComfyUI/blueprints/Image to Video (Wan 2.2).json",
+      "api_workflow_path": "agent-skills/comfyui/workflows/api/wan22_i2v.json",
+      "required_inputs": [
+        "prompt",
+        "image"
+      ],
+      "notes": [
+        "Export the UI workflow to API JSON once, save it to agent-skills/comfyui/workflows/api/wan22_i2v.json, then this skill becomes fully automated."
+      ]
+    },
+    "ltx2_t2v_api": {
+      "type": "api_workflow",
+      "mode": "text-to-video",
+      "automation": "export-api-once",
+      "source_workflow": "ComfyUI/custom_nodes/ComfyUI-LTXVideo/example_workflows/LTX-2_T2V_Distilled_wLora.json",
+      "api_workflow_path": "agent-skills/comfyui/workflows/api/ltx2_t2v_distilled.json",
+      "required_inputs": [
+        "prompt"
+      ],
+      "notes": [
+        "The bundled LTX workflow is in UI format and should be exported to API JSON before automated runs."
+      ]
+    },
+    "ltx2_i2v_api": {
+      "type": "api_workflow",
+      "mode": "image-to-video",
+      "automation": "export-api-once",
+      "source_workflow": "ComfyUI/custom_nodes/ComfyUI-LTXVideo/example_workflows/LTX-2_I2V_Distilled_wLora.json",
+      "api_workflow_path": "agent-skills/comfyui/workflows/api/ltx2_i2v_distilled.json",
+      "required_inputs": [
+        "prompt",
+        "image"
+      ],
+      "notes": [
+        "The bundled LTX workflow is in UI format and should be exported to API JSON before automated runs."
+      ]
+    },
+    "wan_vace_api": {
+      "type": "api_workflow",
+      "mode": "video-inpaint",
+      "automation": "export-api-once",
+      "source_workflow": "ComfyUI/blueprints/Video Inpaint(Wan2.1 VACE).json",
+      "api_workflow_path": "agent-skills/comfyui/workflows/api/wan_vace_inpaint.json",
+      "required_inputs": [
+        "video",
+        "mask"
+      ],
+      "notes": [
+        "Keep this as an exported API workflow because node layouts may evolve between plugin versions."
+      ]
+    },
+    "ltx2_canny_to_video_api": {
+      "type": "api_workflow",
+      "mode": "image-to-video",
+      "automation": "export-api-once",
+      "source_workflow": "ComfyUI/blueprints/Canny to Video (LTX 2.0).json",
+      "api_workflow_path": "agent-skills/comfyui/workflows/api/ltx2_canny_to_video.json",
+      "required_inputs": [
+        "prompt",
+        "image"
+      ],
+      "optional_inputs": [
+        "first_frame",
+        "strength",
+        "width",
+        "height",
+        "length"
+      ],
+      "notes": [
+        "Good for learning control-image driven video generation with LTX 2.0.",
+        "Export the UI workflow to API JSON once before automation."
+      ]
+    },
+    "ltx2_depth_to_video_api": {
+      "type": "api_workflow",
+      "mode": "video-to-video",
+      "automation": "export-api-once",
+      "source_workflow": "ComfyUI/blueprints/Depth to Video (ltx 2.0).json",
+      "api_workflow_path": "agent-skills/comfyui/workflows/api/ltx2_depth_to_video.json",
+      "required_inputs": [
+        "prompt",
+        "video"
+      ],
+      "optional_inputs": [
+        "first_frame",
+        "strength",
+        "width",
+        "height",
+        "length"
+      ],
+      "notes": [
+        "Useful for studying depth-guided temporal consistency and structured conditioning.",
+        "Export the UI workflow to API JSON once before automation."
+      ]
+    },
+    "ltx2_pose_to_video_api": {
+      "type": "api_workflow",
+      "mode": "image-to-video",
+      "automation": "export-api-once",
+      "source_workflow": "ComfyUI/blueprints/Pose to Video (LTX 2.0).json",
+      "api_workflow_path": "agent-skills/comfyui/workflows/api/ltx2_pose_to_video.json",
+      "required_inputs": [
+        "prompt",
+        "control_image"
+      ],
+      "optional_inputs": [
+        "first_frame",
+        "strength",
+        "width",
+        "height",
+        "length"
+      ],
+      "notes": [
+        "Good for learning pose-controlled motion transfer in LTX 2.0.",
+        "Export the UI workflow to API JSON once before automation."
+      ]
+    },
+    "ltx2_v2v_detailer_api": {
+      "type": "api_workflow",
+      "mode": "video-to-video",
+      "automation": "export-api-once",
+      "source_workflow": "ComfyUI/custom_nodes/ComfyUI-LTXVideo/example_workflows/LTX-2_V2V_Detailer.json",
+      "api_workflow_path": "agent-skills/comfyui/workflows/api/ltx2_v2v_detailer.json",
+      "required_inputs": [
+        "video"
+      ],
+      "optional_inputs": [
+        "prompt"
+      ],
+      "notes": [
+        "Useful for studying video-to-video refinement and post-detail workflows in LTX.",
+        "Export the workflow to API JSON once before automation."
+      ]
+    },
+    "video_upscale_gan_api": {
+      "type": "builtin",
+      "mode": "video-upscale",
+      "automation": "direct",
+      "builder": "video_upscale_gan_direct",
+      "source_workflow": "ComfyUI/blueprints/Video Upscale(GAN x4).json",
+      "required_inputs": [
+        "video"
+      ],
+      "optional_inputs": [
+        "model_name",
+        "video_start_time",
+        "video_duration"
+      ],
+      "notes": [
+        "Good post-process skill for learning restoration and resolution enhancement.",
+        "Implemented as a built-in direct workflow; no API export step is required."
+      ]
+    },
+    "video_stitch_api": {
+      "type": "builtin",
+      "mode": "video-postprocess",
+      "automation": "direct",
+      "builder": "video_stitch_direct",
+      "source_workflow": "ComfyUI/blueprints/Video Stitch.json",
+      "required_inputs": [
+        "video",
+        "video_1"
+      ],
+      "optional_inputs": [
+        "direction",
+        "match_image_size",
+        "spacing_width",
+        "spacing_color",
+        "video_start_time",
+        "video_duration"
+      ],
+      "notes": [
+        "Useful for studying side-by-side comparison and before/after presentation workflows.",
+        "Implemented as a built-in direct workflow; no API export step is required."
+      ]
+    },
+    "video_caption_gemini_api": {
+      "type": "builtin",
+      "mode": "video-analysis",
+      "automation": "direct",
+      "builder": "video_caption_gemini_direct",
+      "source_workflow": "ComfyUI/blueprints/Video Captioning (Gemini).json",
+      "required_inputs": [
+        "video"
+      ],
+      "optional_inputs": [
+        "prompt",
+        "analysis_model",
+        "system_prompt",
+        "video_start_time",
+        "video_duration",
+        "seed"
+      ],
+      "notes": [
+        "Useful for learning multimodal video understanding inside ComfyUI.",
+        "Implemented as a built-in direct workflow, but it still requires Gemini credentials configured in the current ComfyUI environment."
+      ]
+    },
+    "image_caption_gemini_api": {
+      "type": "builtin",
+      "mode": "image-analysis",
+      "automation": "direct",
+      "builder": "image_caption_gemini_direct",
+      "source_workflow": "ComfyUI/blueprints/Image Captioning (gemini).json",
+      "required_inputs": [
+        "image"
+      ],
+      "optional_inputs": [
+        "prompt",
+        "analysis_model",
+        "system_prompt",
+        "seed"
+      ],
+      "notes": [
+        "Useful for learning image understanding and prompt extraction inside ComfyUI.",
+        "Implemented as a built-in direct workflow, but it still requires Gemini credentials configured in the current ComfyUI environment."
+      ]
+    },
+    "prompt_enhance_api": {
+      "type": "builtin",
+      "mode": "prompt-engineering",
+      "automation": "direct",
+      "builder": "prompt_enhance_gemini_direct",
+      "source_workflow": "ComfyUI/blueprints/Prompt Enhance.json",
+      "required_inputs": [
+        "prompt"
+      ],
+      "optional_inputs": [
+        "image",
+        "analysis_model",
+        "system_prompt",
+        "seed"
+      ],
+      "notes": [
+        "Useful for learning prompt rewriting patterns from Gemini-backed workflows.",
+        "Implemented as a built-in direct workflow, but it still requires Gemini credentials configured in the current ComfyUI environment."
+      ]
+    },
+    "qwen_image_edit_api": {
+      "type": "api_workflow",
+      "mode": "image-edit",
+      "automation": "export-api-once",
+      "source_workflow": "ComfyUI/blueprints/Image Edit (Qwen 2511).json",
+      "api_workflow_path": "agent-skills/comfyui/workflows/api/qwen_image_edit_2511.json",
+      "required_inputs": [
+        "image",
+        "prompt"
+      ],
+      "optional_inputs": [
+        "image2",
+        "image3"
+      ],
+      "notes": [
+        "Good for studying multi-reference image editing with Qwen Image 2511.",
+        "Export the UI workflow to API JSON once before automation."
+      ]
+    },
+    "qwen_image_inpaint_api": {
+      "type": "api_workflow",
+      "mode": "image-inpaint",
+      "automation": "export-api-once",
+      "source_workflow": "ComfyUI/blueprints/Image Inpainting (Qwen-image).json",
+      "api_workflow_path": "agent-skills/comfyui/workflows/api/qwen_image_inpaint.json",
+      "required_inputs": [
+        "image",
+        "mask",
+        "prompt"
+      ],
+      "notes": [
+        "Useful for learning masked editing with Qwen Image and ControlNet inpainting.",
+        "Export the UI workflow to API JSON once before automation."
+      ]
+    },
+    "qwen_image_outpaint_api": {
+      "type": "api_workflow",
+      "mode": "image-outpaint",
+      "automation": "export-api-once",
+      "source_workflow": "ComfyUI/blueprints/Image Outpainting (Qwen-Image).json",
+      "api_workflow_path": "agent-skills/comfyui/workflows/api/qwen_image_outpaint.json",
+      "required_inputs": [
+        "image"
+      ],
+      "optional_inputs": [
+        "prompt",
+        "left",
+        "top",
+        "right",
+        "bottom",
+        "feathering"
+      ],
+      "notes": [
+        "Useful for learning canvas expansion and controlled outpainting workflows.",
+        "Export the UI workflow to API JSON once before automation."
+      ]
+    },
+    "lotus_depth_map_api": {
+      "type": "api_workflow",
+      "mode": "image-analysis",
+      "automation": "export-api-once",
+      "source_workflow": "ComfyUI/blueprints/Image to Depth Map (Lotus).json",
+      "api_workflow_path": "agent-skills/comfyui/workflows/api/lotus_depth_map.json",
+      "required_inputs": [
+        "image"
+      ],
+      "optional_inputs": [
+        "depth_intensity"
+      ],
+      "notes": [
+        "Useful for learning monocular depth estimation and conditioning prep.",
+        "Export the UI workflow to API JSON once before automation."
+      ]
+    },
+    "hunyuan3d_image_to_model_api": {
+      "type": "api_workflow",
+      "mode": "image-to-3d",
+      "automation": "export-api-once",
+      "source_workflow": "ComfyUI/blueprints/Image to Model (Hunyuan3d 2.1).json",
+      "api_workflow_path": "agent-skills/comfyui/workflows/api/hunyuan3d_image_to_model.json",
+      "required_inputs": [
+        "image"
+      ],
+      "notes": [
+        "Useful for learning single-image 3D reconstruction workflows.",
+        "Export the UI workflow to API JSON once before automation because output handling differs from video runs."
+      ]
+    }
+  }
+}
