@@ -1,0 +1,126 @@
+{
+  "1": {
+    "class_type": "CheckpointLoaderSimple",
+    "inputs": {
+      "ckpt_name": "copaxTimeless_xplus2BNSFW1.safetensors"
+    },
+    "_meta": {
+      "title": "Copax TimeLess Checkpoint"
+    }
+  },
+  "2": {
+    "class_type": "LoraLoader",
+    "inputs": {
+      "model": [
+        "1",
+        0
+      ],
+      "clip": [
+        "1",
+        1
+      ],
+      "lora_name": "nipple pull_illustrious_V2.1.safetensors",
+      "strength_model": 0.0,
+      "strength_clip": 0.0
+    },
+    "_meta": {
+      "title": "LoRA Compatibility Probe Disabled"
+    }
+  },
+  "3": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "2",
+        1
+      ],
+      "text": "adult woman, fully clothed, expressive acting reference, subtle surprised smile, shoulders turning, one hand raised near collarbone without touching skin, modest high-neck dress, clean studio lighting, natural fingers, clear facial expression, detailed eyes"
+    },
+    "_meta": {
+      "title": "Positive Prompt"
+    }
+  },
+  "4": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "2",
+        1
+      ],
+      "text": "NSFW, nude, nudity, explicit, sexual act, exposed nipples, lingerie, fetish, child, teen, minor, worst quality, bad quality, low quality, missing fingers, extra fingers, deformed hands, deformed face, bad anatomy, watermark, text, subtitles, dutch angle"
+    },
+    "_meta": {
+      "title": "Negative Prompt"
+    }
+  },
+  "5": {
+    "class_type": "EmptyLatentImage",
+    "inputs": {
+      "width": 768,
+      "height": 1024,
+      "batch_size": 1
+    },
+    "_meta": {
+      "title": "Portrait Latent"
+    }
+  },
+  "6": {
+    "class_type": "KSampler",
+    "inputs": {
+      "model": [
+        "2",
+        0
+      ],
+      "positive": [
+        "3",
+        0
+      ],
+      "negative": [
+        "4",
+        0
+      ],
+      "latent_image": [
+        "5",
+        0
+      ],
+      "seed": 118112,
+      "steps": 20,
+      "cfg": 4.0,
+      "sampler_name": "dpm_2",
+      "scheduler": "karras",
+      "denoise": 1.0
+    },
+    "_meta": {
+      "title": "Copax Recommended Sampler"
+    }
+  },
+  "7": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "6",
+        0
+      ],
+      "vae": [
+        "1",
+        2
+      ]
+    },
+    "_meta": {
+      "title": "Decode"
+    }
+  },
+  "8": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "7",
+        0
+      ],
+      "filename_prefix": "model_effect_tests/copax_timeless_lora_probe_safe"
+    },
+    "_meta": {
+      "title": "Save Image"
+    }
+  }
+}

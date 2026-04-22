@@ -1,0 +1,2564 @@
+[START] Security scan
+[DONE] Security scan
+## ComfyUI-Manager: installing dependencies done.
+** ComfyUI startup time: 2026-04-21 17:54:32.369
+** Platform: Windows
+** Python version: 3.13.11 (tags/v3.13.11:6278944, Dec  5 2025, 16:26:58) [MSC v.1944 64 bit (AMD64)]
+** Python executable: D:\ComfyUI-aki-v3\python\python.exe
+** ComfyUI Path: D:\ComfyUI-aki-v3\ComfyUI
+** ComfyUI Base Folder Path: D:\ComfyUI-aki-v3\ComfyUI
+** User directory: D:\ComfyUI-aki-v3\ComfyUI\user
+** ComfyUI-Manager config path: D:\ComfyUI-aki-v3\ComfyUI\user\__manager\config.ini
+** Log path: D:\ComfyUI-aki-v3\ComfyUI\user\comfyui.log
+Error loading D:\ComfyUI-aki-v3\ComfyUI\custom_nodes\ComfyUI-RMBG\py\AILab_SAM3Segment.py: No module named 'triton'
+Error loading D:\ComfyUI-aki-v3\ComfyUI\custom_nodes\ComfyUI-RMBG\py\AILab_SAM3Segment.py: No module named 'triton'
+[34m[ComfyUI-RMBG][0m v[93m3.0.0[0m | [93m42 nodes[0m [92mLoaded[0m
+FETCH ComfyRegistry Data: 5/140
+DWPose: Onnxruntime with acceleration providers detected
+Collecting xx-sent-ud-sm==3.8.0
+  Downloading https://github.com/explosion/spacy-models/releases/download/xx_sent_ud_sm-3.8.0/xx_sent_ud_sm-3.8.0-py3-none-any.whl (4.3 MB)
+FETCH ComfyRegistry Data: 10/140
+     ---------------------------------------- 4.3/4.3 MB 2.2 MB/s  0:00:02
+[38;5;2m� Download and installation successful[0m
+You can now load the package via spacy.load('xx_sent_ud_sm')
+[1;35m
+### [START] ComfyUI AlekPet Nodes [1;34mv1.0.92[0m[1;35m ###[0m
+[92mNode -> ArgosTranslateNode: [93mArgosTranslateCLIPTextEncodeNode, ArgosTranslateTextNode[0m [92m[92m[Loading][0m[0m
+[92mNode -> ChatGLMNode[92m[92m[Loading][0m[0m
+[92mNode -> DeepTranslatorNode: [93mDeepTranslatorCLIPTextEncodeNode, DeepTranslatorTextNode[0m [92m[92m[Loading][0m[0m
+[92mNode -> ExtrasNode: [93mPreviewTextNode, HexToHueNode, ColorsCorrectNode[0m [92m[92m[Loading][0m[0m
+[92mNode -> GoogleTranslateNode: [93mGoogleTranslateCLIPTextEncodeNode, GoogleTranslateTextNode[0m [92m[92m[Loading][0m[0m
+[92mNode -> IDENode: [93mIDENode[0m [92m[92m[Loading][0m[0m
+[92mNode -> PainterNode: [93mPainterNode[0m [92m[92m[Loading][0m[0m
+[92mNode -> PoseNode: [93mPoseNode[0m [92m[92m[Loading][0m[0m
+[1;35m### [END] ComfyUI AlekPet Nodes ###[0m
+
+[92m[rgthree-comfy] Loaded 48 magnificent nodes. 🎉[0m
+
+[33m[rgthree-comfy] ComfyUI's new Node 2.0 rendering may be incompatible with some rgthree-comfy nodes and features, breaking some rendering as well as losing the ability to access a node's properties (a vital part of many nodes). It also appears to run MUCH more slowly spiking CPU usage and causing jankiness and unresponsiveness, especially with large workflows. Personally I am not planning to use the new Nodes 2.0 and, unfortunately, am not able to invest the time to investigate and overhaul rgthree-comfy where needed. If you have issues when Nodes 2.0 is enabled, I'd urge you to switch it off as well and join me in hoping ComfyUI is not planning to deprecate the existing, stable canvas rendering all together.
+[0m
+FETCH ComfyRegistry Data: 15/140
+FETCH ComfyRegistry Data: 20/140
+FETCH ComfyRegistry Data: 25/140
+FETCH ComfyRegistry Data: 30/140
+FETCH ComfyRegistry Data: 35/140
+FETCH ComfyRegistry Data: 40/140
+FETCH ComfyRegistry Data: 45/140
+FETCH ComfyRegistry Data: 50/140
+FETCH ComfyRegistry Data: 55/140
+FETCH ComfyRegistry Data: 60/140
+FETCH ComfyRegistry Data: 65/140
+FETCH ComfyRegistry Data: 70/140
+FETCH ComfyRegistry Data: 75/140
+FETCH ComfyRegistry Data: 80/140
+FETCH ComfyRegistry Data: 85/140
+FETCH ComfyRegistry Data: 90/140
+FETCH ComfyRegistry Data: 95/140
+FETCH ComfyRegistry Data: 100/140
+FETCH ComfyRegistry Data: 105/140
+FETCH ComfyRegistry Data: 110/140
+FETCH ComfyRegistry Data: 115/140
+FETCH ComfyRegistry Data: 120/140
+FETCH ComfyRegistry Data: 125/140
+FETCH ComfyRegistry Data: 130/140
+FETCH ComfyRegistry Data: 135/140
+FETCH ComfyRegistry Data: 140/140
+FETCH ComfyRegistry Data [DONE]
+FETCH DATA from: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/custom-node-list.json [DONE]
+Failed to find D:\ComfyUI-aki-v3\ComfyUI\custom_nodes\comfyui_controlnet_aux\ckpts\hr16\yolox-onnx\yolox_l.torchscript.pt.
+ Downloading from huggingface.co
+cacher folder is C:\Users\cotarna\AppData\Local\Temp, you can change it by custom_tmp_path in config.yaml
+[WinError 2] 系统找不到指定的文件�: 'C:\\Users\\cotarna\\AppData\\Local\\Temp\\ckpts'
+model_path is D:\ComfyUI-aki-v3\ComfyUI\custom_nodes\comfyui_controlnet_aux\ckpts\hr16\yolox-onnx\yolox_l.torchscript.pt
+Failed to find D:\ComfyUI-aki-v3\ComfyUI\custom_nodes\comfyui_controlnet_aux\ckpts\hr16\DWPose-TorchScript-BatchSize5\dw-ll_ucoco_384_bs5.torchscript.pt.
+ Downloading from huggingface.co
+cacher folder is C:\Users\cotarna\AppData\Local\Temp, you can change it by custom_tmp_path in config.yaml
+[WinError 2] 系统找不到指定的文件�: 'C:\\Users\\cotarna\\AppData\\Local\\Temp\\ckpts'
+model_path is D:\ComfyUI-aki-v3\ComfyUI\custom_nodes\comfyui_controlnet_aux\ckpts\hr16\DWPose-TorchScript-BatchSize5\dw-ll_ucoco_384_bs5.torchscript.pt
+
+DWPose: Using yolox_l.torchscript.pt for bbox detection and dw-ll_ucoco_384_bs5.torchscript.pt for pose estimation
+DWPose: Caching TorchScript module yolox_l.torchscript.pt on ...
+DWPose: Caching TorchScript module dw-ll_ucoco_384_bs5.torchscript.pt on ...
+DWPose: Bbox 529.16ms
+DWPose: Pose 1264.78ms on 1 people
+
+DWPose: Bbox 3377.66ms
+DWPose: Pose 3283.00ms on 1 people
+
+DWPose: Bbox 116.05ms
+DWPose: Pose 24.17ms on 1 people
+
+DWPose: Bbox 20.95ms
+DWPose: Pose 23.40ms on 1 people
+
+DWPose: Bbox 21.02ms
+DWPose: Pose 23.19ms on 1 people
+
+DWPose: Bbox 21.94ms
+DWPose: Pose 23.00ms on 1 people
+
+DWPose: Bbox 22.32ms
+DWPose: Pose 24.31ms on 1 people
+
+DWPose: Bbox 23.56ms
+DWPose: Pose 24.65ms on 1 people
+
+DWPose: Bbox 22.79ms
+DWPose: Pose 23.82ms on 1 people
+
+DWPose: Bbox 21.35ms
+DWPose: Pose 22.76ms on 1 people
+
+DWPose: Bbox 22.07ms
+DWPose: Pose 23.24ms on 1 people
+
+DWPose: Bbox 22.27ms
+DWPose: Pose 23.53ms on 1 people
+
+DWPose: Bbox 22.20ms
+DWPose: Pose 23.30ms on 1 people
+
+DWPose: Bbox 21.38ms
+DWPose: Pose 23.11ms on 1 people
+
+DWPose: Bbox 22.56ms
+DWPose: Pose 23.60ms on 1 people
+
+DWPose: Bbox 21.25ms
+DWPose: Pose 24.88ms on 1 people
+
+DWPose: Bbox 22.45ms
+DWPose: Pose 23.78ms on 1 people
+
+DWPose: Bbox 21.99ms
+DWPose: Pose 24.26ms on 1 people
+
+DWPose: Bbox 23.68ms
+DWPose: Pose 27.01ms on 1 people
+
+DWPose: Bbox 23.96ms
+DWPose: Pose 28.02ms on 1 people
+
+DWPose: Bbox 24.96ms
+DWPose: Pose 23.77ms on 1 people
+
+DWPose: Bbox 22.31ms
+DWPose: Pose 25.06ms on 1 people
+
+DWPose: Bbox 22.06ms
+DWPose: Pose 24.65ms on 1 people
+
+DWPose: Bbox 23.25ms
+DWPose: Pose 25.03ms on 1 people
+
+DWPose: Bbox 21.42ms
+DWPose: Pose 24.15ms on 1 people
+
+DWPose: Bbox 21.99ms
+DWPose: Pose 25.13ms on 1 people
+
+DWPose: Bbox 23.63ms
+DWPose: Pose 25.41ms on 1 people
+
+DWPose: Bbox 21.93ms
+DWPose: Pose 25.09ms on 1 people
+
+DWPose: Bbox 22.66ms
+DWPose: Pose 23.84ms on 1 people
+
+DWPose: Bbox 23.85ms
+DWPose: Pose 26.39ms on 1 people
+
+DWPose: Bbox 24.16ms
+DWPose: Pose 25.61ms on 1 people
+
+DWPose: Bbox 22.47ms
+DWPose: Pose 26.02ms on 1 people
+
+DWPose: Bbox 23.69ms
+DWPose: Pose 26.08ms on 1 people
+
+DWPose: Bbox 21.70ms
+DWPose: Pose 25.83ms on 1 people
+
+DWPose: Bbox 23.11ms
+DWPose: Pose 26.27ms on 1 people
+
+DWPose: Bbox 23.25ms
+DWPose: Pose 26.09ms on 1 people
+
+DWPose: Bbox 22.17ms
+DWPose: Pose 25.59ms on 1 people
+
+DWPose: Bbox 23.31ms
+DWPose: Pose 28.81ms on 1 people
+
+DWPose: Bbox 25.29ms
+DWPose: Pose 30.67ms on 1 people
+
+DWPose: Bbox 25.38ms
+DWPose: Pose 28.52ms on 1 people
+
+DWPose: Bbox 22.04ms
+DWPose: Pose 26.89ms on 1 people
+
+DWPose: Bbox 22.96ms
+DWPose: Pose 26.52ms on 1 people
+
+DWPose: Bbox 22.94ms
+DWPose: Pose 25.84ms on 1 people
+
+DWPose: Bbox 24.76ms
+DWPose: Pose 27.88ms on 1 people
+
+DWPose: Bbox 25.84ms
+DWPose: Pose 28.64ms on 1 people
+
+DWPose: Bbox 23.85ms
+DWPose: Pose 26.28ms on 1 people
+
+DWPose: Bbox 23.45ms
+DWPose: Pose 26.72ms on 1 people
+
+DWPose: Bbox 21.95ms
+DWPose: Pose 25.94ms on 1 people
+
+DWPose: Bbox 23.51ms
+DWPose: Pose 24.92ms on 1 people
+
+DWPose: Bbox 23.97ms
+DWPose: Pose 26.53ms on 1 people
+
+DWPose: Bbox 23.10ms
+DWPose: Pose 26.39ms on 1 people
+
+DWPose: Bbox 24.91ms
+DWPose: Pose 26.08ms on 1 people
+
+DWPose: Bbox 22.94ms
+DWPose: Pose 26.33ms on 1 people
+
+DWPose: Bbox 24.54ms
+DWPose: Pose 25.29ms on 1 people
+
+DWPose: Bbox 23.65ms
+DWPose: Pose 27.16ms on 1 people
+
+DWPose: Bbox 23.61ms
+DWPose: Pose 26.91ms on 1 people
+
+DWPose: Bbox 24.90ms
+DWPose: Pose 27.71ms on 1 people
+
+DWPose: Bbox 25.56ms
+DWPose: Pose 29.08ms on 1 people
+
+DWPose: Bbox 24.16ms
+DWPose: Pose 26.11ms on 1 people
+
+DWPose: Bbox 23.65ms
+DWPose: Pose 27.38ms on 1 people
+
+DWPose: Bbox 23.98ms
+DWPose: Pose 26.06ms on 1 people
+
+DWPose: Bbox 25.27ms
+DWPose: Pose 26.90ms on 1 people
+
+DWPose: Bbox 24.83ms
+DWPose: Pose 28.27ms on 1 people
+
+DWPose: Bbox 23.24ms
+DWPose: Pose 27.57ms on 1 people
+
+DWPose: Bbox 23.81ms
+DWPose: Pose 26.50ms on 1 people
+
+DWPose: Bbox 25.08ms
+DWPose: Pose 26.18ms on 1 people
+
+DWPose: Bbox 23.41ms
+DWPose: Pose 26.19ms on 1 people
+
+DWPose: Bbox 24.56ms
+DWPose: Pose 26.55ms on 1 people
+
+DWPose: Bbox 25.11ms
+DWPose: Pose 27.00ms on 1 people
+
+DWPose: Bbox 23.57ms
+DWPose: Pose 26.91ms on 1 people
+
+DWPose: Bbox 23.35ms
+DWPose: Pose 26.41ms on 1 people
+
+DWPose: Bbox 23.95ms
+DWPose: Pose 24.43ms on 1 people
+
+DWPose: Bbox 23.22ms
+DWPose: Pose 25.81ms on 1 people
+
+DWPose: Bbox 23.56ms
+DWPose: Pose 25.93ms on 1 people
+
+DWPose: Bbox 24.14ms
+DWPose: Pose 27.15ms on 1 people
+
+DWPose: Bbox 25.42ms
+DWPose: Pose 29.94ms on 1 people
+
+DWPose: Bbox 25.62ms
+DWPose: Pose 29.68ms on 1 people
+
+DWPose: Bbox 23.52ms
+DWPose: Pose 27.75ms on 1 people
+
+DWPose: Bbox 24.16ms
+DWPose: Pose 27.85ms on 1 people
+
+DWPose: Bbox 25.41ms
+DWPose: Pose 28.56ms on 1 people
+
+DWPose: Bbox 24.64ms
+DWPose: Pose 26.65ms on 1 people
+
+DWPose: Bbox 25.47ms
+DWPose: Pose 30.08ms on 1 people
+
+DWPose: Bbox 25.43ms
+DWPose: Pose 27.34ms on 1 people
+
+DWPose: Bbox 23.48ms
+DWPose: Pose 25.91ms on 1 people
+
+DWPose: Bbox 24.48ms
+DWPose: Pose 27.15ms on 1 people
+
+DWPose: Bbox 25.07ms
+DWPose: Pose 27.15ms on 1 people
+
+DWPose: Bbox 24.35ms
+DWPose: Pose 26.16ms on 1 people
+
+DWPose: Bbox 24.89ms
+DWPose: Pose 26.85ms on 1 people
+
+DWPose: Bbox 24.43ms
+DWPose: Pose 27.67ms on 1 people
+
+DWPose: Bbox 25.48ms
+DWPose: Pose 27.40ms on 1 people
+
+DWPose: Bbox 24.67ms
+DWPose: Pose 25.85ms on 1 people
+
+DWPose: Bbox 24.03ms
+DWPose: Pose 25.52ms on 1 people
+
+DWPose: Bbox 25.06ms
+DWPose: Pose 28.57ms on 1 people
+
+DWPose: Bbox 26.41ms
+DWPose: Pose 29.90ms on 1 people
+
+DWPose: Bbox 28.20ms
+DWPose: Pose 28.94ms on 1 people
+
+DWPose: Bbox 25.51ms
+DWPose: Pose 28.15ms on 1 people
+
+DWPose: Bbox 26.03ms
+DWPose: Pose 28.50ms on 1 people
+
+DWPose: Bbox 24.07ms
+DWPose: Pose 28.00ms on 1 people
+
+DWPose: Bbox 24.96ms
+DWPose: Pose 28.31ms on 1 people
+
+DWPose: Bbox 25.18ms
+DWPose: Pose 26.73ms on 1 people
+
+DWPose: Bbox 24.93ms
+DWPose: Pose 27.46ms on 1 people
+
+DWPose: Bbox 24.75ms
+DWPose: Pose 26.59ms on 1 people
+
+DWPose: Bbox 24.71ms
+DWPose: Pose 26.71ms on 1 people
+
+DWPose: Bbox 25.27ms
+DWPose: Pose 26.80ms on 1 people
+
+DWPose: Bbox 24.51ms
+DWPose: Pose 27.53ms on 1 people
+
+DWPose: Bbox 24.93ms
+DWPose: Pose 27.71ms on 1 people
+
+DWPose: Bbox 24.77ms
+DWPose: Pose 28.22ms on 1 people
+
+DWPose: Bbox 24.55ms
+DWPose: Pose 27.39ms on 1 people
+
+DWPose: Bbox 24.78ms
+DWPose: Pose 25.91ms on 1 people
+
+DWPose: Bbox 23.79ms
+DWPose: Bbox 24.95ms
+DWPose: Bbox 25.71ms
+DWPose: Bbox 24.79ms
+DWPose: Bbox 25.07ms
+DWPose: Bbox 25.02ms
+DWPose: Bbox 26.17ms
+DWPose: Bbox 24.71ms
+DWPose: Bbox 26.76ms
+DWPose: Bbox 25.05ms
+DWPose: Bbox 23.73ms
+DWPose: Bbox 24.81ms
+DWPose: Bbox 24.30ms
+DWPose: Bbox 24.85ms
+DWPose: Bbox 24.81ms
+DWPose: Bbox 24.82ms
+DWPose: Bbox 23.94ms
+DWPose: Bbox 23.95ms
+DWPose: Bbox 24.71ms
+DWPose: Bbox 24.65ms
+DWPose: Bbox 23.65ms
+DWPose: Bbox 24.65ms
+DWPose: Bbox 23.90ms
+DWPose: Bbox 23.89ms
+DWPose: Bbox 24.57ms
+DWPose: Bbox 24.63ms
+DWPose: Bbox 23.52ms
+DWPose: Bbox 24.29ms
+DWPose: Bbox 24.36ms
+DWPose: Bbox 24.08ms
+DWPose: Bbox 23.46ms
+DWPose: Bbox 36.97ms
+DWPose: Bbox 35.47ms
+DWPose: Bbox 37.26ms
+DWPose: Bbox 35.10ms
+DWPose: Bbox 21.61ms
+DWPose: Bbox 22.98ms
+DWPose: Bbox 23.19ms
+DWPose: Bbox 25.03ms
+DWPose: Bbox 25.96ms
+DWPose: Bbox 24.05ms
+DWPose: Bbox 22.50ms
+DWPose: Bbox 22.51ms
+DWPose: Bbox 22.49ms
+[VideoHelperSuite] - [0;33mWARNING[0m - Missing input for p has been set to yuv420p
+[VideoHelperSuite] - [0;33mWARNING[0m - Missing input for c has been set to 19
+[VideoHelperSuite] - [0;33mWARNING[0m - Missing input for s has been set to True
+[VideoHelperSuite] - [0;33mWARNING[0m - Missing input for t has been set to False
+[VideoHelperSuite] - [0;33mWARNING[0m - Missing input for p has been set to yuv420p
+[VideoHelperSuite] - [0;33mWARNING[0m - Missing input for c has been set to 19
+[VideoHelperSuite] - [0;33mWARNING[0m - Missing input for s has been set to True
+[VideoHelperSuite] - [0;33mWARNING[0m - Missing input for t has been set to False
+model_path is D:\ComfyUI-aki-v3\ComfyUI\custom_nodes\comfyui_controlnet_aux\ckpts\hr16\yolox-onnx\yolox_l.torchscript.pt
+model_path is D:\ComfyUI-aki-v3\ComfyUI\custom_nodes\comfyui_controlnet_aux\ckpts\hr16\DWPose-TorchScript-BatchSize5\dw-ll_ucoco_384_bs5.torchscript.pt
+
+DWPose: Using yolox_l.torchscript.pt for bbox detection and dw-ll_ucoco_384_bs5.torchscript.pt for pose estimation
+DWPose: Bbox 181.74ms
+DWPose: Pose 84.21ms on 1 people
+
+DWPose: Bbox 23.50ms
+DWPose: Pose 25.75ms on 1 people
+
+DWPose: Bbox 21.67ms
+DWPose: Pose 24.31ms on 1 people
+
+DWPose: Bbox 21.97ms
+DWPose: Pose 22.77ms on 1 people
+
+DWPose: Bbox 20.93ms
+DWPose: Pose 23.24ms on 1 people
+
+DWPose: Bbox 20.98ms
+DWPose: Pose 23.82ms on 1 people
+
+DWPose: Bbox 21.59ms
+DWPose: Pose 21.88ms on 1 people
+
+DWPose: Bbox 21.79ms
+DWPose: Pose 22.43ms on 1 people
+
+DWPose: Bbox 21.74ms
+DWPose: Pose 23.36ms on 1 people
+
+DWPose: Bbox 22.26ms
+DWPose: Pose 22.23ms on 1 people
+
+DWPose: Bbox 21.51ms
+DWPose: Pose 23.27ms on 1 people
+
+DWPose: Bbox 21.63ms
+DWPose: Pose 24.16ms on 1 people
+
+DWPose: Bbox 21.12ms
+DWPose: Pose 24.47ms on 1 people
+
+DWPose: Bbox 22.17ms
+DWPose: Pose 24.85ms on 1 people
+
+DWPose: Bbox 22.82ms
+DWPose: Pose 26.20ms on 1 people
+
+DWPose: Bbox 22.11ms
+DWPose: Pose 23.59ms on 1 people
+
+DWPose: Bbox 21.70ms
+DWPose: Pose 23.35ms on 1 people
+
+DWPose: Bbox 22.30ms
+DWPose: Pose 23.62ms on 1 people
+
+DWPose: Bbox 22.26ms
+DWPose: Pose 24.06ms on 1 people
+
+DWPose: Bbox 22.56ms
+DWPose: Pose 23.55ms on 1 people
+
+DWPose: Bbox 21.74ms
+DWPose: Pose 22.71ms on 1 people
+
+DWPose: Bbox 21.37ms
+DWPose: Pose 22.72ms on 1 people
+
+DWPose: Bbox 21.79ms
+DWPose: Pose 23.93ms on 1 people
+
+DWPose: Bbox 23.19ms
+DWPose: Pose 24.60ms on 1 people
+
+DWPose: Bbox 21.93ms
+DWPose: Pose 24.66ms on 1 people
+
+DWPose: Bbox 22.22ms
+DWPose: Pose 23.52ms on 1 people
+
+DWPose: Bbox 22.06ms
+DWPose: Pose 24.54ms on 1 people
+
+DWPose: Bbox 23.21ms
+DWPose: Pose 23.98ms on 1 people
+
+DWPose: Bbox 22.58ms
+DWPose: Pose 22.01ms on 1 people
+
+DWPose: Bbox 21.41ms
+DWPose: Pose 22.97ms on 1 people
+
+DWPose: Bbox 21.32ms
+DWPose: Pose 24.22ms on 1 people
+
+DWPose: Bbox 22.23ms
+DWPose: Pose 23.38ms on 1 people
+
+DWPose: Bbox 22.48ms
+DWPose: Pose 24.54ms on 1 people
+
+DWPose: Bbox 22.95ms
+DWPose: Pose 23.01ms on 1 people
+
+DWPose: Bbox 21.70ms
+DWPose: Pose 24.56ms on 1 people
+
+DWPose: Bbox 24.55ms
+DWPose: Pose 26.16ms on 1 people
+
+DWPose: Bbox 24.14ms
+DWPose: Pose 25.36ms on 1 people
+
+DWPose: Bbox 22.30ms
+DWPose: Pose 24.35ms on 1 people
+
+DWPose: Bbox 23.07ms
+DWPose: Pose 25.62ms on 1 people
+
+DWPose: Bbox 23.70ms
+DWPose: Pose 24.37ms on 1 people
+
+DWPose: Bbox 23.74ms
+DWPose: Pose 24.03ms on 1 people
+
+DWPose: Bbox 22.40ms
+DWPose: Pose 22.80ms on 1 people
+
+DWPose: Bbox 21.13ms
+DWPose: Pose 24.70ms on 1 people
+
+DWPose: Bbox 23.10ms
+DWPose: Pose 24.54ms on 1 people
+
+DWPose: Bbox 22.96ms
+DWPose: Pose 24.52ms on 1 people
+
+DWPose: Bbox 23.86ms
+DWPose: Pose 25.03ms on 1 people
+
+DWPose: Bbox 22.57ms
+DWPose: Pose 26.37ms on 1 people
+
+DWPose: Bbox 23.46ms
+DWPose: Pose 23.46ms on 1 people
+
+DWPose: Bbox 21.86ms
+DWPose: Pose 27.44ms on 1 people
+
+model_path is D:\ComfyUI-aki-v3\ComfyUI\custom_nodes\comfyui_controlnet_aux\ckpts\hr16\yolox-onnx\yolox_l.torchscript.pt
+model_path is D:\ComfyUI-aki-v3\ComfyUI\custom_nodes\comfyui_controlnet_aux\ckpts\hr16\DWPose-TorchScript-BatchSize5\dw-ll_ucoco_384_bs5.torchscript.pt
+
+DWPose: Using yolox_l.torchscript.pt for bbox detection and dw-ll_ucoco_384_bs5.torchscript.pt for pose estimation
+DWPose: Bbox 22.42ms
+DWPose: Pose 26.58ms on 1 people
+
+DWPose: Bbox 22.38ms
+DWPose: Pose 23.27ms on 1 people
+
+DWPose: Bbox 22.54ms
+DWPose: Pose 25.07ms on 1 people
+
+DWPose: Bbox 22.12ms
+DWPose: Pose 24.26ms on 1 people
+
+DWPose: Bbox 22.52ms
+DWPose: Pose 24.87ms on 1 people
+
+DWPose: Bbox 23.03ms
+DWPose: Pose 24.19ms on 1 people
+
+DWPose: Bbox 23.00ms
+DWPose: Pose 24.10ms on 1 people
+
+DWPose: Bbox 22.91ms
+DWPose: Pose 25.01ms on 1 people
+
+DWPose: Bbox 22.62ms
+DWPose: Pose 27.01ms on 1 people
+
+DWPose: Bbox 22.55ms
+DWPose: Pose 26.54ms on 1 people
+
+DWPose: Bbox 23.20ms
+DWPose: Pose 25.63ms on 1 people
+
+DWPose: Bbox 22.85ms
+DWPose: Pose 24.81ms on 1 people
+
+DWPose: Bbox 21.64ms
+DWPose: Pose 26.08ms on 1 people
+
+DWPose: Bbox 23.22ms
+DWPose: Pose 25.33ms on 1 people
+
+DWPose: Bbox 22.42ms
+DWPose: Pose 25.76ms on 1 people
+
+DWPose: Bbox 22.21ms
+DWPose: Pose 23.78ms on 1 people
+
+DWPose: Bbox 23.02ms
+DWPose: Pose 24.35ms on 1 people
+
+DWPose: Bbox 23.00ms
+DWPose: Pose 26.26ms on 1 people
+
+DWPose: Bbox 23.76ms
+DWPose: Pose 27.34ms on 1 people
+
+DWPose: Bbox 23.59ms
+DWPose: Pose 27.34ms on 1 people
+
+DWPose: Bbox 23.64ms
+DWPose: Pose 25.33ms on 1 people
+
+DWPose: Bbox 23.48ms
+DWPose: Pose 25.61ms on 1 people
+
+DWPose: Bbox 22.73ms
+DWPose: Pose 25.72ms on 1 people
+
+DWPose: Bbox 24.31ms
+DWPose: Pose 25.12ms on 1 people
+
+DWPose: Bbox 22.41ms
+DWPose: Pose 25.68ms on 1 people
+
+DWPose: Bbox 23.17ms
+DWPose: Pose 24.56ms on 1 people
+
+DWPose: Bbox 22.40ms
+DWPose: Pose 24.59ms on 1 people
+
+DWPose: Bbox 22.20ms
+DWPose: Pose 25.10ms on 1 people
+
+DWPose: Bbox 22.75ms
+DWPose: Pose 25.06ms on 1 people
+
+DWPose: Bbox 22.99ms
+DWPose: Pose 25.35ms on 1 people
+
+DWPose: Bbox 24.44ms
+DWPose: Pose 26.93ms on 1 people
+
+DWPose: Bbox 24.38ms
+DWPose: Pose 26.77ms on 1 people
+
+DWPose: Bbox 23.80ms
+DWPose: Pose 24.96ms on 1 people
+
+DWPose: Bbox 22.84ms
+DWPose: Pose 25.50ms on 1 people
+
+DWPose: Bbox 22.79ms
+DWPose: Pose 24.84ms on 1 people
+
+DWPose: Bbox 23.23ms
+DWPose: Pose 25.12ms on 1 people
+
+DWPose: Bbox 22.85ms
+DWPose: Pose 24.59ms on 1 people
+
+DWPose: Bbox 21.75ms
+DWPose: Pose 24.64ms on 1 people
+
+DWPose: Bbox 22.97ms
+DWPose: Pose 24.16ms on 1 people
+
+DWPose: Bbox 23.37ms
+DWPose: Pose 26.84ms on 1 people
+
+DWPose: Bbox 24.63ms
+DWPose: Pose 28.51ms on 1 people
+
+DWPose: Bbox 24.29ms
+DWPose: Pose 25.77ms on 1 people
+
+DWPose: Bbox 22.40ms
+DWPose: Pose 26.66ms on 1 people
+
+DWPose: Bbox 22.61ms
+DWPose: Pose 26.74ms on 1 people
+
+DWPose: Bbox 22.73ms
+DWPose: Pose 24.98ms on 1 people
+
+DWPose: Bbox 22.66ms
+DWPose: Pose 24.95ms on 1 people
+
+DWPose: Bbox 24.24ms
+DWPose: Pose 25.82ms on 1 people
+
+DWPose: Bbox 22.53ms
+DWPose: Pose 24.61ms on 1 people
+
+DWPose: Bbox 22.93ms
+DWPose: Pose 24.51ms on 1 people
+
+model_path is D:\ComfyUI-aki-v3\ComfyUI\custom_nodes\comfyui_controlnet_aux\ckpts\hr16\yolox-onnx\yolox_l.torchscript.pt
+model_path is D:\ComfyUI-aki-v3\ComfyUI\custom_nodes\comfyui_controlnet_aux\ckpts\hr16\DWPose-TorchScript-BatchSize5\dw-ll_ucoco_384_bs5.torchscript.pt
+
+DWPose: Using yolox_l.torchscript.pt for bbox detection and dw-ll_ucoco_384_bs5.torchscript.pt for pose estimation
+DWPose: Bbox 64.93ms
+DWPose: Pose 57.44ms on 1 people
+
+DWPose: Bbox 49.96ms
+DWPose: Pose 52.60ms on 1 people
+
+DWPose: Bbox 51.95ms
+DWPose: Pose 48.83ms on 1 people
+
+DWPose: Bbox 43.82ms
+DWPose: Pose 47.12ms on 1 people
+
+DWPose: Bbox 43.75ms
+DWPose: Pose 46.48ms on 1 people
+
+DWPose: Bbox 41.82ms
+DWPose: Pose 68.48ms on 1 people
+
+DWPose: Bbox 34.56ms
+DWPose: Pose 30.34ms on 1 people
+
+DWPose: Bbox 27.87ms
+DWPose: Pose 29.37ms on 1 people
+
+DWPose: Bbox 23.65ms
+DWPose: Pose 27.02ms on 1 people
+
+DWPose: Bbox 24.22ms
+DWPose: Pose 29.01ms on 1 people
+
+DWPose: Bbox 24.27ms
+DWPose: Pose 29.30ms on 1 people
+
+DWPose: Bbox 22.81ms
+DWPose: Pose 27.35ms on 1 people
+
+DWPose: Bbox 21.88ms
+DWPose: Pose 28.66ms on 1 people
+
+DWPose: Bbox 23.58ms
+DWPose: Pose 28.13ms on 1 people
+
+DWPose: Bbox 22.90ms
+DWPose: Pose 28.50ms on 1 people
+
+DWPose: Bbox 23.48ms
+DWPose: Pose 28.54ms on 1 people
+
+DWPose: Bbox 22.53ms
+DWPose: Pose 29.06ms on 1 people
+
+DWPose: Bbox 24.10ms
+DWPose: Pose 30.06ms on 1 people
+
+DWPose: Bbox 22.97ms
+DWPose: Pose 29.64ms on 1 people
+
+DWPose: Bbox 25.19ms
+DWPose: Pose 29.66ms on 1 people
+
+DWPose: Bbox 24.09ms
+DWPose: Pose 31.89ms on 1 people
+
+DWPose: Bbox 24.52ms
+DWPose: Pose 32.25ms on 1 people
+
+DWPose: Bbox 24.56ms
+DWPose: Pose 28.99ms on 1 people
+
+DWPose: Bbox 22.94ms
+DWPose: Pose 29.03ms on 1 people
+
+DWPose: Bbox 24.07ms
+DWPose: Pose 28.92ms on 1 people
+
+DWPose: Bbox 23.48ms
+DWPose: Pose 29.59ms on 1 people
+
+DWPose: Bbox 23.73ms
+DWPose: Pose 32.57ms on 1 people
+
+DWPose: Bbox 25.62ms
+DWPose: Pose 31.79ms on 1 people
+
+DWPose: Bbox 25.62ms
+DWPose: Pose 32.49ms on 1 people
+
+DWPose: Bbox 25.76ms
+DWPose: Pose 29.28ms on 1 people
+
+DWPose: Bbox 24.65ms
+DWPose: Pose 29.62ms on 1 people
+
+DWPose: Bbox 24.00ms
+DWPose: Pose 30.69ms on 1 people
+
+DWPose: Bbox 22.57ms
+DWPose: Pose 28.91ms on 1 people
+
+DWPose: Bbox 23.69ms
+DWPose: Pose 28.79ms on 1 people
+
+DWPose: Bbox 23.61ms
+DWPose: Pose 28.82ms on 1 people
+
+DWPose: Bbox 23.76ms
+DWPose: Pose 30.01ms on 1 people
+
+DWPose: Bbox 24.01ms
+DWPose: Pose 29.11ms on 1 people
+
+DWPose: Bbox 24.64ms
+DWPose: Pose 31.28ms on 1 people
+
+DWPose: Bbox 25.62ms
+DWPose: Pose 32.05ms on 1 people
+
+DWPose: Bbox 26.16ms
+DWPose: Pose 29.66ms on 1 people
+
+DWPose: Bbox 24.47ms
+DWPose: Pose 30.22ms on 1 people
+
+DWPose: Bbox 23.68ms
+DWPose: Pose 28.98ms on 1 people
+
+DWPose: Bbox 24.21ms
+DWPose: Pose 29.02ms on 1 people
+
+DWPose: Bbox 24.49ms
+DWPose: Pose 30.04ms on 1 people
+
+DWPose: Bbox 24.99ms
+DWPose: Pose 29.71ms on 1 people
+
+DWPose: Bbox 25.00ms
+DWPose: Pose 29.73ms on 1 people
+
+DWPose: Bbox 23.03ms
+DWPose: Pose 29.18ms on 1 people
+
+DWPose: Bbox 27.02ms
+DWPose: Pose 34.44ms on 1 people
+
+DWPose: Bbox 25.08ms
+DWPose: Pose 33.09ms on 1 people
+
+DWPose: Bbox 26.35ms
+DWPose: Pose 31.28ms on 1 people
+
+DWPose: Bbox 26.25ms
+DWPose: Pose 31.10ms on 1 people
+
+DWPose: Bbox 24.72ms
+DWPose: Pose 29.24ms on 1 people
+
+DWPose: Bbox 23.67ms
+DWPose: Pose 29.52ms on 1 people
+
+DWPose: Bbox 24.70ms
+DWPose: Pose 29.62ms on 1 people
+
+DWPose: Bbox 22.72ms
+DWPose: Pose 29.02ms on 1 people
+
+DWPose: Bbox 22.87ms
+DWPose: Pose 29.78ms on 1 people
+
+DWPose: Bbox 25.48ms
+DWPose: Pose 31.20ms on 1 people
+
+DWPose: Bbox 23.67ms
+DWPose: Pose 28.88ms on 1 people
+
+DWPose: Bbox 24.46ms
+DWPose: Pose 29.99ms on 1 people
+
+DWPose: Bbox 23.40ms
+DWPose: Pose 29.39ms on 1 people
+
+DWPose: Bbox 22.95ms
+DWPose: Pose 28.55ms on 1 people
+
+DWPose: Bbox 23.67ms
+DWPose: Pose 28.79ms on 1 people
+
+DWPose: Bbox 23.82ms
+DWPose: Pose 29.01ms on 1 people
+
+DWPose: Bbox 23.68ms
+DWPose: Pose 31.69ms on 1 people
+
+DWPose: Bbox 27.10ms
+DWPose: Pose 34.34ms on 1 people
+
+DWPose: Bbox 25.26ms
+DWPose: Pose 30.34ms on 1 people
+
+DWPose: Bbox 26.97ms
+DWPose: Pose 31.67ms on 1 people
+
+DWPose: Bbox 26.95ms
+DWPose: Pose 37.20ms on 1 people
+
+DWPose: Bbox 24.80ms
+DWPose: Pose 32.72ms on 1 people
+
+DWPose: Bbox 25.09ms
+DWPose: Pose 30.98ms on 1 people
+
+DWPose: Bbox 24.99ms
+DWPose: Pose 33.45ms on 1 people
+
+DWPose: Bbox 24.39ms
+DWPose: Pose 30.54ms on 1 people
+
+DWPose: Bbox 25.07ms
+DWPose: Pose 30.37ms on 1 people
+
+DWPose: Bbox 23.34ms
+DWPose: Pose 29.96ms on 1 people
+
+DWPose: Bbox 24.10ms
+DWPose: Pose 31.19ms on 1 people
+
+DWPose: Bbox 24.79ms
+DWPose: Pose 29.80ms on 1 people
+
+DWPose: Bbox 24.42ms
+DWPose: Pose 30.02ms on 1 people
+
+DWPose: Bbox 24.47ms
+DWPose: Pose 29.40ms on 1 people
+
+DWPose: Bbox 24.08ms
+DWPose: Pose 29.40ms on 1 people
+
+DWPose: Bbox 23.04ms
+DWPose: Pose 28.13ms on 1 people
+
+DWPose: Bbox 23.51ms
+DWPose: Pose 28.56ms on 1 people
+
+DWPose: Bbox 22.89ms
+DWPose: Pose 29.21ms on 1 people
+
+DWPose: Bbox 23.22ms
+DWPose: Pose 28.45ms on 1 people
+
+DWPose: Bbox 23.83ms
+DWPose: Pose 28.82ms on 1 people
+
+DWPose: Bbox 23.22ms
+DWPose: Pose 29.44ms on 1 people
+
+DWPose: Bbox 23.18ms
+DWPose: Pose 28.36ms on 1 people
+
+DWPose: Bbox 23.34ms
+DWPose: Pose 28.35ms on 1 people
+
+DWPose: Bbox 25.26ms
+DWPose: Pose 33.96ms on 1 people
+
+DWPose: Bbox 26.64ms
+DWPose: Pose 32.07ms on 1 people
+
+DWPose: Bbox 24.87ms
+DWPose: Pose 30.80ms on 1 people
+
+DWPose: Bbox 24.86ms
+DWPose: Pose 30.24ms on 1 people
+
+DWPose: Bbox 24.26ms
+DWPose: Pose 30.42ms on 1 people
+
+DWPose: Bbox 26.01ms
+DWPose: Pose 32.59ms on 1 people
+
+DWPose: Bbox 25.33ms
+DWPose: Pose 30.34ms on 1 people
+
+DWPose: Bbox 23.22ms
+DWPose: Pose 31.09ms on 1 people
+
+DWPose: Bbox 23.89ms
+DWPose: Pose 31.04ms on 1 people
+
+DWPose: Bbox 24.84ms
+DWPose: Pose 29.49ms on 1 people
+
+DWPose: Bbox 24.71ms
+DWPose: Pose 30.04ms on 1 people
+
+DWPose: Bbox 24.25ms
+DWPose: Pose 29.04ms on 1 people
+
+DWPose: Bbox 24.44ms
+DWPose: Pose 30.09ms on 1 people
+
+DWPose: Bbox 24.10ms
+DWPose: Pose 29.08ms on 1 people
+
+DWPose: Bbox 24.03ms
+DWPose: Pose 28.87ms on 1 people
+
+DWPose: Bbox 24.25ms
+DWPose: Pose 28.99ms on 1 people
+
+DWPose: Bbox 23.90ms
+DWPose: Pose 30.46ms on 1 people
+
+DWPose: Bbox 24.76ms
+DWPose: Pose 29.86ms on 1 people
+
+DWPose: Bbox 23.64ms
+DWPose: Pose 28.91ms on 1 people
+
+DWPose: Bbox 24.59ms
+DWPose: Pose 29.16ms on 1 people
+
+DWPose: Bbox 24.43ms
+DWPose: Pose 30.32ms on 1 people
+
+DWPose: Bbox 26.75ms
+DWPose: Pose 33.96ms on 1 people
+
+DWPose: Bbox 26.24ms
+DWPose: Bbox 25.57ms
+DWPose: Bbox 24.58ms
+DWPose: Bbox 27.08ms
+DWPose: Bbox 24.48ms
+DWPose: Bbox 25.69ms
+DWPose: Bbox 25.22ms
+DWPose: Bbox 23.83ms
+DWPose: Bbox 24.62ms
+DWPose: Bbox 24.83ms
+DWPose: Bbox 24.57ms
+DWPose: Bbox 24.95ms
+DWPose: Bbox 24.10ms
+DWPose: Bbox 23.14ms
+DWPose: Bbox 24.18ms
+DWPose: Bbox 24.51ms
+DWPose: Bbox 23.58ms
+DWPose: Bbox 23.18ms
+DWPose: Bbox 23.94ms
+DWPose: Bbox 23.59ms
+DWPose: Bbox 23.97ms
+DWPose: Bbox 24.30ms
+DWPose: Bbox 23.58ms
+DWPose: Bbox 23.80ms
+DWPose: Bbox 23.97ms
+DWPose: Bbox 23.76ms
+DWPose: Bbox 23.39ms
+DWPose: Bbox 24.62ms
+DWPose: Bbox 24.96ms
+DWPose: Bbox 23.00ms
+DWPose: Bbox 23.15ms
+DWPose: Bbox 23.42ms
+DWPose: Bbox 22.71ms
+DWPose: Bbox 24.07ms
+DWPose: Bbox 22.68ms
+DWPose: Bbox 22.34ms
+DWPose: Bbox 23.51ms
+DWPose: Bbox 25.26ms
+DWPose: Bbox 24.75ms
+DWPose: Bbox 25.21ms
+DWPose: Bbox 24.69ms
+DWPose: Bbox 25.31ms
+DWPose: Bbox 27.69ms
+DWPose: Bbox 24.45ms
+model_path is D:\ComfyUI-aki-v3\ComfyUI\custom_nodes\comfyui_controlnet_aux\ckpts\hr16\yolox-onnx\yolox_l.torchscript.pt
+model_path is D:\ComfyUI-aki-v3\ComfyUI\custom_nodes\comfyui_controlnet_aux\ckpts\hr16\DWPose-TorchScript-BatchSize5\dw-ll_ucoco_384_bs5.torchscript.pt
+
+DWPose: Using yolox_l.torchscript.pt for bbox detection and dw-ll_ucoco_384_bs5.torchscript.pt for pose estimation
+DWPose: Bbox 28.78ms
+DWPose: Pose 31.76ms on 1 people
+
+DWPose: Bbox 25.28ms
+DWPose: Pose 30.37ms on 1 people
+
+DWPose: Bbox 24.02ms
+DWPose: Pose 31.58ms on 1 people
+
+DWPose: Bbox 24.81ms
+DWPose: Pose 29.62ms on 1 people
+
+DWPose: Bbox 24.59ms
+DWPose: Pose 28.62ms on 1 people
+
+DWPose: Bbox 23.35ms
+DWPose: Pose 28.73ms on 1 people
+
+DWPose: Bbox 24.72ms
+DWPose: Pose 31.17ms on 1 people
+
+DWPose: Bbox 24.01ms
+DWPose: Pose 28.85ms on 1 people
+
+DWPose: Bbox 23.08ms
+DWPose: Pose 30.32ms on 1 people
+
+DWPose: Bbox 24.25ms
+DWPose: Pose 29.36ms on 1 people
+
+DWPose: Bbox 23.35ms
+DWPose: Pose 28.69ms on 1 people
+
+DWPose: Bbox 24.46ms
+DWPose: Pose 28.81ms on 1 people
+
+DWPose: Bbox 22.88ms
+DWPose: Pose 29.88ms on 1 people
+
+DWPose: Bbox 23.19ms
+DWPose: Pose 29.59ms on 1 people
+
+DWPose: Bbox 23.70ms
+DWPose: Pose 30.62ms on 1 people
+
+DWPose: Bbox 24.22ms
+DWPose: Pose 28.25ms on 1 people
+
+DWPose: Bbox 23.65ms
+DWPose: Pose 31.24ms on 1 people
+
+DWPose: Bbox 25.17ms
+DWPose: Pose 30.57ms on 1 people
+
+DWPose: Bbox 24.46ms
+DWPose: Pose 32.09ms on 1 people
+
+DWPose: Bbox 26.18ms
+DWPose: Pose 34.16ms on 1 people
+
+DWPose: Bbox 25.82ms
+DWPose: Pose 32.94ms on 1 people
+
+DWPose: Bbox 24.30ms
+DWPose: Pose 30.66ms on 1 people
+
+DWPose: Bbox 23.79ms
+DWPose: Pose 30.87ms on 1 people
+
+DWPose: Bbox 23.18ms
+DWPose: Pose 30.24ms on 1 people
+
+DWPose: Bbox 24.14ms
+DWPose: Pose 28.96ms on 1 people
+
+DWPose: Bbox 23.88ms
+DWPose: Pose 28.41ms on 1 people
+
+DWPose: Bbox 22.66ms
+DWPose: Pose 28.26ms on 1 people
+
+DWPose: Bbox 24.11ms
+DWPose: Pose 29.03ms on 1 people
+
+DWPose: Bbox 25.03ms
+DWPose: Pose 28.67ms on 1 people
+
+DWPose: Bbox 24.07ms
+DWPose: Pose 31.00ms on 1 people
+
+DWPose: Bbox 24.19ms
+DWPose: Pose 28.07ms on 1 people
+
+DWPose: Bbox 23.46ms
+DWPose: Pose 29.13ms on 1 people
+
+DWPose: Bbox 23.84ms
+DWPose: Pose 28.44ms on 1 people
+
+DWPose: Bbox 23.55ms
+DWPose: Pose 27.91ms on 1 people
+
+DWPose: Bbox 23.51ms
+DWPose: Pose 29.20ms on 1 people
+
+DWPose: Bbox 23.86ms
+DWPose: Pose 28.99ms on 1 people
+
+DWPose: Bbox 24.86ms
+DWPose: Pose 31.92ms on 1 people
+
+DWPose: Bbox 25.02ms
+DWPose: Pose 30.95ms on 1 people
+
+DWPose: Bbox 23.15ms
+DWPose: Pose 29.30ms on 1 people
+
+DWPose: Bbox 24.13ms
+DWPose: Pose 31.04ms on 1 people
+
+DWPose: Bbox 26.26ms
+DWPose: Pose 34.36ms on 1 people
+
+DWPose: Bbox 26.33ms
+DWPose: Pose 32.51ms on 1 people
+
+DWPose: Bbox 24.74ms
+DWPose: Pose 28.94ms on 1 people
+
+DWPose: Bbox 24.89ms
+DWPose: Pose 30.71ms on 1 people
+
+DWPose: Bbox 24.37ms
+DWPose: Pose 31.07ms on 1 people
+
+DWPose: Bbox 23.40ms
+DWPose: Pose 29.40ms on 1 people
+
+DWPose: Bbox 24.17ms
+DWPose: Pose 30.10ms on 1 people
+
+DWPose: Bbox 24.10ms
+DWPose: Pose 28.89ms on 1 people
+
+DWPose: Bbox 23.56ms
+DWPose: Pose 29.19ms on 1 people
+
+DWPose: Bbox 24.72ms
+DWPose: Pose 28.88ms on 1 people
+
+DWPose: Bbox 24.42ms
+DWPose: Pose 29.05ms on 1 people
+
+DWPose: Bbox 24.01ms
+DWPose: Pose 30.95ms on 1 people
+
+DWPose: Bbox 24.53ms
+DWPose: Pose 29.42ms on 1 people
+
+DWPose: Bbox 23.74ms
+DWPose: Pose 28.74ms on 1 people
+
+DWPose: Bbox 24.38ms
+DWPose: Pose 28.79ms on 1 people
+
+DWPose: Bbox 24.85ms
+DWPose: Pose 30.74ms on 1 people
+
+DWPose: Bbox 25.75ms
+DWPose: Pose 30.92ms on 1 people
+
+DWPose: Bbox 24.59ms
+DWPose: Pose 29.73ms on 1 people
+
+DWPose: Bbox 23.48ms
+DWPose: Pose 29.16ms on 1 people
+
+DWPose: Bbox 25.68ms
+DWPose: Pose 29.08ms on 1 people
+
+DWPose: Bbox 22.81ms
+DWPose: Pose 30.96ms on 1 people
+
+DWPose: Bbox 27.04ms
+DWPose: Pose 34.27ms on 1 people
+
+DWPose: Bbox 26.81ms
+DWPose: Pose 33.21ms on 1 people
+
+DWPose: Bbox 25.71ms
+DWPose: Pose 29.78ms on 1 people
+
+DWPose: Bbox 23.81ms
+DWPose: Pose 31.01ms on 1 people
+
+DWPose: Bbox 24.74ms
+DWPose: Pose 30.18ms on 1 people
+
+DWPose: Bbox 24.67ms
+DWPose: Pose 30.89ms on 1 people
+
+DWPose: Bbox 24.23ms
+DWPose: Pose 29.83ms on 1 people
+
+DWPose: Bbox 24.61ms
+DWPose: Pose 28.24ms on 1 people
+
+DWPose: Bbox 24.20ms
+DWPose: Pose 30.48ms on 1 people
+
+DWPose: Bbox 24.63ms
+DWPose: Pose 29.54ms on 1 people
+
+DWPose: Bbox 23.87ms
+DWPose: Pose 29.39ms on 1 people
+
+DWPose: Bbox 23.53ms
+DWPose: Pose 30.49ms on 1 people
+
+DWPose: Bbox 25.02ms
+DWPose: Pose 28.74ms on 1 people
+
+DWPose: Bbox 24.34ms
+DWPose: Pose 30.49ms on 1 people
+
+DWPose: Bbox 25.20ms
+DWPose: Pose 31.30ms on 1 people
+
+DWPose: Bbox 26.05ms
+DWPose: Pose 30.04ms on 1 people
+
+DWPose: Bbox 24.82ms
+DWPose: Pose 30.25ms on 1 people
+
+DWPose: Bbox 23.93ms
+DWPose: Pose 30.36ms on 1 people
+
+DWPose: Bbox 23.55ms
+DWPose: Pose 30.02ms on 1 people
+
+DWPose: Bbox 24.70ms
+DWPose: Pose 28.18ms on 1 people
+
+DWPose: Bbox 24.81ms
+DWPose: Pose 32.03ms on 1 people
+
+DWPose: Bbox 26.15ms
+DWPose: Pose 34.19ms on 1 people
+
+DWPose: Bbox 25.60ms
+DWPose: Pose 33.29ms on 1 people
+
+DWPose: Bbox 24.73ms
+DWPose: Pose 30.56ms on 1 people
+
+DWPose: Bbox 24.74ms
+DWPose: Pose 30.52ms on 1 people
+
+DWPose: Bbox 24.74ms
+DWPose: Pose 30.68ms on 1 people
+
+DWPose: Bbox 24.33ms
+DWPose: Pose 30.12ms on 1 people
+
+DWPose: Bbox 25.64ms
+DWPose: Pose 29.07ms on 1 people
+
+DWPose: Bbox 25.49ms
+DWPose: Pose 28.51ms on 1 people
+
+DWPose: Bbox 24.48ms
+DWPose: Pose 30.17ms on 1 people
+
+DWPose: Bbox 23.93ms
+DWPose: Pose 30.98ms on 1 people
+
+DWPose: Bbox 24.78ms
+DWPose: Pose 29.51ms on 1 people
+
+DWPose: Bbox 25.52ms
+DWPose: Pose 28.32ms on 1 people
+
+DWPose: Bbox 26.39ms
+DWPose: Pose 31.18ms on 1 people
+
+DWPose: Bbox 24.58ms
+DWPose: Pose 29.82ms on 1 people
+
+DWPose: Bbox 25.23ms
+DWPose: Pose 30.52ms on 1 people
+
+DWPose: Bbox 24.93ms
+DWPose: Pose 29.22ms on 1 people
+
+DWPose: Bbox 23.52ms
+DWPose: Pose 30.14ms on 1 people
+
+DWPose: Bbox 24.51ms
+DWPose: Pose 29.44ms on 1 people
+
+DWPose: Bbox 24.60ms
+DWPose: Pose 30.28ms on 1 people
+
+DWPose: Bbox 24.01ms
+DWPose: Pose 29.69ms on 1 people
+
+DWPose: Bbox 23.91ms
+DWPose: Pose 31.39ms on 1 people
+
+DWPose: Bbox 25.42ms
+DWPose: Pose 32.03ms on 1 people
+
+DWPose: Bbox 26.56ms
+DWPose: Pose 32.85ms on 1 people
+
+DWPose: Bbox 25.05ms
+DWPose: Pose 31.34ms on 1 people
+
+DWPose: Bbox 25.64ms
+DWPose: Pose 32.59ms on 1 people
+
+DWPose: Bbox 25.76ms
+DWPose: Pose 30.44ms on 1 people
+
+DWPose: Bbox 25.70ms
+DWPose: Pose 29.38ms on 1 people
+
+DWPose: Bbox 24.07ms
+DWPose: Bbox 25.89ms
+DWPose: Bbox 24.01ms
+DWPose: Bbox 24.04ms
+DWPose: Bbox 23.52ms
+DWPose: Bbox 24.13ms
+DWPose: Bbox 24.20ms
+DWPose: Bbox 25.29ms
+DWPose: Bbox 25.19ms
+DWPose: Bbox 24.45ms
+DWPose: Bbox 23.80ms
+DWPose: Bbox 23.64ms
+DWPose: Bbox 23.22ms
+DWPose: Bbox 23.00ms
+DWPose: Bbox 23.63ms
+DWPose: Bbox 24.16ms
+DWPose: Bbox 23.87ms
+DWPose: Bbox 23.29ms
+DWPose: Bbox 23.94ms
+DWPose: Bbox 24.12ms
+DWPose: Bbox 23.38ms
+DWPose: Bbox 23.57ms
+DWPose: Bbox 23.11ms
+DWPose: Bbox 23.93ms
+DWPose: Bbox 24.44ms
+DWPose: Bbox 24.10ms
+DWPose: Bbox 25.60ms
+DWPose: Bbox 23.78ms
+DWPose: Bbox 26.04ms
+DWPose: Bbox 24.56ms
+DWPose: Bbox 26.63ms
+DWPose: Bbox 25.48ms
+DWPose: Bbox 23.54ms
+DWPose: Bbox 24.25ms
+DWPose: Bbox 23.79ms
+DWPose: Bbox 23.77ms
+DWPose: Bbox 23.78ms
+DWPose: Bbox 24.72ms
+DWPose: Bbox 24.03ms
+DWPose: Bbox 22.26ms
+DWPose: Bbox 23.87ms
+DWPose: Bbox 23.54ms
+DWPose: Bbox 22.75ms
+DWPose: Bbox 23.32ms
+model_path is D:\ComfyUI-aki-v3\ComfyUI\custom_nodes\comfyui_controlnet_aux\ckpts\hr16\yolox-onnx\yolox_l.torchscript.pt
+model_path is D:\ComfyUI-aki-v3\ComfyUI\custom_nodes\comfyui_controlnet_aux\ckpts\hr16\DWPose-TorchScript-BatchSize5\dw-ll_ucoco_384_bs5.torchscript.pt
+
+DWPose: Using yolox_l.torchscript.pt for bbox detection and dw-ll_ucoco_384_bs5.torchscript.pt for pose estimation
+DWPose: Bbox 240.36ms
+DWPose: Pose 38.52ms on 1 people
+
+DWPose: Bbox 22.58ms
+DWPose: Pose 23.27ms on 1 people
+
+DWPose: Bbox 21.81ms
+DWPose: Pose 23.78ms on 1 people
+
+DWPose: Bbox 21.26ms
+DWPose: Pose 23.28ms on 1 people
+
+DWPose: Bbox 21.91ms
+DWPose: Pose 24.28ms on 1 people
+
+DWPose: Bbox 21.87ms
+DWPose: Pose 23.79ms on 1 people
+
+DWPose: Bbox 20.99ms
+DWPose: Pose 23.21ms on 1 people
+
+DWPose: Bbox 23.69ms
+DWPose: Pose 25.09ms on 1 people
+
+DWPose: Bbox 23.48ms
+DWPose: Pose 22.89ms on 1 people
+
+DWPose: Bbox 22.20ms
+DWPose: Pose 23.13ms on 1 people
+
+DWPose: Bbox 22.02ms
+DWPose: Pose 24.02ms on 1 people
+
+DWPose: Bbox 24.31ms
+DWPose: Pose 26.83ms on 1 people
+
+DWPose: Bbox 23.98ms
+DWPose: Pose 26.05ms on 1 people
+
+DWPose: Bbox 24.17ms
+DWPose: Pose 23.74ms on 1 people
+
+DWPose: Bbox 23.34ms
+DWPose: Pose 24.27ms on 1 people
+
+DWPose: Bbox 22.50ms
+DWPose: Pose 23.27ms on 1 people
+
+DWPose: Bbox 22.64ms
+DWPose: Pose 25.03ms on 1 people
+
+DWPose: Bbox 22.50ms
+DWPose: Pose 25.81ms on 1 people
+
+DWPose: Bbox 23.70ms
+DWPose: Pose 24.91ms on 1 people
+
+DWPose: Bbox 22.79ms
+DWPose: Pose 24.57ms on 1 people
+
+DWPose: Bbox 21.82ms
+DWPose: Pose 24.64ms on 1 people
+
+DWPose: Bbox 23.17ms
+DWPose: Pose 23.94ms on 1 people
+
+DWPose: Bbox 22.44ms
+DWPose: Pose 23.41ms on 1 people
+
+DWPose: Bbox 22.70ms
+DWPose: Pose 23.05ms on 1 people
+
+DWPose: Bbox 22.83ms
+DWPose: Pose 24.17ms on 1 people
+
+DWPose: Bbox 22.67ms
+DWPose: Pose 22.93ms on 1 people
+
+DWPose: Bbox 20.77ms
+DWPose: Pose 23.64ms on 1 people
+
+DWPose: Bbox 20.80ms
+DWPose: Pose 23.94ms on 1 people
+
+DWPose: Bbox 21.71ms
+DWPose: Pose 24.99ms on 1 people
+
+DWPose: Bbox 23.35ms
+DWPose: Pose 23.22ms on 1 people
+
+DWPose: Bbox 22.61ms
+DWPose: Pose 23.87ms on 1 people
+
+DWPose: Bbox 22.20ms
+DWPose: Pose 24.34ms on 1 people
+
+DWPose: Bbox 21.91ms
+DWPose: Pose 23.81ms on 1 people
+
+DWPose: Bbox 23.01ms
+DWPose: Pose 23.53ms on 1 people
+
+DWPose: Bbox 21.60ms
+DWPose: Pose 24.09ms on 1 people
+
+DWPose: Bbox 22.30ms
+DWPose: Pose 26.98ms on 1 people
+
+DWPose: Bbox 24.37ms
+DWPose: Pose 27.36ms on 1 people
+
+DWPose: Bbox 23.61ms
+DWPose: Pose 25.41ms on 1 people
+
+DWPose: Bbox 22.25ms
+DWPose: Pose 24.88ms on 1 people
+
+DWPose: Bbox 24.15ms
+DWPose: Pose 27.94ms on 1 people
+
+DWPose: Bbox 24.69ms
+DWPose: Pose 28.23ms on 1 people
+
+DWPose: Bbox 24.17ms
+DWPose: Pose 25.47ms on 1 people
+
+DWPose: Bbox 21.78ms
+DWPose: Pose 24.62ms on 1 people
+
+DWPose: Bbox 21.57ms
+DWPose: Pose 24.92ms on 1 people
+
+DWPose: Bbox 23.57ms
+DWPose: Pose 24.01ms on 1 people
+
+DWPose: Bbox 22.26ms
+DWPose: Pose 23.50ms on 1 people
+
+DWPose: Bbox 23.28ms
+DWPose: Pose 23.71ms on 1 people
+
+DWPose: Bbox 21.68ms
+DWPose: Pose 23.60ms on 1 people
+
+DWPose: Bbox 22.18ms
+DWPose: Pose 25.15ms on 1 people
+
+model_path is D:\ComfyUI-aki-v3\ComfyUI\custom_nodes\comfyui_controlnet_aux\ckpts\hr16\yolox-onnx\yolox_l.torchscript.pt
+model_path is D:\ComfyUI-aki-v3\ComfyUI\custom_nodes\comfyui_controlnet_aux\ckpts\hr16\DWPose-TorchScript-BatchSize5\dw-ll_ucoco_384_bs5.torchscript.pt
+
+DWPose: Using yolox_l.torchscript.pt for bbox detection and dw-ll_ucoco_384_bs5.torchscript.pt for pose estimation
+DWPose: Bbox 25.58ms
+DWPose: Pose 29.27ms on 1 people
+
+DWPose: Bbox 23.36ms
+DWPose: Pose 24.70ms on 1 people
+
+DWPose: Bbox 22.46ms
+DWPose: Pose 25.11ms on 1 people
+
+DWPose: Bbox 23.16ms
+DWPose: Pose 24.83ms on 1 people
+
+DWPose: Bbox 22.87ms
+DWPose: Pose 24.45ms on 1 people
+
+DWPose: Bbox 22.47ms
+DWPose: Pose 25.66ms on 1 people
+
+DWPose: Bbox 24.15ms
+DWPose: Pose 24.33ms on 1 people
+
+DWPose: Bbox 22.98ms
+DWPose: Pose 26.33ms on 1 people
+
+DWPose: Bbox 23.59ms
+DWPose: Pose 26.65ms on 1 people
+
+DWPose: Bbox 22.50ms
+DWPose: Pose 25.25ms on 1 people
+
+DWPose: Bbox 23.95ms
+DWPose: Pose 26.48ms on 1 people
+
+DWPose: Bbox 24.03ms
+DWPose: Pose 28.03ms on 1 people
+
+DWPose: Bbox 23.34ms
+DWPose: Pose 27.42ms on 1 people
+
+DWPose: Bbox 22.95ms
+DWPose: Pose 28.82ms on 1 people
+
+DWPose: Bbox 23.79ms
+DWPose: Pose 24.24ms on 1 people
+
+DWPose: Bbox 22.71ms
+DWPose: Pose 26.32ms on 1 people
+
+DWPose: Bbox 23.94ms
+DWPose: Pose 24.78ms on 1 people
+
+DWPose: Bbox 23.98ms
+DWPose: Pose 25.35ms on 1 people
+
+DWPose: Bbox 23.12ms
+DWPose: Pose 26.62ms on 1 people
+
+DWPose: Bbox 23.56ms
+DWPose: Pose 26.09ms on 1 people
+
+DWPose: Bbox 22.73ms
+DWPose: Pose 25.55ms on 1 people
+
+DWPose: Bbox 23.35ms
+DWPose: Pose 25.13ms on 1 people
+
+DWPose: Bbox 22.63ms
+DWPose: Pose 25.11ms on 1 people
+
+DWPose: Bbox 23.90ms
+DWPose: Pose 25.13ms on 1 people
+
+DWPose: Bbox 22.57ms
+DWPose: Pose 26.32ms on 1 people
+
+DWPose: Bbox 23.06ms
+DWPose: Pose 26.60ms on 1 people
+
+DWPose: Bbox 23.78ms
+DWPose: Pose 25.43ms on 1 people
+
+DWPose: Bbox 22.91ms
+DWPose: Pose 25.33ms on 1 people
+
+DWPose: Bbox 22.27ms
+DWPose: Pose 25.99ms on 1 people
+
+DWPose: Bbox 23.01ms
+DWPose: Pose 25.10ms on 1 people
+
+DWPose: Bbox 23.67ms
+DWPose: Pose 25.47ms on 1 people
+
+DWPose: Bbox 22.99ms
+DWPose: Pose 25.20ms on 1 people
+
+DWPose: Bbox 23.56ms
+DWPose: Pose 26.01ms on 1 people
+
+DWPose: Bbox 23.62ms
+DWPose: Pose 25.91ms on 1 people
+
+DWPose: Bbox 23.54ms
+DWPose: Pose 25.65ms on 1 people
+
+DWPose: Bbox 22.92ms
+DWPose: Pose 25.76ms on 1 people
+
+DWPose: Bbox 23.38ms
+DWPose: Pose 25.95ms on 1 people
+
+DWPose: Bbox 25.33ms
+DWPose: Pose 29.05ms on 1 people
+
+DWPose: Bbox 24.73ms
+DWPose: Pose 29.37ms on 1 people
+
+DWPose: Bbox 23.96ms
+DWPose: Pose 25.65ms on 1 people
+
+DWPose: Bbox 23.70ms
+DWPose: Pose 26.89ms on 1 people
+
+DWPose: Bbox 23.89ms
+DWPose: Pose 26.64ms on 1 people
+
+DWPose: Bbox 23.44ms
+DWPose: Pose 26.58ms on 1 people
+
+DWPose: Bbox 24.01ms
+DWPose: Pose 26.33ms on 1 people
+
+DWPose: Bbox 23.16ms
+DWPose: Pose 25.63ms on 1 people
+
+DWPose: Bbox 23.84ms
+DWPose: Pose 25.54ms on 1 people
+
+DWPose: Bbox 24.05ms
+DWPose: Pose 26.58ms on 1 people
+
+DWPose: Bbox 25.10ms
+DWPose: Pose 25.56ms on 1 people
+
+DWPose: Bbox 23.07ms
+DWPose: Pose 25.86ms on 1 people
+
+model_path is D:\ComfyUI-aki-v3\ComfyUI\custom_nodes\comfyui_controlnet_aux\ckpts\hr16\yolox-onnx\yolox_l.torchscript.pt
+model_path is D:\ComfyUI-aki-v3\ComfyUI\custom_nodes\comfyui_controlnet_aux\ckpts\hr16\DWPose-TorchScript-BatchSize5\dw-ll_ucoco_384_bs5.torchscript.pt
+
+DWPose: Using yolox_l.torchscript.pt for bbox detection and dw-ll_ucoco_384_bs5.torchscript.pt for pose estimation
+DWPose: Bbox 84.37ms
+DWPose: Pose 116.48ms on 1 people
+
+DWPose: Bbox 79.28ms
+DWPose: Pose 49.18ms on 1 people
+
+DWPose: Bbox 44.68ms
+DWPose: Pose 41.76ms on 1 people
+
+DWPose: Bbox 41.30ms
+DWPose: Pose 41.60ms on 1 people
+
+DWPose: Bbox 43.23ms
+DWPose: Pose 42.22ms on 1 people
+
+DWPose: Bbox 69.14ms
+DWPose: Pose 41.22ms on 1 people
+
+DWPose: Bbox 41.22ms
+DWPose: Pose 44.35ms on 1 people
+
+DWPose: Bbox 35.24ms
+DWPose: Pose 26.56ms on 1 people
+
+DWPose: Bbox 23.35ms
+DWPose: Pose 26.36ms on 1 people
+
+DWPose: Bbox 23.20ms
+DWPose: Pose 28.14ms on 1 people
+
+DWPose: Bbox 23.63ms
+DWPose: Pose 26.93ms on 1 people
+
+DWPose: Bbox 24.07ms
+DWPose: Pose 27.84ms on 1 people
+
+DWPose: Bbox 24.76ms
+DWPose: Pose 26.22ms on 1 people
+
+DWPose: Bbox 22.81ms
+DWPose: Pose 25.74ms on 1 people
+
+DWPose: Bbox 23.88ms
+DWPose: Pose 27.83ms on 1 people
+
+DWPose: Bbox 23.42ms
+DWPose: Pose 27.84ms on 1 people
+
+DWPose: Bbox 23.29ms
+DWPose: Pose 27.74ms on 1 people
+
+DWPose: Bbox 23.99ms
+DWPose: Pose 30.43ms on 1 people
+
+DWPose: Bbox 25.43ms
+DWPose: Pose 29.62ms on 1 people
+
+DWPose: Bbox 22.87ms
+DWPose: Pose 27.32ms on 1 people
+
+DWPose: Bbox 23.36ms
+DWPose: Pose 27.64ms on 1 people
+
+DWPose: Bbox 23.58ms
+DWPose: Pose 27.26ms on 1 people
+
+DWPose: Bbox 23.46ms
+DWPose: Pose 26.74ms on 1 people
+
+DWPose: Bbox 23.21ms
+DWPose: Pose 25.85ms on 1 people
+
+DWPose: Bbox 23.89ms
+DWPose: Pose 28.20ms on 1 people
+
+DWPose: Bbox 23.15ms
+DWPose: Pose 27.39ms on 1 people
+
+DWPose: Bbox 25.07ms
+DWPose: Pose 29.73ms on 1 people
+
+DWPose: Bbox 24.45ms
+DWPose: Pose 28.01ms on 1 people
+
+DWPose: Bbox 21.36ms
+DWPose: Pose 26.01ms on 1 people
+
+DWPose: Bbox 22.18ms
+DWPose: Pose 26.45ms on 1 people
+
+DWPose: Bbox 23.45ms
+DWPose: Pose 26.07ms on 1 people
+
+DWPose: Bbox 23.11ms
+DWPose: Pose 25.97ms on 1 people
+
+DWPose: Bbox 22.09ms
+DWPose: Pose 29.66ms on 1 people
+
+DWPose: Bbox 24.54ms
+DWPose: Pose 29.35ms on 1 people
+
+DWPose: Bbox 22.55ms
+DWPose: Pose 30.10ms on 1 people
+
+DWPose: Bbox 24.34ms
+DWPose: Pose 28.84ms on 1 people
+
+DWPose: Bbox 24.67ms
+DWPose: Pose 28.68ms on 1 people
+
+DWPose: Bbox 24.68ms
+DWPose: Pose 30.87ms on 1 people
+
+DWPose: Bbox 25.21ms
+DWPose: Pose 31.51ms on 1 people
+
+DWPose: Bbox 23.58ms
+DWPose: Pose 30.58ms on 1 people
+
+DWPose: Bbox 23.53ms
+DWPose: Pose 29.20ms on 1 people
+
+DWPose: Bbox 24.21ms
+DWPose: Pose 27.67ms on 1 people
+
+DWPose: Bbox 21.52ms
+DWPose: Pose 26.49ms on 1 people
+
+DWPose: Bbox 23.04ms
+DWPose: Pose 28.71ms on 1 people
+
+DWPose: Bbox 23.00ms
+DWPose: Pose 30.57ms on 1 people
+
+DWPose: Bbox 23.72ms
+DWPose: Pose 27.65ms on 1 people
+
+DWPose: Bbox 24.22ms
+DWPose: Pose 27.60ms on 1 people
+
+DWPose: Bbox 24.64ms
+DWPose: Pose 27.83ms on 1 people
+
+DWPose: Bbox 25.06ms
+DWPose: Pose 26.87ms on 1 people
+
+DWPose: Bbox 23.65ms
+DWPose: Pose 27.41ms on 1 people
+
+DWPose: Bbox 23.23ms
+DWPose: Pose 25.92ms on 1 people
+
+DWPose: Bbox 23.40ms
+DWPose: Pose 27.71ms on 1 people
+
+DWPose: Bbox 24.06ms
+DWPose: Pose 29.64ms on 1 people
+
+DWPose: Bbox 24.12ms
+DWPose: Pose 28.58ms on 1 people
+
+DWPose: Bbox 24.05ms
+DWPose: Pose 29.58ms on 1 people
+
+DWPose: Bbox 24.59ms
+DWPose: Pose 28.88ms on 1 people
+
+DWPose: Bbox 24.05ms
+DWPose: Pose 30.43ms on 1 people
+
+DWPose: Bbox 27.12ms
+DWPose: Pose 29.87ms on 1 people
+
+DWPose: Bbox 24.18ms
+DWPose: Pose 29.21ms on 1 people
+
+DWPose: Bbox 24.30ms
+DWPose: Pose 27.96ms on 1 people
+
+DWPose: Bbox 23.49ms
+DWPose: Pose 30.03ms on 1 people
+
+DWPose: Bbox 25.48ms
+DWPose: Pose 27.47ms on 1 people
+
+DWPose: Bbox 23.51ms
+DWPose: Pose 28.29ms on 1 people
+
+DWPose: Bbox 24.58ms
+DWPose: Pose 27.67ms on 1 people
+
+DWPose: Bbox 23.98ms
+DWPose: Pose 29.11ms on 1 people
+
+DWPose: Bbox 23.61ms
+DWPose: Pose 28.71ms on 1 people
+
+DWPose: Bbox 23.77ms
+DWPose: Pose 28.34ms on 1 people
+
+DWPose: Bbox 23.75ms
+DWPose: Pose 29.07ms on 1 people
+
+DWPose: Bbox 23.65ms
+DWPose: Pose 28.31ms on 1 people
+
+DWPose: Bbox 23.75ms
+DWPose: Pose 29.20ms on 1 people
+
+DWPose: Bbox 24.47ms
+DWPose: Pose 28.55ms on 1 people
+
+DWPose: Bbox 25.34ms
+DWPose: Pose 31.47ms on 1 people
+
+DWPose: Bbox 25.26ms
+DWPose: Pose 29.41ms on 1 people
+
+DWPose: Bbox 24.25ms
+DWPose: Pose 29.71ms on 1 people
+
+DWPose: Bbox 25.08ms
+DWPose: Pose 29.32ms on 1 people
+
+DWPose: Bbox 23.59ms
+DWPose: Pose 29.48ms on 1 people
+
+DWPose: Bbox 26.36ms
+DWPose: Pose 30.59ms on 1 people
+
+DWPose: Bbox 25.78ms
+DWPose: Pose 30.14ms on 1 people
+
+DWPose: Bbox 24.09ms
+DWPose: Pose 29.73ms on 1 people
+
+DWPose: Bbox 25.72ms
+DWPose: Pose 29.48ms on 1 people
+
+DWPose: Bbox 23.90ms
+DWPose: Pose 29.17ms on 1 people
+
+DWPose: Bbox 22.87ms
+DWPose: Pose 26.41ms on 1 people
+
+DWPose: Bbox 25.15ms
+DWPose: Pose 28.18ms on 1 people
+
+DWPose: Bbox 25.12ms
+DWPose: Pose 27.79ms on 1 people
+
+DWPose: Bbox 25.60ms
+DWPose: Pose 27.26ms on 1 people
+
+DWPose: Bbox 24.49ms
+DWPose: Pose 26.94ms on 1 people
+
+DWPose: Bbox 25.16ms
+DWPose: Pose 25.61ms on 1 people
+
+DWPose: Bbox 21.96ms
+DWPose: Pose 25.94ms on 1 people
+
+DWPose: Bbox 24.48ms
+DWPose: Pose 26.83ms on 1 people
+
+DWPose: Bbox 23.68ms
+DWPose: Pose 26.72ms on 1 people
+
+DWPose: Bbox 23.84ms
+DWPose: Pose 27.71ms on 1 people
+
+DWPose: Bbox 26.26ms
+DWPose: Pose 28.16ms on 1 people
+
+DWPose: Bbox 25.64ms
+DWPose: Pose 29.07ms on 1 people
+
+DWPose: Bbox 25.87ms
+DWPose: Pose 26.25ms on 1 people
+
+DWPose: Bbox 23.96ms
+DWPose: Pose 26.99ms on 1 people
+
+DWPose: Bbox 25.72ms
+DWPose: Pose 25.94ms on 1 people
+
+DWPose: Bbox 24.43ms
+DWPose: Pose 28.85ms on 1 people
+
+DWPose: Bbox 28.43ms
+DWPose: Pose 30.09ms on 1 people
+
+DWPose: Bbox 25.79ms
+DWPose: Pose 27.53ms on 1 people
+
+DWPose: Bbox 24.21ms
+DWPose: Pose 28.95ms on 1 people
+
+DWPose: Bbox 24.33ms
+DWPose: Pose 27.76ms on 1 people
+
+DWPose: Bbox 25.67ms
+DWPose: Pose 27.16ms on 1 people
+
+DWPose: Bbox 24.18ms
+DWPose: Pose 26.93ms on 1 people
+
+DWPose: Bbox 24.05ms
+DWPose: Pose 26.17ms on 1 people
+
+DWPose: Bbox 22.98ms
+DWPose: Pose 25.70ms on 1 people
+
+DWPose: Bbox 24.36ms
+DWPose: Pose 26.82ms on 1 people
+
+DWPose: Bbox 22.19ms
+DWPose: Pose 25.75ms on 1 people
+
+DWPose: Bbox 22.03ms
+DWPose: Pose 25.56ms on 1 people
+
+DWPose: Bbox 22.55ms
+DWPose: Pose 25.85ms on 1 people
+
+DWPose: Bbox 23.40ms
+DWPose: Bbox 22.72ms
+DWPose: Bbox 21.92ms
+DWPose: Bbox 24.21ms
+DWPose: Bbox 22.67ms
+DWPose: Bbox 23.06ms
+DWPose: Bbox 23.59ms
+DWPose: Bbox 24.04ms
+DWPose: Bbox 24.13ms
+DWPose: Bbox 24.03ms
+DWPose: Bbox 24.80ms
+DWPose: Bbox 23.55ms
+DWPose: Bbox 23.78ms
+DWPose: Bbox 25.13ms
+DWPose: Bbox 24.22ms
+DWPose: Bbox 24.27ms
+DWPose: Bbox 25.12ms
+DWPose: Bbox 24.65ms
+DWPose: Bbox 23.89ms
+DWPose: Bbox 24.62ms
+DWPose: Bbox 25.25ms
+DWPose: Bbox 24.17ms
+DWPose: Bbox 24.49ms
+DWPose: Bbox 22.87ms
+DWPose: Bbox 23.80ms
+DWPose: Bbox 23.48ms
+DWPose: Bbox 24.08ms
+DWPose: Bbox 23.84ms
+DWPose: Bbox 22.98ms
+DWPose: Bbox 23.40ms
+DWPose: Bbox 23.60ms
+DWPose: Bbox 23.41ms
+DWPose: Bbox 22.81ms
+DWPose: Bbox 23.71ms
+DWPose: Bbox 22.29ms
+DWPose: Bbox 22.19ms
+DWPose: Bbox 23.38ms
+DWPose: Bbox 23.52ms
+DWPose: Bbox 23.50ms
+DWPose: Bbox 25.76ms
+DWPose: Bbox 23.22ms
+DWPose: Bbox 24.52ms
+DWPose: Bbox 24.65ms
+DWPose: Bbox 25.02ms
+model_path is D:\ComfyUI-aki-v3\ComfyUI\custom_nodes\comfyui_controlnet_aux\ckpts\hr16\yolox-onnx\yolox_l.torchscript.pt
+model_path is D:\ComfyUI-aki-v3\ComfyUI\custom_nodes\comfyui_controlnet_aux\ckpts\hr16\DWPose-TorchScript-BatchSize5\dw-ll_ucoco_384_bs5.torchscript.pt
+
+DWPose: Using yolox_l.torchscript.pt for bbox detection and dw-ll_ucoco_384_bs5.torchscript.pt for pose estimation
+DWPose: Bbox 30.14ms
+DWPose: Pose 34.30ms on 1 people
+
+DWPose: Bbox 22.47ms
+DWPose: Pose 28.29ms on 1 people
+
+DWPose: Bbox 23.67ms
+DWPose: Pose 27.28ms on 1 people
+
+DWPose: Bbox 24.47ms
+DWPose: Pose 27.35ms on 1 people
+
+DWPose: Bbox 24.63ms
+DWPose: Pose 26.99ms on 1 people
+
+DWPose: Bbox 23.38ms
+DWPose: Pose 25.99ms on 1 people
+
+DWPose: Bbox 23.21ms
+DWPose: Pose 26.81ms on 1 people
+
+DWPose: Bbox 23.29ms
+DWPose: Pose 26.49ms on 1 people
+
+DWPose: Bbox 23.67ms
+DWPose: Pose 26.84ms on 1 people
+
+DWPose: Bbox 22.26ms
+DWPose: Pose 27.04ms on 1 people
+
+DWPose: Bbox 23.43ms
+DWPose: Pose 24.28ms on 1 people
+
+DWPose: Bbox 21.23ms
+DWPose: Pose 25.02ms on 1 people
+
+DWPose: Bbox 24.03ms
+DWPose: Pose 28.08ms on 1 people
+
+DWPose: Bbox 23.09ms
+DWPose: Pose 25.91ms on 1 people
+
+DWPose: Bbox 24.72ms
+DWPose: Pose 26.26ms on 1 people
+
+DWPose: Bbox 22.48ms
+DWPose: Pose 25.30ms on 1 people
+
+DWPose: Bbox 21.42ms
+DWPose: Pose 24.19ms on 1 people
+
+DWPose: Bbox 22.67ms
+DWPose: Pose 25.84ms on 1 people
+
+DWPose: Bbox 24.84ms
+DWPose: Pose 28.38ms on 1 people
+
+DWPose: Bbox 25.17ms
+DWPose: Pose 28.04ms on 1 people
+
+DWPose: Bbox 24.81ms
+DWPose: Pose 27.84ms on 1 people
+
+DWPose: Bbox 23.68ms
+DWPose: Pose 26.65ms on 1 people
+
+DWPose: Bbox 22.61ms
+DWPose: Pose 26.50ms on 1 people
+
+DWPose: Bbox 24.92ms
+DWPose: Pose 30.21ms on 1 people
+
+DWPose: Bbox 25.17ms
+DWPose: Pose 29.78ms on 1 people
+
+DWPose: Bbox 23.68ms
+DWPose: Pose 29.66ms on 1 people
+
+DWPose: Bbox 23.15ms
+DWPose: Pose 28.18ms on 1 people
+
+DWPose: Bbox 23.36ms
+DWPose: Pose 28.88ms on 1 people
+
+DWPose: Bbox 23.18ms
+DWPose: Pose 29.80ms on 1 people
+
+DWPose: Bbox 23.54ms
+DWPose: Pose 28.49ms on 1 people
+
+DWPose: Bbox 26.21ms
+DWPose: Pose 28.24ms on 1 people
+
+DWPose: Bbox 21.75ms
+DWPose: Pose 27.34ms on 1 people
+
+DWPose: Bbox 21.18ms
+DWPose: Pose 28.19ms on 1 people
+
+DWPose: Bbox 23.04ms
+DWPose: Pose 28.28ms on 1 people
+
+DWPose: Bbox 22.68ms
+DWPose: Pose 28.31ms on 1 people
+
+DWPose: Bbox 22.62ms
+DWPose: Pose 28.50ms on 1 people
+
+DWPose: Bbox 23.62ms
+DWPose: Pose 28.96ms on 1 people
+
+DWPose: Bbox 23.72ms
+DWPose: Pose 28.77ms on 1 people
+
+DWPose: Bbox 22.45ms
+DWPose: Pose 28.44ms on 1 people
+
+DWPose: Bbox 24.26ms
+DWPose: Pose 31.97ms on 1 people
+
+DWPose: Bbox 24.30ms
+DWPose: Pose 30.39ms on 1 people
+
+DWPose: Bbox 24.22ms
+DWPose: Pose 27.98ms on 1 people
+
+DWPose: Bbox 23.80ms
+DWPose: Pose 27.96ms on 1 people
+
+DWPose: Bbox 23.97ms
+DWPose: Pose 30.00ms on 1 people
+
+DWPose: Bbox 25.50ms
+DWPose: Pose 33.66ms on 1 people
+
+DWPose: Bbox 25.88ms
+DWPose: Pose 31.11ms on 1 people
+
+DWPose: Bbox 23.01ms
+DWPose: Pose 29.59ms on 1 people
+
+DWPose: Bbox 23.64ms
+DWPose: Pose 27.36ms on 1 people
+
+DWPose: Bbox 24.13ms
+DWPose: Pose 29.54ms on 1 people
+
+DWPose: Bbox 23.82ms
+DWPose: Pose 29.53ms on 1 people
+
+DWPose: Bbox 26.25ms
+DWPose: Pose 29.23ms on 1 people
+
+DWPose: Bbox 23.34ms
+DWPose: Pose 27.95ms on 1 people
+
+DWPose: Bbox 22.90ms
+DWPose: Pose 27.99ms on 1 people
+
+DWPose: Bbox 25.71ms
+DWPose: Pose 29.50ms on 1 people
+
+DWPose: Bbox 23.70ms
+DWPose: Pose 29.29ms on 1 people
+
+DWPose: Bbox 23.89ms
+DWPose: Pose 29.19ms on 1 people
+
+DWPose: Bbox 24.66ms
+DWPose: Pose 28.74ms on 1 people
+
+DWPose: Bbox 23.02ms
+DWPose: Pose 28.65ms on 1 people
+
+DWPose: Bbox 24.82ms
+DWPose: Pose 32.67ms on 1 people
+
+DWPose: Bbox 25.22ms
+DWPose: Pose 34.24ms on 1 people
+
+DWPose: Bbox 25.64ms
+DWPose: Pose 31.93ms on 1 people
+
+DWPose: Bbox 24.44ms
+DWPose: Pose 30.63ms on 1 people
+
+DWPose: Bbox 22.72ms
+DWPose: Pose 29.00ms on 1 people
+
+DWPose: Bbox 24.76ms
+DWPose: Pose 30.75ms on 1 people
+
+DWPose: Bbox 26.02ms
+DWPose: Pose 32.19ms on 1 people
+
+DWPose: Bbox 25.20ms
+DWPose: Pose 30.72ms on 1 people
+
+DWPose: Bbox 24.92ms
+DWPose: Pose 29.93ms on 1 people
+
+DWPose: Bbox 25.02ms
+DWPose: Pose 28.59ms on 1 people
+
+DWPose: Bbox 24.80ms
+DWPose: Pose 30.45ms on 1 people
+
+DWPose: Bbox 23.95ms
+DWPose: Pose 29.01ms on 1 people
+
+DWPose: Bbox 23.96ms
+DWPose: Pose 29.46ms on 1 people
+
+DWPose: Bbox 24.95ms
+DWPose: Pose 29.10ms on 1 people
+
+DWPose: Bbox 25.29ms
+DWPose: Pose 27.96ms on 1 people
+
+DWPose: Bbox 25.59ms
+DWPose: Pose 30.29ms on 1 people
+
+DWPose: Bbox 25.19ms
+DWPose: Pose 30.69ms on 1 people
+
+DWPose: Bbox 24.41ms
+DWPose: Pose 29.45ms on 1 people
+
+DWPose: Bbox 25.63ms
+DWPose: Pose 28.40ms on 1 people
+
+DWPose: Bbox 23.11ms
+DWPose: Pose 27.70ms on 1 people
+
+DWPose: Bbox 25.84ms
+DWPose: Pose 30.25ms on 1 people
+
+DWPose: Bbox 24.81ms
+DWPose: Pose 33.90ms on 1 people
+
+DWPose: Bbox 25.80ms
+DWPose: Pose 31.66ms on 1 people
+
+DWPose: Bbox 24.39ms
+DWPose: Pose 29.68ms on 1 people
+
+DWPose: Bbox 24.35ms
+DWPose: Pose 32.04ms on 1 people
+
+DWPose: Bbox 25.46ms
+DWPose: Pose 32.84ms on 1 people
+
+DWPose: Bbox 26.18ms
+DWPose: Pose 32.11ms on 1 people
+
+DWPose: Bbox 24.11ms
+DWPose: Pose 28.71ms on 1 people
+
+DWPose: Bbox 25.47ms
+DWPose: Pose 30.35ms on 1 people
+
+DWPose: Bbox 25.89ms
+DWPose: Pose 28.40ms on 1 people
+
+DWPose: Bbox 23.86ms
+DWPose: Pose 28.81ms on 1 people
+
+DWPose: Bbox 25.40ms
+DWPose: Pose 29.76ms on 1 people
+
+DWPose: Bbox 24.38ms
+DWPose: Pose 29.77ms on 1 people
+
+DWPose: Bbox 24.90ms
+DWPose: Pose 28.78ms on 1 people
+
+DWPose: Bbox 23.13ms
+DWPose: Pose 28.97ms on 1 people
+
+DWPose: Bbox 24.81ms
+DWPose: Pose 29.44ms on 1 people
+
+DWPose: Bbox 24.27ms
+DWPose: Pose 29.07ms on 1 people
+
+DWPose: Bbox 23.75ms
+DWPose: Pose 30.32ms on 1 people
+
+DWPose: Bbox 25.45ms
+DWPose: Pose 28.60ms on 1 people
+
+DWPose: Bbox 24.15ms
+DWPose: Pose 28.21ms on 1 people
+
+DWPose: Bbox 25.89ms
+DWPose: Pose 32.67ms on 1 people
+
+DWPose: Bbox 26.29ms
+DWPose: Pose 31.72ms on 1 people
+
+DWPose: Bbox 24.18ms
+DWPose: Pose 29.41ms on 1 people
+
+DWPose: Bbox 24.29ms
+DWPose: Pose 29.33ms on 1 people
+
+DWPose: Bbox 24.56ms
+DWPose: Pose 30.97ms on 1 people
+
+DWPose: Bbox 24.94ms
+DWPose: Pose 32.34ms on 1 people
+
+DWPose: Bbox 27.24ms
+DWPose: Pose 33.91ms on 1 people
+
+DWPose: Bbox 24.70ms
+DWPose: Pose 29.79ms on 1 people
+
+DWPose: Bbox 25.34ms
+DWPose: Pose 31.12ms on 1 people
+
+DWPose: Bbox 24.92ms
+DWPose: Pose 30.39ms on 1 people
+
+DWPose: Bbox 24.25ms
+DWPose: Pose 29.33ms on 1 people
+
+DWPose: Bbox 25.58ms
+DWPose: Bbox 25.02ms
+DWPose: Bbox 24.95ms
+DWPose: Bbox 27.08ms
+DWPose: Bbox 23.06ms
+DWPose: Bbox 22.57ms
+DWPose: Bbox 23.49ms
+DWPose: Bbox 23.63ms
+DWPose: Bbox 23.48ms
+DWPose: Bbox 23.64ms
+DWPose: Bbox 24.53ms
+DWPose: Bbox 22.71ms
+DWPose: Bbox 23.11ms
+DWPose: Bbox 22.92ms
+DWPose: Bbox 23.11ms
+DWPose: Bbox 24.56ms
+DWPose: Bbox 24.73ms
+DWPose: Bbox 24.11ms
+DWPose: Bbox 25.38ms
+DWPose: Bbox 24.33ms
+DWPose: Bbox 25.05ms
+DWPose: Bbox 22.99ms
+DWPose: Bbox 23.67ms
+DWPose: Bbox 24.00ms
+DWPose: Bbox 24.13ms
+DWPose: Bbox 23.95ms
+DWPose: Bbox 24.89ms
+DWPose: Bbox 25.50ms
+DWPose: Bbox 23.64ms
+DWPose: Bbox 24.30ms
+DWPose: Bbox 23.80ms
+DWPose: Bbox 23.61ms
+DWPose: Bbox 23.11ms
+DWPose: Bbox 23.83ms
+DWPose: Bbox 22.38ms
+DWPose: Bbox 22.42ms
+DWPose: Bbox 23.29ms
+DWPose: Bbox 23.02ms
+DWPose: Bbox 23.34ms
+DWPose: Bbox 23.46ms
+DWPose: Bbox 24.96ms
+DWPose: Bbox 23.19ms
+DWPose: Bbox 22.72ms
+DWPose: Bbox 22.64ms

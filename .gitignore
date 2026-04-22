@@ -23,3 +23,12 @@ agent-projects/**/.mypy_cache/
 agent-projects/**/.ruff_cache/
 agent-projects/**/build/
 agent-projects/**/dist/
+
+
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+*.tiff
+*.mp4
