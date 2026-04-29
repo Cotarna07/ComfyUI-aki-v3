@@ -30,6 +30,13 @@
 - 如果问题可以通过在 agent 自有区新增文件解决，就不要改秋叶启动器原区。
 - AGENTS.md、CLAUDE.md、.github/copilot-instructions.md 是发布这套规则的固定入口文件。除维护这套规则本身外，不要把新的普通文件继续堆在根目录。
 
+## Git 管理约定
+
+- agent-skills/ 与 agent-projects/ 下由代理协作生成和维护的文件，默认统一纳入当前工作区根目录的 overlay Git 仓库管理。
+- 秋叶启动器原区文件继续由其自身仓库管理；未经用户明确允许，不要把原区文件并入 overlay Git 仓库。
+- 非用户明确要求，不要在 agent-skills/ 或 agent-projects/ 子目录内再初始化或保留并行的独立 Git 仓库。
+- 如果引入了自带 .git 的外部项目，先停用或迁出其子仓库元数据，再决定是否并入当前 overlay Git 仓库。
+
 ## 放置规则
 
 - agent-skills/docs/：技能包说明、技能层规则、与技能层直接相关的文档。

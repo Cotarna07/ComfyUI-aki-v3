@@ -16,6 +16,7 @@
 
 # Ignore common project-local Python noise inside agent-owned project folders.
 agent-projects/**/.git/
+agent-projects/**/.git.repo-backup/
 agent-projects/**/.venv/
 agent-projects/**/__pycache__/
 agent-projects/**/.pytest_cache/
