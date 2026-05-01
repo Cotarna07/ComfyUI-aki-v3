@@ -10,6 +10,8 @@
 !/agent-skills/**
 !/agent-projects/
 !/agent-projects/**
+!/ComfyUI/
+!/ComfyUI/**
 !/comfyui_skill_utils.py
 !/download_models.py
 !/generate_video.py
@@ -24,6 +26,7 @@ agent-projects/**/.mypy_cache/
 agent-projects/**/.ruff_cache/
 agent-projects/**/build/
 agent-projects/**/dist/
+ComfyUI/.git.repo-backup/
 
 
 *.png
@@ -33,3 +36,10 @@ agent-projects/**/dist/
 *.bmp
 *.tiff
 *.mp4
+!/ComfyUI/**/*.png
+!/ComfyUI/**/*.jpg
+!/ComfyUI/**/*.jpeg
+!/ComfyUI/**/*.gif
+!/ComfyUI/**/*.bmp
+!/ComfyUI/**/*.tiff
+!/ComfyUI/**/*.mp4

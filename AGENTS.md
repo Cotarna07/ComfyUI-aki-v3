@@ -88,6 +88,15 @@
 - 可重复执行的 ComfyUI 自动化优先使用 API 工作流。
 - 导出的 API 工作流仍放在 agent-skills/comfyui/workflows/api/。
 - 未检查前不要假设节点 ID、节点类名或模型文件名。
+- 已安装 ComfyUI Queue Manager：ComfyUI/custom_nodes/comfyui-queue-manager，用于统一查看网页队列和代理后台提交的任务。
+
+## ComfyUI API 队列可见性
+
+- 代理调用 ComfyUI API 提交任务时，必须让任务能在网页队列中被识别；不要使用无意义的随机 client_id。
+- 调用 /prompt 时，client_id 建议使用：agent:<代理名>|workflow:<工作流名>|run:<短ID>。
+- 调用 /prompt 时，extra_data 建议至少包含 agent、workflow_name、source、notes 等字段，方便 Queue Manager 或 history 页面显示来源。
+- 如果临时覆写了 prompt、seed、模型、LoRA、尺寸、帧数或输入媒体，必须在 extra_data.notes 中简要说明，并在最终回复里告知用户。
+- 后台 API 排队和 Chrome 画布状态不是同一个东西；如果用户要求界面同步，先保存或加载对应工作流，再执行。
 
 ## 推荐流程
 

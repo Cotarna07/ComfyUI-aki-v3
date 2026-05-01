@@ -35,6 +35,14 @@
 - 如果 /workflow/convert 不稳定或不可用，不要把它作为生产链路依赖。
 - 对用户提供的 API JSON，先检查图结构，再决定如何覆写 prompt、seed 或媒体输入。
 
+## API 队列可见性
+
+- ComfyUI 已安装 Queue Manager：ComfyUI/custom_nodes/comfyui-queue-manager，用于统一查看网页队列和代理后台提交的任务。
+- 代理调用 /prompt API 时，必须使用可识别的 client_id，例如 agent:<代理名>|workflow:<工作流名>|run:<短ID>。
+- 调用 /prompt API 时，extra_data 建议至少包含 agent、workflow_name、source、notes，方便 Queue Manager 或 history 页面显示来源。
+- 临时覆写 prompt、seed、模型、LoRA、尺寸、帧数或输入媒体时，必须写入 extra_data.notes，并在最终回复里告知用户。
+- 后台 API 排队不会自动改变 Chrome 画布；用户要求界面同步时，先保存或加载对应工作流，再执行。
+
 ## 常用命令
 
 列出技能：

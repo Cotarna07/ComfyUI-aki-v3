@@ -19,6 +19,10 @@
 - 命令示例默认使用 PowerShell，优先使用现有 .venv。
 - 项目已有 requirements.txt 或 pyproject.toml 时沿用现有方式，不强推 uv，也不要预设 src/ 布局。
 - 修改含中文的文本文件时必须使用安全的 UTF-8 编辑方式；修改 Python 文件后要做最相关的校验。
+- ComfyUI 已安装 Queue Manager：ComfyUI/custom_nodes/comfyui-queue-manager，用于统一查看网页队列和代理后台提交的任务。
+- 代理调用 ComfyUI /prompt API 时，必须使用可识别的 client_id，例如 agent:<代理名>|workflow:<工作流名>|run:<短ID>，并在 extra_data 中写明 agent、workflow_name、source、notes。
+- 临时覆写 prompt、seed、模型、LoRA、尺寸、帧数或输入媒体时，必须记录在 extra_data.notes 并告知用户。
+- 后台 API 排队不会自动改变 Chrome 画布；用户要求界面同步时，先保存或加载对应工作流，再执行。
 
 ## 本机开发环境约束
 
