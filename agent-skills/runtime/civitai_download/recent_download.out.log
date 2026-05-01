@@ -1,0 +1,165 @@
+[skip] WAI-illustrious-SDXL / v17.0: exists (6.46 GB)
+[skip] Hassaku XL (Illustrious) / v3.4: exists (6.46 GB)
+[skip] PornMaster-色情大师 / Pro-SDXL-V8: exists (6.62 GB)
+[skip] LUSTIFY! [SDXL NSFW checkpoint] / APEX (V8): exists (6.46 GB)
+[skip] Copax TimeLess / XPlus-2B-NSFW-1: exists (6.46 GB)
+[resume] Prefect illustrious XL / v8: from 1.44 GB
+[progress] Prefect illustrious XL / v8: 28.4% (1.84 GB)
+[progress] Prefect illustrious XL / v8: 34.9% (2.25 GB)
+[progress] Prefect illustrious XL / v8: 41.3% (2.67 GB)
+[progress] Prefect illustrious XL / v8: 47.7% (3.08 GB)
+[progress] Prefect illustrious XL / v8: 54.1% (3.50 GB)
+[progress] Prefect illustrious XL / v8: 60.5% (3.91 GB)
+[progress] Prefect illustrious XL / v8: 66.9% (4.32 GB)
+[progress] Prefect illustrious XL / v8: 73.3% (4.74 GB)
+[progress] Prefect illustrious XL / v8: 79.8% (5.15 GB)
+[progress] Prefect illustrious XL / v8: 86.1% (5.57 GB)
+[progress] Prefect illustrious XL / v8: 92.5% (5.98 GB)
+[progress] Prefect illustrious XL / v8: 98.9% (6.39 GB)
+[done] Prefect illustrious XL / v8: 6.46 GB
+[retry] CyberRealistic CyberIllustrious / v11.0: attempt 1/8 failed: RuntimeError: download endpoint returned HTTP 401
+[retry] CyberRealistic CyberIllustrious / v11.0: attempt 2/8 failed: RuntimeError: download endpoint returned HTTP 401
+[retry] CyberRealistic CyberIllustrious / v11.0: attempt 3/8 failed: RuntimeError: download endpoint returned HTTP 401
+[retry] CyberRealistic CyberIllustrious / v11.0: attempt 4/8 failed: RuntimeError: download endpoint returned HTTP 401
+[retry] CyberRealistic CyberIllustrious / v11.0: attempt 5/8 failed: RuntimeError: download endpoint returned HTTP 401
+[retry] CyberRealistic CyberIllustrious / v11.0: attempt 6/8 failed: RuntimeError: download endpoint returned HTTP 401
+[retry] CyberRealistic CyberIllustrious / v11.0: attempt 7/8 failed: RuntimeError: download endpoint returned HTTP 401
+[retry] CyberRealistic CyberIllustrious / v11.0: attempt 8/8 failed: RuntimeError: download endpoint returned HTTP 401
+[download] PornMaster-Pro 色情大师- Illustrious & noob / noob-v6: 6.62 GB -> D:\ComfyUI-Models\checkpoints\pornmasterPro_noobV6.safetensors
+[progress] PornMaster-Pro 色情大师- Illustrious & noob / noob-v6: 6.5% (443.00 MB)
+[progress] PornMaster-Pro 色情大师- Illustrious & noob / noob-v6: 13.4% (906.00 MB)
+[progress] PornMaster-Pro 色情大师- Illustrious & noob / noob-v6: 20.2% (1.33 GB)
+[progress] PornMaster-Pro 色情大师- Illustrious & noob / noob-v6: 27.0% (1.79 GB)
+[progress] PornMaster-Pro 色情大师- Illustrious & noob / noob-v6: 33.8% (2.24 GB)
+[progress] PornMaster-Pro 色情大师- Illustrious & noob / noob-v6: 40.6% (2.69 GB)
+[progress] PornMaster-Pro 色情大师- Illustrious & noob / noob-v6: 47.4% (3.14 GB)
+[progress] PornMaster-Pro 色情大师- Illustrious & noob / noob-v6: 54.2% (3.59 GB)
+[progress] PornMaster-Pro 色情大师- Illustrious & noob / noob-v6: 61.0% (4.04 GB)
+[progress] PornMaster-Pro 色情大师- Illustrious & noob / noob-v6: 65.9% (4.36 GB)
+[progress] PornMaster-Pro 色情大师- Illustrious & noob / noob-v6: 72.4% (4.79 GB)
+[progress] PornMaster-Pro 色情大师- Illustrious & noob / noob-v6: 79.1% (5.23 GB)
+[progress] PornMaster-Pro 色情大师- Illustrious & noob / noob-v6: 85.9% (5.68 GB)
+[progress] PornMaster-Pro 色情大师- Illustrious & noob / noob-v6: 92.6% (6.13 GB)
+[progress] PornMaster-Pro 色情大师- Illustrious & noob / noob-v6: 99.4% (6.58 GB)
+[done] PornMaster-Pro 色情大师- Illustrious & noob / noob-v6: 6.62 GB
+[download] One obsession / v21_Anime: 6.46 GB -> D:\ComfyUI-Models\checkpoints\oneObsession_v21Anime.safetensors
+[progress] One obsession / v21_Anime: 1.7% (110.00 MB)
+[progress] One obsession / v21_Anime: 2.9% (192.00 MB)
+[progress] One obsession / v21_Anime: 3.9% (257.00 MB)
+[progress] One obsession / v21_Anime: 5.0% (329.00 MB)
+[progress] One obsession / v21_Anime: 5.8% (387.00 MB)
+[progress] One obsession / v21_Anime: 7.1% (467.00 MB)
+[progress] One obsession / v21_Anime: 8.4% (554.00 MB)
+[progress] One obsession / v21_Anime: 10.0% (663.00 MB)
+[progress] One obsession / v21_Anime: 12.1% (801.00 MB)
+[progress] One obsession / v21_Anime: 13.6% (903.00 MB)
+[progress] One obsession / v21_Anime: 14.4% (956.00 MB)
+[progress] One obsession / v21_Anime: 17.0% (1.10 GB)
+[progress] One obsession / v21_Anime: 20.6% (1.33 GB)
+[progress] One obsession / v21_Anime: 25.8% (1.67 GB)
+[progress] One obsession / v21_Anime: 29.7% (1.92 GB)
+[progress] One obsession / v21_Anime: 33.1% (2.14 GB)
+[progress] One obsession / v21_Anime: 39.1% (2.52 GB)
+[progress] One obsession / v21_Anime: 45.6% (2.94 GB)
+[progress] One obsession / v21_Anime: 51.8% (3.35 GB)
+[progress] One obsession / v21_Anime: 58.0% (3.75 GB)
+[progress] One obsession / v21_Anime: 64.3% (4.15 GB)
+[progress] One obsession / v21_Anime: 70.6% (4.56 GB)
+[progress] One obsession / v21_Anime: 76.9% (4.97 GB)
+[progress] One obsession / v21_Anime: 83.3% (5.38 GB)
+[progress] One obsession / v21_Anime: 88.4% (5.71 GB)
+[progress] One obsession / v21_Anime: 94.4% (6.10 GB)
+[done] One obsession / v21_Anime: 6.46 GB
+[download] WAN 2.2 Enhanced NSFW | SVI | camera prompt adherence (Lightning Edition) I2V and T2V fp8 GGUF / NSFW FAST MOVE V2 Q8 H: 14.35 GB -> D:\ComfyUI-Models\checkpoints\wan22EnhancedNSFWSVICamera_nsfwFASTMOVEV2Q8H.gguf
+[progress] WAN 2.2 Enhanced NSFW | SVI | camera prompt adherence (Lightning Edition) I2V and T2V fp8 GGUF / NSFW FAST MOVE V2 Q8 H: 3.0% (445.00 MB)
+[progress] WAN 2.2 Enhanced NSFW | SVI | camera prompt adherence (Lightning Edition) I2V and T2V fp8 GGUF / NSFW FAST MOVE V2 Q8 H: 6.2% (910.00 MB)
+[progress] WAN 2.2 Enhanced NSFW | SVI | camera prompt adherence (Lightning Edition) I2V and T2V fp8 GGUF / NSFW FAST MOVE V2 Q8 H: 9.4% (1.34 GB)
+[progress] WAN 2.2 Enhanced NSFW | SVI | camera prompt adherence (Lightning Edition) I2V and T2V fp8 GGUF / NSFW FAST MOVE V2 Q8 H: 12.6% (1.80 GB)
+[progress] WAN 2.2 Enhanced NSFW | SVI | camera prompt adherence (Lightning Edition) I2V and T2V fp8 GGUF / NSFW FAST MOVE V2 Q8 H: 15.7% (2.26 GB)
+[progress] WAN 2.2 Enhanced NSFW | SVI | camera prompt adherence (Lightning Edition) I2V and T2V fp8 GGUF / NSFW FAST MOVE V2 Q8 H: 18.9% (2.72 GB)
+[progress] WAN 2.2 Enhanced NSFW | SVI | camera prompt adherence (Lightning Edition) I2V and T2V fp8 GGUF / NSFW FAST MOVE V2 Q8 H: 22.1% (3.17 GB)
+[progress] WAN 2.2 Enhanced NSFW | SVI | camera prompt adherence (Lightning Edition) I2V and T2V fp8 GGUF / NSFW FAST MOVE V2 Q8 H: 25.3% (3.63 GB)
+[progress] WAN 2.2 Enhanced NSFW | SVI | camera prompt adherence (Lightning Edition) I2V and T2V fp8 GGUF / NSFW FAST MOVE V2 Q8 H: 28.5% (4.09 GB)
+[progress] WAN 2.2 Enhanced NSFW | SVI | camera prompt adherence (Lightning Edition) I2V and T2V fp8 GGUF / NSFW FAST MOVE V2 Q8 H: 31.7% (4.55 GB)
+[progress] WAN 2.2 Enhanced NSFW | SVI | camera prompt adherence (Lightning Edition) I2V and T2V fp8 GGUF / NSFW FAST MOVE V2 Q8 H: 34.9% (5.00 GB)
+[progress] WAN 2.2 Enhanced NSFW | SVI | camera prompt adherence (Lightning Edition) I2V and T2V fp8 GGUF / NSFW FAST MOVE V2 Q8 H: 38.1% (5.46 GB)
+[progress] WAN 2.2 Enhanced NSFW | SVI | camera prompt adherence (Lightning Edition) I2V and T2V fp8 GGUF / NSFW FAST MOVE V2 Q8 H: 41.3% (5.92 GB)
+[progress] WAN 2.2 Enhanced NSFW | SVI | camera prompt adherence (Lightning Edition) I2V and T2V fp8 GGUF / NSFW FAST MOVE V2 Q8 H: 44.4% (6.38 GB)
+[progress] WAN 2.2 Enhanced NSFW | SVI | camera prompt adherence (Lightning Edition) I2V and T2V fp8 GGUF / NSFW FAST MOVE V2 Q8 H: 47.6% (6.83 GB)
+[progress] WAN 2.2 Enhanced NSFW | SVI | camera prompt adherence (Lightning Edition) I2V and T2V fp8 GGUF / NSFW FAST MOVE V2 Q8 H: 50.8% (7.29 GB)
+[progress] WAN 2.2 Enhanced NSFW | SVI | camera prompt adherence (Lightning Edition) I2V and T2V fp8 GGUF / NSFW FAST MOVE V2 Q8 H: 54.0% (7.75 GB)
+[progress] WAN 2.2 Enhanced NSFW | SVI | camera prompt adherence (Lightning Edition) I2V and T2V fp8 GGUF / NSFW FAST MOVE V2 Q8 H: 57.2% (8.20 GB)
+[progress] WAN 2.2 Enhanced NSFW | SVI | camera prompt adherence (Lightning Edition) I2V and T2V fp8 GGUF / NSFW FAST MOVE V2 Q8 H: 60.4% (8.66 GB)
+[progress] WAN 2.2 Enhanced NSFW | SVI | camera prompt adherence (Lightning Edition) I2V and T2V fp8 GGUF / NSFW FAST MOVE V2 Q8 H: 63.5% (9.12 GB)
+[progress] WAN 2.2 Enhanced NSFW | SVI | camera prompt adherence (Lightning Edition) I2V and T2V fp8 GGUF / NSFW FAST MOVE V2 Q8 H: 66.7% (9.58 GB)
+[progress] WAN 2.2 Enhanced NSFW | SVI | camera prompt adherence (Lightning Edition) I2V and T2V fp8 GGUF / NSFW FAST MOVE V2 Q8 H: 69.9% (10.03 GB)
+[progress] WAN 2.2 Enhanced NSFW | SVI | camera prompt adherence (Lightning Edition) I2V and T2V fp8 GGUF / NSFW FAST MOVE V2 Q8 H: 73.1% (10.49 GB)
+[progress] WAN 2.2 Enhanced NSFW | SVI | camera prompt adherence (Lightning Edition) I2V and T2V fp8 GGUF / NSFW FAST MOVE V2 Q8 H: 76.3% (10.95 GB)
+[progress] WAN 2.2 Enhanced NSFW | SVI | camera prompt adherence (Lightning Edition) I2V and T2V fp8 GGUF / NSFW FAST MOVE V2 Q8 H: 79.5% (11.40 GB)
+[progress] WAN 2.2 Enhanced NSFW | SVI | camera prompt adherence (Lightning Edition) I2V and T2V fp8 GGUF / NSFW FAST MOVE V2 Q8 H: 82.6% (11.86 GB)
+[progress] WAN 2.2 Enhanced NSFW | SVI | camera prompt adherence (Lightning Edition) I2V and T2V fp8 GGUF / NSFW FAST MOVE V2 Q8 H: 85.8% (12.31 GB)
+[progress] WAN 2.2 Enhanced NSFW | SVI | camera prompt adherence (Lightning Edition) I2V and T2V fp8 GGUF / NSFW FAST MOVE V2 Q8 H: 89.0% (12.77 GB)
+[progress] WAN 2.2 Enhanced NSFW | SVI | camera prompt adherence (Lightning Edition) I2V and T2V fp8 GGUF / NSFW FAST MOVE V2 Q8 H: 92.2% (13.23 GB)
+[progress] WAN 2.2 Enhanced NSFW | SVI | camera prompt adherence (Lightning Edition) I2V and T2V fp8 GGUF / NSFW FAST MOVE V2 Q8 H: 95.3% (13.68 GB)
+[progress] WAN 2.2 Enhanced NSFW | SVI | camera prompt adherence (Lightning Edition) I2V and T2V fp8 GGUF / NSFW FAST MOVE V2 Q8 H: 98.5% (14.14 GB)
+[done] WAN 2.2 Enhanced NSFW | SVI | camera prompt adherence (Lightning Edition) I2V and T2V fp8 GGUF / NSFW FAST MOVE V2 Q8 H: 14.35 GB
+[download] Smooth Mix Wan 2.2 14B (I2V/T2V) / T2V High v3.0: 13.55 GB -> D:\ComfyUI-Models\checkpoints\smoothMixWan2214BI2V_t2vHighV30.safetensors
+[progress] Smooth Mix Wan 2.2 14B (I2V/T2V) / T2V High v3.0: 3.0% (412.00 MB)
+[retry] Smooth Mix Wan 2.2 14B (I2V/T2V) / T2V High v3.0: attempt 1/8 failed: ConnectionError: HTTPSConnectionPool(host='b2.civitai.com', port=443): Read timed out.
+[retry] Smooth Mix Wan 2.2 14B (I2V/T2V) / T2V High v3.0: attempt 2/8 failed: ProxyError: HTTPSConnectionPool(host='civitai.com', port=443): Max retries exceeded with url: /api/download/models/2768924 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+[resume] Smooth Mix Wan 2.2 14B (I2V/T2V) / T2V High v3.0: from 509.00 MB
+[progress] Smooth Mix Wan 2.2 14B (I2V/T2V) / T2V High v3.0: 6.8% (949.00 MB)
+[progress] Smooth Mix Wan 2.2 14B (I2V/T2V) / T2V High v3.0: 10.2% (1.38 GB)
+[progress] Smooth Mix Wan 2.2 14B (I2V/T2V) / T2V High v3.0: 13.5% (1.83 GB)
+[progress] Smooth Mix Wan 2.2 14B (I2V/T2V) / T2V High v3.0: 16.8% (2.28 GB)
+[progress] Smooth Mix Wan 2.2 14B (I2V/T2V) / T2V High v3.0: 20.1% (2.73 GB)
+[progress] Smooth Mix Wan 2.2 14B (I2V/T2V) / T2V High v3.0: 23.5% (3.18 GB)
+[progress] Smooth Mix Wan 2.2 14B (I2V/T2V) / T2V High v3.0: 26.8% (3.63 GB)
+[progress] Smooth Mix Wan 2.2 14B (I2V/T2V) / T2V High v3.0: 30.1% (4.08 GB)
+[progress] Smooth Mix Wan 2.2 14B (I2V/T2V) / T2V High v3.0: 33.1% (4.48 GB)
+[progress] Smooth Mix Wan 2.2 14B (I2V/T2V) / T2V High v3.0: 36.4% (4.93 GB)
+[progress] Smooth Mix Wan 2.2 14B (I2V/T2V) / T2V High v3.0: 39.6% (5.37 GB)
+[progress] Smooth Mix Wan 2.2 14B (I2V/T2V) / T2V High v3.0: 42.9% (5.82 GB)
+[progress] Smooth Mix Wan 2.2 14B (I2V/T2V) / T2V High v3.0: 46.2% (6.26 GB)
+[progress] Smooth Mix Wan 2.2 14B (I2V/T2V) / T2V High v3.0: 49.5% (6.71 GB)
+[progress] Smooth Mix Wan 2.2 14B (I2V/T2V) / T2V High v3.0: 52.8% (7.15 GB)
+[progress] Smooth Mix Wan 2.2 14B (I2V/T2V) / T2V High v3.0: 56.1% (7.60 GB)
+[progress] Smooth Mix Wan 2.2 14B (I2V/T2V) / T2V High v3.0: 59.4% (8.04 GB)
+[progress] Smooth Mix Wan 2.2 14B (I2V/T2V) / T2V High v3.0: 62.6% (8.48 GB)
+[progress] Smooth Mix Wan 2.2 14B (I2V/T2V) / T2V High v3.0: 65.9% (8.93 GB)
+[progress] Smooth Mix Wan 2.2 14B (I2V/T2V) / T2V High v3.0: 69.2% (9.37 GB)
+[progress] Smooth Mix Wan 2.2 14B (I2V/T2V) / T2V High v3.0: 72.5% (9.82 GB)
+[progress] Smooth Mix Wan 2.2 14B (I2V/T2V) / T2V High v3.0: 75.8% (10.27 GB)
+[progress] Smooth Mix Wan 2.2 14B (I2V/T2V) / T2V High v3.0: 79.0% (10.71 GB)
+[progress] Smooth Mix Wan 2.2 14B (I2V/T2V) / T2V High v3.0: 82.3% (11.15 GB)
+[progress] Smooth Mix Wan 2.2 14B (I2V/T2V) / T2V High v3.0: 85.6% (11.60 GB)
+[progress] Smooth Mix Wan 2.2 14B (I2V/T2V) / T2V High v3.0: 88.9% (12.04 GB)
+[progress] Smooth Mix Wan 2.2 14B (I2V/T2V) / T2V High v3.0: 92.2% (12.49 GB)
+[progress] Smooth Mix Wan 2.2 14B (I2V/T2V) / T2V High v3.0: 95.5% (12.93 GB)
+[progress] Smooth Mix Wan 2.2 14B (I2V/T2V) / T2V High v3.0: 98.7% (13.38 GB)
+[done] Smooth Mix Wan 2.2 14B (I2V/T2V) / T2V High v3.0: 13.55 GB
+[download] DR34ML4Y - All-In-One NSFW (WAN/LTX2) / DR34ML4Y_LT3X_PREVIEW: 1.15 GB -> D:\ComfyUI-Models\loras\DR34ML4Y_LTXXX_PREVIEW_RC1.safetensors
+[progress] DR34ML4Y - All-In-One NSFW (WAN/LTX2) / DR34ML4Y_LT3X_PREVIEW: 34.4% (405.00 MB)
+[progress] DR34ML4Y - All-In-One NSFW (WAN/LTX2) / DR34ML4Y_LT3X_PREVIEW: 70.4% (828.00 MB)
+[done] DR34ML4Y - All-In-One NSFW (WAN/LTX2) / DR34ML4Y_LT3X_PREVIEW: 1.15 GB
+[download] Bouncing Boobs - LTX / Wan / LTX 2.3 V2.5: 1.35 GB -> D:\ComfyUI-Models\loras\bounceV2_5_LTX23_I2V.comfy.safetensors
+[progress] Bouncing Boobs - LTX / Wan / LTX 2.3 V2.5: 29.9% (413.00 MB)
+[progress] Bouncing Boobs - LTX / Wan / LTX 2.3 V2.5: 61.2% (845.00 MB)
+[progress] Bouncing Boobs - LTX / Wan / LTX 2.3 V2.5: 92.5% (1.25 GB)
+[done] Bouncing Boobs - LTX / Wan / LTX 2.3 V2.5: 1.35 GB
+[download] MoriiMee Gothic Niji | LoRA Style / V1 Illustrious Redux: 217.88 MB -> D:\ComfyUI-Models\loras\MoriiMee_Gothic_Realistic.safetensors
+[done] MoriiMee Gothic Niji | LoRA Style / V1 Illustrious Redux: 217.88 MB
+[download] Slingshot swimsuit [SD1.5/Pony/Illustrious] / v1.1_[Illustrious]: 50.47 MB -> D:\ComfyUI-Models\loras\slingshotAlpha_2_Illustrious-sv_cumulative_0.8.safetensors
+[done] Slingshot swimsuit [SD1.5/Pony/Illustrious] / v1.1_[Illustrious]: 50.47 MB
+[download] Bondage Suspension / v1.1_[Illustrious]: 51.36 MB -> D:\ComfyUI-Models\loras\suspensionNmode_Illustrious-sv_fro_0.975.safetensors
+[done] Bondage Suspension / v1.1_[Illustrious]: 51.36 MB
+[download] Wan NSFW Posing Nude / WAN 2.2 i2v High Noise v2: 292.64 MB -> D:\ComfyUI-Models\loras\W22_NSFW_Posing_Nude_i2v_HN_v2.safetensors
+[done] Wan NSFW Posing Nude / WAN 2.2 i2v High Noise v2: 292.64 MB
+[download] HS Style Gallery / HueSpark: 40.88 MB -> D:\ComfyUI-Models\loras\HueSpark1llust.safetensors
+[done] HS Style Gallery / HueSpark: 40.88 MB
+[download] BFS - Best Face Swap / LTX-2.3 -  V3 Focus Head: 1.27 GB -> D:\ComfyUI-Models\loras\head_swap_v3_rank_adaptive_fro_098.safetensors
+[progress] BFS - Best Face Swap / LTX-2.3 -  V3 Focus Head: 34.6% (448.00 MB)
+[progress] BFS - Best Face Swap / LTX-2.3 -  V3 Focus Head: 70.4% (912.00 MB)
+[done] BFS - Best Face Swap / LTX-2.3 -  V3 Focus Head: 1.27 GB
+[download] Better Titfuck (WAN and HunYuan versions) / V5.0 WAN2.2 Universal: 73.22 MB -> D:\ComfyUI-Models\loras\Titjob_WAN2.2_Universal.safetensors
+[done] Better Titfuck (WAN and HunYuan versions) / V5.0 WAN2.2 Universal: 73.22 MB
