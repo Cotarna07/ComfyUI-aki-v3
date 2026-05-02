@@ -1,0 +1,40 @@
+# Workspace git scope: track only agent-owned areas and fixed entry docs.
+*
+
+# Keep git metadata and this ignore file.
+!.gitignore
+
+# Fixed collaboration entry docs.
+!AGENTS.md
+!CLAUDE.md
+
+# Agent-owned areas.
+!agent-skills/
+!agent-skills/**
+!agent-projects/
+!agent-projects/**
+
+# Collaboration and skill instructions.
+!.github/
+!.github/**
+
+# Common local/runtime noise (still ignored even if under allowed trees unless explicitly re-included).
+**/__pycache__/
+**/*.py[cod]
+**/.pytest_cache/
+**/.mypy_cache/
+**/.ruff_cache/
+**/.venv/
+**/venv/
+**/.cache/
+**/cache/
+**/runtime/
+**/logs/
+**/*.log
+**/*.tmp
+**/*.temp
+
+# Windows/editor noise.
+**/.DS_Store
+**/Thumbs.db
+**/.vscode/

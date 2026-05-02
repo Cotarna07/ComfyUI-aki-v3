@@ -1,0 +1,155 @@
+#!/usr/bin/env python3
+"""达梦数据库 DM8 SQL 查询执行工具 (使用 jaydebeapi JDBC 驱动)"""
+
+import argparse
+import json
+import sys
+import os
+from decimal import Decimal
+from datetime import datetime, date, timedelta
+
+try:
+    import jaydebeapi
+except ImportError:
+    print(json.dumps({
+        "success": False,
+        "error": "jaydebeapi 未安装",
+        "message": "请运行: pip install jaydebeapi JPype1"
+    }, ensure_ascii=False))
+    sys.exit(1)
+
+
+class CustomJSONEncoder(json.JSONEncoder):
+    """自定义 JSON 编码器"""
+    def default(self, obj):
+        if isinstance(obj, Decimal):
+            return float(obj)
+        if isinstance(obj, (datetime, date)):
+            return obj.isoformat()
+        if isinstance(obj, timedelta):
+            return str(obj)
+        if isinstance(obj, bytes):
+            return obj.decode('utf-8', errors='replace')
+        return super().default(obj)
+
+
+def find_dm_jdbc_driver() -> str:
+    """查找达梦 JDBC 驱动路径"""
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    
+    possible_paths = [
+        os.path.join(script_dir, "..", "assets", "DmJdbcDriver18.jar"),
+        os.path.join(script_dir, "DmJdbcDriver18.jar"),
+        "/opt/dmdbms/drivers/jdbc/DmJdbcDriver18.jar",
+        os.path.expanduser("~/dmdbms/drivers/jdbc/DmJdbcDriver18.jar"),
+        "C:\\dmdbms\\drivers\\jdbc\\DmJdbcDriver18.jar",
+        os.path.join(os.environ.get('PROGRAMFILES', 'C:\\Program Files'), 'dmdbms', 'drivers', 'jdbc', 'DmJdbcDriver18.jar'),
+    ]
+    
+    dm_home = os.environ.get('DM_HOME')
+    if dm_home:
+        possible_paths.insert(0, os.path.join(dm_home, "drivers", "jdbc", "DmJdbcDriver18.jar"))
+    
+    for path in possible_paths:
+        normalized_path = os.path.normpath(path)
+        if os.path.exists(normalized_path):
+            return normalized_path
+    return None
+
+
+def get_connection(host: str, port: int, user: str, password: str, database: str = None):
+    """获取数据库连接"""
+    jdbc_driver_path = find_dm_jdbc_driver()
+    if not jdbc_driver_path:
+        raise Exception("未找到达梦 JDBC 驱动 (DmJdbcDriver18.jar)")
+    
+    jdbc_url = f"jdbc:dm://{host}:{port}"
+    if database:
+        jdbc_url += f"/{database}"
+    
+    return jaydebeapi.connect(
+        "dm.jdbc.driver.DmDriver",
+        jdbc_url,
+        [user, password],
+        jdbc_driver_path
+    )
+
+
+def execute_query(host: str, port: int, user: str, password: str, query: str, database: str = None) -> dict:
+    """执行 SQL 查询"""
+    try:
+        connection = get_connection(host, port, user, password, database)
+        cursor = connection.cursor()
+        
+        query_upper = query.strip().upper()
+        is_select = (
+            query_upper.startswith("SELECT") or 
+            query_upper.startswith("WITH") or
+            query_upper.startswith("SHOW") or
+            query_upper.startswith("DESCRIBE") or
+            query_upper.startswith("EXPLAIN")
+        )
+        
+        cursor.execute(query)
+        
+        if is_select:
+            columns = [desc[0] for desc in cursor.description] if cursor.description else []
+            rows = [dict(zip(columns, row)) for row in cursor.fetchall()]
+            result = {
+                "success": True,
+                "data": {
+                    "rows": rows,
+                    "row_count": len(rows),
+                    "columns": columns
+                },
+                "message": f"查询成功，返回 {len(rows)} 行"
+            }
+        else:
+            connection.commit()
+            affected_rows = cursor.rowcount
+            result = {
+                "success": True,
+                "data": {
+                    "affected_rows": affected_rows
+                },
+                "message": f"执行成功，影响 {affected_rows} 行"
+            }
+        
+        cursor.close()
+        connection.close()
+        
+        return result
+    except Exception as e:
+        return {
+            "success": False,
+            "error": str(e),
+            "message": "SQL 执行失败"
+        }
+
+
+def main():
+    parser = argparse.ArgumentParser(description="执行达梦数据库 SQL 查询")
+    parser.add_argument("--host", default="localhost", help="数据库主机地址")
+    parser.add_argument("--port", type=int, default=5236, help="数据库端口")
+    parser.add_argument("--user", default="SYSDBA", help="数据库用户名")
+    parser.add_argument("--password", required=True, help="数据库密码")
+    parser.add_argument("--database", default=None, help="数据库名称（可选）")
+    parser.add_argument("--query", required=True, help="要执行的 SQL 语句")
+    
+    args = parser.parse_args()
+    
+    result = execute_query(
+        host=args.host,
+        port=args.port,
+        user=args.user,
+        password=args.password,
+        query=args.query,
+        database=args.database
+    )
+    
+    print(json.dumps(result, ensure_ascii=False, indent=2, cls=CustomJSONEncoder))
+    sys.exit(0 if result["success"] else 1)
+
+
+if __name__ == "__main__":
+    main()
