@@ -83,7 +83,7 @@
 
 ## 既有约定
 
-- 使用 D:/ComfyUI-Models 作为主模型目录。
+- 使用 D:/ComfyUI-aki-v3/ComfyUI/models 作为主模型目录。
 - 本地自动化优先使用 D:/ComfyUI-aki-v3/.venv/Scripts/python.exe。
 - 可重复执行的 ComfyUI 自动化优先使用 API 工作流。
 - 导出的 API 工作流仍放在 agent-skills/comfyui/workflows/api/。

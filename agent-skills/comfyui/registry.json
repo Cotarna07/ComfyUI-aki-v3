@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "model_root": "D:/ComfyUI-Models",
-  "output_root": "D:/ComfyUI-aki-v3/generated_videos",
+  "model_root": "D:/ComfyUI-aki-v3/ComfyUI/models",
+  "output_root": "D:/ComfyUI-aki-v3/ComfyUI/output",
   "learning_tracks": {
     "beginner": {
       "focus": "先掌握直接生成、视频后处理和结构理解。",

@@ -11,7 +11,7 @@
   "2": {
     "class_type": "VHS_LoadVideoFFmpegPath",
     "inputs": {
-      "video": "D:/ComfyUI-aki-v3/generated_videos/input/share_8187c3c938e850fad48dcc870b74df4d1776768361225.mp4",
+      "video": "D:/ComfyUI-aki-v3/ComfyUI/input/share_8187c3c938e850fad48dcc870b74df4d1776768361225.mp4",
       "force_rate": 16,
       "custom_width": 512,
       "custom_height": 768,

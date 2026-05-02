@@ -18,12 +18,12 @@
 2. 确认服务可通过 http://127.0.0.1:8188 访问。
 3. 不要假设节点类名、模型文件名或节点编号，必要时通过 /object_info 和 /system_stats 查询。
 4. 自动化优先使用 API 格式工作流。
-5. 模型统一使用外部目录 D:/ComfyUI-Models。
+5. 模型统一使用 ComfyUI 原生目录 D:/ComfyUI-aki-v3/ComfyUI/models。
 
 ## 本地关键路径
 
-- 模型根目录：D:/ComfyUI-Models
-- 生成文件目录：D:/ComfyUI-aki-v3/generated_videos
+- 模型根目录：D:/ComfyUI-aki-v3/ComfyUI/models
+- 生成文件目录：D:/ComfyUI-aki-v3/ComfyUI/output
 - 注册表：agent-skills/comfyui/registry.json
 - API 工作流导出目录：agent-skills/comfyui/workflows/api/
 - 源蓝图目录：ComfyUI/blueprints/
@@ -84,4 +84,4 @@ d:/ComfyUI-aki-v3/.venv/Scripts/python.exe generate_video.py --skill wan22_i2v_a
 - 缺模型：运行 download_models.py，并指定 skill 名或 workflow 路径。
 - 缺节点：查看失败节点的 class_type，并核对 ComfyUI/custom_nodes/ 中对应插件是否存在且已加载。
 - 显存不足：优先降低 length、width、height，或切换更轻量的工作流变体。
-- 新增外部模型路径或大模型集之后：重启 ComfyUI，让模型下拉列表和节点缓存刷新干净。
+- 新增模型文件或调整原生 models 目录内容后：重启 ComfyUI，让模型下拉列表和节点缓存刷新干净。

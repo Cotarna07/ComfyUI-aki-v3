@@ -821,8 +821,8 @@ def main() -> int:
         return 0
 
     server = args.server.rstrip("/")
-    output_root = workspace_path(args.output_root or registry.get("output_root", "generated_videos"))
-    model_root = workspace_path(args.model_root or registry.get("model_root", "D:/ComfyUI-Models"))
+    output_root = workspace_path(args.output_root or registry.get("output_root", "ComfyUI/output"))
+    model_root = workspace_path(args.model_root or registry.get("model_root", "ComfyUI/models"))
 
     check_server(server)
 

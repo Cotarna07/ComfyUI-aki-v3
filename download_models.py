@@ -184,7 +184,7 @@ def main() -> int:
             print(f"{name}: {pack.get('description', '')}")
         return 0
 
-    model_root = workspace_path(args.model_root or registry.get("model_root", "D:/ComfyUI-Models"))
+    model_root = workspace_path(args.model_root or registry.get("model_root", "ComfyUI/models"))
     entries = resolve_requested_models(args, registry)
     if not entries:
         print("No model entries were resolved.")
