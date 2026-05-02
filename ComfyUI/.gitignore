@@ -29,6 +29,10 @@ uv.lock
 !/user/default/**
 /user/**/*.log
 /user/**/logs/
+# Keep raw downloaded workflow archives out of git; track only organized extracts.
+/user/default/workflows/downloaded_civitai/_archive/
+# Keep archived legacy workflow collections out of git; track the new categorized tree instead.
+/user/default/workflows/comfyui_workflow/90_旧结构归档_*/
 # Exclude large model binary files inside workflow folders
 /user/**/*.bin
 /user/**/*.safetensors

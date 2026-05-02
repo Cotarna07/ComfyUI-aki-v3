@@ -1,0 +1,1152 @@
+{
+  "id": "e7ec1fcf-5dfd-4ade-a374-c07d83c26b17",
+  "extra": {
+    "ds": {
+      "scale": 0.8390545288824949,
+      "offset": [
+        1120.1589207417774,
+        -888.8645501247674
+      ]
+    },
+    "reroutes": null,
+    "node_versions": {
+      "comfy-core": "v0.2.7-3-g8afb97c",
+      "CogVideoX-Fun": "10076a3aee6547541ca9442bf22389bfc2ea7526",
+      "ComfyUI-VideoHelperSuite": "70faa9bcef65932ab72e7404d6373fb300013a2e"
+    },
+    "workspace_info": {
+      "id": "776b62b4-bd17-4ed3-9923-b7aad000b1ea"
+    },
+    "frontendVersion": "1.20.7",
+    "VHS_MetadataImage": true,
+    "VHS_latentpreview": false,
+    "VHS_KeepIntermediate": true,
+    "VHS_latentpreviewrate": 0
+  },
+  "links": [
+    [
+      66,
+      75,
+      0,
+      101,
+      1,
+      "STRING_PROMPT"
+    ],
+    [
+      67,
+      73,
+      0,
+      101,
+      2,
+      "STRING_PROMPT"
+    ],
+    [
+      68,
+      87,
+      0,
+      101,
+      3,
+      "IMAGE"
+    ],
+    [
+      70,
+      106,
+      0,
+      103,
+      1,
+      "STRING_PROMPT"
+    ],
+    [
+      71,
+      107,
+      0,
+      103,
+      2,
+      "STRING_PROMPT"
+    ],
+    [
+      74,
+      103,
+      0,
+      109,
+      0,
+      "IMAGE"
+    ],
+    [
+      75,
+      101,
+      0,
+      110,
+      0,
+      "IMAGE"
+    ],
+    [
+      76,
+      105,
+      0,
+      112,
+      0,
+      "*"
+    ],
+    [
+      77,
+      113,
+      0,
+      103,
+      0,
+      "FunModels"
+    ],
+    [
+      78,
+      114,
+      0,
+      101,
+      0,
+      "FunModels"
+    ],
+    [
+      79,
+      115,
+      0,
+      101,
+      4,
+      "IMAGE"
+    ]
+  ],
+  "nodes": [
+    {
+      "id": 73,
+      "pos": [
+        150.82855224609375,
+        1874.460693359375
+      ],
+      "mode": 0,
+      "size": [
+        383.7149963378906,
+        161.91522216796875
+      ],
+      "type": "FunTextBox",
+      "color": "#322",
+      "flags": {},
+      "order": 0,
+      "title": "Negtive Prompt",
+      "inputs": [],
+      "bgcolor": "#533",
+      "outputs": [
+        {
+          "dir": null,
+          "pos": null,
+          "name": "prompt",
+          "type": "STRING_PROMPT",
+          "label": null,
+          "links": [
+            67
+          ],
+          "shape": null,
+          "locked": null,
+          "color_on": null,
+          "color_off": null,
+          "removable": null,
+          "nameLocked": null,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "ver": "09e7bd2bd01f4d1134d402f9e1e8727e61a7a4ed",
+        "aux_id": "aigc-apps/VideoX-Fun",
+        "cnr_id": "videox-fun",
+        "Node name for S&R": "FunTextBox"
+      },
+      "showAdvanced": null,
+      "widgets_values": [
+        "Bright tones, overexposed, static, blurred details, subtitles, style, work, painting, picture, still, gray overall, worst quality, low quality, JPEG compression residue, ugly, mutilated, extra fingers, poorly drawn hands, poorly drawn faces, deformed, disfigured, morphomorphous limbs, finger fusion, still picture, messy background, three legs, a lot of people in the background, walking backwards"
+      ]
+    },
+    {
+      "id": 107,
+      "pos": [
+        -181.7147979736328,
+        416.2042236328125
+      ],
+      "mode": 0,
+      "size": [
+        383.7149963378906,
+        183.83506774902344
+      ],
+      "type": "FunTextBox",
+      "color": "#322",
+      "flags": {},
+      "order": 1,
+      "title": "Negtive Prompt",
+      "inputs": [],
+      "bgcolor": "#533",
+      "outputs": [
+        {
+          "dir": null,
+          "pos": null,
+          "name": "prompt",
+          "type": "STRING_PROMPT",
+          "label": null,
+          "links": [
+            71
+          ],
+          "shape": null,
+          "locked": null,
+          "color_on": null,
+          "color_off": null,
+          "removable": null,
+          "nameLocked": null,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "ver": "09e7bd2bd01f4d1134d402f9e1e8727e61a7a4ed",
+        "aux_id": "aigc-apps/VideoX-Fun",
+        "cnr_id": "videox-fun",
+        "Node name for S&R": "FunTextBox"
+      },
+      "showAdvanced": null,
+      "widgets_values": [
+        "Bright tones, overexposed, static, blurred details, subtitles, style, work, painting, picture, still, gray overall, worst quality, low quality, JPEG compression residue, ugly, mutilated, extra fingers, poorly drawn hands, poorly drawn faces, deformed, disfigured, morphomorphous limbs, finger fusion, still picture, messy background, three legs, a lot of people in the background, walking backwards"
+      ]
+    },
+    {
+      "id": 114,
+      "pos": [
+        671.1135864257812,
+        1504.708251953125
+      ],
+      "mode": 0,
+      "size": [
+        210,
+        58
+      ],
+      "type": "GetNode",
+      "flags": {
+        "collapsed": true
+      },
+      "order": 2,
+      "title": "Get_Fun_Model",
+      "inputs": [],
+      "outputs": [
+        {
+          "dir": null,
+          "pos": null,
+          "name": "FunModels",
+          "type": "FunModels",
+          "label": null,
+          "links": [
+            78
+          ],
+          "shape": null,
+          "locked": null,
+          "color_on": null,
+          "color_off": null,
+          "removable": null,
+          "nameLocked": null,
+          "slot_index": null
+        }
+      ],
+      "properties": {},
+      "showAdvanced": null,
+      "widgets_values": [
+        "Fun_Model"
+      ]
+    },
+    {
+      "id": 113,
+      "pos": [
+        468.2850341796875,
+        126.20421600341797
+      ],
+      "mode": 0,
+      "size": [
+        210,
+        60
+      ],
+      "type": "GetNode",
+      "flags": {
+        "collapsed": true
+      },
+      "order": 3,
+      "title": "Get_Fun_Model",
+      "inputs": [],
+      "outputs": [
+        {
+          "dir": null,
+          "pos": null,
+          "name": "FunModels",
+          "type": "FunModels",
+          "label": null,
+          "links": [
+            77
+          ],
+          "shape": null,
+          "locked": null,
+          "color_on": null,
+          "color_off": null,
+          "removable": null,
+          "nameLocked": null,
+          "slot_index": null
+        }
+      ],
+      "properties": {},
+      "showAdvanced": null,
+      "widgets_values": [
+        "Fun_Model"
+      ]
+    },
+    {
+      "id": 75,
+      "pos": [
+        150.82855224609375,
+        1664.4603271484375
+      ],
+      "mode": 0,
+      "size": [
+        383.54010009765625,
+        156.71620178222656
+      ],
+      "type": "FunTextBox",
+      "color": "#232",
+      "flags": {},
+      "order": 4,
+      "title": "Positive Prompt",
+      "inputs": [],
+      "bgcolor": "#353",
+      "outputs": [
+        {
+          "dir": null,
+          "pos": null,
+          "name": "prompt",
+          "type": "STRING_PROMPT",
+          "label": null,
+          "links": [
+            66
+          ],
+          "shape": null,
+          "locked": null,
+          "color_on": null,
+          "color_off": null,
+          "removable": null,
+          "nameLocked": null,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "ver": "09e7bd2bd01f4d1134d402f9e1e8727e61a7a4ed",
+        "aux_id": "aigc-apps/VideoX-Fun",
+        "cnr_id": "videox-fun",
+        "Node name for S&R": "FunTextBox"
+      },
+      "showAdvanced": null,
+      "widgets_values": [
+        "cherry tree,  windy tree, evil, fire simulation, The video is of high quality, and the view is very clear. High quality, masterpiece, best quality, highres, ultra-detailed, fantastic."
+      ]
+    },
+    {
+      "id": 101,
+      "pos": [
+        640.8295288085938,
+        1624.4603271484375
+      ],
+      "mode": 0,
+      "size": [
+        428.4000244140625,
+        378
+      ],
+      "type": "WanFunInpaintSampler",
+      "color": "#323",
+      "flags": {},
+      "order": 11,
+      "inputs": [
+        {
+          "dir": null,
+          "pos": null,
+          "link": 78,
+          "name": "funmodels",
+          "type": "FunModels",
+          "label": null,
+          "shape": null,
+          "locked": null,
+          "color_on": null,
+          "color_off": null,
+          "removable": null,
+          "nameLocked": null
+        },
+        {
+          "dir": null,
+          "pos": null,
+          "link": 66,
+          "name": "prompt",
+          "type": "STRING_PROMPT",
+          "label": null,
+          "shape": null,
+          "locked": null,
+          "color_on": null,
+          "color_off": null,
+          "removable": null,
+          "nameLocked": null
+        },
+        {
+          "dir": null,
+          "pos": null,
+          "link": 67,
+          "name": "negative_prompt",
+          "type": "STRING_PROMPT",
+          "label": null,
+          "shape": null,
+          "locked": null,
+          "color_on": null,
+          "color_off": null,
+          "removable": null,
+          "nameLocked": null
+        },
+        {
+          "dir": null,
+          "pos": null,
+          "link": 68,
+          "name": "start_img",
+          "type": "IMAGE",
+          "label": null,
+          "shape": 7,
+          "locked": null,
+          "color_on": null,
+          "color_off": null,
+          "removable": null,
+          "nameLocked": null
+        },
+        {
+          "dir": null,
+          "pos": null,
+          "link": 79,
+          "name": "end_img",
+          "type": "IMAGE",
+          "label": null,
+          "shape": 7,
+          "locked": null,
+          "color_on": null,
+          "color_off": null,
+          "removable": null,
+          "nameLocked": null
+        }
+      ],
+      "bgcolor": "#535",
+      "outputs": [
+        {
+          "dir": null,
+          "pos": null,
+          "name": "images",
+          "type": "IMAGE",
+          "label": null,
+          "links": [
+            75
+          ],
+          "shape": null,
+          "locked": null,
+          "color_on": null,
+          "color_off": null,
+          "removable": null,
+          "nameLocked": null,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "ver": "09e7bd2bd01f4d1134d402f9e1e8727e61a7a4ed",
+        "aux_id": "aigc-apps/VideoX-Fun",
+        "cnr_id": "videox-fun",
+        "Node name for S&R": "WanFunInpaintSampler"
+      },
+      "showAdvanced": null,
+      "widgets_values": [
+        73,
+        896,
+        668974715758458,
+        "fixed",
+        50,
+        6,
+        "Flow",
+        0.1,
+        true,
+        5,
+        true
+      ]
+    },
+    {
+      "id": 106,
+      "pos": [
+        -181.7147979736328,
+        206.2042236328125
+      ],
+      "mode": 0,
+      "size": [
+        383.54010009765625,
+        156.71620178222656
+      ],
+      "type": "FunTextBox",
+      "color": "#232",
+      "flags": {},
+      "order": 5,
+      "title": "Positive Prompt",
+      "inputs": [],
+      "bgcolor": "#353",
+      "outputs": [
+        {
+          "dir": null,
+          "pos": null,
+          "name": "prompt",
+          "type": "STRING_PROMPT",
+          "label": null,
+          "links": [
+            70
+          ],
+          "shape": null,
+          "locked": null,
+          "color_on": null,
+          "color_off": null,
+          "removable": null,
+          "nameLocked": null,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "ver": "09e7bd2bd01f4d1134d402f9e1e8727e61a7a4ed",
+        "aux_id": "aigc-apps/VideoX-Fun",
+        "cnr_id": "videox-fun",
+        "Node name for S&R": "FunTextBox"
+      },
+      "showAdvanced": null,
+      "widgets_values": [
+        "A serene portrait of a beautiful blonde woman standing in nature, soft golden sunlight filtering through the trees around her. She has gentle, expressive eyes and long, flowing hair that catches the breeze. Dressed in a light, flowing dress that blends with the colors of the wildflowers and greenery. The background features a peaceful forest clearing with soft-focus flowers, leaves, and warm, dreamy lighting. A sense of calm, warmth, and quiet connection with nature surrounds her."
+      ]
+    },
+    {
+      "id": 103,
+      "pos": [
+        458.2850341796875,
+        186.2042236328125
+      ],
+      "mode": 0,
+      "size": [
+        415.8000183105469,
+        386
+      ],
+      "type": "WanFunT2VSampler",
+      "color": "#323",
+      "flags": {},
+      "order": 9,
+      "inputs": [
+        {
+          "dir": null,
+          "pos": null,
+          "link": 77,
+          "name": "funmodels",
+          "type": "FunModels",
+          "label": null,
+          "shape": null,
+          "locked": null,
+          "color_on": null,
+          "color_off": null,
+          "removable": null,
+          "nameLocked": null
+        },
+        {
+          "dir": null,
+          "pos": null,
+          "link": 70,
+          "name": "prompt",
+          "type": "STRING_PROMPT",
+          "label": null,
+          "shape": null,
+          "locked": null,
+          "color_on": null,
+          "color_off": null,
+          "removable": null,
+          "nameLocked": null
+        },
+        {
+          "dir": null,
+          "pos": null,
+          "link": 71,
+          "name": "negative_prompt",
+          "type": "STRING_PROMPT",
+          "label": null,
+          "shape": null,
+          "locked": null,
+          "color_on": null,
+          "color_off": null,
+          "removable": null,
+          "nameLocked": null
+        }
+      ],
+      "bgcolor": "#535",
+      "outputs": [
+        {
+          "dir": null,
+          "pos": null,
+          "name": "images",
+          "type": "IMAGE",
+          "label": null,
+          "links": [
+            74
+          ],
+          "shape": null,
+          "locked": null,
+          "color_on": null,
+          "color_off": null,
+          "removable": null,
+          "nameLocked": null,
+          "slot_index": null
+        }
+      ],
+      "properties": {
+        "ver": "09e7bd2bd01f4d1134d402f9e1e8727e61a7a4ed",
+        "aux_id": "aigc-apps/VideoX-Fun",
+        "cnr_id": "videox-fun",
+        "Node name for S&R": "WanFunT2VSampler"
+      },
+      "showAdvanced": null,
+      "widgets_values": [
+        53,
+        832,
+        480,
+        false,
+        658125546596073,
+        "fixed",
+        50,
+        6,
+        "Flow",
+        0.1,
+        true,
+        5,
+        true
+      ]
+    },
+    {
+      "id": 109,
+      "pos": [
+        1101.3917236328125,
+        125.3118667602539
+      ],
+      "mode": 0,
+      "size": [
+        342.7123107910156,
+        334
+      ],
+      "type": "VHS_VideoCombine",
+      "flags": {},
+      "order": 12,
+      "inputs": [
+        {
+          "dir": null,
+          "pos": null,
+          "link": 74,
+          "name": "images",
+          "type": "IMAGE",
+          "label": null,
+          "shape": null,
+          "locked": null,
+          "color_on": null,
+          "color_off": null,
+          "removable": null,
+          "nameLocked": null
+        },
+        {
+          "dir": null,
+          "pos": null,
+          "link": null,
+          "name": "audio",
+          "type": "AUDIO",
+          "label": null,
+          "shape": 7,
+          "locked": null,
+          "color_on": null,
+          "color_off": null,
+          "removable": null,
+          "nameLocked": null
+        },
+        {
+          "dir": null,
+          "pos": null,
+          "link": null,
+          "name": "meta_batch",
+          "type": "VHS_BatchManager",
+          "label": null,
+          "shape": 7,
+          "locked": null,
+          "color_on": null,
+          "color_off": null,
+          "removable": null,
+          "nameLocked": null
+        },
+        {
+          "dir": null,
+          "pos": null,
+          "link": null,
+          "name": "vae",
+          "type": "VAE",
+          "label": null,
+          "shape": 7,
+          "locked": null,
+          "color_on": null,
+          "color_off": null,
+          "removable": null,
+          "nameLocked": null
+        }
+      ],
+      "outputs": [
+        {
+          "dir": null,
+          "pos": null,
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "label": null,
+          "links": null,
+          "shape": null,
+          "locked": null,
+          "color_on": null,
+          "color_off": null,
+          "removable": null,
+          "nameLocked": null,
+          "slot_index": null
+        }
+      ],
+      "properties": {
+        "ver": "c9dcc3a229437df232d61da4f9697c87c1f22428",
+        "cnr_id": "comfyui-videohelpersuite",
+        "Node name for S&R": "VHS_VideoCombine"
+      },
+      "showAdvanced": null,
+      "widgets_values": {
+        "crf": 19,
+        "format": "video/h264-mp4",
+        "pix_fmt": "yuv420p",
+        "pingpong": false,
+        "frame_rate": 24,
+        "loop_count": 0,
+        "save_output": true,
+        "videopreview": {
+          "hidden": false,
+          "params": {
+            "type": "output",
+            "format": "video/h264-mp4",
+            "filename": "T2V_00003.mp4",
+            "fullpath": "/workspace/ComfyUI/output/T2V_00003.mp4",
+            "workflow": "T2V_00003.png",
+            "subfolder": "",
+            "frame_rate": 24
+          },
+          "paused": false
+        },
+        "save_metadata": true,
+        "trim_to_audio": false,
+        "filename_prefix": "T2V"
+      }
+    },
+    {
+      "id": 110,
+      "pos": [
+        1131.3035888671875,
+        1489.5240478515625
+      ],
+      "mode": 0,
+      "size": [
+        346.9075927734375,
+        334
+      ],
+      "type": "VHS_VideoCombine",
+      "flags": {},
+      "order": 13,
+      "inputs": [
+        {
+          "dir": null,
+          "pos": null,
+          "link": 75,
+          "name": "images",
+          "type": "IMAGE",
+          "label": null,
+          "shape": null,
+          "locked": null,
+          "color_on": null,
+          "color_off": null,
+          "removable": null,
+          "nameLocked": null
+        },
+        {
+          "dir": null,
+          "pos": null,
+          "link": null,
+          "name": "audio",
+          "type": "AUDIO",
+          "label": null,
+          "shape": 7,
+          "locked": null,
+          "color_on": null,
+          "color_off": null,
+          "removable": null,
+          "nameLocked": null
+        },
+        {
+          "dir": null,
+          "pos": null,
+          "link": null,
+          "name": "meta_batch",
+          "type": "VHS_BatchManager",
+          "label": null,
+          "shape": 7,
+          "locked": null,
+          "color_on": null,
+          "color_off": null,
+          "removable": null,
+          "nameLocked": null
+        },
+        {
+          "dir": null,
+          "pos": null,
+          "link": null,
+          "name": "vae",
+          "type": "VAE",
+          "label": null,
+          "shape": 7,
+          "locked": null,
+          "color_on": null,
+          "color_off": null,
+          "removable": null,
+          "nameLocked": null
+        }
+      ],
+      "outputs": [
+        {
+          "dir": null,
+          "pos": null,
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "label": null,
+          "links": null,
+          "shape": null,
+          "locked": null,
+          "color_on": null,
+          "color_off": null,
+          "removable": null,
+          "nameLocked": null,
+          "slot_index": null
+        }
+      ],
+      "properties": {
+        "ver": "c9dcc3a229437df232d61da4f9697c87c1f22428",
+        "cnr_id": "comfyui-videohelpersuite",
+        "Node name for S&R": "VHS_VideoCombine"
+      },
+      "showAdvanced": null,
+      "widgets_values": {
+        "crf": 19,
+        "format": "video/h264-mp4",
+        "pix_fmt": "yuv420p",
+        "pingpong": false,
+        "frame_rate": 24,
+        "loop_count": 0,
+        "save_output": true,
+        "videopreview": {
+          "hidden": false,
+          "params": {
+            "type": "output",
+            "format": "video/h264-mp4",
+            "filename": "I2V_00002.mp4",
+            "fullpath": "/workspace/ComfyUI/output/I2V_00002.mp4",
+            "workflow": "I2V_00002.png",
+            "subfolder": "",
+            "frame_rate": 24
+          },
+          "paused": false
+        },
+        "save_metadata": true,
+        "trim_to_audio": false,
+        "filename_prefix": "I2V"
+      }
+    },
+    {
+      "id": 112,
+      "pos": [
+        -574.0128784179688,
+        1311.469970703125
+      ],
+      "mode": 0,
+      "size": [
+        210,
+        60
+      ],
+      "type": "SetNode",
+      "color": "#223",
+      "flags": {
+        "collapsed": true
+      },
+      "order": 10,
+      "title": "Set_Fun_Model",
+      "inputs": [
+        {
+          "dir": null,
+          "pos": null,
+          "link": 76,
+          "name": "FunModels",
+          "type": "FunModels",
+          "label": null,
+          "shape": null,
+          "locked": null,
+          "color_on": null,
+          "color_off": null,
+          "removable": null,
+          "nameLocked": null
+        }
+      ],
+      "bgcolor": "#335",
+      "outputs": [
+        {
+          "dir": null,
+          "pos": null,
+          "name": "*",
+          "type": "*",
+          "label": null,
+          "links": null,
+          "shape": null,
+          "locked": null,
+          "color_on": null,
+          "color_off": null,
+          "removable": null,
+          "nameLocked": null,
+          "slot_index": null
+        }
+      ],
+      "properties": {
+        "previousName": "Fun_Model"
+      },
+      "showAdvanced": null,
+      "widgets_values": [
+        "Fun_Model"
+      ]
+    },
+    {
+      "id": 105,
+      "pos": [
+        -934.0133666992188,
+        1221.4700927734375
+      ],
+      "mode": 0,
+      "size": [
+        315,
+        154
+      ],
+      "type": "LoadWanFunModel",
+      "color": "#223",
+      "flags": {},
+      "order": 6,
+      "inputs": [],
+      "bgcolor": "#335",
+      "outputs": [
+        {
+          "dir": null,
+          "pos": null,
+          "name": "funmodels",
+          "type": "FunModels",
+          "label": null,
+          "links": [
+            76
+          ],
+          "shape": null,
+          "locked": null,
+          "color_on": null,
+          "color_off": null,
+          "removable": null,
+          "nameLocked": null,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "ver": "09e7bd2bd01f4d1134d402f9e1e8727e61a7a4ed",
+        "aux_id": "aigc-apps/VideoX-Fun",
+        "cnr_id": "videox-fun",
+        "Node name for S&R": "LoadWanFunModel"
+      },
+      "showAdvanced": null,
+      "widgets_values": [
+        "Wan2.1-Fun-1.3B-InP",
+        "Inpaint",
+        "model_cpu_offload",
+        "wan2.1/wan_civitai.yaml",
+        "bf16"
+      ]
+    },
+    {
+      "id": 87,
+      "pos": [
+        -255.2204132080078,
+        1502.7520751953125
+      ],
+      "mode": 0,
+      "size": [
+        347.82733154296875,
+        348.9249572753906
+      ],
+      "type": "LoadImage",
+      "color": "#277642",
+      "flags": {},
+      "order": 7,
+      "title": "Start Image",
+      "inputs": [],
+      "bgcolor": "#13622e",
+      "outputs": [
+        {
+          "dir": null,
+          "pos": null,
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "label": null,
+          "links": [
+            68
+          ],
+          "shape": null,
+          "locked": null,
+          "color_on": null,
+          "color_off": null,
+          "removable": null,
+          "nameLocked": null,
+          "slot_index": null
+        },
+        {
+          "dir": null,
+          "pos": null,
+          "name": "MASK",
+          "type": "MASK",
+          "label": null,
+          "links": null,
+          "shape": null,
+          "locked": null,
+          "color_on": null,
+          "color_off": null,
+          "removable": null,
+          "nameLocked": null,
+          "slot_index": null
+        }
+      ],
+      "properties": {
+        "ver": "0.3.27",
+        "cnr_id": "comfy-core",
+        "Node name for S&R": "LoadImage"
+      },
+      "showAdvanced": null,
+      "widgets_values": [
+        "Runcomfy_Example_1212.png",
+        "image"
+      ]
+    },
+    {
+      "id": 115,
+      "pos": [
+        -253.1146697998047,
+        1920.6273193359375
+      ],
+      "mode": 4,
+      "size": [
+        347.82733154296875,
+        348.9249572753906
+      ],
+      "type": "LoadImage",
+      "color": "#277642",
+      "flags": {},
+      "order": 8,
+      "title": "End Image",
+      "inputs": [],
+      "bgcolor": "#13622e",
+      "outputs": [
+        {
+          "dir": null,
+          "pos": null,
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "label": null,
+          "links": [
+            79
+          ],
+          "shape": null,
+          "locked": null,
+          "color_on": null,
+          "color_off": null,
+          "removable": null,
+          "nameLocked": null,
+          "slot_index": null
+        },
+        {
+          "dir": null,
+          "pos": null,
+          "name": "MASK",
+          "type": "MASK",
+          "label": null,
+          "links": null,
+          "shape": null,
+          "locked": null,
+          "color_on": null,
+          "color_off": null,
+          "removable": null,
+          "nameLocked": null,
+          "slot_index": null
+        }
+      ],
+      "properties": {
+        "ver": "0.3.27",
+        "cnr_id": "comfy-core",
+        "Node name for S&R": "LoadImage"
+      },
+      "showAdvanced": null,
+      "widgets_values": [
+        "Runcomfy_Example_1212.png",
+        "image"
+      ]
+    }
+  ],
+  "config": {},
+  "groups": [
+    {
+      "id": 4,
+      "color": "#b36729",
+      "flags": {},
+      "title": "Text 2 Video",
+      "bounding": [
+        -301.1601257324219,
+        6.106614589691162,
+        1870.6683349609375,
+        1201.732666015625
+      ],
+      "font_size": 24
+    },
+    {
+      "id": 5,
+      "color": "#346ab2",
+      "flags": {},
+      "title": "Image 2 Video",
+      "bounding": [
+        -312.6741027832031,
+        1361.9765625,
+        1867.55517578125,
+        1105.572021484375
+      ],
+      "font_size": 24
+    },
+    {
+      "id": 6,
+      "color": "#5444ca",
+      "flags": {},
+      "title": "1) Load Wan 2.1 Model",
+      "bounding": [
+        -1014.013427734375,
+        1097.8699951171875,
+        611.5930786132812,
+        340.38238525390625
+      ],
+      "font_size": 24
+    }
+  ],
+  "version": 0.4,
+  "revision": 0,
+  "last_link_id": 79,
+  "last_node_id": 115,
+  "floatingLinks": null
+}

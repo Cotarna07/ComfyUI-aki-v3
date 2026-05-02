@@ -1,8 +1,0 @@
-kontext  dev FP8大模型链接：https://huggingface.co/6chan/flux1-kontext-dev-fp8/tree/main
-
-提示词：
-粉色跑车人物场景融合：
-this woman is standing next to a pink Porsche convertible. this background is a tranquil lakeside, a road with pink cherry blossom trees with petals scattered on the ground, and mountains in the distance under a blue sky.Keep the exterior details of the pink car unchanged. Keep a woman's face, hairstyle, and dress details unchanged
-
-换装迁移融合：
-This woman is wearing a beige camisole dress and holding a green bag. Keep the dress's suspender design, lace - embellished bust, bow at the waist, and length exactly as in the reference image. The new dress should fit naturally on her body from the same shoulder and torso position. Preserve her face, hairstyle, posture, and the surrounding background.Keep the texture details and texture of the beige camisole skirt unchanged

@@ -1,9 +1,0 @@
-使用 TXT2IMG 与 2 个 Loras 混合的工作流程演示：RalFinger 的 Lora 水晶：https://civitai.com/models/180780?modelVersionId=379351
-
-Allen Dimetri 的 Lora 玻璃雕塑：
-https://civitai.com/models/11203?modelVersionId=177888
-
-Lykon 的 Dreamshaper XL 模型：
-https://civitai.com/models/112902?modelVersionId=351306
-
-comfyui工作流贡献者V：aiten2024 

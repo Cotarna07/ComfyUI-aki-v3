@@ -1,5 +1,0 @@
-所有环境的轮子（python 3.10-3.13, torch 2.5-2.8）都可以在下面找到：
-Windows的轮子链接：
-https://huggingface.co/mit-han-lab/nunchaku/tree/main
-或者
-https://modelscope.cn/models/Lmxyy1999/nunchaku/files

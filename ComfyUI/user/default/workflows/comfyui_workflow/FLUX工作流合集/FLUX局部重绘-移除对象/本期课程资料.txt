@@ -1,5 +1,0 @@
-模型链接：https://civitai.com/models/1121321?modelVersionId=1737401
-插件链接：
-提示词：remove
-其他链接:
-如果有PPT请老师单独放在一个文件夹

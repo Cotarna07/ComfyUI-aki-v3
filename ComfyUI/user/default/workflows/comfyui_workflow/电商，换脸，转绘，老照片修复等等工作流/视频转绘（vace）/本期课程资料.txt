@@ -1,9 +1,0 @@
-视频大模型链接：https://huggingface.co/QuantStack/Wan2.1_14B_VACE-GGUF/tree/main
-
-插件链接：
-https://github.com/city96/ComfyUI-GGUF
-https://github.com/Fannovel16/comfyui_controlnet_aux
-
-提示词：FantasyRealism, A beautiful and calm woman stands in a cyberpunk background, with neon lights reflecting off the character's body and playing an infinitely charming bass
-其他链接:
-如果有PPT请老师单独放在一个文件夹
