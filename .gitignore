@@ -68,3 +68,19 @@ agent-projects/**/runtime/**/*.lock
 !/ComfyUI/**/*.bmp
 !/ComfyUI/**/*.tiff
 !/ComfyUI/**/*.mp4
+
+# Track ComfyUI user workflows and settings (but exclude logs).
+!ComfyUI/
+!ComfyUI/user/
+!ComfyUI/user/default/
+!ComfyUI/user/default/**
+ComfyUI/user/**/*.log
+ComfyUI/user/**/logs/
+
+# Track ComfyUI user workflows and settings, but exclude logs.
+!ComfyUI/
+!ComfyUI/user/
+!ComfyUI/user/default/
+!ComfyUI/user/default/**
+ComfyUI/user/**/*.log
+ComfyUI/user/**/logs/

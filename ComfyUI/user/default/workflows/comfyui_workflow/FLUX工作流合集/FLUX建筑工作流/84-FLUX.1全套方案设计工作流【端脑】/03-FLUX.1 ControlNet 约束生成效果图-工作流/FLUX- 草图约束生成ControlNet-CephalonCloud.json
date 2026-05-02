@@ -1,0 +1,922 @@
+{
+  "last_node_id": 55,
+  "last_link_id": 129,
+  "nodes": [
+    {
+      "id": 49,
+      "type": "MiDaS-DepthMapPreprocessor",
+      "pos": {
+        "0": 1260,
+        "1": -75,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 341.7955017089844,
+        "1": 106
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 118,
+          "label": "image"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            122,
+            127
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "IMAGE"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MiDaS-DepthMapPreprocessor"
+      },
+      "widgets_values": [
+        6.283185307179586,
+        0.1,
+        1024
+      ]
+    },
+    {
+      "id": 50,
+      "type": "CannyEdgePreprocessor",
+      "pos": {
+        "0": 1260,
+        "1": -240,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 350.5612487792969,
+        "1": 110.55437469482422
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 123,
+          "label": "image"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "IMAGE"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CannyEdgePreprocessor"
+      },
+      "widgets_values": [
+        100,
+        200,
+        512
+      ]
+    },
+    {
+      "id": 14,
+      "type": "ApplyFluxControlNet",
+      "pos": {
+        "0": 1635,
+        "1": -375,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 487.345947265625,
+        "1": 85.75177001953125
+      },
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "controlnet",
+          "type": "FluxControlNet",
+          "link": 125,
+          "label": "controlnet"
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 127,
+          "slot_index": 1,
+          "label": "image"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "controlnet_condition",
+          "type": "ControlNetCondition",
+          "links": [
+            28
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "controlnet_condition"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ApplyFluxControlNet"
+      },
+      "widgets_values": [
+        0.7000000000000001
+      ]
+    },
+    {
+      "id": 7,
+      "type": "VAEDecode",
+      "pos": {
+        "0": 1995,
+        "1": -120,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 318.902099609375,
+        "1": 51.4349479675293
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 6,
+          "slot_index": 0,
+          "label": "samples"
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 7,
+          "label": "vae"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            101
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "IMAGE"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      }
+    },
+    {
+      "id": 5,
+      "type": "CLIPTextEncodeFlux",
+      "pos": {
+        "0": 1260,
+        "1": 240,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 352.4010009765625,
+        "1": 292.21368408203125
+      },
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 2,
+          "slot_index": 0,
+          "label": "clip"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            18
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "CONDITIONING"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncodeFlux"
+      },
+      "widgets_values": [
+        "",
+        "a photo of modern office building design. brick texture facade, glass window, roads, trees, cars, blue sky.",
+        4
+      ]
+    },
+    {
+      "id": 16,
+      "type": "LoadImage",
+      "pos": {
+        "0": 240,
+        "1": -375,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 990.1488037109375,
+        "1": 1098.96630859375
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            118,
+            123
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "IMAGE"
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3,
+          "label": "MASK"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "image_311.png",
+        "image"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "DualCLIPLoader",
+      "pos": {
+        "0": 1260,
+        "1": 75,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 348.2952880859375,
+        "1": 116.87371063232422
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            2,
+            27
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "CLIP"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DualCLIPLoader"
+      },
+      "widgets_values": [
+        "clip_l.safetensors",
+        "t5xxl_fp16.safetensors",
+        "flux"
+      ]
+    },
+    {
+      "id": 39,
+      "type": "PreviewImage",
+      "pos": {
+        "0": 1650,
+        "1": 257,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 477.7027587890625,
+        "1": 439.59564208984375
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 122,
+          "label": "images"
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 8,
+      "type": "VAELoader",
+      "pos": {
+        "0": 1850,
+        "1": -119,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 319.47784423828125,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            7
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "VAE"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "ae.sft"
+      ]
+    },
+    {
+      "id": 32,
+      "type": "UNETLoader",
+      "pos": {
+        "0": 1639,
+        "1": -248,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 482.30877685546875,
+        "1": 91.28807067871094
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            58
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "MODEL"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UNETLoader"
+      },
+      "widgets_values": [
+        "flux1-dev.sft",
+        "fp8_e4m3fn"
+      ]
+    },
+    {
+      "id": 19,
+      "type": "CLIPTextEncodeFlux",
+      "pos": {
+        "0": 1650,
+        "1": -118,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 342.108642578125,
+        "1": 150
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 27,
+          "slot_index": 0,
+          "label": "clip"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            26
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "CONDITIONING"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncodeFlux"
+      },
+      "widgets_values": [
+        "bad photo",
+        "bad photo",
+        4
+      ]
+    },
+    {
+      "id": 3,
+      "type": "XlabsSampler",
+      "pos": {
+        "0": 1647,
+        "1": -75,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 476.0826416015625,
+        "1": 282
+      },
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 58,
+          "slot_index": 0,
+          "label": "model"
+        },
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 18,
+          "label": "conditioning"
+        },
+        {
+          "name": "neg_conditioning",
+          "type": "CONDITIONING",
+          "link": 26,
+          "label": "neg_conditioning"
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 129,
+          "label": "latent_image"
+        },
+        {
+          "name": "controlnet_condition",
+          "type": "ControlNetCondition",
+          "link": 28,
+          "label": "controlnet_condition"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "links": [
+            6
+          ],
+          "shape": 3,
+          "label": "latent"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "XlabsSampler"
+      },
+      "widgets_values": [
+        1010861269890146,
+        "randomize",
+        25,
+        1,
+        3.5,
+        0
+      ]
+    },
+    {
+      "id": 51,
+      "type": "LoadFluxControlNet",
+      "pos": {
+        "0": 1260,
+        "1": -375,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 341.66448974609375,
+        "1": 82
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "ControlNet",
+          "type": "FluxControlNet",
+          "links": [
+            125
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "ControlNet"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadFluxControlNet"
+      },
+      "widgets_values": [
+        "flux-dev-fp8",
+        "flux-depth-controlnet-v3.safetensors"
+      ]
+    },
+    {
+      "id": 55,
+      "type": "Reroute",
+      "pos": {
+        "0": 1542,
+        "1": -49.16682052612305,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "*",
+          "links": []
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 6,
+      "type": "EmptyLatentImage",
+      "pos": {
+        "0": 1272,
+        "1": 585,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 348.4585266113281,
+        "1": 119.07986450195312
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            129
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "LATENT"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        1024,
+        1024,
+        1
+      ]
+    },
+    {
+      "id": 23,
+      "type": "SaveImage",
+      "pos": {
+        "0": 2160,
+        "1": -375,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 1061.62353515625,
+        "1": 1080.0118408203125
+      },
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 101,
+          "label": "images"
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "canny_res"
+      ]
+    }
+  ],
+  "links": [
+    [
+      2,
+      4,
+      0,
+      5,
+      0,
+      "CLIP"
+    ],
+    [
+      6,
+      3,
+      0,
+      7,
+      0,
+      "LATENT"
+    ],
+    [
+      7,
+      8,
+      0,
+      7,
+      1,
+      "VAE"
+    ],
+    [
+      18,
+      5,
+      0,
+      3,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      26,
+      19,
+      0,
+      3,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      27,
+      4,
+      0,
+      19,
+      0,
+      "CLIP"
+    ],
+    [
+      28,
+      14,
+      0,
+      3,
+      4,
+      "ControlNetCondition"
+    ],
+    [
+      58,
+      32,
+      0,
+      3,
+      0,
+      "MODEL"
+    ],
+    [
+      101,
+      7,
+      0,
+      23,
+      0,
+      "IMAGE"
+    ],
+    [
+      118,
+      16,
+      0,
+      49,
+      0,
+      "IMAGE"
+    ],
+    [
+      122,
+      49,
+      0,
+      39,
+      0,
+      "IMAGE"
+    ],
+    [
+      123,
+      16,
+      0,
+      50,
+      0,
+      "IMAGE"
+    ],
+    [
+      125,
+      51,
+      0,
+      14,
+      0,
+      "FluxControlNet"
+    ],
+    [
+      127,
+      49,
+      0,
+      14,
+      1,
+      "IMAGE"
+    ],
+    [
+      129,
+      6,
+      0,
+      3,
+      3,
+      "LATENT"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.8769226950000113,
+      "offset": [
+        -334.11745084665307,
+        435.5506153626201
+      ]
+    }
+  },
+  "version": 0.4
+}

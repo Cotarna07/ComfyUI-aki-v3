@@ -1,0 +1,605 @@
+{
+  "last_node_id": 84,
+  "last_link_id": 138,
+  "nodes": [
+    {
+      "id": 82,
+      "type": "Image Comparer (rgthree)",
+      "pos": {
+        "0": 2363,
+        "1": 1080,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 929.4656982421875,
+        "1": 947.3556518554688
+      },
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image_a",
+          "type": "IMAGE",
+          "link": 132,
+          "dir": 3,
+          "label": "image_a"
+        },
+        {
+          "name": "image_b",
+          "type": "IMAGE",
+          "link": 133,
+          "dir": 3,
+          "label": "image_b"
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "comparer_mode": "Slide"
+      },
+      "widgets_values": [
+        [
+          "/api/view?filename=rgthree.compare._temp_fsqmf_00001_.png&type=temp&subfolder=&rand=0.7252783476139053",
+          "/api/view?filename=rgthree.compare._temp_fsqmf_00002_.png&type=temp&subfolder=&rand=0.37613548518020545"
+        ]
+      ]
+    },
+    {
+      "id": 80,
+      "type": "easy float",
+      "pos": [
+        1675,
+        1086
+      ],
+      "size": {
+        "0": 349.84625244140625,
+        "1": 65.01183319091797
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "float",
+          "type": "FLOAT",
+          "links": [
+            136
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "float"
+        }
+      ],
+      "title": "upscale by",
+      "properties": {
+        "Node name for S&R": "easy float"
+      },
+      "widgets_values": [
+        2
+      ]
+    },
+    {
+      "id": 68,
+      "type": "UltimateSDUpscale",
+      "pos": [
+        2054,
+        1094
+      ],
+      "size": [
+        282.5101623535156,
+        631.0081787109375
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 119,
+          "label": "image"
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 120,
+          "label": "model"
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 138,
+          "label": "positive"
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 135,
+          "label": "negative"
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 123,
+          "label": "vae"
+        },
+        {
+          "name": "upscale_model",
+          "type": "UPSCALE_MODEL",
+          "link": 124,
+          "label": "upscale_model"
+        },
+        {
+          "name": "upscale_by",
+          "type": "FLOAT",
+          "link": 136,
+          "widget": {
+            "name": "upscale_by"
+          },
+          "label": "upscale_by"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            133
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "IMAGE"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UltimateSDUpscale"
+      },
+      "widgets_values": [
+        2,
+        1100524841022805,
+        "randomize",
+        20,
+        8,
+        "euler",
+        "normal",
+        0.2,
+        "Linear",
+        512,
+        512,
+        8,
+        32,
+        "None",
+        1,
+        64,
+        8,
+        16,
+        true,
+        false
+      ]
+    },
+    {
+      "id": 46,
+      "type": "UpscaleModelLoader",
+      "pos": [
+        1685,
+        1215
+      ],
+      "size": {
+        "0": 341.35546875,
+        "1": 58
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "UPSCALE_MODEL",
+          "type": "UPSCALE_MODEL",
+          "links": [
+            124
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "UPSCALE_MODEL"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UpscaleModelLoader"
+      },
+      "widgets_values": [
+        "4x-UltraSharp.pth"
+      ]
+    },
+    {
+      "id": 75,
+      "type": "DualCLIPLoader",
+      "pos": [
+        1689,
+        1620
+      ],
+      "size": {
+        "0": 334.9284973144531,
+        "1": 176.9524383544922
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            121,
+            134
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "CLIP"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DualCLIPLoader"
+      },
+      "widgets_values": [
+        "t5xxl_fp16.safetensors",
+        "clip_l.safetensors",
+        "flux"
+      ]
+    },
+    {
+      "id": 77,
+      "type": "CLIPTextEncode",
+      "pos": [
+        1687,
+        1846
+      ],
+      "size": [
+        334.3276044740619,
+        175.1609043527992
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 121,
+          "label": "clip"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            137
+          ],
+          "slot_index": 0,
+          "label": "CONDITIONING"
+        }
+      ],
+      "title": "CLIP Text Encode (Positive Prompt)",
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "a photo of modern office building design. brick texture facade, glass window, roads, trees, cars, blue sky."
+      ]
+    },
+    {
+      "id": 83,
+      "type": "CLIPTextEncode",
+      "pos": [
+        2059,
+        1781
+      ],
+      "size": {
+        "0": 285.6000061035156,
+        "1": 76.00000762939453
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 134,
+          "label": "clip"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            135
+          ],
+          "slot_index": 0,
+          "label": "CONDITIONING"
+        }
+      ],
+      "title": "CLIP Text Encode (Positive Prompt)",
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        ""
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 84,
+      "type": "FluxGuidance",
+      "pos": [
+        2050,
+        1842
+      ],
+      "size": [
+        289.58042086297246,
+        176.51027848283275
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 137,
+          "label": "conditioning"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            138
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "CONDITIONING"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "FluxGuidance"
+      },
+      "widgets_values": [
+        3.5
+      ]
+    },
+    {
+      "id": 65,
+      "type": "LoadImage",
+      "pos": [
+        777,
+        1079
+      ],
+      "size": [
+        883.7540672532841,
+        940.2530960132981
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            119,
+            132
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "IMAGE"
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3,
+          "label": "MASK"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "pasted/image (10).png",
+        "image"
+      ]
+    },
+    {
+      "id": 76,
+      "type": "UNETLoader",
+      "pos": [
+        1693,
+        1469
+      ],
+      "size": {
+        "0": 335.4389343261719,
+        "1": 82
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            120
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "MODEL"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UNETLoader"
+      },
+      "widgets_values": [
+        "flux1-dev.sft",
+        "default"
+      ],
+      "color": "#494949",
+      "bgcolor": "#353535"
+    },
+    {
+      "id": 69,
+      "type": "VAELoader",
+      "pos": [
+        1686,
+        1322
+      ],
+      "size": {
+        "0": 338.86590576171875,
+        "1": 65.79936218261719
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            123
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "VAE"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "ae.sft"
+      ]
+    }
+  ],
+  "links": [
+    [
+      119,
+      65,
+      0,
+      68,
+      0,
+      "IMAGE"
+    ],
+    [
+      120,
+      76,
+      0,
+      68,
+      1,
+      "MODEL"
+    ],
+    [
+      121,
+      75,
+      0,
+      77,
+      0,
+      "CLIP"
+    ],
+    [
+      123,
+      69,
+      0,
+      68,
+      4,
+      "VAE"
+    ],
+    [
+      124,
+      46,
+      0,
+      68,
+      5,
+      "UPSCALE_MODEL"
+    ],
+    [
+      132,
+      65,
+      0,
+      82,
+      0,
+      "IMAGE"
+    ],
+    [
+      133,
+      68,
+      0,
+      82,
+      1,
+      "IMAGE"
+    ],
+    [
+      134,
+      75,
+      0,
+      83,
+      0,
+      "CLIP"
+    ],
+    [
+      135,
+      83,
+      0,
+      68,
+      3,
+      "CONDITIONING"
+    ],
+    [
+      136,
+      80,
+      0,
+      68,
+      6,
+      "FLOAT"
+    ],
+    [
+      137,
+      77,
+      0,
+      84,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      138,
+      84,
+      0,
+      68,
+      2,
+      "CONDITIONING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.5989500000000024,
+      "offset": {
+        "0": -659.1096801757812,
+        "1": -808.7671508789062
+      }
+    }
+  },
+  "version": 0.4
+}
