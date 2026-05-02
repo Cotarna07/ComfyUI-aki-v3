@@ -30,6 +30,28 @@ agent-projects/**/build/
 agent-projects/**/dist/
 ComfyUI/.git.repo-backup/
 
+# Ignore runtime outputs in agent-owned areas, but keep placeholders/docs.
+agent-skills/runtime/**
+!agent-skills/runtime/**/
+!agent-skills/runtime/**/README.md
+!agent-skills/runtime/**/.gitkeep
+agent-skills/scripts/generated/**/runtime/**
+!agent-skills/scripts/generated/**/runtime/**/
+!agent-skills/scripts/generated/**/runtime/**/README.md
+!agent-skills/scripts/generated/**/runtime/**/.gitkeep
+agent-projects/**/runtime/**
+!agent-projects/**/runtime/**/
+!agent-projects/**/runtime/**/README.md
+!agent-projects/**/runtime/**/.gitkeep
+
+# Ignore transient database and lock artifacts in agent-owned areas.
+agent-skills/**/*.db
+agent-skills/**/*.db.lock
+agent-skills/**/*.lock
+agent-projects/**/runtime/**/*.db
+agent-projects/**/runtime/**/*.db.lock
+agent-projects/**/runtime/**/*.lock
+
 
 *.png
 *.jpg
@@ -38,6 +60,7 @@ ComfyUI/.git.repo-backup/
 *.bmp
 *.tiff
 *.mp4
+*.log
 !/ComfyUI/**/*.png
 !/ComfyUI/**/*.jpg
 !/ComfyUI/**/*.jpeg
