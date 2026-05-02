@@ -1,0 +1,1 @@
+放到插件目录里面的models目录里面，比如IPAdapter-ComfyUI/models

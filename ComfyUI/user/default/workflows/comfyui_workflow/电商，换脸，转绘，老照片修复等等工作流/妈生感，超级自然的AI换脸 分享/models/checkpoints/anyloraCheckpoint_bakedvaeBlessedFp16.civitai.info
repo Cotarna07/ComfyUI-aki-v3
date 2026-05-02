@@ -1,0 +1,521 @@
+{
+    "id": 95489,
+    "modelId": 23900,
+    "name": "bakedVae (blessed) fp16 NOT-PRUNED",
+    "createdAt": "2023-06-13T22:59:56.977Z",
+    "updatedAt": "2024-01-19T14:21:41.523Z",
+    "status": "Published",
+    "publishedAt": "2023-06-13T23:18:46.033Z",
+    "trainedWords": [],
+    "trainingStatus": null,
+    "trainingDetails": null,
+    "baseModel": "SD 1.5",
+    "baseModelType": "Standard",
+    "earlyAccessTimeFrame": 0,
+    "description": null,
+    "stats": {
+        "downloadCount": 135592,
+        "ratingCount": 2765,
+        "rating": 4.98,
+        "thumbsUpCount": 4122
+    },
+    "model": {
+        "name": "AnyLoRA - Checkpoint",
+        "type": "Checkpoint",
+        "nsfw": false,
+        "poi": false,
+        "description": "<!--\nAnyLoRAAdd a \u2764\ufe0f to receive future updates.\nDo you like what I do? Consider supporting me on Patreon \ud83c\udd7f\ufe0f or feel free to buy me a coffee \u2615\n\nFor LCM read the version description.\n\nAvailable on the following websites with GPU acceleration:\n\n* Sinkin.ai\n\nRemember to use the pruned version when training (less vram needed).\nAlso this is mostly for training on anime, drawings and cartoon.I made this model to ensure my future LoRA training is compatible with newer models, plus to get a model with a style neutral enough to get accurate styles with any style LoRA. Training on this model is much more effective compared to NAI, so at the end you might want to adjust the weight or offset (I suspect that's because NAI is now much diluted in newer models). I usually find good results at 0.65 weigth that I later offset to 1 (very easy to do with ComfyUI).\n\nThis is good for inference (again, especially with styles) even if I made it mainly for training. It ended up being super good for generating pics and it's now my go-to anime model. It also eats very little vram.\n\nGet the pruned versions for training, as they consume less VRAM. \n\nMake sure you use CLIP skip 2 and booru style tags when training.\n\nRemember to use a good vae when generating, or images wil look desaturated. Or just use the baked vae versions.\n-->",
+        "tags": [
+            "anime",
+            "sexy",
+            "female",
+            "manga",
+            "base model",
+            "art style",
+            "woman",
+            "illustration",
+            "beautiful",
+            "girls",
+            "anylora"
+        ],
+        "allowNoCredit": true,
+        "allowCommercialUse": [
+            "Image",
+            "RentCivit",
+            "Rent"
+        ],
+        "allowDerivatives": true,
+        "allowDifferentLicense": true
+    },
+    "files": [
+        {
+            "id": 66208,
+            "sizeKB": 3374828.369140625,
+            "name": "anyloraCheckpoint_bakedvaeBlessedFp16.safetensors",
+            "type": "Model",
+            "pickleScanResult": "Success",
+            "pickleScanMessage": "No Pickle imports",
+            "virusScanResult": "Success",
+            "virusScanMessage": null,
+            "scannedAt": "2023-06-13T23:09:17.885Z",
+            "metadata": {
+                "format": "SafeTensor",
+                "size": "full",
+                "fp": "fp16"
+            },
+            "hashes": {
+                "AutoV1": "0CE0C184",
+                "AutoV2": "EF49FBB25F",
+                "SHA256": "EF49FBB25FA908BB54DED95ABF81EF4B0E21FA0A8DE56C40C3D62E768EF7E49A",
+                "CRC32": "779F65C3",
+                "BLAKE3": "08403EB93FA6B888250CC32E16B6D99710624BD28BD9E94144A922BDED4FB5C6"
+            },
+            "primary": true,
+            "downloadUrl": "https://civitai.com/api/download/models/95489"
+        }
+    ],
+    "images": [
+        {
+            "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/17d33c16-9053-411b-8a32-a093a00ce160/width=450/1136424.jpeg",
+            "nsfwLevel": 1,
+            "width": 1096,
+            "height": 1648,
+            "hash": "UDKKTh000e.8IVE100tR9F0K-pE2~W%M~q9F",
+            "type": "image",
+            "metadata": {
+                "hash": "UDKKTh000e.8IVE100tR9F0K-pE2~W%M~q9F",
+                "width": 1096,
+                "height": 1648
+            },
+            "availability": "Public",
+            "meta": {
+                "Size": "512x768",
+                "seed": 1315543663,
+                "Model": "AnyLoRA_bakedVae_fp16_blessedVae",
+                "steps": 28,
+                "hashes": {
+                    "model": "ef49fbb25f"
+                },
+                "prompt": "best quality, ultra high res, 1girl, sleeveless white button shirt, black skirt, black choker, cute, (Kpop idol), (aegyo sal:1), (platinum blonde hair:1), ((puffy eyes)), looking at viewer, full body, facing front",
+                "Version": "v1.3.2",
+                "sampler": "DPM++ SDE Karras",
+                "cfgScale": 8,
+                "Clip skip": "2",
+                "resources": [
+                    {
+                        "hash": "ef49fbb25f",
+                        "name": "AnyLoRA_bakedVae_fp16_blessedVae",
+                        "type": "model"
+                    }
+                ],
+                "Model hash": "ef49fbb25f",
+                "Hires steps": "20",
+                "Hires upscale": "2.15",
+                "Hires upscaler": "8x_NMKD-Superscale_150000_G",
+                "negativePrompt": "sketches, (worst quality, low quality:2), FastNegativeV2",
+                "Denoising strength": "0.45"
+            }
+        },
+        {
+            "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/b98a4cf2-b472-4ede-9925-f7b44753f3b7/width=450/1136425.jpeg",
+            "nsfwLevel": 1,
+            "width": 1000,
+            "height": 1791,
+            "hash": "UMR:HG%M~q-;%Mj[fQj[~qof9Fayj[ayt7j[",
+            "type": "image",
+            "metadata": {
+                "hash": "UMR:HG%M~q-;%Mj[fQj[~qof9Fayj[ayt7j[",
+                "width": 1000,
+                "height": 1791
+            },
+            "availability": "Public",
+            "meta": null
+        },
+        {
+            "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/54cbaffa-5176-4741-988d-d7f72aeb66e0/width=450/1136427.jpeg",
+            "nsfwLevel": 2,
+            "width": 920,
+            "height": 1376,
+            "hash": "UDG8QDR50e_303InV@^+I-VtD%9[02E1~CM|",
+            "type": "image",
+            "metadata": {
+                "hash": "UDG8QDR50e_303InV@^+I-VtD%9[02E1~CM|",
+                "width": 920,
+                "height": 1376
+            },
+            "availability": "Public",
+            "meta": {
+                "Size": "512x768",
+                "seed": 3187489593,
+                "Model": "AnyLoRA_bakedVae_fp16_blessedVae",
+                "steps": 20,
+                "hashes": {
+                    "model": "ef49fbb25f"
+                },
+                "prompt": "arcane style,\n1girl, arm tattoo, asymmetrical bangs, bangs, blue hair, braid, brown shirt, cloud tattoo, looking at viewer, laughing, crazy, uncontrollable laugh, mad look, night, city, green hair, long hair, midriff, pink eyes, red lips, shirt, solo, standing, tattoo, twin braids, upper body, arcane jinx, jinx \\(league of legends\\)\n<lora:arcane_offset:1>",
+                "Version": "v1.3.2",
+                "sampler": "DPM++ SDE Karras",
+                "cfgScale": 9,
+                "Clip skip": "2",
+                "resources": [
+                    {
+                        "name": "arcane_offset",
+                        "type": "lora",
+                        "weight": 1
+                    },
+                    {
+                        "hash": "ef49fbb25f",
+                        "name": "AnyLoRA_bakedVae_fp16_blessedVae",
+                        "type": "model"
+                    }
+                ],
+                "Model hash": "ef49fbb25f",
+                "Hires steps": "10",
+                "Hires upscale": "1.8",
+                "\"arcane_offset": "707297e32504\"",
+                "Hires upscaler": "4x_foolhardy_Remacri",
+                "negativePrompt": "(painting by bad-artist-anime:0.9), (painting by bad-artist:0.9), watermark, text, error, blurry, jpeg artifacts, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, artist name, (worst quality, low quality:1.4), bad anatomy",
+                "Denoising strength": "0.35"
+            }
+        },
+        {
+            "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/e1258a7c-0068-4ec5-b177-2a939d67a107/width=450/1136429.jpeg",
+            "nsfwLevel": 1,
+            "width": 920,
+            "height": 1376,
+            "hash": "UOIrf|00tkxaBhnP9txu0KIB^+t6_ME1nOn$",
+            "type": "image",
+            "metadata": {
+                "hash": "UOIrf|00tkxaBhnP9txu0KIB^+t6_ME1nOn$",
+                "width": 920,
+                "height": 1376
+            },
+            "availability": "Public",
+            "meta": {
+                "Size": "512x768",
+                "seed": 1178811602,
+                "Model": "AnyLoRA_bakedVae_fp16_blessedVae",
+                "steps": 20,
+                "hashes": {
+                    "model": "ef49fbb25f"
+                },
+                "prompt": "ghibli style, san \\(mononoke hime\\),\n1girl, armlet, bangs, black hair, black undershirt, breasts, cape, circlet, earrings, facepaint, floating hair, forest, fur cape, green eyes, jewelry, looking at viewer, medium breasts, nature, necklace, outdoors, parted bangs, shirt, short hair, sleeveless, sleeveless shirt, solo, tooth necklace, tree, upper body, white shirt\n, ((masterpiece))\n<lora:ghibli_style_offset:1>",
+                "Version": "v1.3.2",
+                "sampler": "DPM++ SDE Karras",
+                "cfgScale": 8,
+                "Clip skip": "2",
+                "resources": [
+                    {
+                        "name": "ghibli_style_offset",
+                        "type": "lora",
+                        "weight": 1
+                    },
+                    {
+                        "hash": "ef49fbb25f",
+                        "name": "AnyLoRA_bakedVae_fp16_blessedVae",
+                        "type": "model"
+                    }
+                ],
+                "Model hash": "ef49fbb25f",
+                "Hires steps": "10",
+                "Hires upscale": "1.8",
+                "Hires upscaler": "R-ESRGAN AnimeVideo",
+                "negativePrompt": "FastNegativeV2",
+                "Denoising strength": "0.4",
+                "\"ghibli_style_offset": "708c39069ba6\""
+            }
+        },
+        {
+            "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/eaa257eb-84ee-4cbf-ae59-dd04235b47f0/width=450/1136430.jpeg",
+            "nsfwLevel": 1,
+            "width": 920,
+            "height": 1264,
+            "hash": "UhLgRgtSJVD+_NWFx]o#tm%Lt7ozxvx[s:oz",
+            "type": "image",
+            "metadata": {
+                "hash": "UhLgRgtSJVD+_NWFx]o#tm%Lt7ozxvx[s:oz",
+                "width": 920,
+                "height": 1264
+            },
+            "availability": "Public",
+            "meta": {
+                "Size": "512x704",
+                "seed": 471778439,
+                "Model": "AnyLoRA_bakedVae_fp16_blessedVae",
+                "steps": 28,
+                "hashes": {
+                    "model": "ef49fbb25f"
+                },
+                "prompt": "botw style, princess zelda, 1girl, bangs, blonde hair, breasts, white dress, hair ornament, bare shoulders, green eyes, jewelry, long hair, (town), outdoors, pointy ears, small breasts, solo, standing, upper body,  ((masterpiece))   <lora:botw_style_offset:1>",
+                "Version": "v1.3.2",
+                "sampler": "DPM++ SDE Karras",
+                "cfgScale": 9,
+                "Clip skip": "2",
+                "resources": [
+                    {
+                        "name": "botw_style_offset",
+                        "type": "lora",
+                        "weight": 1
+                    },
+                    {
+                        "hash": "ef49fbb25f",
+                        "name": "AnyLoRA_bakedVae_fp16_blessedVae",
+                        "type": "model"
+                    }
+                ],
+                "Model hash": "ef49fbb25f",
+                "Hires steps": "10",
+                "Hires upscale": "1.8",
+                "Hires upscaler": "R-ESRGAN General 4xV3",
+                "negativePrompt": "FastNegativeV2",
+                "\"botw_style_offset": "638ceacee4e5\"",
+                "Denoising strength": "0.4"
+            }
+        },
+        {
+            "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/495b77f2-ec26-44e3-a7df-477155e357b7/width=450/1136434.jpeg",
+            "nsfwLevel": 1,
+            "width": 920,
+            "height": 1264,
+            "hash": "UuKnrKx[lVNLO]R-%gbEIBM|RQoyxuj]sVWF",
+            "type": "image",
+            "metadata": {
+                "hash": "UuKnrKx[lVNLO]R-%gbEIBM|RQoyxuj]sVWF",
+                "width": 920,
+                "height": 1264
+            },
+            "availability": "Public",
+            "meta": {
+                "Size": "512x704",
+                "seed": 3227021174,
+                "Model": "AnyLoRA_bakedVae_fp16_blessedVae",
+                "steps": 30,
+                "hashes": {
+                    "model": "ef49fbb25f"
+                },
+                "prompt": "shinkai makoto, kimi no na wa., 1girl, bangs, black hair, blue sky, blush, bow, bowtie, brown eyes, cloud, collared shirt, hair ribbon, hairband, looking at viewer, negative space, outdoors, red bow, red bowtie, red hairband, red ribbon, ribbon,  school uniform, shirt, short hair, sky, smile, solo, sweater vest, upper body, vest, white shirt, yellow sweater vest, yellow vest  <lora:shinkai_makoto_offset:1>",
+                "Version": "v1.3.2",
+                "sampler": "DPM++ SDE Karras",
+                "cfgScale": 9,
+                "Clip skip": "2",
+                "resources": [
+                    {
+                        "name": "shinkai_makoto_offset",
+                        "type": "lora",
+                        "weight": 1
+                    },
+                    {
+                        "hash": "ef49fbb25f",
+                        "name": "AnyLoRA_bakedVae_fp16_blessedVae",
+                        "type": "model"
+                    }
+                ],
+                "Model hash": "ef49fbb25f",
+                "Hires steps": "10",
+                "Hires upscale": "1.8",
+                "Hires upscaler": "R-ESRGAN AnimeVideo",
+                "negativePrompt": "FastNegativeV2",
+                "Denoising strength": "0.3",
+                "\"shinkai_makoto_offset": "ca429a1460f9\""
+            }
+        },
+        {
+            "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/422c50a5-493e-417c-aa22-b221c1b53b5b/width=450/1136499.jpeg",
+            "nsfwLevel": 1,
+            "width": 920,
+            "height": 1376,
+            "hash": "UNLyV~In4U_K0YRS9uMi?ox;?FKJ8#iz-Ww0",
+            "type": "image",
+            "metadata": {
+                "hash": "UNLyV~In4U_K0YRS9uMi?ox;?FKJ8#iz-Ww0",
+                "width": 920,
+                "height": 1376
+            },
+            "availability": "Public",
+            "meta": {
+                "Size": "512x768",
+                "seed": 637315696,
+                "Model": "AnyLoRA_bakedVae_fp16_blessedVae",
+                "steps": 30,
+                "hashes": {
+                    "model": "ef49fbb25f"
+                },
+                "prompt": "1boy, wanostyle, monkey d luffy, smiling, straw hat, looking at viewer, solo, upper body, ((masterpiece)), (best quality), (extremely detailed), depth of field, sketch, dark intense shadows, sharp focus, soft lighting, hdr, colorful, good composition, fire all around, spectacular, closed shirt, anime screencap, scar under eye, ready to fight, black eyes <lora:wanostyle_2_offset:1.1>",
+                "Version": "v1.3.2",
+                "sampler": "DPM++ SDE Karras",
+                "cfgScale": 9,
+                "Clip skip": "2",
+                "resources": [
+                    {
+                        "name": "wanostyle_2_offset",
+                        "type": "lora",
+                        "weight": 1.1
+                    },
+                    {
+                        "hash": "ef49fbb25f",
+                        "name": "AnyLoRA_bakedVae_fp16_blessedVae",
+                        "type": "model"
+                    }
+                ],
+                "Model hash": "ef49fbb25f",
+                "Hires steps": "10",
+                "Hires upscale": "1.8",
+                "Hires upscaler": "R-ESRGAN General 4xV3",
+                "negativePrompt": "(painting by bad-artist-anime:0.9), (painting by bad-artist:0.9), watermark, text, error, blurry, jpeg artifacts, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, artist name, (worst quality, low quality:1.4), bad anatomy, watermark, signature, text, logo",
+                "Denoising strength": "0.19",
+                "\"wanostyle_2_offset": "891833f564d6\""
+            }
+        },
+        {
+            "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/913974fc-bd67-4db4-8580-838d32e39b98/width=450/1136435.jpeg",
+            "nsfwLevel": 2,
+            "width": 896,
+            "height": 1344,
+            "hash": "UfO{Qx_L4q%M$]o|t9xuM}njNHaetRxufiRP",
+            "type": "image",
+            "metadata": {
+                "hash": "UfO{Qx_L4q%M$]o|t9xuM}njNHaetRxufiRP",
+                "width": 896,
+                "height": 1344
+            },
+            "availability": "Public",
+            "meta": {
+                "Size": "512x768",
+                "seed": 3922467901,
+                "Model": "AnyLoRA_bakedVae_fp16_blessedVae",
+                "steps": 20,
+                "hashes": {
+                    "model": "ef49fbb25f"
+                },
+                "prompt": "kimetsu no yaiba style,1girl, solo, looking at viewer, brown hair, brown eyes, blurry background, blurry, multicolored hair, ponytail, blonde hair, upper body, dress, flower, bare shoulders, smile, lipstick, closed mouth,  anime coloring,  ((masterpiece)) <lora:kimetsu_no_yaiba_style_offset:1>",
+                "Version": "v1.3.2",
+                "sampler": "DPM++ SDE Karras",
+                "cfgScale": 9,
+                "Clip skip": "2",
+                "resources": [
+                    {
+                        "name": "kimetsu_no_yaiba_style_offset",
+                        "type": "lora",
+                        "weight": 1
+                    },
+                    {
+                        "hash": "ef49fbb25f",
+                        "name": "AnyLoRA_bakedVae_fp16_blessedVae",
+                        "type": "model"
+                    }
+                ],
+                "Model hash": "ef49fbb25f",
+                "Hires steps": "10",
+                "Hires upscale": "1.75",
+                "Hires upscaler": "R-ESRGAN AnimeVideo",
+                "negativePrompt": "gagged, bit gag, gag,  (painting by bad-artist-anime:0.9), (painting by bad-artist:0.9), nipples, watermark, text, error, blurry, jpeg artifacts, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, artist name, (worst quality, low quality:1.4), bad anatomy",
+                "Denoising strength": "0.4",
+                "\"kimetsu_no_yaiba_style_offset": "c51f78a00ed3\""
+            }
+        },
+        {
+            "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/bc940683-273e-46e0-898b-6a159171eeaf/width=450/1136444.jpeg",
+            "nsfwLevel": 1,
+            "width": 920,
+            "height": 1264,
+            "hash": "U7L;jX009F0000IU~q_3Rj00IU~qa|D%IU4n",
+            "type": "image",
+            "metadata": {
+                "hash": "U7L;jX009F0000IU~q_3Rj00IU~qa|D%IU4n",
+                "width": 920,
+                "height": 1264
+            },
+            "availability": "Public",
+            "meta": {
+                "ENSD": "31337",
+                "Size": "512x704",
+                "seed": 3690578511,
+                "Model": "AnyLoRA_bakedVae_fp16_NOTpruned",
+                "steps": 28,
+                "hashes": {
+                    "model": "b775b13509"
+                },
+                "prompt": "boichi manga style, 1girl, monochrome greyscale, solo, sitting, long hair, upper body, ((masterpiece)) <lora:boichi_manga_style_offset:1>",
+                "sampler": "DPM++ SDE Karras",
+                "cfgScale": 9,
+                "Clip skip": "2",
+                "resources": [
+                    {
+                        "name": "boichi_manga_style_offset",
+                        "type": "lora",
+                        "weight": 1
+                    },
+                    {
+                        "hash": "b775b13509",
+                        "name": "AnyLoRA_bakedVae_fp16_NOTpruned",
+                        "type": "model"
+                    }
+                ],
+                "Model hash": "b775b13509",
+                "Hires steps": "10",
+                "Hires upscale": "1.8",
+                "Hires upscaler": "R-ESRGAN General 4xV3",
+                "negativePrompt": "(painting by bad-artist-anime:0.9), (painting by bad-artist:0.9), watermark, text, error, blurry, jpeg artifacts, cropped, worst quality, low quality, normal quality, jpeg artifacts, (signature), watermark, username, artist name, (worst quality, low quality:1.4), bad anatomy",
+                "Denoising strength": "0.4"
+            }
+        },
+        {
+            "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/172b7982-b723-4a85-92a8-0aa36f278469/width=450/1136442.jpeg",
+            "nsfwLevel": 1,
+            "width": 896,
+            "height": 1344,
+            "hash": "UaGtsgv#9]Xm}[r?E2SMK5R*nOs:E#kWnin*",
+            "type": "image",
+            "metadata": {
+                "hash": "UaGtsgv#9]Xm}[r?E2SMK5R*nOs:E#kWnin*",
+                "width": 896,
+                "height": 1344
+            },
+            "availability": "Public",
+            "meta": {
+                "ENSD": "31337",
+                "Size": "512x768",
+                "seed": 2107285791,
+                "Model": "AnyLoRA_noVae_fp16-pruned",
+                "steps": 20,
+                "hashes": {
+                    "model": "b0c91a8a93"
+                },
+                "prompt": "ff7r style,\n1boy, male focus, solo, blonde hair, jewelry, earrings, sword, spiked hair, turtleneck, portrait, armor, upper body, blurry background, closed mouth, weapon on back, realistic, single earring\n, ((masterpiece))\n<lora:ff7:0.7>",
+                "sampler": "DPM++ SDE Karras",
+                "cfgScale": 8,
+                "Clip skip": "2",
+                "resources": [
+                    {
+                        "name": "ff7",
+                        "type": "lora",
+                        "weight": 0.7
+                    },
+                    {
+                        "hash": "b0c91a8a93",
+                        "name": "AnyLoRA_noVae_fp16-pruned",
+                        "type": "model"
+                    }
+                ],
+                "Model hash": "b0c91a8a93",
+                "Hires steps": "10",
+                "Hires upscale": "1.75",
+                "Hires upscaler": "R-ESRGAN 4x+",
+                "negativePrompt": "(painting by bad-artist-anime:0.9), (painting by bad-artist:0.9), watermark, text, error, blurry, jpeg artifacts, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, artist name, (worst quality, low quality:1.4), bad anatomy",
+                "Denoising strength": "0.28"
+            }
+        }
+    ],
+    "downloadUrl": "https://civitai.com/api/download/models/95489",
+    "creator": {
+        "username": "Lykon",
+        "image": "https://cdn.discordapp.com/avatars/180327464155742208/59254be18ccd627daf138d053327485d.png"
+    },
+    "extensions": {
+        "sd_civitai_helper": {
+            "version": "1.8.1",
+            "last_update": 1712681365,
+            "skeleton_file": false
+        }
+    }
+}

@@ -1,0 +1,668 @@
+{
+    "id": 128713,
+    "modelId": 4384,
+    "name": "8",
+    "createdAt": "2023-07-29T15:56:46.392Z",
+    "updatedAt": "2024-01-18T15:45:13.651Z",
+    "status": "Published",
+    "publishedAt": "2023-07-29T20:50:47.173Z",
+    "trainedWords": [],
+    "trainingStatus": null,
+    "trainingDetails": null,
+    "baseModel": "SD 1.5",
+    "baseModelType": "Standard",
+    "earlyAccessTimeFrame": 0,
+    "description": "<!--\n* Better at handling Character LoRA\n\n* Better at photorealism without sacrificing range (can still do art and anime pretty well, even if you might have to increase weight)\n\n* Better at NSFW\n-->",
+    "stats": {
+        "downloadCount": 323922,
+        "ratingCount": 2594,
+        "rating": 4.8
+    },
+    "model": {
+        "name": "DreamShaper",
+        "type": "Checkpoint",
+        "nsfw": false,
+        "poi": false,
+        "description": "<!--\nDreamShaper - V\u221e!Please check out my other base models, including SDXL ones!Check the version description below (bottom right) for more info and add a \u2764\ufe0f to receive future updates.\nDo you like what I do? Consider supporting me on Patreon \ud83c\udd7f\ufe0f to get exclusive tips and tutorials, or feel free to buy me a coffee \u2615\n\ud83c\udf9f\ufe0f Commissions on Ko-Fi\n\n\n\nJoin my Discord ServerFor LCM read the version description.\n\n\n\nAvailable on the following websites with GPU acceleration:\n\n* Mage.space\n\n* Sinkin.ai\n\n* RandomSeed\n\n* AnimeMaker.ai\n\n* Rendernet.ai\n\n* https://tensor.art/u/600303455797521413\n\n\nLive demo available on HuggingFace (CPU is slow but free).\n\nNew Negative Embedding for this: Bad Dream.\n\n\nMessage from the authorHello hello, my fellow AI Art lovers. Version 8 just released. Did you like the cover with the \u221e symbol? This version holds a special meaning for me.\n\nDreamShaper started as a model to have an alternative to MidJourney in the open source world. I didn't like how MJ was handled back when I started and how closed it was and still is, as well as the lack of freedom it gives to users compared to SD. Look at all the tools we have now from TIs to LoRA, from ControlNet to Latent Couple. We can do anything. The purpose of DreamShaper has always been to make \"a better Stable Diffusion\", a model capable of doing everything on its own, to weave dreams. \nWith SDXL (and, of course, DreamShaper XL \ud83d\ude09) just released, I think the \"swiss knife\" type of model is closer then ever. That model architecture is big and heavy enough to accomplish that the pretty easily. But what about all the resources built on top of SD1.5? Or all the users that don't have 10GB of vram? It might just be a bit too early to let go of DreamShaper. \n\nNot before one. Last. Push. \n\nAnd here it is, I hope you enjoy. And thank you for all the support you've given me in the recent months.\n\nPS: the primary goal is still towards art and illustrations. Being good at everything comes second.\n\n\nSuggested settings:\n- I had CLIP skip 2 on some pics, the model works with that too. \n- I have ENSD set to 31337, in case you need to reproduce some results, but it doesn't guarantee it. \n- All of them had highres.fix or img2img at higher resolution. Some even have ADetailer. Careful with that tho, as it tends to make all faces look the same.\n- I don't use \"restore faces\".\n\nFor old versions:\n- Versions >4 require no LoRA for anime style. For version 3 I suggest to use one of these LoRA networks at 0.35 weight: \n-- https://civitai.com/models/4219 (the girls with glasses or if it says `wanostyle`)\n-- https://huggingface.co/closertodeath/dpepmkmp/blob/main/last.pt (if it says `mksk style`)\n-- https://civitai.com/models/4982/anime-screencap-style-lora (not used for any example but works great).\n\nLCMBeing a distilled model it has lower quality compared to the base one. However it's MUCH faster and perfect for video and real time applications.\n\nUse it with 5-15 steps, ~2 cfg. IT WORKS ONLY WITH LCM SAMPLER (as of December 2023, Auto1111 requires an external plugin for it).\n\nComparison with V7 LCM https://civitai.com/posts/951513\n\nNOTES\n\n* Version 8 focuses on improving what V7 started. Might be harder to do photorealism compared to realism focused models, as it might be hard to do anime compared to anime focused models, but it can do both pretty well if you're skilled enough. Check the examples!\n\n* Version 7 improves lora support, NSFW and realism. If you're interested in \"absolute\" realism, try AbsoluteReality.\n\n* Version 6 adds more lora support and more style in general. It should also be better at generating directly at 1024 height (but be careful with it). 6.x are all improvements.\n\n* Version 5 is the best at photorealism and has noise offset.\n\n* Version 4 is much better with anime (can do them with no LoRA) and booru tags. IT might be harder to control if you're used to caption style, so you might still want to use version 3.31.\n\n* V4 is also better with eyes at lower resolutions. Overall is like a \"fix\" of V3 and shouldn't be too much different.\n\n* Results of version 3.32 \"clip fix\" will vary from the examples (produced on 3.31, which I personally prefer).\n\n* I get no money from any generative service, but you can buy me a coffee.\n\n* You should use 3.32 for mixing, so the clip error doesn't spread.\n\n* Inpainting models are only for inpaint and outpaint, not txt2img or mixing. \n\n\nOriginal v1 description: \nAfter a lot of tests I'm finally releasing my mix model. This started as a model to make good portraits that do not look like cg or photos with heavy filters, but more like actual paintings. The result is a model capable of doing portraits like I wanted, but also great backgrounds and anime-style characters. Below you can find some suggestions, including LoRA networks to make anime style images. \n\nI hope you'll enjoy it as much as I do.\n\n\nOfficial HF repository: https://huggingface.co/Lykon/DreamShaper\n-->",
+        "tags": [
+            "anime",
+            "landscapes",
+            "3d",
+            "photorealistic",
+            "inpainting",
+            "digital art",
+            "scifi",
+            "base model",
+            "fantasy art",
+            "art style",
+            "paintings",
+            "woman",
+            "illustration",
+            "2d",
+            "digital illustration",
+            "fantasy",
+            "girls",
+            "portraits",
+            "realistic",
+            "video game"
+        ],
+        "allowNoCredit": true,
+        "allowCommercialUse": "Rent",
+        "allowDerivatives": true,
+        "allowDifferentLicense": true
+    },
+    "files": [
+        {
+            "id": 93211,
+            "sizeKB": 2082642.474609375,
+            "name": "dreamshaper_8.safetensors",
+            "type": "Model",
+            "metadata": {
+                "fp": "fp16",
+                "size": "pruned",
+                "format": "SafeTensor"
+            },
+            "pickleScanResult": "Success",
+            "pickleScanMessage": "No Pickle imports",
+            "virusScanResult": "Success",
+            "virusScanMessage": null,
+            "scannedAt": "2023-07-29T16:06:30.357Z",
+            "hashes": {
+                "AutoV1": "9D40847D",
+                "AutoV2": "879DB523C3",
+                "SHA256": "879DB523C30D3B9017143D56705015E15A2CB5628762C11D086FED9538ABD7FD",
+                "CRC32": "6A63EC60",
+                "BLAKE3": "771C807DB56DBFC33FEDA5638D920F6C507DB971DA44772EE44A08DC38C3B437"
+            },
+            "primary": true,
+            "downloadUrl": "https://civitai.com/api/download/models/128713"
+        }
+    ],
+    "images": [
+        {
+            "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/dd9b038c-bd15-43ab-86ab-66e145ad7ff2/width=450/1777041.jpeg",
+            "nsfw": "None",
+            "width": 1096,
+            "height": 1648,
+            "hash": "UFBMV#_29]IV~W-;X8NGTK%M-ps.%Mx[ogs.",
+            "type": "image",
+            "metadata": {
+                "hash": "UFBMV#_29]IV~W-;X8NGTK%M-ps.%Mx[ogs.",
+                "width": 1096,
+                "height": 1648
+            },
+            "availability": "Public",
+            "meta": {
+                "Size": "512x768",
+                "seed": 132340247,
+                "Model": "DreamShaper8_pruned",
+                "model": "control_sd15_hed [fef5e48e]",
+                "steps": 28,
+                "hashes": {
+                    "model": "879db523c3"
+                },
+                "prompt": "8k portrait of beautiful cyborg with brown hair, intricate, elegant, highly detailed, majestic, digital photography, art by artgerm and ruan jia and greg rutkowski surreal painting gold butterfly filigree, broken glass, (masterpiece, sidelighting, finely detailed beautiful eyes: 1.2), hdr, (detailed background window to a new dimension, plants and flowers:0.7) <lora:more_details:0.5> infinity, infinite symbol,",
+                "weight": "1",
+                "Version": "v1.4.1",
+                "sampler": "DPM++ SDE Karras",
+                "cfgScale": 7,
+                "clipSkip": 2,
+                "resources": [
+                    {
+                        "name": "more_details",
+                        "type": "lora",
+                        "weight": 0.5
+                    },
+                    {
+                        "hash": "879db523c3",
+                        "name": "DreamShaper8_pruned",
+                        "type": "model"
+                    }
+                ],
+                "Model hash": "879db523c3",
+                "Hires steps": "25",
+                "resize mode": "Crop and Resize",
+                "control mode": "Balanced",
+                "\"more_details": "3b8aa1d351ef\"",
+                "\"preprocessor": "none",
+                "Hires sampler": "DPM++ 2M SDE Karras",
+                "Hires upscale": "2.15",
+                "pixel perfect": "False",
+                "Hires upscaler": "Latent (bicubic antialiased)",
+                "negativePrompt": "BadDream, FastNegativeV2",
+                "ADetailer model": "face_yolov8n.pt",
+                "starting/ending": "(0, 0.95)",
+                "ADetailer prompt": "\"8k portrait of beautiful cyborg with brown hair, intricate, elegant, highly detailed, majestic, digital photography, art by artgerm and ruan jia and greg rutkowski surreal painting gold butterfly filigree, broken glass, (masterpiece, sidelighting",
+                "ADetailer version": "23.6.1.post0",
+                "Denoising strength": "0.46",
+                "ADetailer mask blur": "4",
+                "preprocessor params": "(512, 64, 64)\"",
+                "ADetailer confidence": "0.3",
+                "ADetailer dilate/erode": "4",
+                "ADetailer inpaint padding": "32",
+                "ADetailer negative prompt": "\"BadDream, UnrealisticDream, FastNegativeV2\"",
+                "ADetailer denoising strength": "0.4",
+                "ADetailer inpaint only masked": "True",
+                "finely detailed beautiful eyes": "1.2), hdr\""
+            }
+        },
+        {
+            "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/c1033497-007c-4a73-b812-915c8e32e8fe/width=450/1777043.jpeg",
+            "nsfw": "None",
+            "width": 1120,
+            "height": 1824,
+            "hash": "UeIXaFNG%2-o~Wt6t7s:g4xuIoR*X9ozIUa}",
+            "type": "image",
+            "metadata": {
+                "hash": "UeIXaFNG%2-o~Wt6t7s:g4xuIoR*X9ozIUa}",
+                "width": 1120,
+                "height": 1824
+            },
+            "availability": "Public",
+            "meta": {
+                "Size": "512x832",
+                "seed": 5775713,
+                "Model": "DreamShaper8_pruned",
+                "steps": 30,
+                "hashes": {
+                    "model": "879db523c3"
+                },
+                "prompt": "(masterpiece), (extremely intricate:1.3), (realistic), portrait of a girl, the most beautiful in the world, (medieval armor), metal reflections, upper body, outdoors, intense sunlight, far away castle, professional photograph of a stunning woman detailed, sharp focus, dramatic, award winning, cinematic lighting, octane render  unreal engine,  volumetrics dtx, (film grain, blurry background, blurry foreground, bokeh, depth of field, sunset, motion blur:1.3), chainmail",
+                "Version": "v1.4.1",
+                "sampler": "DPM++ SDE Karras",
+                "cfgScale": 9,
+                "clipSkip": 2,
+                "resources": [
+                    {
+                        "hash": "879db523c3",
+                        "name": "DreamShaper8_pruned",
+                        "type": "model"
+                    }
+                ],
+                "Model hash": "879db523c3",
+                "Hires steps": "20",
+                "Hires upscale": "2.2",
+                "Hires upscaler": "8x_NMKD-Superscale_150000_G",
+                "negativePrompt": "BadDream, (UnrealisticDream:1.3)",
+                "ADetailer model": "face_yolov8n.pt",
+                "ADetailer prompt": "\"photo of a blonde girl, (film grain)\"",
+                "(UnrealisticDream": "1.3)\"",
+                "ADetailer version": "23.6.1.post0",
+                "Denoising strength": "0.46",
+                "ADetailer mask blur": "4",
+                "ADetailer model 2nd": "hand_yolov8n.pt",
+                "ADetailer confidence": "0.3",
+                "ADetailer dilate/erode": "4",
+                "ADetailer mask blur 2nd": "4",
+                "ADetailer confidence 2nd": "0.3",
+                "ADetailer inpaint padding": "0",
+                "ADetailer negative prompt": "\"BadDream",
+                "ADetailer dilate/erode 2nd": "4",
+                "ADetailer denoising strength": "0.27",
+                "ADetailer inpaint only masked": "True",
+                "ADetailer inpaint padding 2nd": "32",
+                "ADetailer negative prompt 2nd": "\"BadDream",
+                "ADetailer denoising strength 2nd": "0.3",
+                "ADetailer inpaint only masked 2nd": "True"
+            }
+        },
+        {
+            "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/e6a56e46-ccbf-4de3-ad62-09afd2ad9b91/width=450/1777944.jpeg",
+            "nsfw": "None",
+            "width": 1176,
+            "height": 1912,
+            "hash": "UuIY5@IVxuaz~qRjofj[tQWBRPWAbHM|M{Rk",
+            "type": "image",
+            "metadata": {
+                "hash": "UuIY5@IVxuaz~qRjofj[tQWBRPWAbHM|M{Rk",
+                "width": 1176,
+                "height": 1912
+            },
+            "availability": "Public",
+            "meta": {
+                "Niji": "492d6878f85a",
+                "Size": "512x832",
+                "seed": 951655291,
+                "Model": "DreamShaper8_pruned",
+                "steps": 30,
+                "hashes": {
+                    "model": "879db523c3"
+                },
+                "prompt": "cgmech, (realistic)\nsolo, white mecha robot, cape, science fiction, torn clothes, glowing, standing, robot joints, mecha, armor, cowboy shot, (floating cape), intense sunlight, silver dragonborn, outdoors, landscape, nature\n, ((masterpiece, best quality)),  <lora:cgmechmix_offset:1><lora:more_details:0.3>  <lora:Niji:0.5><lora:dragonborn_offset:0.7>\n, volumetrics dtx, (film grain, blurry background, blurry foreground, bokeh, depth of field, motion blur:1.3)",
+                "Version": "v1.4.1",
+                "sampler": "DPM++ 2M SDE Karras",
+                "cfgScale": 8,
+                "clipSkip": 2,
+                "resources": [
+                    {
+                        "name": "cgmechmix_offset",
+                        "type": "lora",
+                        "weight": 1
+                    },
+                    {
+                        "name": "more_details",
+                        "type": "lora",
+                        "weight": 0.3
+                    },
+                    {
+                        "name": "Niji",
+                        "type": "lora",
+                        "weight": 0.5
+                    },
+                    {
+                        "name": "dragonborn_offset",
+                        "type": "lora",
+                        "weight": 0.7
+                    },
+                    {
+                        "hash": "879db523c3",
+                        "name": "DreamShaper8_pruned",
+                        "type": "model"
+                    }
+                ],
+                "Model hash": "879db523c3",
+                "Hires steps": "30",
+                "more_details": "3b8aa1d351ef",
+                "Hires upscale": "2.3",
+                "Hires upscaler": "8x_NMKD-Superscale_150000_G",
+                "negativePrompt": "BadDream, FastNegativeV2",
+                "\"cgmechmix_offset": "5e66c6a56945",
+                "dragonborn_offset": "35d2c1e89ddb\"",
+                "Denoising strength": "0.45"
+            }
+        },
+        {
+            "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/1c1d4f13-21b0-4068-acd0-51a3ec1c18bc/width=450/1777046.jpeg",
+            "nsfw": "None",
+            "width": 1024,
+            "height": 1408,
+            "hash": "UAH_}d9G00xV00?b~CIAO@IprWV?4:-;ITRP",
+            "type": "image",
+            "metadata": {
+                "hash": "UAH_}d9G00xV00?b~CIAO@IprWV?4:-;ITRP",
+                "width": 1024,
+                "height": 1408
+            },
+            "availability": "Public",
+            "meta": {
+                "Size": "512x704",
+                "seed": 2067885436,
+                "Model": "DreamShaper8_pruned",
+                "steps": 20,
+                "hashes": {
+                    "model": "879db523c3"
+                },
+                "prompt": "(anime coloring, anime screencap, ghibli, mappa, anime style), 1girl, hatsune miku, white gown, angel, angel wings, golden halo, dark background, upper body, (closed mouth:1.2), looking at viewer, arms behind back, blue theme, stars, starry night",
+                "Version": "v1.4.1",
+                "sampler": "DPM++ SDE Karras",
+                "cfgScale": 8,
+                "clipSkip": 2,
+                "resources": [
+                    {
+                        "hash": "879db523c3",
+                        "name": "DreamShaper8_pruned",
+                        "type": "model"
+                    }
+                ],
+                "Model hash": "879db523c3",
+                "Hires steps": "12",
+                "(closed mouth": "1.2), looking at viewer, arms behind back, blue theme, stars, starry night\"",
+                "Hires upscale": "2",
+                "Hires upscaler": "8x_NMKD-Superscale_150000_G",
+                "negativePrompt": "BadDream, FastNegativeV2",
+                "ADetailer model": "face_yolov8n.pt",
+                "ADetailer prompt": "\"(anime coloring, anime screencap, ghibli, mappa, anime style), 1girl, hatsune miku, white gown, angel, angel wings, golden halo, dark background, upper body",
+                "(UnrealisticDream": "1.3)\"",
+                "ADetailer version": "23.6.1.post0",
+                "Denoising strength": "0.4",
+                "ADetailer mask blur": "4",
+                "ADetailer model 2nd": "hand_yolov8n.pt",
+                "ADetailer confidence": "0.3",
+                "ADetailer dilate/erode": "4",
+                "ADetailer mask blur 2nd": "4",
+                "ADetailer confidence 2nd": "0.3",
+                "ADetailer inpaint padding": "0",
+                "ADetailer negative prompt": "\"BadDream, FastNegativeV2\"",
+                "ADetailer dilate/erode 2nd": "4",
+                "ADetailer denoising strength": "0.4",
+                "ADetailer inpaint only masked": "True",
+                "ADetailer inpaint padding 2nd": "32",
+                "ADetailer negative prompt 2nd": "\"BadDream",
+                "ADetailer denoising strength 2nd": "0.3",
+                "ADetailer inpaint only masked 2nd": "True"
+            }
+        },
+        {
+            "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/e5f49ec5-62f7-4511-8be6-517042729091/width=450/1781165.jpeg",
+            "nsfw": "None",
+            "width": 1352,
+            "height": 1696,
+            "hash": "UPC?lyt6V?.TI[o#X9xtDikCbIRO%2jYn~NH",
+            "type": "image",
+            "metadata": {
+                "hash": "UPC?lyt6V?.TI[o#X9xtDikCbIRO%2jYn~NH",
+                "width": 1352,
+                "height": 1696
+            },
+            "availability": "Public",
+            "meta": {
+                "Size": "512x640",
+                "seed": 1584580292,
+                "Model": "DreamShaper8_pruned",
+                "steps": 30,
+                "hashes": {
+                    "model": "879db523c3"
+                },
+                "prompt": "masterpiece, (photorealistic:1.4), best quality, beautiful lighting, (ulzzang-6500:0.5), lucy \\(cyberpunk\\), 1girl, white hair, against railing, arm rest, bangs, bare shoulders, belt, black belt, black leotard, black pants, blurry, bob cut, breasts, building, cityscape, clothing cutout, (cropped jacket), cyberpunk, depth of field, from side, gradient eyes, grey eyes, grey hair, white jacket, leotard, lips, long sleeves, looking afar, looking ahead, (mechanical parts), medium breasts, multicolored eyes, multicolored hair, night, night sky, off shoulder, open clothes, open jacket, outdoors, pants, parted lips, railing, red eyeliner, science fiction, short hair with long locks, short shorts, shorts, sidelocks, sky, solo, standing, teeth, thigh cutout, upper teeth only, white jacket, white shorts, cyberpunk \\(series\\), cyberpunk edgerunners, RAW photo, 8k uhd, film grain, cosplay, white wig, night, neon lights,,,, <lora:lucy_offset:1.21>",
+                "Version": "v1.4.1",
+                "sampler": "DPM++ SDE Karras",
+                "cfgScale": 9,
+                "clipSkip": 2,
+                "resources": [
+                    {
+                        "name": "lucy_offset",
+                        "type": "lora",
+                        "weight": 1.21
+                    },
+                    {
+                        "hash": "879db523c3",
+                        "name": "DreamShaper8_pruned",
+                        "type": "model"
+                    }
+                ],
+                "Model hash": "879db523c3",
+                "Hires steps": "15",
+                "lucy_offset": "1.21>\"",
+                "\"lucy_offset": "f7a664103d28\"",
+                "(ulzzang-6500": "0.5), lucy \\\\(cyberpunk\\\\), 1girl, white hair, against railing, arm rest, bangs, bare shoulders, belt, black belt, black leotard, black pants, blurry, bob cut, breasts, building, cityscape, clothing cutout, (cropped jacket), cyberpunk, depth of field, from side, gradient eyes, grey eyes, grey hair, white jacket, leotard, lips, long sleeves, looking afar, looking ahead, (mechanical parts), medium breasts, multicolored eyes, multicolored hair, night, night sky, off shoulder, open clothes, open jacket, outdoors, pants, parted lips, railing, red eyeliner, science fiction, short hair with long locks, short shorts, shorts, sidelocks, sky, solo, standing, teeth, thigh cutout, upper teeth only, white jacket, white shorts, cyberpunk \\\\(series\\\\), cyberpunk edgerunners, RAW photo, 8k uhd, film grain, cosplay, white wig, night, neon lights,,,",
+                "Hires upscale": "2.65",
+                "Hires upscaler": "8x_NMKD-Superscale_150000_G",
+                "negativePrompt": "BadDream, (UnrealisticDream:1.3)",
+                "(photorealistic": "1.4), best quality, beautiful lighting",
+                "ADetailer model": "face_yolov8n.pt",
+                "ADetailer prompt": "\"masterpiece",
+                "(UnrealisticDream": "1.3)\"",
+                "ADetailer version": "23.6.1.post0",
+                "Denoising strength": "0.4",
+                "ADetailer mask blur": "5",
+                "ADetailer confidence": "0.2",
+                "ADetailer dilate/erode": "4",
+                "ADetailer inpaint padding": "0",
+                "ADetailer negative prompt": "\"BadDream",
+                "ADetailer denoising strength": "0.37",
+                "ADetailer inpaint only masked": "True"
+            }
+        },
+        {
+            "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/399f1835-2eb3-42f9-80fc-5e7ffb98f5e9/width=450/1778542.jpeg",
+            "nsfw": "None",
+            "width": 688,
+            "height": 1024,
+            "hash": "U68|eR.7E0IpMe9a9tIoEeNG$*s:5R?G~V-o",
+            "type": "image",
+            "metadata": {
+                "hash": "U68|eR.7E0IpMe9a9tIoEeNG$*s:5R?G~V-o",
+                "width": 688,
+                "height": 1024
+            },
+            "availability": "Public",
+            "meta": {
+                "Size": "344x512",
+                "seed": 3091544718,
+                "Model": "DreamShaper8_pruned",
+                "steps": 30,
+                "hashes": {
+                    "model": "879db523c3"
+                },
+                "prompt": "(masterpiece), (extremely intricate), fantasy, (((realistic portrait of an evil hermit, male, villain, anti hero, evil face, masculine face, medium hair, Maroon hair, wicked, cruel, sinister, malicious, ruthless, masculine, athletic))), (((dark bloody clothing, intricate details on clothing))), (perfect composition:1.4), aspect ratio 1:1, beach, deviantart hd, artstation hd, concept art, detailed face and body, award-winning photography, margins, detailed face, professional oil painting by Ed Blinkey, Atey Ghailan, Jeremy Mann, Greg Manchess, Alex Gray, trending on ArtStation, trending on CGSociety, intricate, high detail, sharp focus, dramatic, award winning matte drawing cinematic lighting octane render unreal engine volumetrics dtx",
+                "Version": "v1.4.1",
+                "sampler": "DPM++ SDE Karras",
+                "cfgScale": 12,
+                "clipSkip": 2,
+                "resources": [
+                    {
+                        "hash": "879db523c3",
+                        "name": "DreamShaper8_pruned",
+                        "type": "model"
+                    }
+                ],
+                "Model hash": "879db523c3",
+                "Hires steps": "25",
+                "Hires upscale": "2",
+                "Hires upscaler": "Latent (bicubic antialiased)",
+                "negativePrompt": "UnrealisticDream, (BadDream)",
+                "Denoising strength": "0.6"
+            }
+        },
+        {
+            "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/82887503-fb67-4b77-8f56-eecb6d230da2/width=450/1777053.jpeg",
+            "nsfw": "Mature",
+            "width": 1176,
+            "height": 1912,
+            "hash": "UiK^+~WB_Nxu~qxubbbHx]M{jEt7t7oLRjWB",
+            "type": "image",
+            "metadata": {
+                "hash": "UiK^+~WB_Nxu~qxubbbHx]M{jEt7t7oLRjWB",
+                "width": 1176,
+                "height": 1912
+            },
+            "availability": "Public",
+            "meta": {
+                "Size": "512x832",
+                "seed": 5775694,
+                "Model": "DreamShaper8_pruned",
+                "steps": 30,
+                "hashes": {
+                    "model": "879db523c3"
+                },
+                "prompt": "Fashion magazine cover photo of a young asian female model with jet black hair, bold red lipstick, detailed skin, leather jacket, posing confidently with hand on hip, upper body shot, studio backdrop, (bright fill lighting:1.4) from the front balancing out shadows, straight on angle, very shallow DOF, in an edgy style, (film grain)<lora:polyhedron_skinny_all:0.6>",
+                "Version": "v1.4.1",
+                "sampler": "DPM++ SDE Karras",
+                "cfgScale": 9,
+                "clipSkip": 2,
+                "resources": [
+                    {
+                        "name": "polyhedron_skinny_all",
+                        "type": "lora",
+                        "weight": 0.6
+                    },
+                    {
+                        "hash": "879db523c3",
+                        "name": "DreamShaper8_pruned",
+                        "type": "model"
+                    }
+                ],
+                "Model hash": "879db523c3",
+                "Hires steps": "20",
+                "Hires upscale": "2.3",
+                "Hires upscaler": "8x_NMKD-Superscale_150000_G",
+                "negativePrompt": "BadDream, (UnrealisticDream:1.3)",
+                "Denoising strength": "0.46",
+                "\"polyhedron_skinny_all": "210b1ee059ef\""
+            }
+        },
+        {
+            "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/9a5690e9-fafc-4e9c-9bc0-b9aaad215562/width=450/1777509.jpeg",
+            "nsfw": "X",
+            "width": 1024,
+            "height": 1536,
+            "hash": "UAI}3G=y0Nem0z~q?bE156t7-p%g009]D%-p",
+            "type": "image",
+            "metadata": {
+                "hash": "UAI}3G=y0Nem0z~q?bE156t7-p%g009]D%-p",
+                "width": 1024,
+                "height": 1536
+            },
+            "availability": "Public",
+            "meta": {
+                "Size": "512x768",
+                "seed": 1221160284,
+                "Model": "DreamShaper8_pruned",
+                "steps": 40,
+                "hashes": {
+                    "model": "879db523c3"
+                },
+                "prompt": "film grain and (medium full shot:1.2) and 8K HD RAW photo of one of the most beautiful swedish woman from instagram and (Selfie pussy in a beautiful bedroom) and (legs apart and m legs showing pussy) and (sitting) and completely nude with no clothes on and looking contemptuously at the audience, mirror selfie, blonde short hair\n, volumetrics dtx, (film grain, blurry background, depth of field, motion blur)",
+                "Version": "v1.4.1",
+                "sampler": "DPM++ SDE Karras",
+                "cfgScale": 6,
+                "clipSkip": 2,
+                "resources": [
+                    {
+                        "hash": "879db523c3",
+                        "name": "DreamShaper8_pruned",
+                        "type": "model"
+                    }
+                ],
+                "Model hash": "879db523c3",
+                "Hires steps": "20",
+                "Hires upscale": "2",
+                "Hires upscaler": "8x_NMKD-Superscale_150000_G",
+                "depth of field": "1.3)\"",
+                "negativePrompt": "BadDream, (UnrealisticDream:1.3)",
+                "ADetailer model": "face_yolov8n.pt",
+                "ADetailer prompt": "\"(realistic photo), face of (Ana de Armas and Charlize Theron)",
+                "(UnrealisticDream": "1.3)\"",
+                "ADetailer version": "23.6.1.post0",
+                "Denoising strength": "0.45",
+                "ADetailer mask blur": "5",
+                "ADetailer model 2nd": "hand_yolov8n.pt",
+                "ADetailer confidence": "0.2",
+                "ADetailer prompt 2nd": "\"woman's hand, iphone apple logo\"",
+                "ADetailer dilate/erode": "4",
+                "ADetailer mask blur 2nd": "4",
+                "ADetailer confidence 2nd": "0.3",
+                "ADetailer inpaint padding": "0",
+                "ADetailer negative prompt": "\"BadDream",
+                "1.3) and (medium full shot": "1.2) and 8K HD RAW photo of one of the most beautiful swedish woman from instagram,  blonde short hairm skin pores\\n, volumetrics dtx, (film grain, blurry background",
+                "ADetailer dilate/erode 2nd": "4",
+                "ADetailer denoising strength": "0.5",
+                "ADetailer inpaint only masked": "True",
+                "ADetailer inpaint padding 2nd": "32",
+                "ADetailer negative prompt 2nd": "\"BadDream",
+                "ADetailer denoising strength 2nd": "0.3",
+                "ADetailer inpaint only masked 2nd": "True"
+            }
+        },
+        {
+            "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/9b64fd01-a4c5-4ecb-8c8f-cc8167a5c0bb/width=450/1777051.jpeg",
+            "nsfw": "None",
+            "width": 1176,
+            "height": 1912,
+            "hash": "U59?:%={00T1={IT00xv0gf+}q-;Tyw]^PX8",
+            "type": "image",
+            "metadata": {
+                "hash": "U59?:%={00T1={IT00xv0gf+}q-;Tyw]^PX8",
+                "width": 1176,
+                "height": 1912
+            },
+            "availability": "Public",
+            "meta": {
+                "Size": "512x832",
+                "seed": 5775692,
+                "Model": "DreamShaper8_pruned",
+                "steps": 30,
+                "hashes": {
+                    "model": "879db523c3"
+                },
+                "prompt": "Portrait photo of muscular bearded guy in a worn mech suit, ((light bokeh)), intricate, (steel metal [rust]), elegant, sharp focus, photo by greg rutkowski, soft lighting, vibrant colors, (masterpiece), ((streets)), (detailed face:1.2), (glowing blue eyes:1.1) <lora:FilmVelvia3:0.4>  <lora:more_details:0.6>",
+                "Version": "v1.4.1",
+                "sampler": "DPM++ 2M SDE Karras",
+                "cfgScale": 9,
+                "clipSkip": 2,
+                "resources": [
+                    {
+                        "name": "FilmVelvia3",
+                        "type": "lora",
+                        "weight": 0.4
+                    },
+                    {
+                        "name": "more_details",
+                        "type": "lora",
+                        "weight": 0.6
+                    },
+                    {
+                        "hash": "879db523c3",
+                        "name": "DreamShaper8_pruned",
+                        "type": "model"
+                    }
+                ],
+                "Model hash": "879db523c3",
+                "Hires steps": "20",
+                "\"FilmVelvia3": "6e93473d6228",
+                "more_details": "3b8aa1d351ef\"",
+                "Hires upscale": "2.3",
+                "Hires upscaler": "8x_NMKD-Superscale_150000_G",
+                "negativePrompt": "BadDream, (UnrealisticDream:1.3)",
+                "Denoising strength": "0.46"
+            }
+        },
+        {
+            "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/29d21927-d45d-4062-a7c4-45bba8226302/width=450/1778026.jpeg",
+            "nsfw": "None",
+            "width": 1024,
+            "height": 1536,
+            "hash": "U6AK2L9G00t7?wIA00jY_3s.RORk01-:ITRj",
+            "type": "image",
+            "metadata": {
+                "hash": "U6AK2L9G00t7?wIA00jY_3s.RORk01-:ITRj",
+                "width": 1024,
+                "height": 1536
+            },
+            "availability": "Public",
+            "meta": {
+                "Size": "512x768",
+                "seed": 1650465323,
+                "Model": "DreamShaper8_pruned",
+                "steps": 20,
+                "hashes": {
+                    "model": "879db523c3"
+                },
+                "prompt": "black humanoid made of rock, upper body, barechested, male,  ((masterpiece, best quality)),  <lora:more_details:0.3>, cracked skin, white electricity coming through cracks, muscular male, (dragonborn:0.6), white hair\noutdoors, detailed background <lora:dragonborn_offset:0.6> <lora:r1ge - AnimeRage:1> <lora:Cracked Skin:1.2>\n, depth of field",
+                "Version": "v1.4.1",
+                "sampler": "DPM++ 2M SDE Karras",
+                "cfgScale": 8,
+                "clipSkip": 2,
+                "resources": [
+                    {
+                        "name": "more_details",
+                        "type": "lora",
+                        "weight": 0.3
+                    },
+                    {
+                        "name": "dragonborn_offset",
+                        "type": "lora",
+                        "weight": 0.6
+                    },
+                    {
+                        "hash": "879db523c3",
+                        "name": "DreamShaper8_pruned",
+                        "type": "model"
+                    }
+                ],
+                "Model hash": "879db523c3",
+                "Hires steps": "20",
+                "Cracked Skin": "37a7cea146ca\"",
+                "\"more_details": "3b8aa1d351ef",
+                "Hires upscale": "2",
+                "Hires upscaler": "8x_NMKD-Superscale_150000_G",
+                "negativePrompt": "BadDream, UnrealisticDream, orange",
+                "r1ge - AnimeRage": "d4fd87d54db1",
+                "dragonborn_offset": "35d2c1e89ddb",
+                "Denoising strength": "0.45"
+            }
+        }
+    ],
+    "downloadUrl": "https://civitai.com/api/download/models/128713",
+    "creator": {
+        "username": "Lykon",
+        "image": "https://cdn.discordapp.com/avatars/180327464155742208/59254be18ccd627daf138d053327485d.png"
+    },
+    "extensions": {
+        "sd_civitai_helper": {
+            "version": "1.8.1",
+            "last_update": 1708940593,
+            "skeleton_file": false
+        }
+    }
+}

@@ -84,3 +84,10 @@ ComfyUI/user/**/logs/
 !ComfyUI/user/default/**
 ComfyUI/user/**/*.log
 ComfyUI/user/**/logs/
+
+# Exclude large model binary files inside workflow folders
+ComfyUI/user/**/*.bin
+ComfyUI/user/**/*.safetensors
+ComfyUI/user/**/*.ckpt
+ComfyUI/user/**/*.pth
+ComfyUI/user/**/*.pt

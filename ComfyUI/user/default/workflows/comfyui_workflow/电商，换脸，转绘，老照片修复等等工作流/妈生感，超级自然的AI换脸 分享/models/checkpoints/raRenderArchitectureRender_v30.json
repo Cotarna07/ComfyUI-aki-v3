@@ -1,0 +1,12 @@
+{
+    "description": "<!--\nIntroduction\n\nThis model is used to generate realistic architecture rendering works, with a focus on human perspective and a balance between bird's-eye and indoor performance.\n\nThe prompt word can be in the form of tag or natural language, but it is not recommended to input too long prompt words. Welcome to share your own works (with 5 \u2606).\n\n\n\nI don't know why my pictures uploaded are always missing generating data, you can down load it for the full generating information.\n\nRecommended Parameters:\n\nprompt:modern architecture style, photo realistic, hyper detailed photo, human perspective,\n\nnegative prompt:lowres, normal quality, worst quality, cropped, blurry, drawing, painting,\n\n\n\n\u8bf4\u660e\n\n\u672c\u6a21\u578b\u7528\u4e8e\u751f\u6210\u5404\u7c7b\u5efa\u7b51\u5199\u5b9e\u6e32\u67d3\u6548\u679c\uff0c\u4ee5\u4eba\u89c6\u6548\u679c\u4e3a\u4e3b\uff0c\u517c\u987e\u9e1f\u77b0\u4e0e\u5ba4\u5185\u7684\u8868\u73b0\u3002\n\n\u63d0\u793a\u8bcd\u4ee5tag\u5f62\u5f0f\u6216\u81ea\u7136\u8bed\u8a00\u5747\u53ef\uff0c\u4f46\u4e0d\u5efa\u8bae\u8f93\u5165\u592a\u957f\u7684\u63d0\u793a\u8bcd\u3002\u6b22\u8fce\u5206\u4eab\u4f5c\u54c1\u81ea\u5df1\u7684\u4f5c\u54c1\u2606\uff0c\n-->",
+    "notes": "<!--\nBased on the realistic model, increased universality of the model and noise offset has been added.\n-->",
+    "sd version": "SD1",
+    "extensions": {
+        "sd_civitai_helper": {
+            "version": "1.8.1",
+            "last_update": 1708941158,
+            "skeleton_file": false
+        }
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "description": "",
+    "notes": "",
+    "sd version": "Unknown",
+    "extensions": {
+        "sd_civitai_helper": {
+            "version": "1.8.1",
+            "last_update": 1708939087,
+            "skeleton_file": true
+        }
+    }
+}

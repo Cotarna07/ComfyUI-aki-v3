@@ -29,4 +29,10 @@ uv.lock
 !/user/default/**
 /user/**/*.log
 /user/**/logs/
+# Exclude large model binary files inside workflow folders
+/user/**/*.bin
+/user/**/*.safetensors
+/user/**/*.ckpt
+/user/**/*.pth
+/user/**/*.pt
 # End user/ rules

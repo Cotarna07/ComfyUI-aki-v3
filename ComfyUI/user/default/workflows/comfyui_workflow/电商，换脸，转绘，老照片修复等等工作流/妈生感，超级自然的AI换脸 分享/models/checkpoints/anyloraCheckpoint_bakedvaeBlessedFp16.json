@@ -1,0 +1,11 @@
+{
+    "description": "<!--\nAnyLoRAAdd a \u2764\ufe0f to receive future updates.\nDo you like what I do? Consider supporting me on Patreon \ud83c\udd7f\ufe0f or feel free to buy me a coffee \u2615\n\nFor LCM read the version description.\n\nAvailable on the following websites with GPU acceleration:\n\n* Sinkin.ai\n\nRemember to use the pruned version when training (less vram needed).\nAlso this is mostly for training on anime, drawings and cartoon.I made this model to ensure my future LoRA training is compatible with newer models, plus to get a model with a style neutral enough to get accurate styles with any style LoRA. Training on this model is much more effective compared to NAI, so at the end you might want to adjust the weight or offset (I suspect that's because NAI is now much diluted in newer models). I usually find good results at 0.65 weigth that I later offset to 1 (very easy to do with ComfyUI).\n\nThis is good for inference (again, especially with styles) even if I made it mainly for training. It ended up being super good for generating pics and it's now my go-to anime model. It also eats very little vram.\n\nGet the pruned versions for training, as they consume less VRAM. \n\nMake sure you use CLIP skip 2 and booru style tags when training.\n\nRemember to use a good vae when generating, or images wil look desaturated. Or just use the baked vae versions.\n-->",
+    "sd version": "SD1",
+    "extensions": {
+        "sd_civitai_helper": {
+            "version": "1.8.1",
+            "last_update": 1712681365,
+            "skeleton_file": false
+        }
+    }
+}

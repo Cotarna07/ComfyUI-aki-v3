@@ -1,0 +1,26 @@
+模型链接：
+kontext dev GGUF模型：https://huggingface.co/bullerwins/FLUX.1-Kontext-dev-GGUF/tree/main
+
+去衣lora模型：https://www.liblib.art/modelinfo/71f8009c97164f9db9bdcd00f3563dd0?from=search&versionUuid=6530a84312574449b01567ca46aa1359
+
+
+插件链接：
+
+
+提示词：
+lora提示词：remove clothes
+
+1：针对原图进行描述：
+Replace the woman's black and white clothes with a printed blue sleeveless dress. Ensure that the skirt naturally fits her body from the shoulder and waist positions. Keep the texture, texture, and details of the skirt unchanged. Maintain the appearance, features, and posture of the character unchanged. Keep the composition unchanged. Keep the background elements unchanged.
+给照片中的黑白色衣服的女人更换一件带有印花的蓝色无袖连衣裙。确保裙子从肩部和腰部位置自然贴合她的身体。保持裙子的质地、纹理和细节不变。保持角色的外观、特征和姿势不变。保持构图不变。保持背景元素不变。
+
+
+2：针对NSFW进行描述：
+Wear a printed blue sleeveless dress for a woman. Ensure that the skirt naturally fits her body from the shoulder and waist positions. Keep the texture, texture, and details of the skirt unchanged. Maintain the appearance, features, and posture of the character unchanged. Keep the composition unchanged. Keep the background elements unchanged.
+给照片中女人穿一件带有印花的蓝色无袖连衣裙。确保裙子从肩部和腰部位置自然贴合她的身体。保持裙子的质地、纹理和细节不变。保持角色的外观、特征和姿势不变。保持构图不变。保持背景元素不变。
+
+
+
+
+其他链接:
+如果有PPT请老师单独放在一个文件夹

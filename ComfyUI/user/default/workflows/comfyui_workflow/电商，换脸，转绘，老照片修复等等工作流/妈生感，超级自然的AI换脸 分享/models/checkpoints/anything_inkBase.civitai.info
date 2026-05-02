@@ -1,0 +1,408 @@
+{
+    "id": 90854,
+    "modelId": 9409,
+    "name": "ink_base",
+    "createdAt": "2023-06-07T05:23:48.984Z",
+    "updatedAt": "2024-01-12T06:15:18.293Z",
+    "status": "Published",
+    "publishedAt": "2023-06-07T05:51:00.432Z",
+    "trainedWords": [],
+    "trainingStatus": null,
+    "trainingDetails": null,
+    "baseModel": "SD 1.5",
+    "baseModelType": "Standard",
+    "earlyAccessTimeFrame": 0,
+    "description": "<!--\n\u8fd9\u6b21\u66f4\u65b0\u6a21\u578b\u662f\u4e3a\u4e86\u4ee3\u66ff\u8001\u65e7\u7684Anything3.0\u3002\n-->",
+    "stats": {
+        "downloadCount": 127474,
+        "ratingCount": 276,
+        "rating": 4.88
+    },
+    "model": {
+        "name": "Anything | \u4e07\u8c61\u7194\u7089",
+        "type": "Checkpoint",
+        "nsfw": false,
+        "poi": false,
+        "description": "<!--\n\u4e0d\u8981\u95ee\u4e3a\u4ec0\u4e48\u522b\u7684\u6a21\u578b\u80fd\u51fa\u8fd9\u4e2a\u6a21\u578b\u4e0d\u80fd\u51fa\uff0c\u6216\u8005\u4e3a\u4ec0\u4e48\u7ec6\u8282/\u753b\u9762\u4e0d\u4e30\u5bcc\u7cbe\u7f8e\uff0c\u4f60\u5148\u770b\u770b\u4f60\u5199\u6ca1\u5199\u6216\u8005\u5199\u4e86\u4ec0\u4e48\u5947\u602a\u7684\u4e1c\u897f\uff0c\u6ca1\u5199\u7684\u4e1c\u897f\u522b\u6307\u671b\u6a21\u578b\u7ed9\u4f60\u51fa\u56fe\u3002\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\n\nAnything-Inkhugging face:X779/Anything_ink \u00b7 Hugging Face\n\n1.\u539f\u6a21\u578b\u4f7f\u752860w+\u5f20\u57fa\u4e8enovelAI\u548cnijijourney\u751f\u6210\u7684\u56fe\u7247\u5728\u5355\u5f204090\u4e0a\u8bad\u7ec3\u7ea62\u4e2a\u6708\uff0c\u540e\u7eed\u901a\u8fc7\u4e00\u90e8\u5206\u201c\u9b54\u6cd5\u201d\u6b65\u9aa4\u5f97\u5230\u73b0\u5728\u6240\u770b\u5230\u7684ink\u6a21\u578b\n\n2.\u8bf7\u907f\u514d\u4f7f\u7528\u4f8b\u5982\u53ea\u6709\u201c1girl\u201d\u6b64\u7c7b\u7684\u63d0\u793a\u8bcd\uff0c\u6a21\u578b\u63d0\u793a\u8bcd\u51c6\u786e\u5ea6\u6781\u9ad8\uff0c\u5bf9\u4f7f\u7528\u8005\u7684prompt\u4e66\u5199\u80fd\u529b\u4f1a\u6709\u6240\u8981\u6c42\u3002prompt\u53ef\u4ee5\u53c2\u8003\uff1a\u5143\u7d20\u540c\u5178\uff1a\u786e\u5b9e\u4e0d\u5b8c\u5168\u79d1\u5b66\u7684\u9b54\u5bfc\u4e66\n\n3.\u672c\u6a21\u578b\u4e0d\u9002\u914dnovelAI\u76f8\u5173\u7684LoRA\u6a21\u578b\uff0c\u5f3a\u884c\u4f7f\u7528\u53ef\u80fd\u51fa\u53e4\u795e\u201c\u9b3c\u56fe\u201d\n\n4.\u4e0d\u5efa\u8bae\u4f7f\u7528\u4efb\u4f55\u5916\u7f6eVAE\uff0c\u5426\u5219\u5bb9\u6613\u51fa\u73b0\u56fe\u50cf\u5931\u771f\u6216\u8005\u201c\u9b3c\u56fe\u201d\n\n5.\u56e0\u4e3a\u6211\u8bad\u7ec3SDXL\u4ec5\u80fd\u5236\u4f5c\u5927\u53f7\u76841.5\uff0c\u9664\u4e86\u66f4\u5927\u7684\u4f53\u79ef\u548c\u66f4\u9ad8\u7684\u8fd0\u884c\u9700\u6c42\u5916\u5e76\u6ca1\u6709\u5f88\u5927\u7684\u63d0\u5347\uff0c\u751a\u81f3\u6548\u679c\u8fd8\u66f4\u5dee\uff0c\u6240\u4ee5\u76ee\u524d\u4e0d\u4f1a\u53d1\u5e03\u4efb\u4f55SDXL\u7684\u6a21\u578b\u3002\n\n*.\u8fd9\u4e2a\u6a21\u578b\u5355\u7eaf\u662f\u56e0\u4e3a\u6211\u5355\u72ec\u53d1\u51fa\u6765\u6ca1\u4eba\u770b\u5c31\u6807\u4e86\u4e2aanything\u7684\u540d\u79f0\u653e\u5230\u8fd9\u91cc\u4e86\n\n1. The original model was trained on a single 4090 for about 2 months using more than 600,000 images generated based on novelAI and NijiJourney, and then the ink model seen now was obtained through a part of \"magic\" steps.\n\n2.Please avoid using prompt words such as \"1girl\", the model prompt words are highly accurate, which will require the prompt writing ability of the user. The prompt writing can refer to the following document:\u5143\u7d20\u540c\u5178\uff1a\u786e\u5b9e\u4e0d\u5b8c\u5168\u79d1\u5b66\u7684\u9b54\u5bfc\u4e66\n\n3. This model is not suitable for LoRA model related to novelAI, and the forced use may result in \"ghost pictures\"\n\n\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\n\nLicense: Fair AI Public License 1.0-SD\n\u5f00\u6e90\u534f\u8bae\uff1aFair AI Public License 1.0-SD\n-->",
+        "tags": [
+            "anime",
+            "base model"
+        ],
+        "allowNoCredit": true,
+        "allowCommercialUse": "Sell",
+        "allowDerivatives": true,
+        "allowDifferentLicense": true
+    },
+    "files": [
+        {
+            "id": 62542,
+            "sizeKB": 2082642.642578125,
+            "name": "anything_inkBase.safetensors",
+            "type": "Model",
+            "metadata": {
+                "fp": "fp16",
+                "size": "full",
+                "format": "SafeTensor"
+            },
+            "pickleScanResult": "Success",
+            "pickleScanMessage": "No Pickle imports",
+            "virusScanResult": "Success",
+            "virusScanMessage": null,
+            "scannedAt": "2023-06-07T05:48:05.997Z",
+            "hashes": {
+                "AutoV1": "A45EB6E9",
+                "AutoV2": "A1535D0A42",
+                "SHA256": "A1535D0A42CE4F8822ED034C15AEFF62CC515836E388511D294645D11DB8C10D",
+                "CRC32": "96534BA3",
+                "BLAKE3": "CD0B52DC006ECF3D2218D2198D84CDD71D6B2F5960C0E535ED285AF9E5D74888"
+            },
+            "primary": true,
+            "downloadUrl": "https://civitai.com/api/download/models/90854"
+        }
+    ],
+    "images": [
+        {
+            "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/c38dc610-697c-4df3-9235-1b8ec89885bd/width=450/1058112.jpeg",
+            "nsfw": "None",
+            "width": 1024,
+            "height": 1536,
+            "hash": "UJJH:j?HQ,x]4msqMxbb~qxa-QRjjEob4:IU",
+            "type": "image",
+            "metadata": {
+                "hash": "UJJH:j?HQ,x]4msqMxbb~qxa-QRjjEob4:IU",
+                "width": 1024,
+                "height": 1536
+            },
+            "availability": "Public",
+            "meta": {
+                "Size": "512x768",
+                "seed": 529716395,
+                "Model": "YUNO BEST",
+                "steps": 25,
+                "hashes": {
+                    "model": "a1535d0a42"
+                },
+                "prompt": "([balloons:Small planets:0.5]:1.4), (Small_planets inside of balloons:1.4), (lots of colorful Small_planets:1.35)\n(colorful planets, earth, floating petals, big balloons:1.22),\n1 girl, cute face,\nFull body, sitting, detailed beautiful eyes, bare legs, costume combination, Goddess, perfect body, [nsfw:0.88]\n(sitting on ice_planet:1.22)\n(lots of [floting blue Butterflies:floting ice:0.4]:1.22)\n(detailed light), (an extremely delicate and beautiful), volume light, best shadow,cinematic lighting, Depth of field, dynamic angle, Oily skin,",
+                "Version": "v1.3.2-RC-1-gbaf6946e",
+                "sampler": "DPM++ SDE Karras",
+                "cfgScale": 7,
+                "Clip skip": "2",
+                "resources": [
+                    {
+                        "hash": "a1535d0a42",
+                        "name": "YUNO BEST",
+                        "type": "model"
+                    }
+                ],
+                "Model hash": "a1535d0a42",
+                "Hires upscale": "2",
+                "Hires upscaler": "R-ESRGAN 4x+ Anime6B",
+                "negativePrompt": "(worst quality, low quality, blurry:1.66), (bad hand:1.4), watermark, (greyscale:0.88), multiple limbs, (deformed fingers, bad fingers:1.2), (ugly:1.3), monochrome, horror, geometry, bad anatomy, bad limbs, (Blurry pupil), (bad shading), error, bad composition, Extra fingers, strange fingers, Extra ears, extra leg, bad leg, disability, Blurry eyes, bad eyes, Twisted body, confusion, (bad legs:1.3)",
+                "Denoising strength": "0.5"
+            }
+        },
+        {
+            "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/e87013fb-2818-4e04-9fbd-64ee260265fc/width=450/1652942.jpeg",
+            "nsfw": "None",
+            "width": 4263,
+            "height": 5592,
+            "hash": "U7IhNz?300~9.7Mor|9HRY_1_1M{^Y?a0JM_",
+            "type": "image",
+            "metadata": {
+                "hash": "U7IhNz?300~9.7Mor|9HRY_1_1M{^Y?a0JM_",
+                "width": 4263,
+                "height": 5592
+            },
+            "availability": "Public",
+            "meta": null
+        },
+        {
+            "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/434cd3e0-187d-465b-a8ea-26f09f7c6eab/width=450/2358011.jpeg",
+            "nsfw": "Mature",
+            "width": 512,
+            "height": 768,
+            "hash": "UBLMxKi^00-;S#ogEfI.00$Q~qNG}uS2weEK",
+            "type": "image",
+            "metadata": {
+                "hash": "UBLMxKi^00-;S#ogEfI.00$Q~qNG}uS2weEK",
+                "size": 504257,
+                "width": 512,
+                "height": 768
+            },
+            "availability": "Public",
+            "meta": {
+                "ENSD": "31337",
+                "Size": "512x768",
+                "seed": 3471347502,
+                "Model": "Anything-ink",
+                "steps": 20,
+                "hashes": {
+                    "model": "a1535d0a42"
+                },
+                "prompt": "(flat color),(colorful:1.1),(masterpiece:1.2),best quality, masterpiece, highres, original, extremely detailed 8k cg wallpaper,\n(Fantasy style), no clothes, wide shot, sheer dress,\nautumn plant, autumn leaves,\n(colorful:1.3),\n[ (\n(((no hair,simple hair))), (head is covered by flowers and blossom:1.2025), high quality,flowers and blossom with body , flowers around head,[(simple flowers hair):blossom:0.7], light particles, black background, ((head surrounded by flower)),(((head surrounded by colorful petals and blossoms))), looking at side,(original:1.1025), diffusion lighting, abstract,\n),\ndream of flowers, in a flowery bed, waiting for the next spring,\n(((body covered by flowers and blossom))),\n(colorful hair),(high saturation),(hair surrounded by petals splashes),(hair surrounded by colorful dot),\n:\n(\n(((no hair,simple hair))),\n((she is in a flower blossom stetch to the edge of screen)),\n(blossoms on head, blossoms with body:1.2),\n(petals and blossoms_print_on_head:1.35),\n((detailed flowery meadow with petals and blossoms on head):1.2), (flowers filled the screen),\n):0.5]\n(white underwear:1.3), (white brassiere:1.3), (White socks:1.555)",
+                "Version": "v1.6.0",
+                "sampler": "Euler a",
+                "cfgScale": 5,
+                "clipSkip": 2,
+                "resources": [
+                    {
+                        "hash": "a1535d0a42",
+                        "name": "Anything-ink",
+                        "type": "model"
+                    }
+                ],
+                "Model hash": "a1535d0a42",
+                "negativePrompt": "(bad and mutated hands:1.2), ,(bad anatomy, paintings, sketches, worst quality, low quality, normal quality, lowres,:1.2)"
+            }
+        },
+        {
+            "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/9098a383-5b0f-42c8-89d5-3c02b4655ff1/width=450/1662197.jpeg",
+            "nsfw": "None",
+            "width": 4928,
+            "height": 3838,
+            "hash": "UCJtuU?cQ;x?#5$x%LVaxKDj}[%KpCx0$dR-",
+            "type": "image",
+            "metadata": {
+                "hash": "UCJtuU?cQ;x?#5$x%LVaxKDj}[%KpCx0$dR-",
+                "width": 4928,
+                "height": 3838
+            },
+            "availability": "Public",
+            "meta": null
+        },
+        {
+            "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/e241170a-106d-425e-955b-d24d9a66c9b3/width=450/1664688.jpeg",
+            "nsfw": "None",
+            "width": 1024,
+            "height": 1536,
+            "hash": "UBI#Jz-;4m$j8w~WEfju00WA-;%M%Mr@^+tR",
+            "type": "image",
+            "metadata": {
+                "hash": "UBI#Jz-;4m$j8w~WEfju00WA-;%M%Mr@^+tR",
+                "width": 1024,
+                "height": 1536
+            },
+            "availability": "Public",
+            "meta": {
+                "ENSD": "31337",
+                "Size": "512x768",
+                "seed": 1573347102,
+                "Model": "Anything-ink",
+                "steps": 20,
+                "hashes": {
+                    "model": "a1535d0a42"
+                },
+                "prompt": "(flat color),(colorful:1.1),(masterpiece:1.2),best quality, masterpiece, highres, original, extremely detailed 8k cg wallpaper,\n(Fantasy style), no clothes, wide shot, sheer dress,\nautumn plant, autumn leaves,\n(colorful:1.3),\n[ (\n(((no hair,simple hair))), (head is covered by flowers and blossom:1.2025), high quality,flowers and blossom with body , flowers around head,[(simple flowers hair):blossom:0.7], light particles, black background, ((head surrounded by flower)),(((head surrounded by colorful petals and blossoms))), looking at side,(original:1.1025), diffusion lighting, abstract,\n),\ndream of flowers, in a flowery bed, waiting for the next spring,\n(((body covered by flowers and blossom))),\n(colorful hair),(high saturation),(hair surrounded by petals splashes),(hair surrounded by colorful dot),\n:\n(\n(((no hair,simple hair))),\n((she is in a flower blossom stetch to the edge of screen)),\n(blossoms on head, blossoms with body:1.2),\n(petals and blossoms_print_on_head:1.35),\n((detailed flowery meadow with petals and blossoms on head):1.2), (flowers filled the screen),\n):0.5]",
+                "Version": "v1.5.0-RC-13-g23c947ab",
+                "sampler": "Euler a",
+                "cfgScale": 5,
+                "clipSkip": 2,
+                "resources": [
+                    {
+                        "hash": "a1535d0a42",
+                        "name": "Anything-ink",
+                        "type": "model"
+                    }
+                ],
+                "Model hash": "a1535d0a42",
+                "Hires upscale": "2",
+                "Hires upscaler": "Latent",
+                "negativePrompt": "(bad and mutated hands:1.2), ,(bad anatomy, paintings, sketches, worst quality, low quality, normal quality, lowres,:1.2)",
+                "Denoising strength": "0.5",
+                "Token merging ratio": "0.5",
+                "Token merging ratio hr": "0.4"
+            }
+        },
+        {
+            "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/c1405c81-bdd0-4996-9877-fb68790d24f2/width=450/1638925.jpeg",
+            "nsfw": "None",
+            "width": 1280,
+            "height": 1840,
+            "hash": "UXI}hn~qELM{_3-pt7t8NcjtaKay%NR*M{s:",
+            "type": "image",
+            "metadata": {
+                "hash": "UXI}hn~qELM{_3-pt7t8NcjtaKay%NR*M{s:",
+                "width": 1280,
+                "height": 1840
+            },
+            "availability": "Public",
+            "meta": {
+                "ENSD": "31337",
+                "Size": "640x920",
+                "seed": 3720829924,
+                "Model": "Anything-V3.2++[ink]",
+                "steps": 30,
+                "hashes": {
+                    "model": "a1535d0a42"
+                },
+                "prompt": "Brilliant light and shadow,Back lit,1girl, side blunt bangs,hairs between eyes,Red eyes,delicate face, ribbons,White Dress, bowties, buttons, bare shoulders,Detached Sleeve,(small breast), ((breeze)), Flying splashes,wind,Long flowing hair,(Broken glass),Grey hair,The flying water,Hair covering your body,The flying red ribbon,\n(Ink painting style),\n[:(Delicate arms and hands):0.8]",
+                "Version": "v1.5.0-RC-13-g23c947ab",
+                "sampler": "Euler a",
+                "cfgScale": 6.5,
+                "clipSkip": 2,
+                "resources": [
+                    {
+                        "hash": "a1535d0a42",
+                        "name": "Anything-V3.2++[ink]",
+                        "type": "model"
+                    }
+                ],
+                "Model hash": "a1535d0a42",
+                "Hires upscale": "2",
+                "Hires upscaler": "R-ESRGAN 4x+ Anime6B",
+                "negativePrompt": "(mutated hands and fingers:1.5 ),(mutation, poorly drawn :1.2), (long body :1.3), (mutation, poorly drawn :1.2) , liquid body, text font ui, long neck, uncoordinated body,fused ears,huge breasts,((((ugly)))),one hand with more than 5 fingers, one hand with less than 5 fingers",
+                "Denoising strength": "0.7"
+            }
+        },
+        {
+            "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/dc245951-bbca-4f9b-9f45-99551a31ca2d/width=450/1311891.jpeg",
+            "nsfw": "None",
+            "width": 1600,
+            "height": 896,
+            "hash": "UAGHSV_4s;0M01IUxa=|V?M{EL%1AdT0%1E2",
+            "type": "image",
+            "metadata": {
+                "hash": "UAGHSV_4s;0M01IUxa=|V?M{EL%1AdT0%1E2",
+                "width": 1600,
+                "height": 896
+            },
+            "availability": "Public",
+            "meta": null
+        },
+        {
+            "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/6a2be358-6102-4d51-b361-fa593e023cea/width=450/1058110.jpeg",
+            "nsfw": "None",
+            "width": 1920,
+            "height": 1280,
+            "hash": "UXIX,Vs*4TR;?dR.RjNE_2IoN3ohtQWBslR%",
+            "type": "image",
+            "metadata": {
+                "hash": "UXIX,Vs*4TR;?dR.RjNE_2IoN3ohtQWBslR%",
+                "width": 1920,
+                "height": 1280
+            },
+            "availability": "Public",
+            "meta": {
+                "Size": "960x640",
+                "seed": 76390644,
+                "Model": "YUNO BEST",
+                "steps": 50,
+                "hashes": {
+                    "model": "a1535d0a42"
+                },
+                "prompt": "(((masterpiece))),(((best quality))),(((extremely detailed))),\nchromatic aberration abuse,pastel color,\nDepth of field,\nfield,garden of the sun,shiny,water,river,stone,green hill zone,Purple tint,(Purple fog:1.3)",
+                "Version": "v1.3.2-RC-1-gbaf6946e",
+                "sampler": "DPM++ 2M Karras",
+                "cfgScale": 10,
+                "Clip skip": "2",
+                "resources": [
+                    {
+                        "hash": "a1535d0a42",
+                        "name": "YUNO BEST",
+                        "type": "model"
+                    }
+                ],
+                "Model hash": "a1535d0a42",
+                "Hires steps": "25",
+                "Hires upscale": "2",
+                "Hires upscaler": "Latent (bicubic antialiased)",
+                "negativePrompt": "EasyNegative,nsfw,watermark,username,lowres,bad anatomy,bad hands,text,error,missing fingers,extra digit,fewer digits,cropped,worst quality,low quality,normal quality,jpeg artifacts,signature,watermark,username,blurry,",
+                "Denoising strength": "0.55"
+            }
+        },
+        {
+            "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/1b608438-18cc-4cb8-928b-8f2b930506d6/width=450/1058115.jpeg",
+            "nsfw": "None",
+            "width": 2072,
+            "height": 1376,
+            "hash": "UNEf4;%M58oM_4s.aJj]0LNG=rj?4oR.kWoJ",
+            "type": "image",
+            "metadata": {
+                "hash": "UNEf4;%M58oM_4s.aJj]0LNG=rj?4oR.kWoJ",
+                "width": 2072,
+                "height": 1376
+            },
+            "availability": "Public",
+            "meta": {
+                "Size": "768x512",
+                "seed": 999468853,
+                "Model": "YUNO BEST",
+                "steps": 20,
+                "hashes": {
+                    "model": "a1535d0a42"
+                },
+                "prompt": "masterpiece, best quality, landscape, no humans, from above, over cloud  sea,oil painting \\(medium\\) fake sky,(multiple fake stars falling from  sky),floating star shape falling down,broken ground,(There is a kingdom  on an island that floats in the air with a mechanical power plant:1.3)",
+                "Version": "v1.3.2-RC-1-gbaf6946e",
+                "sampler": "DPM++ SDE",
+                "cfgScale": 8,
+                "Clip skip": "2",
+                "resources": [
+                    {
+                        "hash": "a1535d0a42",
+                        "name": "YUNO BEST",
+                        "type": "model"
+                    }
+                ],
+                "Model hash": "a1535d0a42",
+                "Hires steps": "20",
+                "Hires upscale": "2.7",
+                "Hires upscaler": "Latent (bicubic antialiased)",
+                "negativePrompt": "(low quality, worst quality:1.4), (bad anatoalchemistmy), (inaccurate  limb:1.2),bad composition, inaccurate eyes, extra digit,fewer  digits,(extra arms:1.2)",
+                "Denoising strength": "0.55"
+            }
+        },
+        {
+            "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/4f241130-836a-41cb-8007-431473024b16/width=450/1058107.jpeg",
+            "nsfw": "None",
+            "width": 1224,
+            "height": 2760,
+            "hash": "U9EV,8by00WX00s-~9NG+pjDoO%N~qITRkxu",
+            "type": "image",
+            "metadata": {
+                "hash": "U9EV,8by00WX00s-~9NG+pjDoO%N~qITRkxu",
+                "width": 1224,
+                "height": 2760
+            },
+            "availability": "Public",
+            "meta": {
+                "Size": "512x1152",
+                "seed": 1025381640,
+                "Model": "YUNO BEST",
+                "steps": 20,
+                "hashes": {
+                    "model": "a1535d0a42"
+                },
+                "prompt": "masterpiece, best quality, landscape, no humans, sadness,oil painting \\(medium\\) fake sky,(multiple fake stars falling from sky:1.2),floating star shape falling down,broken ground",
+                "Version": "v1.3.2-RC-1-gbaf6946e",
+                "sampler": "DPM++ SDE",
+                "cfgScale": 8,
+                "Clip skip": "2",
+                "resources": [
+                    {
+                        "hash": "a1535d0a42",
+                        "name": "YUNO BEST",
+                        "type": "model"
+                    }
+                ],
+                "Model hash": "a1535d0a42",
+                "Hires steps": "20",
+                "Hires upscale": "2.4",
+                "Hires upscaler": "Latent (bicubic antialiased)",
+                "negativePrompt": "(low quality, worst quality:1.4), (bad anatoalchemistmy), (inaccurate limb:1.2),bad composition, inaccurate eyes, extra digit,fewer digits,(extra arms:1.2),belly",
+                "Denoising strength": "0.6"
+            }
+        }
+    ],
+    "downloadUrl": "https://civitai.com/api/download/models/90854",
+    "creator": {
+        "username": "Yuno779",
+        "image": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/c2b9c4e0-c227-4d50-99b3-f8479dd2020f/width=96/Yuno779.jpeg"
+    },
+    "extensions": {
+        "sd_civitai_helper": {
+            "version": "1.8.1",
+            "last_update": 1708940489,
+            "skeleton_file": false
+        }
+    }
+}

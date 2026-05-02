@@ -1,0 +1,9 @@
+需要魔法上网：
+
+所有SD3.5的模型下载链接：https://docs.google.com/document/d/1bmMLB9PFDMgWjRmdkFW7ho8z-GA8wUbnd1I0AvFOdoo/edit?pli=1&tab=t.0
+
+Stable Diffusion 3.5 Medium 更小更快！今天我将向您介绍如何在 ComfyUI 上使用 SD3.5 Medium。它的工作流程与我们前几天看到的大型模型几乎相同，只是要添加一个额外的节点，这将有助于解决解剖畸形问题。考虑到它是一个 2.5B 模型，这意味着更快的生成时间，这绝对是我认为开源社区会喜欢的训练模型！在此处获取模型和工作流程https://huggingface.co/stabilityai/stable-diffusion-3.5-medium/tree/main
+
+包括文本编码器的模型https://huggingface.co/Comfy-Org/stable-diffusion-3.5-fp8/tree/main
+
+所有 SD3.5 模型的列表https://docs.google.com/document/d/1bmMLB9PFDMgWjRmdkFW7ho8z-GA8wUbnd1I0AvFOdoo/edit?pli=1&tab=t.0

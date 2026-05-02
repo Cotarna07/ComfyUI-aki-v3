@@ -1,0 +1,25 @@
+PREPROCESSOR:
+  - TYPE: repainting
+    REPAINTING_SCALE: 1.0
+    ANNOTATOR:
+  - TYPE: no_preprocess
+    REPAINTING_SCALE: 0.0
+    ANNOTATOR:
+  - TYPE: contour_repainting
+    REPAINTING_SCALE: 0.0
+    ANNOTATOR:
+      NAME: InfoDrawContourAnnotator
+      INPUT_NC: 3
+      OUTPUT_NC: 1
+      N_RESIDUAL_BLOCKS: 3
+      SIGMOID: True
+      PRETRAINED_MODEL: "E:/ComfyUI-aki-e1205/custom_nodes/ComfyUI-ACE_Plus/ckpt/informative_drawing_contour_style.pth"
+  - TYPE: depth_repainting
+    REPAINTING_SCALE: 0.0
+    ANNOTATOR:
+      NAME: MidasDetector
+      PRETRAINED_MODEL: "E:/ComfyUI-aki-e1205/custom_nodes/ComfyUI-ACE_Plus/ckpt/dpt_hybrid-midas-501f0c75.pt"
+  - TYPE: recolorizing
+    REPAINTING_SCALE: 0.0
+    ANNOTATOR:
+      NAME: GrayAnnotator

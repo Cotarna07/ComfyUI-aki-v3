@@ -1,0 +1,11 @@
+{
+    "description": "<!--\nThere's no good pixar disney looking cartoon model yet so i decided to make one. This is a merge of Pixar Style Model with my own Loras to create a generic 3d looking western cartoon. In the examples I Use hires. fix, upscale latent, denoising 0.5, hires steps 20, upscale by 2 . Clip skip 2 . I will upload more variants of this in the future\n\n\n\nYou need to use VAE or the color become pale and gray\n\n\n\nif you like the models, please consider supporting me on, i will continue to upload more cool stuffs in the future\n\n\nhttps://www.patreon.com/PromptSharingSamaritan\n\n\nhttps://ko-fi.com/promptsharingsamaritan\n-->",
+    "sd version": "SD1",
+    "extensions": {
+        "sd_civitai_helper": {
+            "version": "1.8.1",
+            "last_update": 1708939057,
+            "skeleton_file": false
+        }
+    }
+}
