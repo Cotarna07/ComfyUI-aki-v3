@@ -1,0 +1,74 @@
+[run]
+name = "overnight-lmstudio-comfyui"
+output_dir = "runtime"
+fixed_instruction = """
+你是 ComfyUI 提示词工程师。请根据同一个测试场景生成 Stable Diffusion / Flux 可用的提示词。
+
+测试场景：一位独立创作者在夜晚工作室中整理影像素材，画面要有电影感、真实摄影质感、清晰主体、自然光影和可用于封面图的构图。
+
+只输出 JSON，不要解释：
+{
+  "positive_prompt": "英文正面提示词，逗号分隔，包含主体、环境、构图、光线、镜头、风格、质量词",
+  "negative_prompt": "英文负面提示词，逗号分隔，包含低质量、畸形、文字、水印、噪点等排除项",
+  "notes": "中文简短说明，不超过 80 字"
+}
+"""
+
+[lmstudio]
+base_url = "http://localhost:1234/v1"
+api_key = "lm-studio"
+request_timeout_sec = 240
+retries = 2
+retry_sleep_sec = 8
+
+# 留空时会尝试调用 /models 自动发现；建议过夜测评时显式填写，避免模型列表变化。
+models = [
+  "model-a",
+  "model-b"
+]
+
+[[parameters]]
+temperature = 0.4
+top_p = 0.9
+max_tokens = 512
+
+[[parameters]]
+temperature = 0.7
+top_p = 0.95
+max_tokens = 512
+
+[[parameters]]
+temperature = 1.0
+top_p = 0.95
+max_tokens = 512
+
+[quality]
+min_positive_chars = 160
+min_negative_chars = 60
+required_positive_terms = ["cinematic", "lighting"]
+required_negative_terms = ["watermark", "text"]
+penalize_non_english_prompt = true
+
+[comfyui]
+enabled = true
+base_url = "http://127.0.0.1:8188"
+workflow_path = "agent-skills/comfyui/workflows/api/prompt_benchmark_workflow.json"
+client_id = "lmstudio-comfyui-benchmark"
+poll_interval_sec = 3
+prompt_timeout_sec = 1800
+retries = 1
+
+# workflow JSON 中要替换的输入路径。格式为 "<node_id>.inputs.<field>"。
+positive_prompt_path = "6.inputs.text"
+negative_prompt_path = "7.inputs.text"
+
+# 可选：为所有出图任务固定基础参数，确保只比较提示词差异。
+[comfyui.overrides]
+"3.inputs.seed" = 123456789
+"3.inputs.steps" = 28
+"3.inputs.cfg" = 5.5
+"3.inputs.sampler_name" = "euler"
+"3.inputs.scheduler" = "normal"
+"5.inputs.width" = 1024
+"5.inputs.height" = 1024
+
