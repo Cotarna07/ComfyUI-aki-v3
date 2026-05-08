@@ -68,8 +68,9 @@
         "source_url":  "https://github.com/1038lab/ComfyUI-DeepSeek-OCR.git",
         "category":  "ocr",
         "cloned_commit":  "3c7f9aa1af6e7ad7e44ecf22b61cfbd4c4fa31d7",
-        "local_path":  "d:\\ComfyUI-aki-v3\\agent-projects\\manga-pipeline-reference\\resources\\reference-projects\\ComfyUI-DeepSeek-OCR",
-        "git_removed":  true
+        "local_path":  "D:\\ComfyUI-aki-v3\\agent-projects\\manga-pipeline-reference\\resources\\reference-projects\\ComfyUI-DeepSeek-OCR",
+        "git_removed":  true,
+        "refreshed_at":  "2026-05-08T22:10:51"
     },
     {
         "name":  "MangaPanelizer",

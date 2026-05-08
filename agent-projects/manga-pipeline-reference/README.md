@@ -11,6 +11,8 @@
 
 ## 当前结构
 
+- `scripts/`
+  存放项目维护脚本，例如第三方参考仓库的一键刷新脚本。
 - `resources/reference-projects/`
   存放已拉取的第三方参考仓库源码副本。
 - `resources/reference-projects/manifest.json`
@@ -52,3 +54,35 @@
 1. 先看 `docs/2026-05-08_资源索引.md`，确定每个开发阶段优先参考哪一类仓库。
 2. 需要核对某个仓库的来源和拉取版本时，查 `resources/reference-projects/manifest.json`。
 3. 需要找示例 workflow、examples 或 sample layouts 时，优先从已归档的第三方目录中直接查看，不要重新全网检索。
+
+## 一键刷新第三方仓库
+
+已提供维护脚本：
+
+- `scripts/refresh_reference_projects.ps1`
+
+脚本行为：
+
+1. 以 `resources/reference-projects/manifest.json` 为来源清单。
+2. 重新从每个 `source_url` 拉取最新浅克隆。
+3. 用新内容覆盖本地参考目录。
+4. 删除各参考目录中的 `.git`，继续保持只由根仓库统一管理。
+5. 更新 `manifest.json` 中的 `cloned_commit` 和 `refreshed_at`。
+
+刷新全部参考仓库：
+
+```powershell
+& .\agent-projects\manga-pipeline-reference\scripts\refresh_reference_projects.ps1
+```
+
+只刷新指定仓库：
+
+```powershell
+& .\agent-projects\manga-pipeline-reference\scripts\refresh_reference_projects.ps1 -Name ComfyUI-QwenVL,ComfyUI-Florence2
+```
+
+保留临时克隆目录便于排查：
+
+```powershell
+& .\agent-projects\manga-pipeline-reference\scripts\refresh_reference_projects.ps1 -KeepTemp
+```
