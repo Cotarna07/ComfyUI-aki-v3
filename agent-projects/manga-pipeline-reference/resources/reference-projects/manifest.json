@@ -1,0 +1,98 @@
+﻿[
+    {
+        "name":  "comfyui_panels",
+        "source_url":  "https://github.com/bmad4ever/comfyui_panels.git",
+        "category":  "panel_cutting",
+        "cloned_commit":  "8a3f158a0190239858211c4de8d0a5c722a5cb15",
+        "local_path":  "d:\\ComfyUI-aki-v3\\agent-projects\\manga-pipeline-reference\\resources\\reference-projects\\comfyui_panels",
+        "git_removed":  true
+    },
+    {
+        "name":  "ComfyUI-Florence2",
+        "source_url":  "https://github.com/kijai/ComfyUI-Florence2.git",
+        "category":  "panel_understanding",
+        "cloned_commit":  "9ece3de914214c5f581d725167bc9d0eeb0d1120",
+        "local_path":  "d:\\ComfyUI-aki-v3\\agent-projects\\manga-pipeline-reference\\resources\\reference-projects\\ComfyUI-Florence2",
+        "git_removed":  true
+    },
+    {
+        "name":  "ComfyUI-QwenVL",
+        "source_url":  "https://github.com/1038lab/ComfyUI-QwenVL.git",
+        "category":  "story_reranking",
+        "cloned_commit":  "fcd1ada87a28f922cb887f779db32429f78a022c",
+        "local_path":  "d:\\ComfyUI-aki-v3\\agent-projects\\manga-pipeline-reference\\resources\\reference-projects\\ComfyUI-QwenVL",
+        "git_removed":  true
+    },
+    {
+        "name":  "ComfyUI_FaceAnalysis",
+        "source_url":  "https://github.com/cubiq/ComfyUI_FaceAnalysis.git",
+        "category":  "character_matching",
+        "cloned_commit":  "8846653446a6b13582da11793faf950325a398e0",
+        "local_path":  "d:\\ComfyUI-aki-v3\\agent-projects\\manga-pipeline-reference\\resources\\reference-projects\\ComfyUI_FaceAnalysis",
+        "git_removed":  true
+    },
+    {
+        "name":  "ComfyUI_InstantID",
+        "source_url":  "https://github.com/cubiq/ComfyUI_InstantID.git",
+        "category":  "identity_generation",
+        "cloned_commit":  "72495e806bc2ab9c41581e15ccaa1bcf83c477e8",
+        "local_path":  "d:\\ComfyUI-aki-v3\\agent-projects\\manga-pipeline-reference\\resources\\reference-projects\\ComfyUI_InstantID",
+        "git_removed":  true
+    },
+    {
+        "name":  "ComfyUI_IPAdapter_plus",
+        "source_url":  "https://github.com/cubiq/ComfyUI_IPAdapter_plus.git",
+        "category":  "identity_generation",
+        "cloned_commit":  "a0f451a5113cf9becb0847b92884cb10cbdec0ef",
+        "local_path":  "d:\\ComfyUI-aki-v3\\agent-projects\\manga-pipeline-reference\\resources\\reference-projects\\ComfyUI_IPAdapter_plus",
+        "git_removed":  true
+    },
+    {
+        "name":  "Comfyui-ocr",
+        "source_url":  "https://github.com/VexMare/Comfyui-ocr.git",
+        "category":  "ocr",
+        "cloned_commit":  "ab1131084a949988e7d30fe02f148f076d0e38d2",
+        "local_path":  "d:\\ComfyUI-aki-v3\\agent-projects\\manga-pipeline-reference\\resources\\reference-projects\\Comfyui-ocr",
+        "git_removed":  true
+    },
+    {
+        "name":  "ComfyUI-PaddleOCR",
+        "source_url":  "https://github.com/kaili-yang/ComfyUI-PaddleOCR.git",
+        "category":  "ocr",
+        "cloned_commit":  "eef80ec68ef7f42c483a01438f464e48617987b3",
+        "local_path":  "d:\\ComfyUI-aki-v3\\agent-projects\\manga-pipeline-reference\\resources\\reference-projects\\ComfyUI-PaddleOCR",
+        "git_removed":  true
+    },
+    {
+        "name":  "ComfyUI-DeepSeek-OCR",
+        "source_url":  "https://github.com/1038lab/ComfyUI-DeepSeek-OCR.git",
+        "category":  "ocr",
+        "cloned_commit":  "3c7f9aa1af6e7ad7e44ecf22b61cfbd4c4fa31d7",
+        "local_path":  "d:\\ComfyUI-aki-v3\\agent-projects\\manga-pipeline-reference\\resources\\reference-projects\\ComfyUI-DeepSeek-OCR",
+        "git_removed":  true
+    },
+    {
+        "name":  "MangaPanelizer",
+        "source_url":  "https://github.com/futurediffusion/MangaPanelizer.git",
+        "category":  "panel_cutting_alt",
+        "cloned_commit":  "ad09f94ff0165a7a8962041393bdcd140dad54d9",
+        "local_path":  "d:\\ComfyUI-aki-v3\\agent-projects\\manga-pipeline-reference\\resources\\reference-projects\\MangaPanelizer",
+        "git_removed":  true
+    },
+    {
+        "name":  "manga-panel-segmentation",
+        "source_url":  "https://github.com/7sumona02/manga-panel-segmentation.git",
+        "category":  "panel_cutting_research",
+        "cloned_commit":  "17d4c65b947c4e2f0130ed2dec557e6f2603498f",
+        "local_path":  "d:\\ComfyUI-aki-v3\\agent-projects\\manga-pipeline-reference\\resources\\reference-projects\\manga-panel-segmentation",
+        "git_removed":  true
+    },
+    {
+        "name":  "Manga-Panels-Segmentation",
+        "source_url":  "https://github.com/R1sedge/Manga-Panels-Segmentation.git",
+        "category":  "panel_cutting_research",
+        "cloned_commit":  "2a37c05870afb90e73e590da9c7223cd8b45252a",
+        "local_path":  "d:\\ComfyUI-aki-v3\\agent-projects\\manga-pipeline-reference\\resources\\reference-projects\\Manga-Panels-Segmentation",
+        "git_removed":  true
+    }
+]
