@@ -95,5 +95,21 @@
         "cloned_commit":  "2a37c05870afb90e73e590da9c7223cd8b45252a",
         "local_path":  "d:\\ComfyUI-aki-v3\\agent-projects\\manga-pipeline-reference\\resources\\reference-projects\\Manga-Panels-Segmentation",
         "git_removed":  true
+    },
+    {
+        "name":  "DeepPanel",
+        "source_url":  "https://github.com/pedrovgs/DeepPanel.git",
+        "category":  "panel_detection_dl",
+        "cloned_commit":  "02082771afce30da74412e9cfe6ac854e5f53b28",
+        "local_path":  "d:\\ComfyUI-aki-v3\\agent-projects\\manga-pipeline-reference\\resources\\reference-projects\\DeepPanel",
+        "git_removed":  true
+    },
+    {
+        "name":  "Manga-Panel-Extractor",
+        "source_url":  "https://github.com/adenzu/Manga-Panel-Extractor.git",
+        "category":  "panel_detection_cv",
+        "cloned_commit":  "014d8a56d1dcecbd3ed31ca7674f3a60990b0a17",
+        "local_path":  "d:\\ComfyUI-aki-v3\\agent-projects\\manga-pipeline-reference\\resources\\reference-projects\\Manga-Panel-Extractor",
+        "git_removed":  true
     }
 ]

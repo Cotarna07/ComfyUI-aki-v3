@@ -38,3 +38,23 @@
 **/.DS_Store
 **/Thumbs.db
 **/.vscode/
+
+# Model weight files (reference copies should not bloat the repo).
+*.pt
+*.pth
+*.h5
+*.pb
+*.ckpt
+*.weights
+*.safetensors
+*.onnx
+
+# Reference project static images (workflow diagrams, samples, screenshots).
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+*.webp
+*.svg
+*.ico
