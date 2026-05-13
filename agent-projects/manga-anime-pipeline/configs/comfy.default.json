@@ -1,0 +1,18 @@
+{
+  "comfy": {
+    "server": "http://127.0.0.1:8188",
+    "timeout_seconds": 60,
+    "poll_interval_seconds": 3,
+    "max_retries": 1,
+    "dry_run": false
+  },
+  "workflow_templates": {
+    "establish_scene": "configs/comfy_workflows/establish_scene.json",
+    "dialogue_light_motion": "configs/comfy_workflows/dialogue_light_motion.json",
+    "dialogue_heavy_expression": "configs/comfy_workflows/dialogue_heavy_expression.json",
+    "action_performance": "configs/comfy_workflows/action_performance.json",
+    "transition_atmosphere": "configs/comfy_workflows/transition_atmosphere.json",
+    "repair_only": "configs/comfy_workflows/repair_only.json",
+    "skip": null
+  }
+}

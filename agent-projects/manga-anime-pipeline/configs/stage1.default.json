@@ -1,0 +1,10 @@
+{
+  "window_height": 1200,
+  "overlap": 160,
+  "providers": {
+    "ocr": "mock",
+    "dialogue": "mock",
+    "detection": "mock",
+    "director": "mock"
+  }
+}

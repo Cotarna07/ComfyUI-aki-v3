@@ -1,0 +1,22 @@
+{
+  "providers": {
+    "ocr": "paddleocr",
+    "dialogue": "ocr_based",
+    "detection": "lightweight",
+    "director": "mock"
+  },
+  "dialogue": {
+    "ocr_based": {
+      "min_confidence": 0.3,
+      "max_merge_distance": 48,
+      "min_text_length": 1
+    }
+  },
+  "detection": {
+    "lightweight": {
+      "min_crop_score": 0.2,
+      "avoid_text_overlap": true,
+      "center_crop_ratios": [0.75, 0.9, 1.0]
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "providers": {
+    "ocr": "paddleocr",
+    "dialogue": "mock",
+    "detection": "mock",
+    "director": "mock"
+  }
+}
