@@ -22,7 +22,10 @@ from urllib.parse import urlparse
 CHUNK_SIZE = 4 * 1024 * 1024
 USER_AGENT = 'ComfyUI-Civitai-Downloader/2.0'
 TOKEN_ENV_NAMES = ('CIVITAI_API_TOKEN', 'CIVITAI_TOKEN')
-CIVITAI_API_ROOT = 'https://civitai.com/api/v1'
+CIVITAI_API_ROOTS = (
+    'https://civitai.com/api/v1',
+    'https://civitai.red/api/v1',
+)
 CIVITAI_DOWNLOAD_ROOT = 'https://civitai.com/api/download/models'
 LEGACY_TOKEN_FILE = Path.home() / '.civitai' / 'config'
 USER_CONFIG_FILE = Path.home() / '.civitai' / 'downloader.json'
@@ -373,6 +376,38 @@ def request_json(url: str, settings: Settings) -> dict[str, Any]:
     return json.loads(payload.decode('utf-8'))
 
 
+def preferred_api_root_for_ref(ref: str) -> str | None:
+    parsed = urlparse(ref.strip())
+    if not parsed.scheme or not parsed.netloc:
+        return None
+    host = parsed.netloc.lower()
+    if 'civitai.red' in host:
+        return CIVITAI_API_ROOTS[1]
+    if 'civitai.com' in host:
+        return CIVITAI_API_ROOTS[0]
+    return None
+
+
+def request_api_json(path: str, settings: Settings, preferred_root: str | None = None) -> dict[str, Any]:
+    candidate_roots: list[str] = []
+    if preferred_root:
+        candidate_roots.append(preferred_root)
+    for root in CIVITAI_API_ROOTS:
+        if root not in candidate_roots:
+            candidate_roots.append(root)
+
+    last_error: Exception | None = None
+    for root in candidate_roots:
+        try:
+            return request_json(f'{root}{path}', settings)
+        except Exception as exc:
+            last_error = exc
+            if settings.verbose:
+                print(f'API 根地址失败，准备回退: {root}{path} -> {exc}', flush=True)
+
+    raise RuntimeError(f'请求失败: {path} -> {last_error}') from last_error
+
+
 def request_bytes(
     url: str,
     settings: Settings,
@@ -430,6 +465,17 @@ def human_bytes(size: int | None) -> str:
     return f'{value:.2f} TB'
 
 
+def format_duration(seconds: float | None) -> str:
+    if seconds is None or seconds < 0 or seconds == float('inf'):
+        return '--:--'
+    total_seconds = int(seconds)
+    minutes, secs = divmod(total_seconds, 60)
+    hours, minutes = divmod(minutes, 60)
+    if hours:
+        return f'{hours:d}:{minutes:02d}:{secs:02d}'
+    return f'{minutes:02d}:{secs:02d}'
+
+
 def iso_now() -> str:
     return datetime.now().astimezone().isoformat(timespec='seconds')
 
@@ -466,12 +512,20 @@ def extract_version_id(ref: str) -> int:
     raise ValueError(f'无法从引用中提取 modelVersionId: {ref}')
 
 
-def fetch_version(version_id: int, settings: Settings) -> dict[str, Any]:
-    return request_json(f'{CIVITAI_API_ROOT}/model-versions/{version_id}', settings)
+def fetch_version(version_id: int, settings: Settings, ref: str | None = None) -> dict[str, Any]:
+    return request_api_json(
+        f'/model-versions/{version_id}',
+        settings,
+        preferred_root=preferred_api_root_for_ref(ref or ''),
+    )
 
 
-def fetch_model(model_id: int, settings: Settings) -> dict[str, Any]:
-    return request_json(f'{CIVITAI_API_ROOT}/models/{model_id}', settings)
+def fetch_model(model_id: int, settings: Settings, ref: str | None = None) -> dict[str, Any]:
+    return request_api_json(
+        f'/models/{model_id}',
+        settings,
+        preferred_root=preferred_api_root_for_ref(ref or ''),
+    )
 
 
 def select_primary_file(version_data: dict[str, Any]) -> dict[str, Any]:
@@ -504,6 +558,58 @@ def is_complete_file(path: Path, expected_size: int | None) -> bool:
     if expected_size is None:
         return path.stat().st_size > 0
     return path.stat().st_size == expected_size
+
+
+def part_path_for(target_path: Path) -> Path:
+    return target_path.with_name(target_path.name + '.part')
+
+
+def incomplete_file_size(path: Path, expected_size: int | None) -> int:
+    if not path.exists() or not path.is_file():
+        return 0
+    if is_complete_file(path, expected_size):
+        return 0
+    return path.stat().st_size
+
+
+def current_partial_size(target_path: Path, expected_size: int | None) -> int:
+    return max(
+        incomplete_file_size(target_path, expected_size),
+        incomplete_file_size(part_path_for(target_path), expected_size),
+    )
+
+
+def normalize_partial_files(target_path: Path, expected_size: int | None) -> Path:
+    part_path = part_path_for(target_path)
+    target_size = incomplete_file_size(target_path, expected_size)
+    part_size = incomplete_file_size(part_path, expected_size)
+
+    if target_size and not part_size:
+        target_path.replace(part_path)
+        print(
+            f'发现历史残片，已转为续传文件: {target_path.name} ({human_bytes(target_size)})',
+            flush=True,
+        )
+        return part_path
+
+    if target_size and part_size:
+        if target_size > part_size:
+            part_path.unlink(missing_ok=True)
+            target_path.replace(part_path)
+            print(
+                f'发现更大的历史残片，已切换为续传源: {target_path.name} '
+                f'({human_bytes(target_size)}，原 .part 为 {human_bytes(part_size)})',
+                flush=True,
+            )
+        else:
+            target_path.unlink(missing_ok=True)
+            print(
+                f'发现较小的历史残片，已忽略: {target_path.name} '
+                f'({human_bytes(target_size)}，当前 .part 为 {human_bytes(part_size)})',
+                flush=True,
+            )
+
+    return part_path
 
 
 def resolve_endpoint(download_url: str, settings: Settings) -> ResolvedEndpoint:
@@ -555,12 +661,39 @@ def append_jsonl(path: Path, record: dict[str, Any]) -> None:
         handle.write(json.dumps(record, ensure_ascii=False) + '\n')
 
 
-def print_progress(prefix: str, downloaded: int, expected_size: int | None) -> None:
+def print_progress(
+    prefix: str,
+    downloaded: int,
+    expected_size: int | None,
+    *,
+    start_time: float | None = None,
+    initial_downloaded: int = 0,
+    final: bool = False,
+) -> None:
+    line = ''
     if expected_size:
         percent = downloaded / expected_size * 100
-        print(f'{prefix}: {percent:.1f}% ({human_bytes(downloaded)} / {human_bytes(expected_size)})', flush=True)
+        bar_width = 24
+        filled = min(bar_width, int(bar_width * min(downloaded, expected_size) / expected_size))
+        bar = '#' * filled + '-' * (bar_width - filled)
+        line = (
+            f'\r{prefix} [{bar}] {percent:5.1f}% '
+            f'({human_bytes(downloaded)} / {human_bytes(expected_size)})'
+        )
     else:
-        print(f'{prefix}: {human_bytes(downloaded)}', flush=True)
+        line = f'\r{prefix} {human_bytes(downloaded)}'
+
+    if start_time is not None:
+        elapsed = max(time.monotonic() - start_time, 1e-6)
+        session_downloaded = max(0, downloaded - initial_downloaded)
+        speed = session_downloaded / elapsed
+        line += f' {human_bytes(int(speed))}/s'
+        if expected_size and speed > 0:
+            remaining = max(expected_size - downloaded, 0)
+            line += f' ETA {format_duration(remaining / speed)}'
+
+    line = line.ljust(140)
+    print(line, end='\n' if final else '', flush=True)
 
 
 def download_with_builtin(
@@ -569,30 +702,37 @@ def download_with_builtin(
     expected_size: int | None,
     settings: Settings,
 ) -> None:
-    part_path = target_path.with_name(target_path.name + '.part')
-    offset = part_path.stat().st_size if part_path.exists() else 0
-    headers = {'User-Agent': USER_AGENT}
-    if endpoint.needs_auth_header:
-        headers['Authorization'] = f'Bearer {settings.token}'
-    if offset:
-        headers['Range'] = f'bytes={offset}-'
-
+    part_path = normalize_partial_files(target_path, expected_size)
     opener = build_opener(settings.proxy)
     last_error: Exception | None = None
     for attempt in range(1, settings.retries + 1):
+        offset = part_path.stat().st_size if part_path.exists() else 0
+        headers = {'User-Agent': USER_AGENT}
+        if endpoint.needs_auth_header:
+            headers['Authorization'] = f'Bearer {settings.token}'
+        if offset:
+            headers['Range'] = f'bytes={offset}-'
+
+        progress_prefix = f'内置下载 {target_path.name}'
+        progress_rendered = False
+        start_time = time.monotonic()
         request = urllib.request.Request(endpoint.url, headers=headers)
         try:
             with opener.open(request, timeout=settings.timeout) as response:
                 status = getattr(response, 'status', response.getcode())
                 if offset and status == 200:
-                    offset = 0
-                    mode = 'wb'
+                    raise RuntimeError('服务端未返回 206 续传响应，已保留残片，准备刷新签名后重试')
                 else:
                     mode = 'ab' if offset else 'wb'
 
                 ensure_parent(part_path)
+                if offset:
+                    print(
+                        f'检测到残片，准备续传: {target_path.name} ({human_bytes(offset)} 已下载)',
+                        flush=True,
+                    )
                 downloaded = offset
-                last_report = time.monotonic()
+                last_report = start_time
                 with part_path.open(mode) as handle:
                     while True:
                         chunk = response.read(CHUNK_SIZE)
@@ -601,20 +741,42 @@ def download_with_builtin(
                         handle.write(chunk)
                         downloaded += len(chunk)
                         now = time.monotonic()
-                        if now - last_report >= 30:
-                            print_progress('内置下载进度', downloaded, expected_size)
+                        if now - last_report >= 0.2:
+                            print_progress(
+                                progress_prefix,
+                                downloaded,
+                                expected_size,
+                                start_time=start_time,
+                                initial_downloaded=offset,
+                            )
+                            progress_rendered = True
                             last_report = now
 
             if expected_size is not None and part_path.stat().st_size != expected_size:
                 raise RuntimeError(
                     f'文件大小校验失败，当前 {part_path.stat().st_size}，预期 {expected_size}'
                 )
+            print_progress(
+                progress_prefix,
+                part_path.stat().st_size,
+                expected_size,
+                start_time=start_time,
+                initial_downloaded=offset,
+                final=True,
+            )
             part_path.replace(target_path)
             return
         except (urllib.error.HTTPError, urllib.error.URLError, TimeoutError, OSError, RuntimeError) as exc:
             last_error = exc
+            if progress_rendered:
+                print('', flush=True)
             if attempt < settings.retries:
-                print(f'内置下载失败，准备重试 {attempt}/{settings.retries}: {exc}', flush=True)
+                current_size = part_path.stat().st_size if part_path.exists() else 0
+                print(
+                    f'内置下载失败，准备重试 {attempt}/{settings.retries}: '
+                    f'{target_path.name} {human_bytes(current_size)} / {human_bytes(expected_size)} ; {exc}',
+                    flush=True,
+                )
                 time.sleep(min(120, settings.retry_wait * attempt))
 
     raise RuntimeError(f'内置下载最终失败: {last_error}') from last_error
@@ -705,7 +867,7 @@ def download_with_refreshable_endpoint(
             if is_complete_file(target_path, expected_size):
                 return backend
             if attempt < settings.retries:
-                current_size = target_path.stat().st_size if target_path.exists() else 0
+                current_size = current_partial_size(target_path, expected_size)
                 print(
                     f'下载中断，准备刷新签名后续传 {attempt}/{settings.retries}: '
                     f'{human_bytes(current_size)} / {human_bytes(expected_size)} ; {exc}',
@@ -746,9 +908,9 @@ def process_ref(
 ) -> dict[str, Any]:
     started_at = time.time()
     version_id = extract_version_id(ref)
-    version_data = fetch_version(version_id, settings)
+    version_data = fetch_version(version_id, settings, ref=ref)
     model_id = int(version_data['modelId'])
-    model_data = fetch_model(model_id, settings)
+    model_data = version_data.get('model') or fetch_model(model_id, settings, ref=ref)
     file_info = select_primary_file(version_data)
 
     filename = sanitize_filename(file_info.get('name') or f'{version_id}.bin')

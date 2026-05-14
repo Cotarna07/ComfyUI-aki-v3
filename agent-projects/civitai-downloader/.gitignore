@@ -1,3 +1,4 @@
 runtime/
-config.local.jsonvenv
+config.local.json
+.venv/
 .idea

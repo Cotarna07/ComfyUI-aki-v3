@@ -79,6 +79,14 @@ python .\download.py "https://civitai.com/models/1234567?modelVersionId=46846"
 python .\download.py "https://civitai.com/api/download/models/46846"
 ```
 
+如果你更习惯先运行脚本、再往终端里粘贴链接，可以直接使用交互入口：
+
+```powershell
+python .\scripts\generated\civitai\download_requested_models.py
+```
+
+启动后逐行粘贴模型链接或版本 ID，最后回车一次就会开始下载。默认会自动移动到 ComfyUI 模型目录，并优先使用带进度条的内置续传下载器。
+
 兼容旧用法：
 
 ```powershell
