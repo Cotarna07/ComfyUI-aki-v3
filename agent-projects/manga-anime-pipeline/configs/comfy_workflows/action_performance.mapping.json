@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "route": "action_performance",
+  "fields": {
+    "positive_prompt": {
+      "node_id": "93",
+      "input": "text"
+    },
+    "negative_prompt": {
+      "node_id": "89",
+      "input": "text"
+    },
+    "input_image": {
+      "node_id": "1",
+      "input": "image"
+    },
+    "seed": [
+      {
+        "node_id": "86",
+        "input": "noise_seed"
+      },
+      {
+        "node_id": "85",
+        "input": "noise_seed"
+      }
+    ],
+    "width": {
+      "node_id": "98",
+      "input": "width"
+    },
+    "height": {
+      "node_id": "98",
+      "input": "height"
+    },
+    "length": {
+      "node_id": "98",
+      "input": "length"
+    },
+    "fps": {
+      "node_id": "117",
+      "input": "fps"
+    },
+    "steps": [
+      {
+        "node_id": "86",
+        "input": "steps"
+      },
+      {
+        "node_id": "85",
+        "input": "steps"
+      }
+    ],
+    "cfg": [
+      {
+        "node_id": "86",
+        "input": "cfg"
+      },
+      {
+        "node_id": "85",
+        "input": "cfg"
+      }
+    ],
+    "output_prefix": {
+      "node_id": "118",
+      "input": "filename_prefix"
+    }
+  }
+}

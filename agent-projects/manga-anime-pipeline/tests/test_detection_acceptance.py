@@ -83,6 +83,89 @@ class DetectionAcceptanceTests(unittest.TestCase):
         self.assertEqual(result["pipeline_status"], "fail")
         self.assertFalse(result["next_stage_allowed"])
 
+    def test_grounded_sam2_quality_allows_next_stage(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            project_root = Path(tmp)
+            _, chapter = _prepare_project(project_root)
+            packet_path = project_root / "runtime" / "structured" / "series" / "chapter" / "packets" / "w001.json"
+            write_json(
+                packet_path,
+                {
+                    "window_id": "w001",
+                    "page_id": "p001",
+                    "source_box": [0, 0, 160, 320],
+                    "width": 160,
+                    "height": 320,
+                    "object_boxes": [
+                        {
+                            "object_id": "obj_0001",
+                            "label": "person",
+                            "box": [20, 40, 120, 260],
+                            "confidence": 0.9,
+                            "provider": "grounded_sam2",
+                        }
+                    ],
+                    "object_masks": [
+                        {
+                            "mask_id": "mask_0001",
+                            "source_object_id": "obj_0001",
+                            "mask_path": "runtime/windows/series/chapter/p001/w001_masks/mask_0001.png",
+                            "provider": "grounded_sam2",
+                        }
+                    ],
+                    "crop_candidates": [
+                        {
+                            "crop_id": "crop_0001",
+                            "box": [0, 0, 150, 300],
+                            "reason": "main_subject",
+                            "score": 0.88,
+                            "provider": "grounded_sam2",
+                        }
+                    ],
+                    "focus_subjects": [],
+                    "scene_density": {"value": 0.4, "level": "medium", "provider": "grounded_sam2"},
+                },
+            )
+            write_json(
+                project_root / "runtime" / "structured" / "series" / "chapter" / "structured_packets.json",
+                {
+                    "series_id": "series",
+                    "chapter_id": "chapter",
+                    "packet_refs": [str(packet_path.relative_to(project_root))],
+                },
+            )
+            write_json(
+                project_root / "runtime" / "windows" / "series" / "chapter" / "window_manifest.json",
+                {
+                    "series_id": "series",
+                    "chapter_id": "chapter",
+                    "windows": [
+                        {
+                            "window_id": "w001",
+                            "page_id": "p001",
+                            "source_page": "runtime/input/page.png",
+                            "image_path": "runtime/input/page.png",
+                            "source_box": [0, 0, 160, 320],
+                            "width": 160,
+                            "height": 320,
+                            "index": 0,
+                        }
+                    ],
+                },
+            )
+            write_json(project_root / "runtime" / "manifests" / "series" / "chapter" / "shot_manifest.json", {"shots": []})
+            write_json(project_root / "runtime" / "qc" / "series" / "chapter" / "stage1_status.json", {"statuses": []})
+            result = evaluate_detection_acceptance(
+                project_root=project_root,
+                runtime_root=project_root / "runtime",
+                config={"providers": {"detection": "grounded_sam2", "director": "mock"}},
+                chapter=chapter,
+                stage_report=None,
+            )
+        self.assertEqual(result["pipeline_status"], "warning")
+        self.assertTrue(result["next_stage_allowed"])
+        self.assertFalse(result["detection_quality"]["is_mock_detection"])
+
 
 if __name__ == "__main__":
     unittest.main()

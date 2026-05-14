@@ -27,7 +27,7 @@ class ProviderFactoryTests(unittest.TestCase):
         self.assertEqual(create_dialogue_provider("ocr_based").provider_name, "ocr_based")
         self.assertEqual(create_dialogue_provider("ocr-based").provider_name, "ocr_based")
         self.assertEqual(create_dialogue_provider("ocrbased").provider_name, "ocr_based")
-        self.assertEqual(create_detection_provider("grounded_sam2").provider_name, "grounded_sam2_mock")
+        self.assertEqual(create_detection_provider("grounded_sam2").provider_name, "grounded_sam2")
 
     def test_unknown_provider_raises_clear_error(self) -> None:
         with self.assertRaisesRegex(ValueError, "Unknown OCR provider"):

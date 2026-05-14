@@ -51,9 +51,10 @@ def evaluate_detection_acceptance(
     if schema_errors:
         errors.extend(schema_errors)
 
-    if expected_detection == "lightweight" and quality["is_mock_detection"]:
-        errors.append("config requires detection=lightweight but structured packets still look like mock_detection")
-    if expected_detection == "lightweight" and quality["windows_with_crops"] == 0 and quality["window_count"] > 0:
+    real_detection_providers = {"lightweight", "grounded_sam2"}
+    if expected_detection in real_detection_providers and quality["is_mock_detection"]:
+        errors.append(f"config requires detection={expected_detection} but structured packets still look like mock_detection")
+    if expected_detection in real_detection_providers and quality["windows_with_crops"] == 0 and quality["window_count"] > 0:
         errors.append("crop_candidates are empty across all windows")
     if quality["crop_out_of_bounds"]:
         errors.append("crop_candidates contain boxes outside window bounds: " + ", ".join(sorted(set(quality["crop_out_of_bounds"]))))
@@ -72,7 +73,7 @@ def evaluate_detection_acceptance(
     pipeline_status = "fail" if errors else "warning" if warnings else "pass"
     next_stage_allowed = (
         not errors
-        and expected_detection == "lightweight"
+        and expected_detection in real_detection_providers
         and not quality["is_mock_detection"]
         and quality["windows_with_crops"] > 0
     )

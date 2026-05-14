@@ -3,10 +3,12 @@ from __future__ import annotations
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
+import numpy as np
 from PIL import Image
 
-from pipeline.detection.grounded_sam2_provider import GroundedSAM2DetectionProvider
+from pipeline.detection.grounded_sam2_provider import GroundedSAM2DetectionProvider, GroundedSAM2RuntimeUnavailable
 from pipeline.detection.lightweight_provider import LightweightDetectionProvider
 from pipeline.detection.provider_factory import create_detection_provider
 
@@ -69,14 +71,43 @@ class LightweightDetectionShapeTests(unittest.TestCase):
 
 
 class GroundedSAM2MockDetectionTests(unittest.TestCase):
-    def test_mock_provider_keeps_grounded_sam2_shape(self) -> None:
+    def test_ultralytics_backend_saves_masks_and_returns_grounded_shape(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            project_root = Path(tmp)
+            image_path = project_root / "runtime" / "windows" / "series" / "chapter" / "p001" / "w001.png"
+            image_path.parent.mkdir(parents=True, exist_ok=True)
+            Image.new("RGB", (240, 320), "white").save(image_path)
+            packet = {
+                **_make_packet(image_path, 240, 320),
+                "window_image_path": str(image_path.relative_to(project_root)),
+                "project_root": str(project_root),
+            }
+            provider = GroundedSAM2DetectionProvider(
+                {"detection": {"grounded_sam2": {"mode": "ultralytics", "confidence_threshold": 0.2}}}
+            )
+            with patch.object(provider, "_load_ultralytics_models", return_value=(_FakeYolo(), _FakeSam())):
+                result = provider.analyze(packet)
+            self.assertEqual(result["provider"], "grounded_sam2")
+            self.assertEqual(result["object_boxes"][0]["label"], "person")
+            self.assertEqual(result["object_boxes"][0]["box"], [24, 32, 160, 260])
+            self.assertEqual(len(result["object_masks"]), 1)
+            mask_path = project_root / result["object_masks"][0]["mask_path"]
+            self.assertTrue(mask_path.exists())
+            with Image.open(mask_path) as mask_image:
+                self.assertEqual(mask_image.mode, "L")
+            self.assertTrue(result["crop_candidates"])
+            self.assertEqual(result["focus_subjects"][0]["source_object_id"], result["object_boxes"][0]["object_id"])
+
+    def test_auto_mode_falls_back_to_runnable_mock_when_runtime_missing(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             image_path = Path(tmp) / "page.png"
             Image.new("RGB", (240, 320), "white").save(image_path)
-            provider = GroundedSAM2DetectionProvider()
-            result = provider.analyze(_make_packet(image_path, 240, 320))
-        self.assertEqual(result["provider"], "grounded_sam2_mock")
+            provider = GroundedSAM2DetectionProvider({"detection": {"grounded_sam2": {"mode": "auto"}}})
+            with patch.object(provider, "_run_ultralytics", side_effect=GroundedSAM2RuntimeUnavailable("ultralytics missing")):
+                result = provider.analyze(_make_packet(image_path, 240, 320))
+        self.assertEqual(result["provider"], "mock_grounded_sam2")
         self.assertEqual(result["mock_replacement_for"], "Grounded-SAM-2")
+        self.assertIn("ultralytics missing", result["runtime_warning"])
         labels = {box["label"] for box in result["object_boxes"]}
         self.assertIn("main_character", labels)
         self.assertIn("face", labels)
@@ -89,9 +120,42 @@ class GroundedSAM2MockDetectionTests(unittest.TestCase):
             provider = create_detection_provider(alias)
             self.assertIsInstance(provider, GroundedSAM2DetectionProvider)
 
-    def test_real_mode_fails_with_replacement_point(self) -> None:
-        with self.assertRaisesRegex(RuntimeError, "Grounded-SAM-2 real mode is not available yet"):
-            GroundedSAM2DetectionProvider({"detection": {"grounded_sam2": {"mode": "real"}}})
+    def test_real_mode_without_fallback_fails_with_replacement_point(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            image_path = Path(tmp) / "page.png"
+            Image.new("RGB", (240, 320), "white").save(image_path)
+            provider = GroundedSAM2DetectionProvider(
+                {"detection": {"grounded_sam2": {"mode": "real", "allow_fallback": False}}}
+            )
+            with patch.object(provider, "_run_ultralytics", side_effect=GroundedSAM2RuntimeUnavailable("ultralytics missing")):
+                with self.assertRaisesRegex(GroundedSAM2RuntimeUnavailable, "pipeline/detection/grounded_sam2_provider.py"):
+                    provider.analyze(_make_packet(image_path, 240, 320))
+
+
+class _FakeYolo:
+    names = {0: "person"}
+
+    def predict(self, source, conf=0.25, verbose=False, **kwargs):
+        return [_FakeYoloResult()]
+
+
+class _FakeYoloResult:
+    names = {0: "person"}
+    boxes = [
+        {
+            "xyxy": [24, 32, 160, 260],
+            "confidence": 0.93,
+            "class_id": 0,
+            "label": "person",
+        }
+    ]
+
+
+class _FakeSam:
+    def predict(self, source, bboxes=None, verbose=False, **kwargs):
+        mask = np.zeros((320, 240), dtype=np.uint8)
+        mask[40:250, 30:150] = 1
+        return [{"masks": [mask]}]
 
 
 if __name__ == "__main__":

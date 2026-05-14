@@ -1,8 +1,8 @@
 # manga-anime-pipeline
 
-这是《私有化漫画转动漫多模块工作流设计方案》的 Stage 1 / Stage 1.5 / Stage 2 OCR / Stage 2.5 Dialogue / Stage 3A Acceptance 最小可跑通工程。当前目标覆盖：输入漫画图片 -> 长图切片 -> OCR provider -> OCR-based Dialogue provider -> mock 检测 -> mock 导演草稿 shot manifest -> manifest 落盘 -> 自动验收报告。
+这是《私有化漫画转动漫多模块工作流设计方案》的私有化漫画转动漫流水线工程。当前目标覆盖：输入漫画图片 -> 长图切片 -> OCR provider -> OCR-based Dialogue provider -> lightweight 或 Grounded-SAM-2 检测 -> 导演草稿 shot manifest -> ComfyUI API 工作流投递 -> 自动验收报告。
 
-当前只接入了可选 PaddleOCR provider 和规则型 OCR-based Dialogue provider；仍不接 Wan、LTX、VACE、WanAnimate、Flux、Kontext，不接 Grounded-SAM-2、SAM2、Manga Image Translator 或 Qwen3-VL。
+当前已接入可选 PaddleOCR、规则型 OCR-based Dialogue、lightweight detection、Grounded-SAM-2/Ultralytics 检测入口、Qwen3-VL director 入口，以及 Wan/VACE 方向的 ComfyUI API 工作流模板。Manga Image Translator、完整口型/音频/BGM 后期链和人工审核台仍未接入。
 
 ## 环境要求
 
@@ -294,13 +294,11 @@ d:\ComfyUI-aki-v3\.venv\Scripts\python.exe -m py_compile scripts\run_stage1.py s
 
 ## 当前未实现内容清单
 
-- 未接真实 Surya、PaddleOCR-VL 或 PaddleOCR。
-- 未接真实 Surya 或 PaddleOCR-VL。
+- 未接真实 Surya、PaddleOCR-VL。
 - 未接 Manga Image Translator。
-- 未接 Grounded-SAM-2、SAM2 或 SAHI。
-- 未接本地 Qwen3-VL。
+- Grounded-SAM-2 当前通过 Ultralytics YOLO + SAM2 入口接入；本机未安装 `ultralytics` 时会降级为同接口 mock。
 - 未实现人工审核台、失败重试策略和镜头质检模型。
-- 未接任何视频生成工作流，包括 Wan、LTX、VACE、WanAnimate、Flux、Kontext。
+- 未接完整音频 / 口型 / BGM 后期链。
 
 
 ## Stage 3A / 4A / 5 / 6 门禁体系
@@ -314,6 +312,7 @@ d:\ComfyUI-aki-v3\.venv\Scripts\python.exe -m py_compile scripts\run_stage1.py s
 | OCR | `configs/stage1.ocr.dialogue.json` 等 | `paddleocr` / `paddle` | `requirements-ocr.txt` |
 | Dialogue | 同上 | `ocr_based` | 无外部依赖 |
 | Detection（轻量） | `configs/stage1.ocr.dialogue.detect.json` | `lightweight` / `light` / `rule_based` | `requirements-detection.txt`（Pillow + opencv-python-headless） |
+| Detection（Grounded-SAM-2） | `configs/stage1.grounded_sam2.detect.json` | `grounded_sam2` / `grounded-sam-2` | `requirements-detection.txt`（ultralytics + SAM2 权重；缺失时可同接口降级） |
 | Director（Qwen3-VL） | `configs/stage1.full.director.json` | `qwen3vl` / `qwen3-vl` / `qwen_vl` | 三选一：本地 `transformers` 权重目录，或 Ollama API，或 LM Studio / 其他 OpenAI 兼容 API |
 | ComfyUI 投递 | `configs/comfy.default.json` | — | ComfyUI 服务（默认 `http://127.0.0.1:8188`）+ `configs/comfy_workflows/*.json` 模板 |
 

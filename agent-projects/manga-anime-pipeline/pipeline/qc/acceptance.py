@@ -303,6 +303,9 @@ def _normalize_provider_name(name: Any) -> str:
         "paddle": "paddleocr",
         "ocr-based": "ocr_based",
         "ocrbased": "ocr_based",
+        "grounded-sam-2": "grounded_sam2",
+        "grounded_sam_2": "grounded_sam2",
+        "groundedsam2": "grounded_sam2",
     }
     normalized = aliases.get(value, value)
     if normalized == "mock":
