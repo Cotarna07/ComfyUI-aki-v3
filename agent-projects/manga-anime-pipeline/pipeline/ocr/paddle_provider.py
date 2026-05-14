@@ -50,6 +50,8 @@ class PaddleOCRProvider(OCRProvider):
         init_attempts = [
             {"lang": self.language, "use_angle_cls": True, "use_gpu": False, "show_log": False},
             {"lang": self.language, "use_angle_cls": True, "use_gpu": False},
+            {"lang": self.language, "device": "cpu", "enable_mkldnn": False, "cpu_threads": 4},
+            {"lang": self.language, "device": "cpu", "enable_mkldnn": False},
             {"lang": self.language, "device": "cpu"},
             {"lang": self.language},
         ]
@@ -58,10 +60,10 @@ class PaddleOCRProvider(OCRProvider):
             try:
                 self._engine = PaddleOCR(**kwargs)
                 return self._engine
-            except TypeError as error:
-                last_error = error
-                continue
             except Exception as error:
+                if _is_unsupported_constructor_argument(error):
+                    last_error = error
+                    continue
                 raise RuntimeError(f"Failed to initialize PaddleOCR CPU provider: {error}") from error
         raise RuntimeError(f"Failed to initialize PaddleOCR with supported constructor options: {last_error}")
 
@@ -109,6 +111,11 @@ def _extract_blocks(raw_result: Any, window_id: str, width: int, height: int) ->
             }
         )
     return blocks
+
+
+def _is_unsupported_constructor_argument(error: Exception) -> bool:
+    message = str(error).lower()
+    return "unknown argument" in message or "unexpected keyword argument" in message
 
 
 def _iter_text_boxes(raw_result: Any) -> list[tuple[Any, Any, Any]]:

@@ -8,6 +8,8 @@ import json
 import sys
 from pathlib import Path
 from typing import Any
+from urllib import error as urlerror
+from urllib import request as urlrequest
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
@@ -24,38 +26,132 @@ GATE_NAME = "stage5_gate"
 GATE_TITLE = "Stage 5 Gate (Qwen3-VL Director)"
 
 
-def check_qwen_env(model_path: str | None) -> dict[str, Any]:
+def check_qwen_env(settings: dict[str, Any] | None) -> dict[str, Any]:
+    settings = settings or {}
+    mode = _normalize_mode(str(settings.get("mode", "local")))
+    model_path = str(settings.get("model_path") or "")
+    api_base = str(settings.get("api_base") or settings.get("base_url") or _default_api_base(mode))
+    api_model = str(settings.get("api_model") or settings.get("model_name") or "")
     findings: dict[str, Any] = {
+        "mode": mode,
+        "api_base": api_base,
+        "api_model": api_model,
         "transformers_import_ok": False,
         "torch_import_ok": False,
         "model_path_configured": bool(model_path),
         "model_path_exists": False,
+        "api_base_configured": bool(api_base),
+        "api_model_configured": bool(api_model),
+        "api_server_reachable": False,
+        "api_model_available": False,
         "errors": [],
         "warnings": [],
     }
-    try:
-        importlib.import_module("torch")
-        findings["torch_import_ok"] = True
-    except Exception as error:
-        findings["errors"].append(f"torch import failed: {error}")
-    try:
-        importlib.import_module("transformers")
-        findings["transformers_import_ok"] = True
-    except Exception as error:
-        findings["errors"].append(f"transformers import failed: {error}")
-    if model_path:
-        findings["model_path_exists"] = Path(model_path).exists()
-        if not findings["model_path_exists"]:
-            findings["errors"].append(f"model_path does not exist: {model_path}")
-    else:
-        findings["errors"].append("director.qwen3vl.model_path not configured")
-    findings["env_ready"] = (
-        findings["transformers_import_ok"]
-        and findings["torch_import_ok"]
-        and findings["model_path_configured"]
-        and findings["model_path_exists"]
+    if mode == "local":
+        try:
+            importlib.import_module("torch")
+            findings["torch_import_ok"] = True
+        except Exception as error:
+            findings["errors"].append(f"torch import failed: {error}")
+        try:
+            importlib.import_module("transformers")
+            findings["transformers_import_ok"] = True
+        except Exception as error:
+            findings["errors"].append(f"transformers import failed: {error}")
+        if model_path:
+            findings["model_path_exists"] = Path(model_path).exists()
+            if not findings["model_path_exists"]:
+                findings["errors"].append(f"model_path does not exist: {model_path}")
+        else:
+            findings["errors"].append("director.qwen3vl.model_path not configured")
+        findings["env_ready"] = (
+            findings["transformers_import_ok"]
+            and findings["torch_import_ok"]
+            and findings["model_path_configured"]
+            and findings["model_path_exists"]
+        )
+        return findings
+
+    if mode in {"ollama", "openai_compatible"}:
+        if not api_base:
+            findings["errors"].append("director.qwen3vl.api_base not configured")
+        if not api_model:
+            findings["errors"].append("director.qwen3vl.api_model (or model_name) not configured")
+        if findings["api_base_configured"] and findings["api_model_configured"]:
+            try:
+                if mode == "ollama":
+                    payload = _get_json(_ollama_api_url(api_base, "/api/tags"))
+                    models = [
+                        str(item.get("model") or item.get("name") or "")
+                        for item in (payload.get("models") or [])
+                    ]
+                else:
+                    payload = _get_json(_openai_api_url(api_base, "/models"))
+                    models = [str(item.get("id") or "") for item in (payload.get("data") or [])]
+                findings["api_server_reachable"] = True
+                findings["api_model_available"] = api_model in models
+                if not findings["api_model_available"]:
+                    findings["errors"].append(f"configured api_model not available from {mode} backend: {api_model}")
+            except Exception as error:
+                findings["errors"].append(f"{mode} api probe failed: {error}")
+        findings["env_ready"] = (
+            findings["api_base_configured"]
+            and findings["api_model_configured"]
+            and findings["api_server_reachable"]
+            and findings["api_model_available"]
+        )
+        return findings
+
+    findings["errors"].append(
+        f"unsupported director.qwen3vl.mode: {mode}. Supported: local, ollama, openai_compatible, dry_run_blocked"
     )
+    findings["env_ready"] = False
     return findings
+
+
+def _normalize_mode(mode: str) -> str:
+    value = (mode or "local").strip().lower()
+    aliases = {
+        "lmstudio": "openai_compatible",
+        "lm_studio": "openai_compatible",
+        "openai": "openai_compatible",
+        "openai-compatible": "openai_compatible",
+    }
+    return aliases.get(value, value)
+
+
+def _default_api_base(mode: str) -> str:
+    if mode == "ollama":
+        return "http://127.0.0.1:11434"
+    if mode == "openai_compatible":
+        return "http://127.0.0.1:1234/v1"
+    return ""
+
+
+def _get_json(url: str, timeout_seconds: int = 8) -> dict[str, Any]:
+    request = urlrequest.Request(url, method="GET")
+    try:
+        with urlrequest.urlopen(request, timeout=timeout_seconds) as response:
+            raw = response.read()
+    except urlerror.HTTPError as error:
+        detail = error.read().decode("utf-8", errors="replace")
+        raise RuntimeError(f"HTTP {error.code} calling {url}: {detail or error.reason}") from error
+    except urlerror.URLError as error:
+        raise RuntimeError(f"Could not reach {url}: {error.reason}") from error
+    if not raw:
+        return {}
+    return json.loads(raw.decode("utf-8"))
+
+
+def _ollama_api_url(base_url: str, endpoint: str) -> str:
+    return f"{(base_url or _default_api_base('ollama')).rstrip('/')}{endpoint}"
+
+
+def _openai_api_url(base_url: str, endpoint: str) -> str:
+    base = (base_url or _default_api_base("openai_compatible")).rstrip("/")
+    if not base.endswith("/v1"):
+        base = f"{base}/v1"
+    return f"{base}{endpoint}"
 
 
 def run_gate(
@@ -84,10 +180,15 @@ def run_gate(
         "stage4a_status": upstream_report["gate_status"],
         "stage4a_next_stage_allowed": upstream_report["next_stage_allowed"],
         "qwen_env_ready": False,
+        "director_mode": None,
         "transformers_import_ok": False,
         "torch_import_ok": False,
         "model_path_configured": False,
         "model_path_exists": False,
+        "api_base_configured": False,
+        "api_model_configured": False,
+        "api_server_reachable": False,
+        "api_model_available": False,
         "pipeline_ran": False,
         "director_acceptance_ran": False,
         "director_acceptance_status": None,
@@ -95,15 +196,20 @@ def run_gate(
     }
     director_quality: dict[str, Any] | None = None
     pipeline_config = read_json(pipeline_config_path)
-    model_path = (((pipeline_config.get("director") or {}).get("qwen3vl") or {}).get("model_path")) or None
-    env = check_qwen_env(model_path)
+    qwen_settings = ((pipeline_config.get("director") or {}).get("qwen3vl") or {})
+    env = check_qwen_env(qwen_settings)
     checks.update(
         {
             "qwen_env_ready": env["env_ready"],
+            "director_mode": env["mode"],
             "transformers_import_ok": env["transformers_import_ok"],
             "torch_import_ok": env["torch_import_ok"],
             "model_path_configured": env["model_path_configured"],
             "model_path_exists": env["model_path_exists"],
+            "api_base_configured": env["api_base_configured"],
+            "api_model_configured": env["api_model_configured"],
+            "api_server_reachable": env["api_server_reachable"],
+            "api_model_available": env["api_model_available"],
         }
     )
 
@@ -115,7 +221,7 @@ def run_gate(
     elif not env["env_ready"]:
         gate_status = "blocked"
         next_stage_allowed = False
-        next_action = "Qwen3-VL 环境未就绪，安装 requirements-director.txt 并配置 director.qwen3vl.model_path 后重跑。"
+        next_action = _next_action_for_mode(env["mode"])
         errors.extend(env["errors"])
     else:
         chapter = read_json(input_path)
@@ -159,10 +265,15 @@ def run_gate(
             next_action = "可以继续 Stage 6 (ComfyUI 投递)。"
 
     commands = {
-        "install_director": "python -m pip install -r requirements-director.txt",
         "run_stage4a_gate": f"python scripts/run_stage4a_gate.py --input {input_path} --pipeline-config {detection_config_path} --force",
         "run_stage5_gate": f"python scripts/run_stage5_gate.py --input {input_path} --pipeline-config {pipeline_config_path} --force",
     }
+    if env["mode"] == "local":
+        commands["install_director"] = "python -m pip install -r requirements-director.txt"
+    elif env["mode"] == "ollama":
+        commands["check_ollama"] = f"Invoke-RestMethod {env.get('api_base') or _default_api_base('ollama')}/api/tags"
+    elif env["mode"] == "openai_compatible":
+        commands["check_openai_compatible"] = "Invoke-RestMethod http://127.0.0.1:1234/v1/models"
     report = {
         "gate_name": GATE_NAME,
         "gate_status": gate_status,
@@ -251,6 +362,16 @@ def _resolve_runtime(value: str) -> Path:
     if path.is_absolute():
         return path
     return (PROJECT_ROOT / path).resolve()
+
+
+def _next_action_for_mode(mode: str) -> str:
+    if mode == "local":
+        return "Qwen3-VL 本地权重环境未就绪，安装 requirements-director.txt 并配置 director.qwen3vl.model_path 后重跑。"
+    if mode == "ollama":
+        return "Ollama Director 环境未就绪，确认 api_base 可达且 api_model 已拉取后重跑 Stage 5。支持改为局域网内 Ollama 服务地址。"
+    if mode == "openai_compatible":
+        return "LM Studio / OpenAI 兼容 Director 环境未就绪，启动服务并确保 model 已加载到 /v1/models 后重跑 Stage 5。支持改为局域网内服务地址。"
+    return "Qwen3-VL Director 环境未就绪，修复配置后重跑 Stage 5。"
 
 
 if __name__ == "__main__":
