@@ -6,6 +6,7 @@ from pathlib import Path
 
 from PIL import Image
 
+from pipeline.detection.grounded_sam2_provider import GroundedSAM2DetectionProvider
 from pipeline.detection.lightweight_provider import LightweightDetectionProvider
 from pipeline.detection.provider_factory import create_detection_provider
 
@@ -65,6 +66,32 @@ class LightweightDetectionShapeTests(unittest.TestCase):
         for alias in ("lightweight", "light", "rule_based", "rule-based"):
             provider = create_detection_provider(alias)
             self.assertIsInstance(provider, LightweightDetectionProvider)
+
+
+class GroundedSAM2MockDetectionTests(unittest.TestCase):
+    def test_mock_provider_keeps_grounded_sam2_shape(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            image_path = Path(tmp) / "page.png"
+            Image.new("RGB", (240, 320), "white").save(image_path)
+            provider = GroundedSAM2DetectionProvider()
+            result = provider.analyze(_make_packet(image_path, 240, 320))
+        self.assertEqual(result["provider"], "grounded_sam2_mock")
+        self.assertEqual(result["mock_replacement_for"], "Grounded-SAM-2")
+        labels = {box["label"] for box in result["object_boxes"]}
+        self.assertIn("main_character", labels)
+        self.assertIn("face", labels)
+        self.assertIn("hand", labels)
+        self.assertTrue(result["crop_candidates"])
+        self.assertIn(result["crop_candidates"][0]["framing"], {"close_up", "medium_shot", "wide_shot"})
+
+    def test_grounded_sam2_factory_aliases(self) -> None:
+        for alias in ("grounded_sam2", "grounded-sam-2", "grounded_sam_2", "groundedsam2"):
+            provider = create_detection_provider(alias)
+            self.assertIsInstance(provider, GroundedSAM2DetectionProvider)
+
+    def test_real_mode_fails_with_replacement_point(self) -> None:
+        with self.assertRaisesRegex(RuntimeError, "Grounded-SAM-2 real mode is not available yet"):
+            GroundedSAM2DetectionProvider({"detection": {"grounded_sam2": {"mode": "real"}}})
 
 
 if __name__ == "__main__":

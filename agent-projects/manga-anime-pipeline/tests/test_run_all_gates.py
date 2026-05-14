@@ -59,9 +59,12 @@ class RunAllGatesCascadeTests(unittest.TestCase):
                 slice_config=SliceConfig(window_height=160, overlap=20),
                 force=True,
             )
-            # Since paddleocr is not installed in this environment we expect
-            # Stage 3A blocked and every downstream gate blocked too.
-            self.assertEqual(report["gates"]["stage3a"]["status"], "blocked")
+            # The exact Stage 3A status depends on whether PaddleOCR is
+            # installed in the local environment. The cascade behavior is the
+            # invariant: if Stage 3A does not allow the next stage, downstream
+            # gates must remain blocked.
+            self.assertIn(report["gates"]["stage3a"]["status"], {"blocked", "fail"})
+            self.assertFalse(report["gates"]["stage3a"]["next_stage_allowed"])
             for downstream in ("stage4a", "stage5", "stage6"):
                 self.assertEqual(report["gates"][downstream]["status"], "blocked")
                 self.assertFalse(report["gates"][downstream]["next_stage_allowed"])

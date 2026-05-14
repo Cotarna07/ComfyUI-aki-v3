@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "route": "dialogue_light_motion",
+  "fields": {
+    "input_image": {
+      "node_id": "1",
+      "input": "image"
+    },
+    "output_prefix": {
+      "node_id": "2",
+      "input": "filename_prefix"
+    }
+  }
+}

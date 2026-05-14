@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "route": "dialogue_light_motion",
+  "fields": {
+    "positive_prompt": {
+      "node_id": "93",
+      "input": "text"
+    },
+    "negative_prompt": {
+      "node_id": "89",
+      "input": "text"
+    },
+    "input_image": {
+      "node_id": "1",
+      "input": "image"
+    },
+    "seed": [
+      {
+        "node_id": "86",
+        "input": "noise_seed"
+      },
+      {
+        "node_id": "85",
+        "input": "noise_seed"
+      }
+    ],
+    "output_prefix": {
+      "node_id": "118",
+      "input": "filename_prefix"
+    }
+  }
+}

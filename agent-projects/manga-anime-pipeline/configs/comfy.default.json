@@ -4,7 +4,10 @@
     "timeout_seconds": 60,
     "poll_interval_seconds": 3,
     "max_retries": 1,
-    "dry_run": false
+    "dry_run": false,
+    "require_all_templates": true,
+    "require_finished": true,
+    "require_outputs": true
   },
   "workflow_templates": {
     "establish_scene": "configs/comfy_workflows/establish_scene.json",

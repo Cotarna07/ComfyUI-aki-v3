@@ -41,7 +41,11 @@ def main() -> int:
     except ServerUnreachable as error:
         print(json.dumps({"status": "blocked", "error": str(error)}, ensure_ascii=False, indent=2))
         return 3
-    router = WorkflowRouter(comfy_config.get("workflow_templates", {}) or {}, PROJECT_ROOT)
+    router = WorkflowRouter(
+        comfy_config.get("workflow_templates", {}) or {},
+        PROJECT_ROOT,
+        comfy_config.get("workflow_mappings", {}) or {},
+    )
     output_dir = runtime_root / "comfy" / safe_path_part(series_id) / safe_path_part(chapter_id)
     settings = comfy_config.get("comfy", {}) or {}
     result = submit_batch(
@@ -51,8 +55,11 @@ def main() -> int:
         router=router,
         submitter_config=SubmitterConfig(
             poll_interval_seconds=float(settings.get("poll_interval_seconds", 3.0)),
+            history_poll_attempts=int(settings.get("history_poll_attempts", 1)),
             max_retries=int(settings.get("max_retries", 1)),
             dry_run=bool(settings.get("dry_run", False)),
+            comfy_input_dir=_resolve_runtime(settings["input_dir"]) if settings.get("input_dir") else None,
+            output_prefix_root=str(settings.get("output_prefix_root", "manga_anime_pipeline")),
         ),
         agent_id="manga-anime-pipeline",
     )

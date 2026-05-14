@@ -69,8 +69,9 @@ def run_gate(
     comfy_config = read_json(comfy_config_path)
     server_url = (comfy_config.get("comfy") or {}).get("server", "http://127.0.0.1:8188")
     templates = comfy_config.get("workflow_templates", {}) or {}
-    router = WorkflowRouter(templates, project_root)
-    template_findings = router.validate_all()
+    router = WorkflowRouter(templates, project_root, comfy_config.get("workflow_mappings", {}) or {})
+    template_findings: dict[str, Any] = {"missing": [], "valid": [], "skipped": [], "mappings_valid": [], "mappings_missing": []}
+    template_scope = "not_checked"
 
     if not upstream_report["next_stage_allowed"]:
         gate_status = "blocked"
@@ -85,20 +86,12 @@ def run_gate(
         except ServerUnreachable as error:
             checks["comfy_server_reachable"] = False
             errors.append(str(error))
-        if template_findings["missing"]:
-            errors.extend([f"template missing: {item['route']} -> {item['path']}" for item in template_findings["missing"]])
-        else:
-            checks["templates_ok"] = True
         if not checks["comfy_server_reachable"]:
             gate_status = "blocked"
             next_stage_allowed = False
             next_action = (
                 f"ComfyUI 服务未启动或不可达：{server_url}。请先启动 ComfyUI（默认 http://127.0.0.1:8188）。"
             )
-        elif not checks["templates_ok"]:
-            gate_status = "fail"
-            next_stage_allowed = False
-            next_action = "请先准备 configs/comfy_workflows/ 下的 workflow JSON，再重跑 Stage 6。"
         else:
             shot_manifest_path = (
                 runtime_root
@@ -115,44 +108,73 @@ def run_gate(
             else:
                 shot_manifest = read_json(shot_manifest_path)
                 comfy_settings = comfy_config.get("comfy", {}) or {}
-                submitter_config = SubmitterConfig(
-                    poll_interval_seconds=float(comfy_settings.get("poll_interval_seconds", 3.0)),
-                    max_retries=int(comfy_settings.get("max_retries", 1)),
-                    dry_run=bool(comfy_settings.get("dry_run", False)),
+                template_findings, template_scope, required_routes = _template_findings_for_manifest(
+                    router,
+                    shot_manifest,
+                    require_all_templates=bool(comfy_settings.get("require_all_templates", False)),
                 )
-                output_dir = (
-                    runtime_root
-                    / "comfy"
-                    / safe_path_part(series_id)
-                    / safe_path_part(chapter_id)
-                )
-                submission_result = submit_batch(
-                    shot_manifest=shot_manifest,
-                    output_dir=output_dir,
-                    client=client,
-                    router=router,
-                    submitter_config=submitter_config,
-                    agent_id="manga-anime-pipeline",
-                )
-                output_path = submission_result["output_path"]
-                checks["submission_ran"] = True
-                acceptance = evaluate_comfy_acceptance(submission_result)
-                checks["submission_status"] = acceptance["pipeline_status"]
-                comfy_quality = acceptance["comfy_quality"]
-                errors.extend(acceptance["errors"])
-                warnings.extend(acceptance["warnings"])
-                if acceptance["pipeline_status"] == "blocked":
-                    gate_status = "blocked"
-                    next_stage_allowed = False
-                    next_action = "ComfyUI 服务在提交过程中不可达，请重新启动后重跑。"
-                elif errors:
+                checks["required_routes"] = required_routes
+                checks["template_validation_scope"] = template_scope
+                if template_findings["missing"] or template_findings["mappings_missing"]:
+                    checks["templates_ok"] = False
+                    errors.extend([f"template missing: {item['route']} -> {item['path']}" for item in template_findings["missing"]])
+                    errors.extend([f"mapping missing: {item['route']} -> {item['path']}" for item in template_findings["mappings_missing"]])
                     gate_status = "fail"
                     next_stage_allowed = False
-                    next_action = "ComfyUI 提交失败，查看 comfy_tasks.json 调整 prompt / 模板后重跑。"
+                    next_action = "请先准备本次 shot_manifest 实际需要的 workflow JSON / mapping，再重跑 Stage 6。"
                 else:
-                    gate_status = "pass"
-                    next_stage_allowed = True
-                    next_action = "ComfyUI 已成功接收所有非 skip 镜头任务。"
+                    checks["templates_ok"] = True
+                    comfy_input_dir = None
+                    if comfy_settings.get("input_dir"):
+                        raw_input_dir = Path(str(comfy_settings["input_dir"]))
+                        comfy_input_dir = raw_input_dir if raw_input_dir.is_absolute() else (project_root / raw_input_dir).resolve()
+                    submitter_config = SubmitterConfig(
+                        poll_interval_seconds=float(comfy_settings.get("poll_interval_seconds", 3.0)),
+                        history_poll_attempts=int(comfy_settings.get("history_poll_attempts", 1)),
+                        max_retries=int(comfy_settings.get("max_retries", 1)),
+                        dry_run=bool(comfy_settings.get("dry_run", False)),
+                        comfy_input_dir=comfy_input_dir,
+                        output_prefix_root=str(comfy_settings.get("output_prefix_root", "manga_anime_pipeline")),
+                    )
+                    output_dir = (
+                        runtime_root
+                        / "comfy"
+                        / safe_path_part(series_id)
+                        / safe_path_part(chapter_id)
+                    )
+                    submission_result = submit_batch(
+                        shot_manifest=shot_manifest,
+                        output_dir=output_dir,
+                        client=client,
+                        router=router,
+                        submitter_config=submitter_config,
+                        agent_id="manga-anime-pipeline",
+                    )
+                    output_path = submission_result["output_path"]
+                    checks["submission_ran"] = True
+                    acceptance = evaluate_comfy_acceptance(
+                        submission_result,
+                        require_finished=bool(comfy_settings.get("require_finished", False)),
+                        require_outputs=bool(comfy_settings.get("require_outputs", False)),
+                    )
+                    checks["submission_status"] = acceptance["pipeline_status"]
+                    checks["require_finished"] = bool(comfy_settings.get("require_finished", False))
+                    checks["require_outputs"] = bool(comfy_settings.get("require_outputs", False))
+                    comfy_quality = acceptance["comfy_quality"]
+                    errors.extend(acceptance["errors"])
+                    warnings.extend(acceptance["warnings"])
+                    if acceptance["pipeline_status"] == "blocked":
+                        gate_status = "blocked"
+                        next_stage_allowed = False
+                        next_action = "ComfyUI 服务在提交过程中不可达，请重新启动后重跑。"
+                    elif errors:
+                        gate_status = "fail"
+                        next_stage_allowed = False
+                        next_action = "ComfyUI 提交失败，查看 comfy_tasks.json 调整 prompt / 模板后重跑。"
+                    else:
+                        gate_status = "pass"
+                        next_stage_allowed = True
+                        next_action = "ComfyUI 已成功接收所有非 skip 镜头任务。"
 
     commands = {
         "install_comfy": "python -m pip install -r requirements-comfy.txt",
@@ -185,6 +207,9 @@ def run_gate(
             "templates_valid": template_findings["valid"],
             "templates_missing": template_findings["missing"],
             "templates_skipped": template_findings["skipped"],
+            "mappings_valid": template_findings.get("mappings_valid", []),
+            "mappings_missing": template_findings.get("mappings_missing", []),
+            "validation_scope": template_scope,
         },
         "comfy_quality": comfy_quality,
         "comfy_tasks_path": project_ref(output_path, project_root) if output_path else None,
@@ -253,6 +278,30 @@ def _resolve(value: str) -> Path:
     if cwd_path.exists():
         return cwd_path
     return (PROJECT_ROOT / path).resolve()
+
+
+def _required_routes(shot_manifest: dict[str, Any]) -> list[str]:
+    routes: list[str] = []
+    seen: set[str] = set()
+    for shot in shot_manifest.get("shots", []) or []:
+        route = str(shot.get("workflow_route", "")).strip()
+        if not route or route == "skip" or route in seen:
+            continue
+        seen.add(route)
+        routes.append(route)
+    return routes
+
+
+def _template_findings_for_manifest(
+    router: WorkflowRouter,
+    shot_manifest: dict[str, Any],
+    *,
+    require_all_templates: bool,
+) -> tuple[dict[str, Any], str, list[str]]:
+    required_routes = _required_routes(shot_manifest)
+    if require_all_templates:
+        return router.validate_all(), "all_configured_routes", required_routes
+    return router.validate_routes(required_routes), "shot_manifest_routes", required_routes
 
 
 def _resolve_runtime(value: str) -> Path:

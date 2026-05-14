@@ -14,6 +14,10 @@ class OCRBasedDialogueProviderTests(unittest.TestCase):
         self.assertIn("第一句 第二句", result["dialogue_blocks"][0]["text"])
         self.assertEqual(result["dialogue_blocks"][0]["source_ocr_blocks"], ["ocr_0001", "ocr_0002"])
         self.assertEqual(result["cleaned_text_candidates"][0]["source_dialogue_id"], result["dialogue_blocks"][0]["dialogue_id"])
+        self.assertEqual(len(result["bubble_boxes"]), 2)
+        self.assertEqual(result["bubble_boxes"][0]["source_dialogue_id"], result["dialogue_blocks"][0]["dialogue_id"])
+        self.assertEqual(result["bubble_boxes"][0]["box"], [0, 0, 96, 44])
+        self.assertEqual(result["bubble_boxes"][0]["speaker_hint"], {"horizontal": "left", "vertical": "top"})
 
     def test_filters_low_confidence_and_empty_text(self) -> None:
         provider = OCRBasedDialogueProvider(_config(min_confidence=0.8))

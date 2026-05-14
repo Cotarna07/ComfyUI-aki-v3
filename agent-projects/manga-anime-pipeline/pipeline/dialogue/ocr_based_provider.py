@@ -13,6 +13,7 @@ class OCRBasedDialogueConfig:
     min_confidence: float = 0.3
     max_merge_distance: int = 48
     min_text_length: int = 1
+    bubble_padding: int = 16
 
 
 class OCRBasedDialogueProvider(DialogueProvider):
@@ -26,15 +27,19 @@ class OCRBasedDialogueProvider(DialogueProvider):
             min_confidence=float(settings.get("min_confidence", 0.3)),
             max_merge_distance=int(settings.get("max_merge_distance", 48)),
             min_text_length=int(settings.get("min_text_length", 1)),
+            bubble_padding=int(settings.get("bubble_padding", 16)),
         )
 
     def analyze(self, window_packet: dict[str, Any], ocr_result: dict[str, Any] | None = None) -> dict[str, Any]:
         ocr_result = ocr_result or {}
+        width = int(window_packet.get("width") or 0)
+        height = int(window_packet.get("height") or 0)
         ordered_blocks = _ordered_ocr_blocks(ocr_result)
         usable_blocks = [block for block in ordered_blocks if self._is_usable(block)]
         groups = _merge_nearby_blocks(usable_blocks, self.config.max_merge_distance)
 
         dialogue_blocks: list[dict[str, Any]] = []
+        bubble_boxes: list[dict[str, Any]] = []
         sfx_blocks: list[dict[str, Any]] = []
         cleaned_text_candidates: list[dict[str, Any]] = []
 
@@ -58,6 +63,18 @@ class OCRBasedDialogueProvider(DialogueProvider):
                 "provider": self.provider_name,
             }
             dialogue_blocks.append(dialogue)
+            if dialogue_type != "sfx":
+                bubble_boxes.append(
+                    {
+                        "bubble_id": f"{window_packet['window_id']}_bubble_{len(bubble_boxes):04d}",
+                        "source_dialogue_id": dialogue_id,
+                        "box": _expand_box(box, width, height, self.config.bubble_padding),
+                        "dialogue_type": dialogue_type,
+                        "speaker_hint": _speaker_hint(box, width, height),
+                        "confidence": confidence,
+                        "provider": self.provider_name,
+                    }
+                )
             if dialogue_type == "sfx":
                 sfx_blocks.append(
                     {
@@ -81,7 +98,7 @@ class OCRBasedDialogueProvider(DialogueProvider):
 
         return {
             "dialogue_blocks": dialogue_blocks,
-            "bubble_boxes": [],
+            "bubble_boxes": bubble_boxes,
             "sfx_blocks": sfx_blocks,
             "cleaned_text_candidates": cleaned_text_candidates,
             "provider": self.provider_name,
@@ -140,6 +157,38 @@ def _union_box(boxes: list[list[int]]) -> list[int]:
         max(box[2] for box in boxes),
         max(box[3] for box in boxes),
     ]
+
+
+def _expand_box(box: list[int], width: int, height: int, padding: int) -> list[int]:
+    if width <= 0 or height <= 0:
+        return box
+    pad = max(0, int(padding))
+    return [
+        max(0, box[0] - pad),
+        max(0, box[1] - pad),
+        min(width, box[2] + pad),
+        min(height, box[3] + pad),
+    ]
+
+
+def _speaker_hint(box: list[int], width: int, height: int) -> dict[str, Any]:
+    if width <= 0 or height <= 0:
+        return {"horizontal": "unknown", "vertical": "unknown"}
+    center_x = (box[0] + box[2]) / 2.0
+    center_y = (box[1] + box[3]) / 2.0
+    if center_x < width / 3.0:
+        horizontal = "left"
+    elif center_x > width * 2.0 / 3.0:
+        horizontal = "right"
+    else:
+        horizontal = "center"
+    if center_y < height / 3.0:
+        vertical = "top"
+    elif center_y > height * 2.0 / 3.0:
+        vertical = "bottom"
+    else:
+        vertical = "middle"
+    return {"horizontal": horizontal, "vertical": vertical}
 
 
 def _average_confidence(blocks: list[dict[str, Any]]) -> float:
