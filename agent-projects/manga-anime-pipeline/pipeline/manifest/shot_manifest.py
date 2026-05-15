@@ -7,6 +7,7 @@ from pipeline.common.io import as_project_path, write_json
 from pipeline.common.schemas import SHOT_MANIFEST_SCHEMA
 from pipeline.common.status import utc_now_iso
 from pipeline.common.validation import validate_json_schema
+from pipeline.characters import build_character_bible
 from pipeline.director.context import build_context_summary
 from pipeline.manifest.integrity import validate_shot_manifest_links
 
@@ -34,6 +35,7 @@ def build_shot_manifest(
         "source_packet_refs": [as_project_path(project_root, path) for path in packet_paths],
         "shots": shots,
     }
+    build_character_bible(manifest, project_root, runtime_root)
     validate_json_schema(manifest, SHOT_MANIFEST_SCHEMA, "shot_manifest")
     validate_shot_manifest_links(packets, manifest)
     output_path = runtime_root / "manifests" / _safe_path_part(series_id) / _safe_path_part(chapter_id) / "shot_manifest.json"

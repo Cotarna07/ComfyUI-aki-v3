@@ -102,6 +102,9 @@ def run_stage1(
         "providers": provider_report(providers),
         "mock_modules": [provider.provider_name for provider in providers.values() if provider.provider_name.startswith("mock")],
     }
+    if shot_manifest.get("character_bible_ref"):
+        report["outputs"]["character_bible"] = shot_manifest["character_bible_ref"]
+        report["counts"]["characters"] = _count_characters(project_root / shot_manifest["character_bible_ref"])
     report_path = status_report_path(chapter["series_id"], chapter["chapter_id"], runtime_root, run_id, force)
     status = TaskStatus.started("write_status_report", [as_project_path(project_root, shot_manifest_path)])
     statuses.append(status)
@@ -117,3 +120,12 @@ def run_stage1(
         raise
     return report
 
+
+def _count_characters(character_bible_path: Path) -> int:
+    try:
+        from pipeline.common.io import read_json
+
+        bible = read_json(character_bible_path)
+    except Exception:
+        return 0
+    return len(bible.get("characters", []) or [])

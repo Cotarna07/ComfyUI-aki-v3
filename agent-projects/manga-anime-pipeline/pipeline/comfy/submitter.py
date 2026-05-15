@@ -10,6 +10,7 @@ from typing import Any
 
 from pipeline.common.io import read_json, write_json
 from pipeline.comfy.client import ComfyClient, ServerUnreachable
+from pipeline.comfy.provenance import write_output_provenance
 from pipeline.comfy.template_patcher import (
     TemplatePatchError,
     infer_comfy_input_dir,
@@ -101,6 +102,7 @@ def _process_shot(
         "submitted_at": None,
         "finished_at": None,
         "output_files": [],
+        "provenance_files": [],
         "error_message": None,
         "retry_count": 0,
         "seed": None,
@@ -222,6 +224,17 @@ def _process_shot(
         record["status"] = "submitted"
         record["submitted_at"] = _now_iso()
         _poll_history(client, record, submitter_config)
+        if record["output_files"]:
+            record["provenance_files"] = _write_output_provenance_records(
+                output_dir=output_dir,
+                project_root=router.project_root,
+                workflow_payload=workflow_payload,
+                workflow_route=workflow_route,
+                prompt_id=str(record["prompt_id"]),
+                client_id=client_id,
+                extra_data=payload["extra_data"],
+                record=record,
+            )
         return record
     return record
 
@@ -276,6 +289,37 @@ def _history_error_message(status_info: dict[str, Any]) -> str:
     if messages:
         return str(messages[-1])
     return str(status_info or "ComfyUI history reported failure")
+
+
+def _write_output_provenance_records(
+    *,
+    output_dir: Path,
+    project_root: Path,
+    workflow_payload: dict[str, Any],
+    workflow_route: str,
+    prompt_id: str,
+    client_id: str,
+    extra_data: dict[str, Any],
+    record: dict[str, Any],
+) -> list[str]:
+    provenance_dir = output_dir / "provenance"
+    sidecars: list[str] = []
+    for output_file in record["output_files"]:
+        sidecar = provenance_dir / f"{_safe_path_part(str(output_file))}.provenance.json"
+        path = write_output_provenance(
+            Path(str(output_file)),
+            project_root=project_root,
+            workflow=workflow_payload,
+            workflow_name=workflow_route,
+            prompt_id=prompt_id,
+            client_id=client_id,
+            extra_data=extra_data,
+            task_context={key: value for key, value in record.items() if key != "provenance_files"},
+            sidecar_path=sidecar,
+            output_label=str(output_file),
+        )
+        sidecars.append(str(path))
+    return sidecars
 
 
 def _now_iso() -> str:

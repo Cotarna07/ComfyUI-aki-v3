@@ -460,10 +460,10 @@ def _normalize_shot_payload(data: dict[str, Any], packet: dict[str, Any], contex
     crop = data.get("crop_recommendation")
     if not isinstance(crop, dict):
         crop = {"type": "full_window", "box": packet["source_box"]}
-    main_characters = _ensure_str_list(data.get("main_characters"), default=["unknown_character"])
-    support_characters = _ensure_str_list(data.get("support_characters"), default=[])
+    main_characters, main_character_details = _normalize_character_payloads(data.get("main_characters"), default=["unknown_character"], role_scope="main")
+    support_characters, support_character_details = _normalize_character_payloads(data.get("support_characters"), default=[], role_scope="support")
     continuity_notes = _ensure_str_list(data.get("continuity_notes"), default=[])
-    return {
+    shot = {
         "shot_id": f"{_safe_id(packet['chapter_id'])}_s{shot_index:04d}",
         "source_pages": [packet["page_id"]],
         "source_windows": [packet["window_id"]],
@@ -486,12 +486,55 @@ def _normalize_shot_payload(data: dict[str, Any], packet: dict[str, Any], contex
         "workflow_route": route,
         "confidence": confidence,
     }
+    character_candidates = main_character_details + support_character_details
+    if character_candidates:
+        shot["character_candidates"] = character_candidates
+        if not continuity_notes:
+            shot["continuity_notes"] = _character_continuity_notes(character_candidates)
+    return shot
 
 
 def _ensure_str_list(value: Any, default: list[str]) -> list[str]:
     if isinstance(value, list):
         return [str(item) for item in value if str(item).strip()]
     return list(default)
+
+
+def _normalize_character_payloads(value: Any, default: list[str], role_scope: str) -> tuple[list[str], list[dict[str, Any]]]:
+    names: list[str] = []
+    details: list[dict[str, Any]] = []
+    items = value if isinstance(value, list) else []
+    for item in items:
+        if isinstance(item, dict):
+            name = str(item.get("name") or item.get("character_name") or "").strip()
+            if name:
+                names.append(name)
+            detail = {str(key): item_value for key, item_value in item.items() if item_value not in (None, "")}
+            if detail:
+                detail["role_scope"] = role_scope
+                details.append(detail)
+            continue
+        text = str(item or "").strip()
+        if text:
+            names.append(text)
+            details.append({"name": text, "description": text, "role_scope": role_scope})
+    if not names:
+        names = list(default)
+        details.extend({"name": name, "description": name, "role_scope": role_scope} for name in names)
+    return names, details
+
+
+def _character_continuity_notes(character_candidates: list[dict[str, Any]]) -> list[str]:
+    notes: list[str] = []
+    for item in character_candidates:
+        name = str(item.get("name") or "角色")
+        fragments = []
+        for key in ("height", "hair_color", "hair_style", "eye_color", "attire"):
+            if item.get(key):
+                fragments.append(f"{key}={item[key]}")
+        if fragments:
+            notes.append(f"保持{name}外观一致：" + "，".join(fragments))
+    return notes[:4]
 
 
 def _to_float(value: Any, default: float) -> float:

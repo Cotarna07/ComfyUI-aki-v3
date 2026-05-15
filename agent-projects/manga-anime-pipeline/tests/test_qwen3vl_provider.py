@@ -122,6 +122,35 @@ class Qwen3VLProviderTests(unittest.TestCase):
                 shot_index=0,
             )
 
+    def test_character_dicts_are_normalized_to_names_and_candidates(self) -> None:
+        shot = _normalize_shot_payload(
+            {
+                "workflow_route": "dialogue_light_motion",
+                "positive_prompt": "anime close shot",
+                "negative_prompt": "blurry",
+                "anime_fit_score": 0.8,
+                "confidence": 0.7,
+                "main_characters": [
+                    {
+                        "name": "里绪奈",
+                        "hair_color": "银白",
+                        "eye_color": "绿色",
+                        "attire": "校服",
+                    },
+                    {
+                        "name": "黑发角色",
+                        "description": "深紫高马尾，金色眼睛，校服",
+                    },
+                ],
+            },
+            packet={"chapter_id": "ch", "page_id": "p", "window_id": "w", "source_box": [0, 0, 10, 10]},
+            context={},
+            shot_index=0,
+        )
+        self.assertEqual(shot["main_characters"], ["里绪奈", "黑发角色"])
+        self.assertEqual(shot["character_candidates"][0]["hair_color"], "银白")
+        self.assertIn("保持里绪奈外观一致", shot["continuity_notes"][0])
+
     def test_strict_json_parses_braces(self) -> None:
         text = "garbage {\"a\": 1, \"b\": [1,2]} trailing"
         parsed = _parse_strict_json(text, True)

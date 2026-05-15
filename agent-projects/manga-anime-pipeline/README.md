@@ -162,6 +162,7 @@ PaddleOCR + OCR-based Dialogue 配置示例见 `configs/stage1.ocr.dialogue.json
 - `runtime/YYYY-MM-DD_<series_id>/structured/<series_id>/<chapter_id>/packets/<window_id>.json`
 - `runtime/YYYY-MM-DD_<series_id>/structured/<series_id>/<chapter_id>/structured_packets.json`
 - `runtime/YYYY-MM-DD_<series_id>/manifests/<series_id>/<chapter_id>/shot_manifest.json`
+- `runtime/YYYY-MM-DD_<series_id>/characters/<series_id>/<chapter_id>/character_bible.json`
 - `runtime/YYYY-MM-DD_<series_id>/qc/<series_id>/<chapter_id>/stage1_status.json`
 - `runtime/YYYY-MM-DD_<series_id>/qc/<series_id>/<chapter_id>/acceptance_report.json`
 - `runtime/YYYY-MM-DD_<series_id>/qc/<series_id>/<chapter_id>/acceptance_report.md`
@@ -201,10 +202,80 @@ PaddleOCR + OCR-based Dialogue 配置示例见 `configs/stage1.ocr.dialogue.json
 - `pipeline/director/mock.py`：mock director，输出符合 schema 的 shot 草稿。
 - `pipeline/director/base.py`、`pipeline/director/context.py` 与 `pipeline/director/provider_factory.py`：导演 provider 抽象、上下文摘要与加载。
 - `pipeline/manifest/shot_manifest.py`：写入 shot manifest，并在写入前校验 JSON schema。
+- `pipeline/characters/bible.py`：从 shot manifest 汇总角色候选，归并同名、泛称和视觉特征，生成 `character_bible.json` 并为 shot 标记 `main_character_ids`。
 - `pipeline/qc/acceptance.py` 与 `pipeline/qc/report.py`：自动验收规则、质量统计、JSON/Markdown 报告。
 - `pipeline/workflows/chapter_analysis/runner.py`：串联第一阶段闭环。
 - `pipeline/stage1.py`：兼容旧导入路径，后续新代码优先引用 `pipeline.workflows.chapter_analysis`。
 - `scripts/run_acceptance.py`：运行 pipeline 并输出 acceptance report。
+
+## 角色圣经与本地模型建议
+
+`character_bible.json` 是后续角色设计和多镜头一致性的中间锚点。它会把 director 输出里的 `黑发角色`、`白发角色`、`高个子角色`、角色实名和身高/外观描述归并为稳定 `character_id`，并给出 `continuity_prompt`、外观字段、证据镜头和需要人工确认的问题。
+
+本轮漫画短视频测试的完整交接说明见 `docs/2026-05-15_测试链路交接与参数绑定规则.md`。新对话接手时优先读这份文档，再看对应 `runtime/.../review_index.md`。
+
+当前前半段只生成角色结构，不直接调用 ComfyUI 生成角色设定图。后续接角色设计时，建议按用途选择本机已有模型：
+
+- 角色设定图/风格定稿：优先试 `waiIllustriousSDXL_v170.safetensors`、`animagineXLV31_v31.safetensors`、`Illustrious-XL-v0.1.safetensors`、`hassakuXLIllustrious_v34.safetensors` 这类偏二次元/插画的 SDXL checkpoint。
+- 原图角色参考保持：优先用 `ipadapter` + `clip_vision` 目录下的 SDXL FaceID / Plus 相关模型，把漫画 crop 作为身份参考。
+- 漫画 crop 转短视频：当前项目 route 模板优先接 Wan 2.2 I2V；本机有 `wan2.2_i2v_high_noise_14B_fp8_scaled.safetensors`、`wan2.2_i2v_low_noise_14B_fp8_scaled.safetensors` 及 Lightx2v LoRA。
+- 强动作/表情后续链：可评估 `Wan2_2-Animate-14B_fp8_scaled_e4m3fn_KJ_v2.safetensors` 和 `WanAnimate_relight_lora_fp16.safetensors`，但应在角色圣经和参考图稳定后再接。
+- 构图/姿态控制：本机已有 `controlnet/mistoLine_rank256.safetensors`、`sai_xl_depth_256lora.safetensors`、`grounding-dino`、`sams` 和 `ultralytics` 模型，可用于后续更准的角色裁切、线稿/深度/分割条件。
+
+### 角色风格矩阵测试
+
+如果角色设定图出现低幼化、服装漂移或气质偏差，优先用矩阵测试同时比较“模型”和“提示词风格档位”，不要只看单次出图。
+
+当前临时脚本位于：
+
+```powershell
+d:\ComfyUI-aki-v3\.venv\Scripts\python.exe scripts\generated\test_projects_review\run_character_style_matrix.py --run-id 20260515_style_matrix_v1
+```
+
+默认会跑 3 个 checkpoint × 3 个风格档位 × 2 个角色，并按以下方式分类输出：
+
+- `runtime/<topic>/review/style_matrix/<run_id>/all_conditions_contact_sheet.png`：全部条件总览。
+- `runtime/<topic>/review/style_matrix/<run_id>/by_checkpoint/`：按模型横向比较。
+- `runtime/<topic>/review/style_matrix/<run_id>/by_profile/`：按风格档位横向比较。
+- `runtime/<topic>/review/style_matrix/<run_id>/by_condition/`：每个具体条件下的单张结果。
+- `runtime/<topic>/review/style_matrix/<run_id>/review_index.md`：人工审核表，可记录年龄感、还原度和可用性。
+
+初步判断规则：同一风格档位在不同 checkpoint 下差异大，优先怀疑模型默认审美；同一 checkpoint 在 `mature_shoujo` 明显改善，则说明提示词/角色设计 skill 可以继续加强；如果所有文生图都难以还原，应转向 IPAdapter、ControlNet、角色 LoRA 或参考图编辑链。
+
+### 角色图生视频模型横评
+
+角色设定图稳定后，可以用同一批角色图测试多个本地图生视频模型，先看身份保持、动作自然度和画面崩坏概率，再决定进入更长视频或分镜级生产。
+
+当前临时脚本位于：
+
+```powershell
+d:\ComfyUI-aki-v3\.venv\Scripts\python.exe scripts\generated\test_projects_review\run_character_video_model_matrix.py --run-id 20260515_video_models_v2
+```
+
+默认测试 3 个本地 I2V 条件 × 2 个角色：
+
+- `wan22_i2v_lightx2v`：Wan 2.2 官方高/低噪 UNet + Lightx2v LoRA，快速轻动作基线。
+- `wan21_i2v_480p`：Wan 2.1 I2V 14B 480P，传统 I2V 基线。
+- `wan22_i2v_dasiwa_lightspeed`：Dasiwa Wan 2.2 派生高噪 UNet + 官方低噪 UNet，不挂成人向 LoRA，仅保留安全负面词约束。
+
+输出会按模型分类：
+
+- `runtime/<topic>/review/video_model_matrix/<run_id>/by_model/<model_id>/`：每个模型下的角色视频。
+- `runtime/<topic>/review/video_model_matrix/<run_id>/video_review_contact_sheet.jpg`：每个视频首帧/中帧/尾帧审核图。
+- `runtime/<topic>/review/video_model_matrix/<run_id>/video_matrix_tasks.json`：模型、seed、提示词、输出文件和 ComfyUI prompt_id。
+- `runtime/<topic>/review/video_model_matrix/<run_id>/review_index.md`：人工审核表。
+
+本机还存在 HunyuanVideo、LTX、CogVideoX、Wan Animate 等视频相关模型或节点，但首批批量横评优先使用已能稳定通过 ComfyUI API 的 Wan I2V 链。若某个模型虽然 `finished` 但帧图出现噪点、爆色或身份完全漂移，应直接标记为不可用条件，而不是进入后续长视频生产。
+
+### ComfyUI 输出参数绑定
+
+所有 ComfyUI 测试输出必须带同名 `*.provenance.json`，例如 `char_dark_ponytail_01.mp4.provenance.json`。旁车内保存完整 API workflow、节点参数、模型、LoRA、VAE、采样器、seed、尺寸、提示词、prompt_id 和任务上下文；后续调参不应只看总表。
+
+统一工具位于 `pipeline/comfy/provenance.py`。已有测试脚本和 Stage 6 submitter 已接入；旧产物可用下面命令回填：
+
+```powershell
+d:\ComfyUI-aki-v3\.venv\Scripts\python.exe scripts\generated\test_projects_review\backfill_comfy_provenance.py
+```
 
 ## schema 校验
 
