@@ -169,6 +169,21 @@ PaddleOCR + OCR-based Dialogue 配置示例见 `configs/stage1.ocr.dialogue.json
 
 每个阶段都会写入 task status，字段包含 `task_id`、`stage`、`status`、`started_at`、`finished_at`、`input_refs`、`output_refs`、`error_message`、`retry_count`。
 
+## 核心工作流目录
+
+项目核心代码开始按“可单独理解、可单独测试、可复用产物”的工作流边界收敛到 `pipeline/workflows/`：
+
+- `pipeline/workflows/chapter_analysis/`：章节分析闭环，负责读取章节、切片窗口、构建结构化素材包、生成 shot manifest 和写入阶段状态。
+- `pipeline/stage1.py`：旧入口兼容层，继续导出 `run_stage1`，方便既有脚本、测试和门禁不受目录拆分影响。
+
+`chapter_analysis` 内部再按职责拆分：
+
+- `artifacts.py`：负责 windows、structured packets、shot manifest 的复用、校验和重建。
+- `providers.py`：负责 OCR、dialogue、detection、director provider 装配和 runtime check。
+- `executor.py`：负责单个 stage 的状态追踪、reused/completed/failed 标记和输出引用收集。
+- `reports.py`：负责失败状态报告。
+- `runner.py`：只保留章节分析主编排。
+
 ## 当前模块
 
 - `pipeline/ingest/chapter.py`：读取章节 manifest，并校验图片尺寸。
@@ -187,7 +202,8 @@ PaddleOCR + OCR-based Dialogue 配置示例见 `configs/stage1.ocr.dialogue.json
 - `pipeline/director/base.py`、`pipeline/director/context.py` 与 `pipeline/director/provider_factory.py`：导演 provider 抽象、上下文摘要与加载。
 - `pipeline/manifest/shot_manifest.py`：写入 shot manifest，并在写入前校验 JSON schema。
 - `pipeline/qc/acceptance.py` 与 `pipeline/qc/report.py`：自动验收规则、质量统计、JSON/Markdown 报告。
-- `pipeline/stage1.py`：串联第一阶段闭环。
+- `pipeline/workflows/chapter_analysis/runner.py`：串联第一阶段闭环。
+- `pipeline/stage1.py`：兼容旧导入路径，后续新代码优先引用 `pipeline.workflows.chapter_analysis`。
 - `scripts/run_acceptance.py`：运行 pipeline 并输出 acceptance report。
 
 ## schema 校验
