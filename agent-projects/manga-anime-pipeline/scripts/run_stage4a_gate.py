@@ -16,6 +16,7 @@ from pipeline.common.io import as_project_path, read_json  # noqa: E402
 from pipeline.ingest.slicer import SliceConfig  # noqa: E402
 from pipeline.qc.detection_acceptance import evaluate_detection_acceptance  # noqa: E402
 from pipeline.qc.gate_common import load_input_metadata, project_ref, render_simple_markdown, write_gate_reports  # noqa: E402
+from pipeline.runtime_layout import prepare_runtime_for_input  # noqa: E402
 from pipeline.stage1 import run_stage1  # noqa: E402
 from scripts.run_stage3a_gate import run_gate as run_stage3a_gate  # noqa: E402
 
@@ -154,7 +155,9 @@ def main() -> int:
     input_path = _resolve(args.input)
     pipeline_config_path = _resolve(args.pipeline_config)
     upstream_config_path = _resolve(args.upstream_config) if args.upstream_config else pipeline_config_path
-    runtime_root = _resolve_runtime(args.runtime_root)
+    runtime_context = prepare_runtime_for_input(PROJECT_ROOT, _resolve_runtime(args.runtime_root), input_path)
+    input_path = runtime_context.input_path
+    runtime_root = runtime_context.runtime_root
     report, json_path, md_path = run_gate(
         input_path=input_path,
         pipeline_config_path=pipeline_config_path,

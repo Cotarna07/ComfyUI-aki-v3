@@ -43,6 +43,10 @@ d:\ComfyUI-aki-v3\.venv\Scripts\python.exe scripts\create_example_input.py
 - `runtime/input/example_page.png`
 - `runtime/input/example_chapter.json`
 
+实际执行 `run_stage1.py`、`run_acceptance.py`、各 stage gate 或 `run_all_gates.py` 时，脚本会自动在 `runtime/` 下创建当前漫画的专属目录，目录名格式为 `YYYY-MM-DD_<series_id>`。当前输入 manifest 会被复制到该专属目录的 `input/` 下，后续 stage 产物也都会统一写入这个目录。
+
+如果同一个 `series_id` 之前已经跑过，脚本会复用已有专属目录，而不是重复创建新的日期目录；旧版散落在 `runtime/windows/`、`runtime/structured/`、`runtime/manifests/`、`runtime/qc/`、`runtime/comfy/` 下的同漫画产物也会自动迁入该专属目录。
+
 示例 JSON：
 
 ```json
@@ -149,16 +153,19 @@ PaddleOCR + OCR-based Dialogue 配置示例见 `configs/stage1.ocr.dialogue.json
 
 ## 输出文件
 
-默认输出在项目内 `runtime/` 下：
+默认输出在项目内 `runtime/YYYY-MM-DD_<series_id>/` 下：
 
-- `runtime/windows/<series_id>/<chapter_id>/window_manifest.json`
-- `runtime/windows/<series_id>/<chapter_id>/<page_id>/w0000.png`
-- `runtime/structured/<series_id>/<chapter_id>/packets/<window_id>.json`
-- `runtime/structured/<series_id>/<chapter_id>/structured_packets.json`
-- `runtime/manifests/<series_id>/<chapter_id>/shot_manifest.json`
-- `runtime/qc/<series_id>/<chapter_id>/stage1_status.json`
-- `runtime/qc/<series_id>/<chapter_id>/acceptance_report.json`
-- `runtime/qc/<series_id>/<chapter_id>/acceptance_report.md`
+- `runtime/YYYY-MM-DD_<series_id>/input/<chapter_manifest>.json`
+- `runtime/YYYY-MM-DD_<series_id>/input/pages/<page_id>_<image_name>.png`
+- `runtime/YYYY-MM-DD_<series_id>/windows/<series_id>/<chapter_id>/window_manifest.json`
+- `runtime/YYYY-MM-DD_<series_id>/windows/<series_id>/<chapter_id>/<page_id>/w0000.png`
+- `runtime/YYYY-MM-DD_<series_id>/structured/<series_id>/<chapter_id>/packets/<window_id>.json`
+- `runtime/YYYY-MM-DD_<series_id>/structured/<series_id>/<chapter_id>/structured_packets.json`
+- `runtime/YYYY-MM-DD_<series_id>/manifests/<series_id>/<chapter_id>/shot_manifest.json`
+- `runtime/YYYY-MM-DD_<series_id>/qc/<series_id>/<chapter_id>/stage1_status.json`
+- `runtime/YYYY-MM-DD_<series_id>/qc/<series_id>/<chapter_id>/acceptance_report.json`
+- `runtime/YYYY-MM-DD_<series_id>/qc/<series_id>/<chapter_id>/acceptance_report.md`
+- `runtime/YYYY-MM-DD_<series_id>/comfy/<series_id>/<chapter_id>/comfy_tasks.json`
 
 每个阶段都会写入 task status，字段包含 `task_id`、`stage`、`status`、`started_at`、`finished_at`、`input_refs`、`output_refs`、`error_message`、`retry_count`。
 

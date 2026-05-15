@@ -11,6 +11,7 @@ if str(PROJECT_ROOT) not in sys.path:
 
 from pipeline.common.io import read_json  # noqa: E402
 from pipeline.ingest.slicer import SliceConfig  # noqa: E402
+from pipeline.runtime_layout import prepare_runtime_for_input  # noqa: E402
 from pipeline.stage1 import run_stage1  # noqa: E402
 
 
@@ -26,9 +27,11 @@ def main() -> int:
 
     try:
         config_path = _resolve_existing_path(args.config, PROJECT_ROOT)
-        config = read_json(config_path) if config_path.exists() else {}
         input_path = _resolve_existing_path(args.input, PROJECT_ROOT)
-        runtime_root = _resolve_runtime_path(args.runtime_root, PROJECT_ROOT)
+        runtime_context = prepare_runtime_for_input(PROJECT_ROOT, _resolve_runtime_path(args.runtime_root, PROJECT_ROOT), input_path)
+        input_path = runtime_context.input_path
+        runtime_root = runtime_context.runtime_root
+        config = read_json(config_path) if config_path.exists() else {}
         slice_config = SliceConfig(
             window_height=args.window_height if args.window_height is not None else int(config.get("window_height", 1200)),
             overlap=args.overlap if args.overlap is not None else int(config.get("overlap", 160)),

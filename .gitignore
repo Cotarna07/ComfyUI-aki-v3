@@ -91,3 +91,5 @@ ComfyUI/user/**/*.safetensors
 ComfyUI/user/**/*.ckpt
 ComfyUI/user/**/*.pth
 ComfyUI/user/**/*.pt
+agent-projects/manga-anime-pipeline/yolo11n.pt
+agent-projects/manga-anime-pipeline/sam2.1_l.pt

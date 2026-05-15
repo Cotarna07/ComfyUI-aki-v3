@@ -11,6 +11,7 @@ if str(PROJECT_ROOT) not in sys.path:
 
 from pipeline.ingest.slicer import SliceConfig  # noqa: E402
 from pipeline.qc.acceptance import run_acceptance  # noqa: E402
+from pipeline.runtime_layout import prepare_runtime_for_input  # noqa: E402
 
 
 def main() -> int:
@@ -25,7 +26,9 @@ def main() -> int:
 
     input_path = _resolve_path(args.input, PROJECT_ROOT)
     config_path = _resolve_path(args.config, PROJECT_ROOT)
-    runtime_root = _resolve_runtime_path(args.runtime_root, PROJECT_ROOT)
+    runtime_context = prepare_runtime_for_input(PROJECT_ROOT, _resolve_runtime_path(args.runtime_root, PROJECT_ROOT), input_path)
+    input_path = runtime_context.input_path
+    runtime_root = runtime_context.runtime_root
     report, json_path, md_path = run_acceptance(
         input_path=input_path,
         config_path=config_path,

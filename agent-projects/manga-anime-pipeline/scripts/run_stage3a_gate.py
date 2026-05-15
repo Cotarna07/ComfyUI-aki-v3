@@ -19,6 +19,7 @@ from pipeline.qc.gate_common import (  # noqa: E402
     render_simple_markdown,
     write_gate_reports,
 )
+from pipeline.runtime_layout import prepare_runtime_for_input  # noqa: E402
 from scripts.check_ocr_env import check_ocr_environment  # noqa: E402
 
 
@@ -134,7 +135,9 @@ def main() -> int:
     args = parser.parse_args()
     input_path = _resolve(args.input)
     config_path = _resolve(args.config)
-    runtime_root = _resolve_runtime(args.runtime_root)
+    runtime_context = prepare_runtime_for_input(PROJECT_ROOT, _resolve_runtime(args.runtime_root), input_path)
+    input_path = runtime_context.input_path
+    runtime_root = runtime_context.runtime_root
     report, json_path, md_path = run_gate(
         input_path=input_path,
         config_path=config_path,

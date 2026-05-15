@@ -26,6 +26,7 @@ from pipeline.qc.gate_common import (  # noqa: E402
     safe_path_part,
     write_gate_reports,
 )
+from pipeline.runtime_layout import prepare_runtime_for_input  # noqa: E402
 from scripts.run_stage5_gate import run_gate as run_stage5_gate  # noqa: E402
 
 GATE_NAME = "stage6_gate"
@@ -240,7 +241,9 @@ def main() -> int:
     detection_config_path = _resolve(args.detection_config) if args.detection_config else pipeline_config_path
     upstream_config_path = _resolve(args.upstream_config) if args.upstream_config else detection_config_path
     comfy_config_path = _resolve(args.comfy_config)
-    runtime_root = _resolve_runtime(args.runtime_root)
+    runtime_context = prepare_runtime_for_input(PROJECT_ROOT, _resolve_runtime(args.runtime_root), input_path)
+    input_path = runtime_context.input_path
+    runtime_root = runtime_context.runtime_root
     report, json_path, md_path = run_gate(
         input_path=input_path,
         pipeline_config_path=pipeline_config_path,

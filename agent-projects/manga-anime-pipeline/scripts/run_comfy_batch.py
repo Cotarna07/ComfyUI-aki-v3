@@ -16,6 +16,7 @@ from pipeline.comfy.submitter import SubmitterConfig, submit_batch  # noqa: E402
 from pipeline.comfy.workflow_router import WorkflowRouter  # noqa: E402
 from pipeline.common.io import read_json  # noqa: E402
 from pipeline.qc.gate_common import safe_path_part  # noqa: E402
+from pipeline.runtime_layout import prepare_runtime_for_manifest  # noqa: E402
 
 
 def main() -> int:
@@ -25,14 +26,16 @@ def main() -> int:
     parser.add_argument("--runtime-root", default="runtime")
     args = parser.parse_args()
     manifest_path = _resolve(args.shot_manifest)
-    comfy_config_path = _resolve(args.comfy_config)
-    runtime_root = _resolve_runtime(args.runtime_root)
     if not manifest_path.exists():
         print(json.dumps({"status": "fail", "error": f"shot_manifest not found: {manifest_path}"}, ensure_ascii=False, indent=2))
         return 2
+    comfy_config_path = _resolve(args.comfy_config)
+    runtime_context = prepare_runtime_for_manifest(PROJECT_ROOT, _resolve_runtime(args.runtime_root), manifest_path)
+    manifest_path = runtime_context.manifest_path
+    runtime_root = runtime_context.runtime_root
     manifest = read_json(manifest_path)
-    series_id = str(manifest.get("series_id", "unknown_series"))
-    chapter_id = str(manifest.get("chapter_id", "unknown_chapter"))
+    series_id = runtime_context.series_id
+    chapter_id = runtime_context.chapter_id
     comfy_config = read_json(comfy_config_path)
     server_url = (comfy_config.get("comfy") or {}).get("server", "http://127.0.0.1:8188")
     client = ComfyClient(ComfyClientConfig(server=server_url))

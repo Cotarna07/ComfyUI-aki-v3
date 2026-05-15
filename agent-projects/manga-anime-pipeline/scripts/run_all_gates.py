@@ -19,6 +19,7 @@ from pipeline.qc.gate_common import (  # noqa: E402
     render_simple_markdown,
     write_gate_reports,
 )
+from pipeline.runtime_layout import prepare_runtime_for_input  # noqa: E402
 from scripts.run_stage3a_gate import run_gate as run_stage3a_gate  # noqa: E402
 from scripts.run_stage4a_gate import run_gate as run_stage4a_gate  # noqa: E402
 from scripts.run_stage5_gate import run_gate as run_stage5_gate  # noqa: E402
@@ -191,14 +192,17 @@ def main() -> int:
     parser.add_argument("--overlap", type=int, default=160)
     parser.add_argument("--force", action="store_true")
     args = parser.parse_args()
+    input_path = _resolve(args.input)
+    runtime_context = prepare_runtime_for_input(PROJECT_ROOT, _resolve_runtime(args.runtime_root), input_path)
+    input_path = runtime_context.input_path
     report, json_path, md_path = run_all(
-        input_path=_resolve(args.input),
+        input_path=input_path,
         ocr_config_path=_resolve(args.ocr_config),
         detect_config_path=_resolve(args.detect_config),
         director_config_path=_resolve(args.director_config),
         comfy_config_path=_resolve(args.comfy_config),
         project_root=PROJECT_ROOT,
-        runtime_root=_resolve_runtime(args.runtime_root),
+        runtime_root=runtime_context.runtime_root,
         slice_config=SliceConfig(window_height=args.window_height, overlap=args.overlap),
         force=args.force,
     )
