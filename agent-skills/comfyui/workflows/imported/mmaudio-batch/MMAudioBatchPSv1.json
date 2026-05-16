@@ -1,0 +1,1699 @@
+{
+  "id": "391eaa4f-f7b9-4338-a353-5df66613f809",
+  "revision": 0,
+  "last_node_id": 270,
+  "last_link_id": 398,
+  "nodes": [
+    {
+      "id": 110,
+      "type": "MMAudioFeatureUtilsLoader",
+      "pos": [
+        2880,
+        -780
+      ],
+      "size": [
+        487.2332763671875,
+        154
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "bigvgan_vocoder_model",
+          "shape": 7,
+          "type": "VOCODER_MODEL",
+          "link": 389
+        }
+      ],
+      "outputs": [
+        {
+          "name": "mmaudio_featureutils",
+          "type": "MMAUDIO_FEATUREUTILS",
+          "links": [
+            189
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-mmaudio",
+        "ver": "841b307095f3cdc448d940a5787bc36706e49f1d",
+        "Node name for S&R": "MMAudioFeatureUtilsLoader",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.4.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "mmaudio_vae_44k_fp16.safetensors",
+        "mmaudio_synchformer_fp16.safetensors",
+        "apple_DFN5B-CLIP-ViT-H-14-384_fp16.safetensors",
+        "44k",
+        "fp16"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 133,
+      "type": "For Each Done [DVB]",
+      "pos": [
+        2070,
+        40
+      ],
+      "size": [
+        210,
+        46
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 229
+        },
+        {
+          "name": "foreach",
+          "type": "FOREACH",
+          "link": 210
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfyui-dream-video-batches",
+        "ver": "1.1.4",
+        "Node name for S&R": "For Each Done [DVB]",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.4.1"
+        }
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 131,
+      "type": "CR Integer To String",
+      "pos": [
+        2060,
+        80
+      ],
+      "size": [
+        315,
+        78
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "int_",
+          "type": "INT",
+          "link": 207
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "slot_index": 0,
+          "links": [
+            208
+          ]
+        },
+        {
+          "name": "show_help",
+          "type": "STRING",
+          "slot_index": 1,
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyroll",
+        "ver": "d78b780ae43fcf8c6b7c6505e6ffb4584281ceca",
+        "Node name for S&R": "CR Integer To String",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.4.1"
+        }
+      },
+      "widgets_values": [],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 132,
+      "type": "ShowText|pysssss",
+      "pos": [
+        2060,
+        -10
+      ],
+      "size": [
+        315,
+        76
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 22,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 208
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "shape": 6,
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-custom-scripts",
+        "ver": "1.2.5",
+        "Node name for S&R": "ShowText|pysssss",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.4.1"
+        }
+      },
+      "widgets_values": [
+        "385"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 261,
+      "type": "CR Float Input Switch JK",
+      "pos": [
+        2010,
+        -350
+      ],
+      "size": [
+        270,
+        126
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "boolean_value",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "boolean_value"
+          },
+          "link": 386
+        },
+        {
+          "name": "float_false",
+          "type": "FLOAT",
+          "widget": {
+            "name": "float_false"
+          },
+          "link": 384
+        }
+      ],
+      "outputs": [
+        {
+          "name": "float_output",
+          "type": "FLOAT",
+          "links": [
+            393
+          ]
+        },
+        {
+          "name": "boolean",
+          "type": "BOOLEAN",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-jakeupgrade",
+        "ver": "2.3.2",
+        "Node name for S&R": "CR Float Input Switch JK",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.4.1"
+        }
+      },
+      "widgets_values": [
+        false,
+        0,
+        24
+      ]
+    },
+    {
+      "id": 267,
+      "type": "easy cleanGpuUsed",
+      "pos": [
+        2810,
+        -240
+      ],
+      "size": [
+        157.38925170898438,
+        26
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "anything",
+          "type": "*",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": []
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "1.3.4",
+        "Node name for S&R": "easy cleanGpuUsed",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.4.1"
+        }
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 263,
+      "type": "SaveAudio",
+      "pos": [
+        2800,
+        -550
+      ],
+      "size": [
+        270,
+        112
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 26,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 392
+        },
+        {
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": 388
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.64",
+        "Node name for S&R": "SaveAudio",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.4.1"
+        }
+      },
+      "widgets_values": [
+        "audio/ComfyUI"
+      ]
+    },
+    {
+      "id": 264,
+      "type": "MMAudioVoCoderLoader",
+      "pos": [
+        2310,
+        -680
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "mmaudio_vocoder",
+          "type": "VOCODER_MODEL",
+          "links": [
+            389
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-mmaudio",
+        "ver": "841b307095f3cdc448d940a5787bc36706e49f1d",
+        "Node name for S&R": "MMAudioVoCoderLoader",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.4.1"
+        }
+      },
+      "widgets_values": [
+        "apple_DFN5B-CLIP-ViT-H-14-384_fp16.safetensors"
+      ]
+    },
+    {
+      "id": 111,
+      "type": "MMAudioModelLoader",
+      "pos": [
+        2890,
+        -900
+      ],
+      "size": [
+        490,
+        82
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "mmaudio_model",
+          "type": "MMAUDIO_MODEL",
+          "slot_index": 0,
+          "links": [
+            190
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-mmaudio",
+        "ver": "841b307095f3cdc448d940a5787bc36706e49f1d",
+        "Node name for S&R": "MMAudioModelLoader",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.4.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "mmaudio_large_44k_nsfw_gold_8.5k_final_fp16.safetensors",
+        "fp16"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 92,
+      "type": "MMAudioSampler",
+      "pos": [
+        2280,
+        -570
+      ],
+      "size": [
+        490,
+        350
+      ],
+      "flags": {},
+      "order": 23,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mmaudio_model",
+          "type": "MMAUDIO_MODEL",
+          "link": 190
+        },
+        {
+          "name": "feature_utils",
+          "type": "MMAUDIO_FEATUREUTILS",
+          "link": 189
+        },
+        {
+          "name": "images",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 225
+        },
+        {
+          "name": "duration",
+          "type": "FLOAT",
+          "widget": {
+            "name": "duration"
+          },
+          "link": 192
+        }
+      ],
+      "outputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "slot_index": 0,
+          "links": [
+            230,
+            390,
+            392
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-mmaudio",
+        "ver": "841b307095f3cdc448d940a5787bc36706e49f1d",
+        "Node name for S&R": "MMAudioSampler",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "duration": true
+          },
+          "version": "7.4.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        3,
+        50,
+        4.5,
+        282809958611944,
+        "increment",
+        "oral sex",
+        "",
+        false,
+        false
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 150,
+      "type": "RegexReplace",
+      "pos": [
+        3440,
+        0
+      ],
+      "size": [
+        510.66290283203125,
+        292
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 3,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            235,
+            394
+          ]
+        }
+      ],
+      "title": "Regex Replace (SPECIFIC TO YOUR NAMING CONVENTION)",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.64",
+        "Node name for S&R": "RegexReplace",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.4.1"
+        }
+      },
+      "widgets_values": [
+        "",
+        "(.*?)(_\\d{1,6}).*",
+        "\\1\\2",
+        true,
+        false,
+        false,
+        0
+      ]
+    },
+    {
+      "id": 268,
+      "type": "easy showAnything",
+      "pos": [
+        3860,
+        0
+      ],
+      "size": [
+        210,
+        88
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 14,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 394
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "Stage 1 Debug",
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "1.3.4",
+        "Node name for S&R": "easy showAnything",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.4.1"
+        }
+      },
+      "widgets_values": [
+        "Photorealistic_04420"
+      ]
+    },
+    {
+      "id": 269,
+      "type": "easy showAnything",
+      "pos": [
+        3870,
+        50
+      ],
+      "size": [
+        210,
+        88
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 17,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 395
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "Stage 2 Debug",
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "1.3.4",
+        "Node name for S&R": "easy showAnything",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.4.1"
+        }
+      },
+      "widgets_values": [
+        "Photorealistic_04420"
+      ]
+    },
+    {
+      "id": 152,
+      "type": "RegexReplace",
+      "pos": [
+        3470,
+        50
+      ],
+      "size": [
+        400,
+        292
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 13,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "string",
+          "type": "STRING",
+          "widget": {
+            "name": "string"
+          },
+          "link": 235
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            395
+          ]
+        }
+      ],
+      "title": "Regex PATH STRIPPER",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.64",
+        "Node name for S&R": "RegexReplace",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.4.1"
+        }
+      },
+      "widgets_values": [
+        "",
+        ".*[\\\\/]",
+        "",
+        true,
+        false,
+        false,
+        99
+      ]
+    },
+    {
+      "id": 257,
+      "type": "PrimitiveString",
+      "pos": [
+        3410,
+        -190
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            365
+          ]
+        }
+      ],
+      "title": "YOUR DESTINATION DIRECTORY",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.64",
+        "Node name for S&R": "PrimitiveString",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.4.1"
+        }
+      },
+      "widgets_values": [
+        "MMAudio\\"
+      ],
+      "color": "#f61717",
+      "bgcolor": "#e20303"
+    },
+    {
+      "id": 258,
+      "type": "Note",
+      "pos": [
+        2270,
+        -160
+      ],
+      "size": [
+        580,
+        240
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Prompts",
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.4.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "Start with MINIMAL prompts.  Let the nsfw model do its thing.  Only get descriptive if you're having problems.  The default above, 'oral sex' is more than enough in most cases.  Remember, it can see what's going on."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 242,
+      "type": "Text Concatenate",
+      "pos": [
+        3400,
+        -380
+      ],
+      "size": [
+        270,
+        142
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text_a",
+          "shape": 7,
+          "type": "STRING",
+          "link": 365
+        },
+        {
+          "name": "text_b",
+          "shape": 7,
+          "type": "STRING",
+          "link": 397
+        },
+        {
+          "name": "text_c",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        },
+        {
+          "name": "text_d",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            366,
+            388,
+            391
+          ]
+        }
+      ],
+      "title": "Bridge Concatenate",
+      "properties": {
+        "cnr_id": "was-ns",
+        "ver": "3.0.1",
+        "Node name for S&R": "Text Concatenate",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.4.1"
+        }
+      },
+      "widgets_values": [
+        "",
+        "true"
+      ]
+    },
+    {
+      "id": 270,
+      "type": "Note",
+      "pos": [
+        2830,
+        -450
+      ],
+      "size": [
+        220,
+        90
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Prompts",
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.4.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "If you're editing a project and don't need to duplicate clips, just use one of the audio nodes.  The correct filename will be pulled from the loader."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 260,
+      "type": "PrimitiveFloat",
+      "pos": [
+        2000,
+        -680
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "FLOAT",
+          "type": "FLOAT",
+          "links": [
+            384
+          ]
+        }
+      ],
+      "title": "Framerate (if not 24fps)",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.64",
+        "Node name for S&R": "PrimitiveFloat",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.4.1"
+        }
+      },
+      "widgets_values": [
+        60
+      ],
+      "color": "#ff1414",
+      "bgcolor": "#ff0000"
+    },
+    {
+      "id": 114,
+      "type": "Note",
+      "pos": [
+        2060,
+        -440
+      ],
+      "size": [
+        210,
+        300
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "The MMAudio Sampler",
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.4.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "Switch between 24fps (minimum framerate and native MMAudio standard) and a higher one.  MMAudio does work with higher framerates, but you may have to tweak the timing of the audio afterwards, as it usually will not match exactly.  The framerate is pulled from the video info and only goes to the video combiner.  The duration is what the model uses- it will decimate extra frames based on its native training, but as will all audio models, you'll sometimes get funny deadspace or nonesense where there is a mismatch.  I always edit, so I don't have a problem with these artifacts.  That said, it doesn't happen all that often anyway."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 112,
+      "type": "VHS_VideoInfo",
+      "pos": [
+        2600,
+        -900
+      ],
+      "size": [
+        260,
+        260
+      ],
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "video_info",
+          "type": "VHS_VIDEOINFO",
+          "link": 227
+        }
+      ],
+      "outputs": [
+        {
+          "name": "source_fps🟨",
+          "type": "FLOAT",
+          "links": [
+            398
+          ]
+        },
+        {
+          "name": "source_frame_count🟨",
+          "type": "INT",
+          "links": []
+        },
+        {
+          "name": "source_duration🟨",
+          "type": "FLOAT",
+          "links": []
+        },
+        {
+          "name": "source_width🟨",
+          "type": "INT",
+          "links": []
+        },
+        {
+          "name": "source_height🟨",
+          "type": "INT",
+          "links": []
+        },
+        {
+          "name": "loaded_fps🟦",
+          "type": "FLOAT",
+          "slot_index": 5,
+          "links": []
+        },
+        {
+          "name": "loaded_frame_count🟦",
+          "type": "INT",
+          "slot_index": 6,
+          "links": []
+        },
+        {
+          "name": "loaded_duration🟦",
+          "type": "FLOAT",
+          "slot_index": 7,
+          "links": [
+            192
+          ]
+        },
+        {
+          "name": "loaded_width🟦",
+          "type": "INT",
+          "links": []
+        },
+        {
+          "name": "loaded_height🟦",
+          "type": "INT",
+          "links": []
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-videohelpersuite",
+        "ver": "6e7f63867584bb1fb4944d36172e7f98436da9a1",
+        "Node name for S&R": "VHS_VideoInfo",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.4.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": {},
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 138,
+      "type": "VHS_LoadVideoPath",
+      "pos": [
+        1740,
+        -630
+      ],
+      "size": [
+        231.8896484375,
+        286
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "meta_batch",
+          "shape": 7,
+          "type": "VHS_BatchManager",
+          "link": null
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": null
+        },
+        {
+          "name": "video",
+          "type": "STRING",
+          "widget": {
+            "name": "video"
+          },
+          "link": 212
+        },
+        {
+          "name": "force_rate",
+          "type": "FLOAT",
+          "widget": {
+            "name": "force_rate"
+          },
+          "link": 393
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            225,
+            228,
+            229
+          ]
+        },
+        {
+          "name": "frame_count",
+          "type": "INT",
+          "links": [
+            207
+          ]
+        },
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "slot_index": 2,
+          "links": []
+        },
+        {
+          "name": "video_info",
+          "type": "VHS_VIDEOINFO",
+          "slot_index": 3,
+          "links": [
+            227
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-videohelpersuite",
+        "ver": "1.7.7",
+        "Node name for S&R": "Path",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.4.1"
+        }
+      },
+      "widgets_values": {
+        "video": "",
+        "force_rate": 24,
+        "custom_width": 0,
+        "custom_height": 0,
+        "frame_load_cap": 0,
+        "skip_first_frames": 0,
+        "select_every_nth": 1,
+        "format": "Wan",
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "force_rate": 24,
+            "frame_load_cap": 0,
+            "skip_first_frames": 0,
+            "select_every_nth": 1
+          },
+          "muted": false
+        }
+      }
+    },
+    {
+      "id": 262,
+      "type": "SimpleToggleNode",
+      "pos": [
+        2020,
+        -590
+      ],
+      "size": [
+        210,
+        100
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 9,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": " ",
+          "type": "BOOLEAN",
+          "links": [
+            386
+          ]
+        }
+      ],
+      "title": "Force 24fps?",
+      "properties": {
+        "cnr_id": "crt-nodes",
+        "ver": "5ce2df47e066ee07c6870559b1f1f555e7405cf3",
+        "Node name for S&R": "SimpleToggleNode",
+        "title": "Force FR",
+        "color_on": "#00bd65",
+        "color_off": "#c8f000",
+        "style": "button",
+        "on_text": "24fps",
+        "off_text": "Manual",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.4.1"
+        }
+      },
+      "widgets_values": [
+        false,
+        ""
+      ],
+      "color": "transparent",
+      "bgcolor": "transparent"
+    },
+    {
+      "id": 116,
+      "type": "Note",
+      "pos": [
+        1740,
+        -940
+      ],
+      "size": [
+        820,
+        220
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Models",
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.4.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "Adapted from WF with interpolation: https://civitai.com/models/2137833/nsfw-dead-simple-mmaudio-rife-interpolation-setup-for-wan-22-i2v-14b\n\nAll of these files should be downloaded to ComfyUI\\models\\mmaudio\nMMAudio Model: \nhttps://huggingface.co/phazei/NSFW_MMaudio/resolve/main/mmaudio_large_44k_nsfw_gold_8.5k_final_fp16.safetensors?download=true\n\nMMAudio VAE: \nhttps://huggingface.co/Kijai/MMAudio_safetensors/resolve/5984623e6b436818c6ff287ef6eec93e3e05aa3f/mmaudio_vae_44k_fp16.safetensors\n\nMMAudio Synchformer: \nhttps://huggingface.co/Kijai/MMAudio_safetensors/resolve/main/mmaudio_synchformer_fp16.safetensors\n\nMMAudio CLIP: \nhttps://huggingface.co/Kijai/MMAudio_safetensors/resolve/main/apple_DFN5B-CLIP-ViT-H-14-384_fp16.safetensors\n\nMy models: https://civitai.com/user/Ponder_Stibbons/models"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 137,
+      "type": "For Each Filename [DVB]",
+      "pos": [
+        1730,
+        -270
+      ],
+      "size": [
+        315,
+        358.0000305175781
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "filepath",
+          "type": "STRING",
+          "slot_index": 0,
+          "links": [
+            212
+          ]
+        },
+        {
+          "name": "name",
+          "type": "STRING",
+          "slot_index": 1,
+          "links": [
+            397
+          ]
+        },
+        {
+          "name": "foreach",
+          "type": "FOREACH",
+          "slot_index": 2,
+          "links": [
+            210
+          ]
+        }
+      ],
+      "title": "YOUR SOURCE DIRECTORY",
+      "properties": {
+        "cnr_id": "comfyui-dream-video-batches",
+        "ver": "1.1.4",
+        "Node name for S&R": "For Each Filename [DVB]",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.4.1"
+        }
+      },
+      "widgets_values": [
+        "apple",
+        "D:\\ComfyOutput\\24fps",
+        "*.mp4"
+      ]
+    },
+    {
+      "id": 265,
+      "type": "SaveAudioMP3",
+      "pos": [
+        3090,
+        -580
+      ],
+      "size": [
+        270,
+        136
+      ],
+      "flags": {},
+      "order": 25,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 390
+        },
+        {
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": 391
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.64",
+        "Node name for S&R": "SaveAudioMP3",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.4.1"
+        }
+      },
+      "widgets_values": [
+        "audio/ComfyUI",
+        "V0"
+      ]
+    },
+    {
+      "id": 145,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        3050,
+        -440
+      ],
+      "size": [
+        315,
+        513.9375
+      ],
+      "flags": {},
+      "order": 24,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 228
+        },
+        {
+          "name": "audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": 230
+        },
+        {
+          "name": "meta_batch",
+          "shape": 7,
+          "type": "VHS_BatchManager",
+          "link": null
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": null
+        },
+        {
+          "name": "frame_rate",
+          "type": "FLOAT",
+          "widget": {
+            "name": "frame_rate"
+          },
+          "link": 398
+        },
+        {
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": 366
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "slot_index": 0,
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-videohelpersuite",
+        "ver": "1.7.7",
+        "Node name for S&R": "VHS_VideoCombine",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.4.1"
+        }
+      },
+      "widgets_values": {
+        "frame_rate": 30,
+        "loop_count": 0,
+        "filename_prefix": "MMAudio\\%Path.video%_AudioGen",
+        "format": "video/h264-mp4",
+        "pix_fmt": "yuv420p",
+        "crf": 14,
+        "save_metadata": true,
+        "trim_to_audio": false,
+        "pingpong": false,
+        "save_output": true,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "Photorealistic_00217_.png_00001_.png_00001_.png_00002_00002-audio.mp4",
+            "subfolder": "MMAudio",
+            "type": "output",
+            "format": "video/h264-mp4",
+            "frame_rate": 60,
+            "workflow": "Photorealistic_00217_.png_00001_.png_00001_.png_00002_00002.png",
+            "fullpath": "D:\\ComfyOutput\\MMAudio\\Photorealistic_00217_.png_00001_.png_00001_.png_00002_00002-audio.mp4"
+          }
+        }
+      },
+      "color": "#232",
+      "bgcolor": "#353"
+    }
+  ],
+  "links": [
+    [
+      189,
+      110,
+      0,
+      92,
+      1,
+      "MMAUDIO_FEATUREUTILS"
+    ],
+    [
+      190,
+      111,
+      0,
+      92,
+      0,
+      "MMAUDIO_MODEL"
+    ],
+    [
+      192,
+      112,
+      7,
+      92,
+      3,
+      "FLOAT"
+    ],
+    [
+      207,
+      138,
+      1,
+      131,
+      0,
+      "INT"
+    ],
+    [
+      208,
+      131,
+      0,
+      132,
+      0,
+      "STRING"
+    ],
+    [
+      210,
+      137,
+      2,
+      133,
+      1,
+      "FOREACH"
+    ],
+    [
+      212,
+      137,
+      0,
+      138,
+      2,
+      "STRING"
+    ],
+    [
+      225,
+      138,
+      0,
+      92,
+      2,
+      "IMAGE"
+    ],
+    [
+      227,
+      138,
+      3,
+      112,
+      0,
+      "VHS_VIDEOINFO"
+    ],
+    [
+      228,
+      138,
+      0,
+      145,
+      0,
+      "IMAGE"
+    ],
+    [
+      229,
+      138,
+      0,
+      133,
+      0,
+      "IMAGE"
+    ],
+    [
+      230,
+      92,
+      0,
+      145,
+      1,
+      "AUDIO"
+    ],
+    [
+      235,
+      150,
+      0,
+      152,
+      0,
+      "STRING"
+    ],
+    [
+      365,
+      257,
+      0,
+      242,
+      0,
+      "STRING"
+    ],
+    [
+      366,
+      242,
+      0,
+      145,
+      5,
+      "STRING"
+    ],
+    [
+      384,
+      260,
+      0,
+      261,
+      1,
+      "FLOAT"
+    ],
+    [
+      386,
+      262,
+      0,
+      261,
+      0,
+      "BOOLEAN"
+    ],
+    [
+      388,
+      242,
+      0,
+      263,
+      1,
+      "STRING"
+    ],
+    [
+      389,
+      264,
+      0,
+      110,
+      0,
+      "VOCODER_MODEL"
+    ],
+    [
+      390,
+      92,
+      0,
+      265,
+      0,
+      "AUDIO"
+    ],
+    [
+      391,
+      242,
+      0,
+      265,
+      1,
+      "STRING"
+    ],
+    [
+      392,
+      92,
+      0,
+      263,
+      0,
+      "AUDIO"
+    ],
+    [
+      393,
+      261,
+      0,
+      138,
+      3,
+      "FLOAT"
+    ],
+    [
+      394,
+      150,
+      0,
+      268,
+      0,
+      "*"
+    ],
+    [
+      395,
+      152,
+      0,
+      269,
+      0,
+      "*"
+    ],
+    [
+      397,
+      137,
+      1,
+      242,
+      1,
+      "STRING"
+    ],
+    [
+      398,
+      112,
+      0,
+      145,
+      4,
+      "FLOAT"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 2,
+      "title": "Step 2: MMAudio",
+      "bounding": [
+        1720,
+        -1020,
+        1670,
+        1113.5999755859375
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 4,
+      "title": "Filename Cleanup",
+      "bounding": [
+        3410,
+        -80,
+        630,
+        160
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.3380916604057192,
+      "offset": [
+        -713.9546923783532,
+        1416.733443526161
+      ]
+    },
+    "frontendVersion": "1.27.10",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": false,
+    "VHS_KeepIntermediate": false,
+    "ue_links": [],
+    "links_added_by_ue": [],
+    "groupNodes": {}
+  },
+  "version": 0.4
+}
