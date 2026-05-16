@@ -385,11 +385,15 @@ def write_outputs(records: list[WorkflowRecord], out_dir: Path) -> None:
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--root", default="D:/ComfyUI-Models/comfyui_workflow")
-    parser.add_argument("--model-root", default="D:/ComfyUI-Models")
+    parser.add_argument(
+        "--root",
+        default="D:/ComfyUI-aki-v3/agent-skills/comfyui/userdata/default/workflows/comfyui_workflow",
+    )
+    parser.add_argument("--model-root", default="D:/ComfyUI-aki-v3/ComfyUI/models")
     parser.add_argument("--server", default="http://127.0.0.1:8188")
     parser.add_argument("--out-dir", default="D:/ComfyUI-aki-v3/agent-skills/runtime/workflow_story_filter")
     args = parser.parse_args()
+
 
     root = Path(args.root)
     if not root.exists():

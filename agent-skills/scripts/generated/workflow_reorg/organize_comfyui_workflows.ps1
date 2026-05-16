@@ -1,5 +1,5 @@
 ﻿param(
-    [string]$Root = 'D:\ComfyUI-aki-v3\ComfyUI\user\default\workflows\comfyui_workflow',
+    [string]$Root = 'D:\ComfyUI-aki-v3\agent-skills\comfyui\userdata\default\workflows\comfyui_workflow',
     [switch]$Execute,
     [int]$PreviewCount = 40
 )

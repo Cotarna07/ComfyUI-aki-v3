@@ -69,21 +69,8 @@ agent-projects/**/runtime/**/*.lock
 !/ComfyUI/**/*.tiff
 !/ComfyUI/**/*.mp4
 
-# Track ComfyUI user workflows and settings (but exclude logs).
-!ComfyUI/
-!ComfyUI/user/
-!ComfyUI/user/default/
-!ComfyUI/user/default/**
-ComfyUI/user/**/*.log
-ComfyUI/user/**/logs/
-
-# Track ComfyUI user workflows and settings, but exclude logs.
-!ComfyUI/
-!ComfyUI/user/
-!ComfyUI/user/default/
-!ComfyUI/user/default/**
-ComfyUI/user/**/*.log
-ComfyUI/user/**/logs/
+# ComfyUI user data is now managed from agent-skills/comfyui/userdata.
+ComfyUI/user/**
 
 # Exclude large model binary files inside workflow folders
 ComfyUI/user/**/*.bin

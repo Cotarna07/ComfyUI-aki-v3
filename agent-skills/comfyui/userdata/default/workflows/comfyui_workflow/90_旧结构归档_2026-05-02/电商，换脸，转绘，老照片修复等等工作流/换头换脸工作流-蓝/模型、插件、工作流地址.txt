@@ -1,0 +1,14 @@
+工作流地址：
+
+
+
+模型地址：
+ACE++人像迁移portrait 模型：https://huggingface.co/ali-vilab/ACE_Plus/tree/main/portrait
+阿里加上模型：https://huggingface.co/alimama-creative/FLUX.1-Turbo-Alpha/tree/main
+
+
+插件地址：
+
+
+
+其他：
