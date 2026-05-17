@@ -1,0 +1,18 @@
+{
+  "plugins": [
+    "comfyui-mmaudio",
+    "ComfyUI-VFI",
+    "ComfyUI-VideoHelperSuite",
+    "ComfyUI-Florence2",
+    "comfyui-ollama",
+    "comfyui-dream-video-batches",
+    "ComfyUI-JakeUpgrade",
+    "ControlFlowUtils",
+    "CRT-Nodes",
+    "ComfyUI-Custom-Scripts",
+    "ComfyUI_Comfyroll_CustomNodes",
+    "ComfyUI-Easy-Use",
+    "rgthree-comfy",
+    "comfyui-workflow-to-api-converter-endpoint"
+  ]
+}

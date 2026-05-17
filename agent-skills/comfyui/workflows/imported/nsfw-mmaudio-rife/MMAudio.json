@@ -81,7 +81,7 @@
         "Node name for S&R": "MMAudioModelLoader"
       },
       "widgets_values": [
-        "mmaudio_large_44k_nsfw_gold_8.5k_final_fp16.safetensors",
+          "mmaudio_large_44k_v2_fp16.safetensors",
         "fp16"
       ],
       "color": "#222",
