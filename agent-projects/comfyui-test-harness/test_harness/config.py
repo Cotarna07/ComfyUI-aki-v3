@@ -2,6 +2,7 @@
 # 离线模式：只做静态校验；在线模式：增加 object_info 与执行冒烟测试
 from __future__ import annotations
 
+import os
 from pathlib import Path
 
 # ---- 路径常量 ----
@@ -20,7 +21,7 @@ REGISTRY_PATH = WORKSPACE_ROOT / "agent-skills" / "comfyui" / "registry.json"
 RUNTIME_DIR = PROJECT_ROOT / "runtime"
 REPORTS_DIR = RUNTIME_DIR / "reports"
 
-SERVER_URL = "http://127.0.0.1:8188"
+SERVER_URL = os.environ.get("COMFYUI_SERVER_URL", "http://127.0.0.1:8188")
 
 # ---- 本次测试重点关注 ----
 # 2026-05-16 新增/变更的资源

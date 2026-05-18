@@ -13,6 +13,7 @@
     "ComfyUI_Comfyroll_CustomNodes",
     "ComfyUI-Easy-Use",
     "rgthree-comfy",
-    "comfyui-workflow-to-api-converter-endpoint"
+    "comfyui-workflow-to-api-converter-endpoint",
+    "ComfyUI_wav2lip"
   ]
 }

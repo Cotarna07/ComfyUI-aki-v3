@@ -9,6 +9,15 @@ from typing import Any
 from .config import CUSTOM_NODES_ROOT, MODELS_ROOT
 
 
+IGNORED_UI_NODE_TYPES = {
+    "Note",
+}
+
+NODE_TYPE_ALIASES = {
+    "Text Concatenate": "CR Text Concatenate",
+}
+
+
 MODEL_INPUT_DIRS: dict[str, dict[str, list[str]]] = {
     "CheckpointLoaderSimple": {"ckpt_name": ["checkpoints"]},
     "CLIPLoader": {"clip_name": ["clip"]},
@@ -206,11 +215,16 @@ def resolve_model(name: str, expected_dirs: list[str]) -> dict[str, Any]:
 def validate_node_types(workflow: dict[str, Any], node_inventory: dict[str, Any]) -> list[dict[str, Any]]:
     issues: list[dict[str, Any]] = []
     for node in extract_nodes(workflow):
-        node_type = node.get("type", "") or node.get("class_type", "")
+        node_type = (node.get("type", "") or node.get("class_type", "") or "").strip()
         if not node_type:
             issues.append({"severity": "error", "node_id": node.get("id", "?"), "message": "节点缺少 type/class_type"})
             continue
-        if node_inventory and node_type not in node_inventory:
+
+        if node_type in IGNORED_UI_NODE_TYPES:
+            continue
+
+        effective_type = NODE_TYPE_ALIASES.get(node_type, node_type)
+        if node_inventory and effective_type not in node_inventory:
             issues.append({
                 "severity": "error",
                 "node_id": node.get("id", "?"),
