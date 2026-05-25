@@ -1,38 +1,38 @@
-以 AGENTS.md 作为本工作区的跨代理总规则入口。
+以 AGENTS.md 作为本工作区的跨代理总规则入口；如果本文件与 AGENTS.md 不一致，以 AGENTS.md 为准。
 
 这个工作区只有两个代理自有区：
 
 - agent-skills/：技能包、ComfyUI 自动化资产、技能层脚本与说明
 - agent-projects/：独立项目代码，尤其是后续新建的 Python 项目
 
-除这两个目录及固定入口说明文件外，其他路径默认都视为秋叶启动器原区；未经用户明确允许，不得修改。
+固定入口说明文件仅指 AGENTS.md、CLAUDE.md 和 .github/copilot-instructions.md。除这两个目录及这三个固定入口说明文件外，其他路径默认都视为秋叶启动器原区；未经用户明确允许，不得新建、删除、写入或重命名。读取、执行只读命令，以及在各自 runtime/ 目录中生成运行产物，不算这里的“修改”。
+如需改动秋叶启动器原区，先复述将要修改的路径与变更内容，得到用户明确“同意/确认”后方可执行，并在回复中标注已修改原区路径。
 不要再把独立项目代码放进 agent-skills/。
 所有代理生成的人类可读文档默认使用简体中文，除非用户明确要求其他语言。
 
 默认约定：
 
+以下只保留默认摘要；涉及 Git、Windows 文本安全和 ComfyUI API 的具体细则，以 AGENTS.md 引导的专题文档为准。
+
 - 如需提交、生成 commit message 或编写 PR 描述，统一使用中文；commit 格式为：<类型>: <一句话中文说明>，PR 描述按“背景 / 修改内容 / 验证方式 / 风险与回滚”四段组织。
-- 优先更新已有文档，不创建重复说明或历史副本。
-- 只有用户明确要求“总结 / 沉淀”时，才新建总结文档；命名建议为 YYYY-MM-DD_简要内容.md。
+- 优先更新已有文档，不创建重复说明或历史副本；只有用户明确要求“总结 / 沉淀”且现有 README.md 或 docs/ 没有合适承载位置时，才按 YYYY-MM-DD_简要内容.md 新建总结文档。
 - 一次性排查、实验、临时分析脚本不要放根目录；技能层放 agent-skills/scripts/generated/<topic>/，独立项目放 agent-projects/<project-slug>/scripts/generated/<topic>/。
 - 运行产物和中间结果放各自 runtime/ 目录，不要散落在根目录或 docs/。
 - 命令示例默认使用 PowerShell，优先使用现有 .venv。
 - 项目已有 requirements.txt 或 pyproject.toml 时沿用现有方式，不强推 uv，也不要预设 src/ 布局。
-- 修改含中文的文本文件时必须使用安全的 UTF-8 编辑方式；修改 Python 文件后要做最相关的校验。
+- 修改含中文文本时，使用 UTF-8（无 BOM）写入；在 PowerShell 中使用 [System.IO.File]::WriteAllText(path, content, [System.Text.UTF8Encoding]::new($false))，不要使用默认 Set-Content / Out-File。修改 Python 文件后至少执行：(1) python -m py_compile 检查语法；(2) 若存在 pytest，则运行相关测试文件；(3) 若涉及导入路径变化，则运行 python -c "import <module>" 验证；其余细则按 agent-skills/docs/windows_dev_defaults.md 执行。
 - ComfyUI 已安装 Queue Manager：ComfyUI/custom_nodes/comfyui-queue-manager，用于统一查看网页队列和代理后台提交的任务。
-- 代理调用 ComfyUI /prompt API 时，必须使用可识别的 client_id，例如 agent:<代理名>|workflow:<工作流名>|run:<短ID>，并在 extra_data 中写明 agent、workflow_name、source、notes。
-- 临时覆写 prompt、seed、模型、LoRA、尺寸、帧数或输入媒体时，必须记录在 extra_data.notes 并告知用户。
-- 后台 API 排队不会自动改变 Chrome 画布；用户要求界面同步时，先保存或加载对应工作流，再执行。
+- 代理调用 ComfyUI /prompt API、填写 client_id / extra_data.notes、以及处理画布同步时，按 agent-skills/docs/comfyui_api_rules.md 执行。
 
 ## 本机开发环境约束
 
-### 运行时版本
+### 当前已观测运行时版本
 | 环境 | 版本 |
 |------|------|
-| Python | 3.10.6 (64-bit, MSC v.1932) |
+| Python | 3.13.11 (64-bit, MSC v.1944) |
 | Node.js | v22.14.0 |
-| PyTorch | 2.6.0+cu124 |
-| CUDA | 12.4 |
+| PyTorch | 2.9.1+cu130 |
+| CUDA | 13.0 |
 | GPU | NVIDIA GeForce RTX 4080 (16GB) |
 
 
@@ -41,6 +41,9 @@
 - agent-skills/README.md
 - agent-skills/comfyui/registry.json
 - agent-skills/comfyui/SKILL.md
+- agent-skills/docs/workspace_git_rules.md
+- agent-skills/docs/windows_dev_defaults.md
+- agent-skills/docs/comfyui_api_rules.md
 
 涉及独立项目时，还要读取：
 

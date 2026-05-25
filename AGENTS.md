@@ -4,8 +4,11 @@
 
 ## 必读文件
 
-- 先读 AGENTS.md。
+- 先读 AGENTS.md，并先据此判定目录归属、修改权限与根目录例外；只有命中相关场景时，再继续查看后续专题段落。
 - 涉及技能包或 ComfyUI 自动化时，再读 agent-skills/README.md、agent-skills/comfyui/registry.json 和 agent-skills/comfyui/SKILL.md。
+- 涉及 Git 管理、根目录兼容入口或子仓库边界时，再读 agent-skills/docs/workspace_git_rules.md。
+- 涉及 Windows 文本编辑、编码或验证时，再读 agent-skills/docs/windows_dev_defaults.md。
+- 涉及 ComfyUI API 提交、Queue Manager 或自动化执行时，再读 agent-skills/docs/comfyui_api_rules.md。
 - 涉及独立项目时，再读 agent-projects/README.md。
 
 ## 协作输出约定
@@ -24,18 +27,17 @@
 
 ## 修改权限规则
 
-- 默认只读：agent-skills/ 与 agent-projects/ 之外的路径，代理只能读取和分析，不能擅自创建、修改、删除、重命名。
-- 只有在用户明确允许的情况下，才能改动秋叶启动器原区文件。
+| 路径类别 | 读取 / 执行 | 新建 / 修改 / 删除 | 说明 |
+|------|------|------|------|
+| agent-skills/ 与 agent-projects/ | 允许 | 允许 | 仍需遵守放置规则、Git 管理约定与项目内说明 |
+| AGENTS.md / CLAUDE.md / .github/copilot-instructions.md | 允许 | 仅允许维护这些入口文件本身 | 属于根目录例外，不等于允许新增其他根级普通文件 |
+| 其他路径（包括 ComfyUI/、启动器原文件、根目录兼容入口脚本） | 允许 | 仅在用户明确允许时 | 默认视为秋叶启动器原区 |
 - “明确允许”指用户直接点名要改的文件或目录，或明确说明本次任务可以改启动器或上游文件。
-- 如果问题可以通过在 agent 自有区新增文件解决，就不要改秋叶启动器原区。
-- AGENTS.md、CLAUDE.md、.github/copilot-instructions.md 是发布这套规则的固定入口文件。除维护这套规则本身外，不要把新的普通文件继续堆在根目录。
+- 如果问题既可以通过在 agent 自有区新增文件解决，也可以通过改秋叶启动器原区解决，默认选择前者。
 
 ## Git 管理约定
 
-- agent-skills/ 与 agent-projects/ 下由代理协作生成和维护的文件，默认统一纳入当前工作区根目录的 overlay Git 仓库管理。
-- 秋叶启动器原区文件继续由其自身仓库管理；未经用户明确允许，不要把原区文件并入 overlay Git 仓库。
-- 非用户明确要求，不要在 agent-skills/ 或 agent-projects/ 子目录内再初始化或保留并行的独立 Git 仓库。
-- 如果引入了自带 .git 的外部项目，先停用或迁出其子仓库元数据，再决定是否并入当前 overlay Git 仓库。
+- agent-skills/ 与 agent-projects/ 下由代理协作生成和维护的文件，默认统一由当前工作区现有版本管理跟踪；涉及根目录 .git、overlay 或子仓库边界时，按 agent-skills/docs/workspace_git_rules.md 执行。
 
 ## 放置规则
 
@@ -44,7 +46,7 @@
 - agent-skills/comfyui/：ComfyUI 专用注册表、工作流导出、技能资产。
 - agent-projects/<project-slug>/：独立项目的代码、测试、项目文档和项目内脚本。
 - 不要把独立应用、独立 Python 包、独立服务项目放进 agent-skills/。
-- 现有根目录文件 comfyui_skill_utils.py、download_models.py、generate_video.py 属于兼容性保留入口，不是后续新文件的默认落点。
+- 现有根目录文件 comfyui_skill_utils.py、download_models.py、generate_video.py 属于兼容性保留入口，可作为读取或执行入口使用，但除用户明确允许外，不作为默认修改目标。
 
 ## 文档与临时文件规则
 
@@ -57,28 +59,21 @@
 
 ## Windows 开发默认值
 
-- 命令示例默认使用 PowerShell。
-- 优先使用仓库或项目现有的 .venv。
-- 如果项目已经使用 requirements.txt 或 pyproject.toml，优先沿用现有依赖管理方式，不强行迁移到 uv 或其他新工具。
-- 不要假设 src/ 目录布局；先按真实项目结构组织代码、测试和校验范围。
-- lint、type check、测试优先针对真实源码路径和本次改动范围执行。
+- Windows 下的命令、依赖沿用、源码路径判断与验证范围，按 agent-skills/docs/windows_dev_defaults.md 执行。
 
 ## 编码与校验安全
 
-- 不要用 PowerShell 默认编码管道直接改写包含中文的 .py、.md、.json、.yaml 等文本文件。
-- 如需脚本化读写文本，必须显式使用 UTF-8。
-- 修改 Python 文件后，优先运行最相关的校验，例如 python -m py_compile、pytest 或目标脚本自检。
-- 临时日志、缓存和中间结果优先放在 agent 自有区的 runtime/、logs/ 或 generated 目录，不要继续堆在根目录。
+- 涉及中文文本改写、UTF-8 安全和 Python 文件后的最相关校验时，按 agent-skills/docs/windows_dev_defaults.md 执行。
 
 ## 本机开发环境约束
 
-### 运行时版本
+### 当前已观测运行时版本
 | 环境 | 版本 |
 |------|------|
-| Python | 3.10.6 (64-bit, MSC v.1932) |
+| Python | 3.13.11 (64-bit, MSC v.1944) |
 | Node.js | v22.14.0 |
-| PyTorch | 2.6.0+cu124 |
-| CUDA | 12.4 |
+| PyTorch | 2.9.1+cu130 |
+| CUDA | 13.0 |
 | GPU | NVIDIA GeForce RTX 4080 (16GB) |
 
 ## 既有约定
@@ -86,21 +81,12 @@
 - 使用 D:/ComfyUI-aki-v3/ComfyUI/models 作为主模型目录。
 - 本地自动化优先使用 D:/ComfyUI-aki-v3/.venv/Scripts/python.exe。
 - 可重复执行的 ComfyUI 自动化优先使用 API 工作流。
-- 导出的 API 工作流仍放在 agent-skills/comfyui/workflows/api/。
-- 未检查前不要假设节点 ID、节点类名或模型文件名。
-- 已安装 ComfyUI Queue Manager：ComfyUI/custom_nodes/comfyui-queue-manager，用于统一查看网页队列和代理后台提交的任务。
+- 导出的 API 工作流仍放在 agent-skills/comfyui/workflows/api/；其余 ComfyUI API 与队列约定详见 agent-skills/docs/comfyui_api_rules.md。
 
 ## ComfyUI API 队列可见性
 
-- 代理调用 ComfyUI API 提交任务时，必须让任务能在网页队列中被识别；不要使用无意义的随机 client_id。
-- 调用 /prompt 时，client_id 建议使用：agent:<代理名>|workflow:<工作流名>|run:<短ID>。
-- 调用 /prompt 时，extra_data 建议至少包含 agent、workflow_name、source、notes 等字段，方便 Queue Manager 或 history 页面显示来源。
-- 如果临时覆写了 prompt、seed、模型、LoRA、尺寸、帧数或输入媒体，必须在 extra_data.notes 中简要说明，并在最终回复里告知用户。
-- 后台 API 排队和 Chrome 画布状态不是同一个东西；如果用户要求界面同步，先保存或加载对应工作流，再执行。
+- ComfyUI API 提交、Queue Manager 可见性、client_id、extra_data 和画布同步规则详见 agent-skills/docs/comfyui_api_rules.md。
 
 ## 推荐流程
 
-1. 先确认 ComfyUI 可通过 127.0.0.1:8188 访问。
-2. 用 download_models.py 检查或同步所需模型包。
-3. 用 generate_video.py --list-skills、--skill 或 --workflow-api 运行自动化。
-4. 如果工作流还是完整 UI 格式，先导出一次 API JSON，不要每次临时重建。
+1. ComfyUI 自动化执行的推荐步骤详见 agent-skills/docs/comfyui_api_rules.md。
