@@ -10,6 +10,7 @@
 - 调用 /prompt 时，client_id 建议使用：agent:<代理名>|workflow:<工作流名>|run:<8位十六进制随机ID，例如 a3f9c1b2>。
 - 调用 /prompt 时，extra_data 建议至少包含 agent、workflow_name、source、notes 等字段，方便 Queue Manager 或 history 页面显示来源。
 - 如果临时覆写了 prompt、seed、模型、LoRA、尺寸、帧数或输入媒体，必须在 extra_data.notes 中简要说明，并在最终回复里告知用户。
+- 对明确要求质量优先的任务，先用当前设备可稳定运行的最佳配置测试出可评价、可复现的本地实用方案，并记录模型精度、尺寸与限制；只有该路线在本机验证有效后，才规划云端同系更大/更高精度配置提升质量上限。
 - 若用户希望画布反映 API 提交内容，则加载该工作流到画布；若用户希望 API 提交沿用当前画布，则先导出当前画布为 API JSON 再提交。
 
 ## 推荐流程
