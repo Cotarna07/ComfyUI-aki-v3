@@ -20,6 +20,7 @@
 - 运行产物和中间结果放各自 runtime/ 目录，不要散落在根目录或 docs/。
 - 命令示例默认使用 PowerShell，优先使用现有 .venv。
 - 项目已有 requirements.txt 或 pyproject.toml 时沿用现有方式，不强推 uv，也不要预设 src/ 布局。
+- ComfyUI 工作流统一以 agent-skills/comfyui/workflows/ 为总入口：01-shared/ 放跨项目正式模板，02-project/<project>/ 放项目专用模板，03-source/ 放 imported、vendor、drafts 与历史归档。
 - 修改含中文文本时，使用 UTF-8（无 BOM）写入；在 PowerShell 中使用 [System.IO.File]::WriteAllText(path, content, [System.Text.UTF8Encoding]::new($false))，不要使用默认 Set-Content / Out-File。修改 Python 文件后至少执行：(1) python -m py_compile 检查语法；(2) 若存在 pytest，则运行相关测试文件；(3) 若涉及导入路径变化，则运行 python -c "import <module>" 验证；其余细则按 agent-skills/docs/windows_dev_defaults.md 执行。
 - ComfyUI 已安装 Queue Manager：ComfyUI/custom_nodes/comfyui-queue-manager，用于统一查看网页队列和代理后台提交的任务。
 - 代理调用 ComfyUI /prompt API、填写 client_id / extra_data.notes、以及处理画布同步时，按 agent-skills/docs/comfyui_api_rules.md 执行。

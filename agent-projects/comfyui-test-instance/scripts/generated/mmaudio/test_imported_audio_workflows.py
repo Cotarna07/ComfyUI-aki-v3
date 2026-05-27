@@ -21,10 +21,10 @@ OUTPUT_ROOT = INSTANCE_ROOT / "output"
 RUNTIME_ROOT = PROJECT_ROOT / "agent-projects/comfyui-test-instance/runtime/audio-workflow-tests"
 
 WORKFLOWS = {
-    "nsfw-mmaudio-rife": PROJECT_ROOT / "agent-skills/comfyui/workflows/imported/nsfw-mmaudio-rife/MMAudio.json",
-    "mmaudio-batch": PROJECT_ROOT / "agent-skills/comfyui/workflows/imported/mmaudio-batch/MMAudioBatchPSv1.json",
+    "nsfw-mmaudio-rife": PROJECT_ROOT / "agent-skills/comfyui/workflows/03-source/imported/nsfw-mmaudio-rife/MMAudio.json",
+    "mmaudio-batch": PROJECT_ROOT / "agent-skills/comfyui/workflows/03-source/imported/mmaudio-batch/MMAudioBatchPSv1.json",
     "mmaudio-kiss-sfx-autocaption": PROJECT_ROOT
-    / "agent-skills/comfyui/workflows/imported/mmaudio-kiss-sfx-autocaption/MM Audio AUTO CAPTION 2.5.json",
+    / "agent-skills/comfyui/workflows/03-source/imported/mmaudio-kiss-sfx-autocaption/MM Audio AUTO CAPTION 2.5.json",
 }
 
 DEFAULT_VIDEOS = [

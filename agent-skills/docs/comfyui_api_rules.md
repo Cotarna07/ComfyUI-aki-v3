@@ -3,7 +3,7 @@
 - 使用 D:/ComfyUI-aki-v3/ComfyUI/models 作为主模型目录。
 - 本地自动化优先使用 D:/ComfyUI-aki-v3/.venv/Scripts/python.exe。
 - 可重复执行的 ComfyUI 自动化优先使用 API 工作流。
-- 导出的 API 工作流仍放在 agent-skills/comfyui/workflows/api/。
+- 导出的 API 工作流统一放在 agent-skills/comfyui/workflows/ 下：共享正式模板进 01-shared/，项目专用模板进 02-project/<project>/，外部导入与草稿先进 03-source/。
 - 未检查前不要假设节点 ID、节点类名或模型文件名。
 - 已安装 ComfyUI Queue Manager：ComfyUI/custom_nodes/comfyui-queue-manager，用于统一查看网页队列和代理后台提交的任务。
 - 代理调用 ComfyUI API 提交任务时，必须让任务能在网页队列中被识别；不要使用无意义的随机 client_id。

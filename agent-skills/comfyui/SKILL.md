@@ -25,13 +25,17 @@
 - 模型根目录：D:/ComfyUI-aki-v3/ComfyUI/models
 - 生成文件目录：D:/ComfyUI-aki-v3/ComfyUI/output
 - 注册表：agent-skills/comfyui/registry.json
-- API 工作流导出目录：agent-skills/comfyui/workflows/api/
+- 总工作流目录：agent-skills/comfyui/workflows/
+- 共享正式层：agent-skills/comfyui/workflows/01-shared/
+- 项目模板层：agent-skills/comfyui/workflows/02-project/
+- 来源草稿层：agent-skills/comfyui/workflows/03-source/
 - 源蓝图目录：ComfyUI/blueprints/
 
 ## 工作流规则
 
 - 内置直跑目前至少包括 wan22_t2v_fast、video_upscale_gan_api、video_stitch_api，以及 Gemini 相关分析技能。
-- 对于完整 UI 工作流，优先采用“导出一次 API JSON”模式，并保存到 agent-skills/comfyui/workflows/api/。
+- 对于完整 UI 工作流，优先采用“导出一次 API JSON”模式；跨项目复用模板保存到 agent-skills/comfyui/workflows/01-shared/，项目专用模板保存到 agent-skills/comfyui/workflows/02-project/<project>/。
+- 外部导入、供应商示例和待整理草稿先落到 agent-skills/comfyui/workflows/03-source/，不要直接混入正式层。
 - 如果 /workflow/convert 不稳定或不可用，不要把它作为生产链路依赖。
 - 对用户提供的 API JSON，先检查图结构，再决定如何覆写 prompt、seed 或媒体输入。
 
@@ -84,7 +88,7 @@ d:/ComfyUI-aki-v3/.venv/Scripts/python.exe generate_video.py --skill wan22_i2v_a
 
 1. 在 ComfyUI 界面中加载源工作流。
 2. 从界面导出 API JSON。
-3. 把文件保存到 agent-skills/comfyui/workflows/api/。
+3. 共享模板保存到 agent-skills/comfyui/workflows/01-shared/；项目模板保存到 agent-skills/comfyui/workflows/02-project/<project>/。
 4. 在 agent-skills/comfyui/registry.json 中新增或更新 skill 条目。
 
 ## 排障规则

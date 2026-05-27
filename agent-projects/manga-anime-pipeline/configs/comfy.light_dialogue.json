@@ -14,7 +14,7 @@
   },
   "workflow_templates": {
     "establish_scene": null,
-    "dialogue_light_motion": "configs/comfy_workflows/dialogue_light_motion.json",
+    "dialogue_light_motion": "../../agent-skills/comfyui/workflows/02-project/manga-anime-pipeline/dialogue_light_motion.json",
     "dialogue_heavy_expression": null,
     "action_performance": null,
     "transition_atmosphere": null,
@@ -22,6 +22,6 @@
     "skip": null
   },
   "workflow_mappings": {
-    "dialogue_light_motion": "configs/comfy_workflows/dialogue_light_motion.mapping.json"
+    "dialogue_light_motion": "../../agent-skills/comfyui/workflows/02-project/manga-anime-pipeline/dialogue_light_motion.mapping.json"
   }
 }

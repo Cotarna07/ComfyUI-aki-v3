@@ -385,7 +385,7 @@
             <h3>在 ComfyUI 网页里运行</h3>
             <pre>1. 打开 ComfyUI 网页: http://127.0.0.1:8188
 2. 载入工作流 JSON:
-   agent-skills/comfyui/workflows/api/wan22_i2v_dasiwa_six_loras_4080_safe.json
+  agent-skills/comfyui/workflows/01-shared/wan22_i2v_dasiwa_six_loras_4080_safe.json
 3. 把 LoadImage 节点的起始图换成你自己的图
 4. 改正向提示词和负向提示词
 5. 先不要放大分辨率，也不要先把 length 改长
@@ -468,7 +468,7 @@ Content-Type: application/json
 
       <section class="section">
         <h2>6. PowerShell API 示例</h2>
-        <pre>$path = 'D:/ComfyUI-aki-v3/agent-skills/comfyui/workflows/api/wan22_i2v_dasiwa_six_loras_4080_safe.json'
+        <pre>$path = 'D:/ComfyUI-aki-v3/agent-skills/comfyui/workflows/01-shared/wan22_i2v_dasiwa_six_loras_4080_safe.json'
 $workflow = Get-Content -Raw -LiteralPath $path | ConvertFrom-Json
 $body = @{
   prompt = $workflow

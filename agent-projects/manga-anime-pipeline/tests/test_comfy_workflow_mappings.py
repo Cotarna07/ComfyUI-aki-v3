@@ -7,7 +7,7 @@ from pipeline.common.io import read_json
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-WORKFLOW_DIR = PROJECT_ROOT / "configs" / "comfy_workflows"
+WORKFLOW_DIR = PROJECT_ROOT.parent.parent / "agent-skills" / "comfyui" / "workflows" / "02-project" / "manga-anime-pipeline"
 ROUTES = (
     "establish_scene",
     "dialogue_heavy_expression",

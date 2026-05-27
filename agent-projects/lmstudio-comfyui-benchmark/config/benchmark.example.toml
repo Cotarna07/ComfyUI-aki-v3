@@ -52,7 +52,7 @@ penalize_non_english_prompt = true
 [comfyui]
 enabled = true
 base_url = "http://127.0.0.1:8188"
-workflow_path = "agent-skills/comfyui/workflows/api/prompt_benchmark_workflow.json"
+workflow_path = "agent-skills/comfyui/workflows/01-shared/prompt_benchmark_workflow.json"
 client_id = "lmstudio-comfyui-benchmark"
 poll_interval_sec = 3
 prompt_timeout_sec = 1800

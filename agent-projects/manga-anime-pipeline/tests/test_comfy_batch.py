@@ -196,7 +196,7 @@ class Stage6GateRunTests(unittest.TestCase):
                 ],
             },
         )
-        workflow_rel = "configs/comfy_workflows/light.json"
+        workflow_rel = "agent-skills/comfyui/workflows/02-project/manga-anime-pipeline/light.json"
         if template_exists:
             write_json(
                 project_root / workflow_rel,

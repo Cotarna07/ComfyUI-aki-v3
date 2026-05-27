@@ -202,7 +202,7 @@ def build_prompt_pack(
         "character_design_sheet": str(character_sheet.relative_to(PROJECT_ROOT)),
         "storyboard_sheet": str(storyboard_sheet.relative_to(PROJECT_ROOT)),
         "recommended_comfy_route": "dialogue_light_motion",
-        "recommended_base_workflow": "configs/comfy_workflows/dialogue_light_motion.json",
+        "recommended_base_workflow": "../../agent-skills/comfyui/workflows/02-project/manga-anime-pipeline/dialogue_light_motion.json",
         "characters": bible.get("characters", []),
         "shots": shots,
     }

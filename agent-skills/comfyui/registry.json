@@ -148,13 +148,13 @@
       "automation": "export-api-once",
       "model_pack": "wan22_i2v_fast",
       "source_workflow": "ComfyUI/blueprints/Image to Video (Wan 2.2).json",
-      "api_workflow_path": "agent-skills/comfyui/workflows/api/wan22_i2v.json",
+      "api_workflow_path": "agent-skills/comfyui/workflows/01-shared/wan22_i2v.json",
       "required_inputs": [
         "prompt",
         "image"
       ],
       "notes": [
-        "Export the UI workflow to API JSON once, save it to agent-skills/comfyui/workflows/api/wan22_i2v.json, then this skill becomes fully automated."
+        "Export the UI workflow to API JSON once, save it to agent-skills/comfyui/workflows/01-shared/wan22_i2v.json, then this skill becomes fully automated."
       ]
     },
     "ltx2_t2v_api": {
@@ -162,7 +162,7 @@
       "mode": "text-to-video",
       "automation": "export-api-once",
       "source_workflow": "ComfyUI/custom_nodes/ComfyUI-LTXVideo/example_workflows/LTX-2_T2V_Distilled_wLora.json",
-      "api_workflow_path": "agent-skills/comfyui/workflows/api/ltx2_t2v_distilled.json",
+      "api_workflow_path": "agent-skills/comfyui/workflows/01-shared/ltx2_t2v_distilled.json",
       "required_inputs": [
         "prompt"
       ],
@@ -175,7 +175,7 @@
       "mode": "image-to-video",
       "automation": "export-api-once",
       "source_workflow": "ComfyUI/custom_nodes/ComfyUI-LTXVideo/example_workflows/LTX-2_I2V_Distilled_wLora.json",
-      "api_workflow_path": "agent-skills/comfyui/workflows/api/ltx2_i2v_distilled.json",
+      "api_workflow_path": "agent-skills/comfyui/workflows/01-shared/ltx2_i2v_distilled.json",
       "required_inputs": [
         "prompt",
         "image"
@@ -189,7 +189,7 @@
       "mode": "video-inpaint",
       "automation": "export-api-once",
       "source_workflow": "ComfyUI/blueprints/Video Inpaint(Wan2.1 VACE).json",
-      "api_workflow_path": "agent-skills/comfyui/workflows/api/wan_vace_inpaint.json",
+      "api_workflow_path": "agent-skills/comfyui/workflows/01-shared/wan_vace_inpaint.json",
       "required_inputs": [
         "video",
         "mask"
@@ -203,7 +203,7 @@
       "mode": "image-to-video",
       "automation": "export-api-once",
       "source_workflow": "ComfyUI/blueprints/Canny to Video (LTX 2.0).json",
-      "api_workflow_path": "agent-skills/comfyui/workflows/api/ltx2_canny_to_video.json",
+      "api_workflow_path": "agent-skills/comfyui/workflows/01-shared/ltx2_canny_to_video.json",
       "required_inputs": [
         "prompt",
         "image"
@@ -225,7 +225,7 @@
       "mode": "video-to-video",
       "automation": "export-api-once",
       "source_workflow": "ComfyUI/blueprints/Depth to Video (ltx 2.0).json",
-      "api_workflow_path": "agent-skills/comfyui/workflows/api/ltx2_depth_to_video.json",
+      "api_workflow_path": "agent-skills/comfyui/workflows/01-shared/ltx2_depth_to_video.json",
       "required_inputs": [
         "prompt",
         "video"
@@ -247,7 +247,7 @@
       "mode": "image-to-video",
       "automation": "export-api-once",
       "source_workflow": "ComfyUI/blueprints/Pose to Video (LTX 2.0).json",
-      "api_workflow_path": "agent-skills/comfyui/workflows/api/ltx2_pose_to_video.json",
+      "api_workflow_path": "agent-skills/comfyui/workflows/01-shared/ltx2_pose_to_video.json",
       "required_inputs": [
         "prompt",
         "control_image"
@@ -269,7 +269,7 @@
       "mode": "video-to-video",
       "automation": "export-api-once",
       "source_workflow": "ComfyUI/custom_nodes/ComfyUI-LTXVideo/example_workflows/LTX-2_V2V_Detailer.json",
-      "api_workflow_path": "agent-skills/comfyui/workflows/api/ltx2_v2v_detailer.json",
+      "api_workflow_path": "agent-skills/comfyui/workflows/01-shared/ltx2_v2v_detailer.json",
       "required_inputs": [
         "video"
       ],
@@ -390,7 +390,7 @@
       "mode": "image-edit",
       "automation": "export-api-once",
       "source_workflow": "ComfyUI/blueprints/Image Edit (Qwen 2511).json",
-      "api_workflow_path": "agent-skills/comfyui/workflows/api/qwen_image_edit_2511.json",
+      "api_workflow_path": "agent-skills/comfyui/workflows/01-shared/qwen_image_edit_2511.json",
       "required_inputs": [
         "image",
         "prompt"
@@ -409,7 +409,7 @@
       "mode": "image-inpaint",
       "automation": "export-api-once",
       "source_workflow": "ComfyUI/blueprints/Image Inpainting (Qwen-image).json",
-      "api_workflow_path": "agent-skills/comfyui/workflows/api/qwen_image_inpaint.json",
+      "api_workflow_path": "agent-skills/comfyui/workflows/01-shared/qwen_image_inpaint.json",
       "required_inputs": [
         "image",
         "mask",
@@ -425,7 +425,7 @@
       "mode": "image-outpaint",
       "automation": "export-api-once",
       "source_workflow": "ComfyUI/blueprints/Image Outpainting (Qwen-Image).json",
-      "api_workflow_path": "agent-skills/comfyui/workflows/api/qwen_image_outpaint.json",
+      "api_workflow_path": "agent-skills/comfyui/workflows/01-shared/qwen_image_outpaint.json",
       "required_inputs": [
         "image"
       ],
@@ -447,7 +447,7 @@
       "mode": "image-analysis",
       "automation": "export-api-once",
       "source_workflow": "ComfyUI/blueprints/Image to Depth Map (Lotus).json",
-      "api_workflow_path": "agent-skills/comfyui/workflows/api/lotus_depth_map.json",
+      "api_workflow_path": "agent-skills/comfyui/workflows/01-shared/lotus_depth_map.json",
       "required_inputs": [
         "image"
       ],
@@ -464,7 +464,7 @@
       "mode": "image-to-3d",
       "automation": "export-api-once",
       "source_workflow": "ComfyUI/blueprints/Image to Model (Hunyuan3d 2.1).json",
-      "api_workflow_path": "agent-skills/comfyui/workflows/api/hunyuan3d_image_to_model.json",
+      "api_workflow_path": "agent-skills/comfyui/workflows/01-shared/hunyuan3d_image_to_model.json",
       "required_inputs": [
         "image"
       ],

@@ -11,7 +11,7 @@ import requests
 
 
 DEFAULT_SERVER_URL = "http://127.0.0.1:8190"
-DEFAULT_WORKFLOW = Path("D:/ComfyUI-aki-v3/agent-skills/comfyui/workflows/imported/nsfw-mmaudio-rife/MMAudio.json")
+DEFAULT_WORKFLOW = Path("D:/ComfyUI-aki-v3/agent-skills/comfyui/workflows/03-source/imported/nsfw-mmaudio-rife/MMAudio.json")
 DEFAULT_OUTPUT_ROOT = Path("D:/ComfyUI-aki-v3/agent-projects/comfyui-test-instance/runtime/instance/output")
 
 

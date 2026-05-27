@@ -3,7 +3,7 @@
   "track": "factual_product",
   "source_authentication_note": "??????????????????????????????",
   "comfyui_test": {
-    "workflow": "agent-skills/comfyui/workflows/api/kontext_product_edit.json",
+    "workflow": "agent-skills/comfyui/workflows/01-shared/kontext_product_edit.json",
     "model": "flux1-dev-kontext_fp8_scaled.safetensors",
     "steps": 28,
     "guidance": 2.8,

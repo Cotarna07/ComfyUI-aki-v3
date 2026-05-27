@@ -97,7 +97,8 @@
 - 使用 D:/ComfyUI-aki-v3/ComfyUI/models 作为主模型目录。
 - 本地自动化优先使用 D:/ComfyUI-aki-v3/.venv/Scripts/python.exe。
 - 可重复执行的 ComfyUI 自动化优先使用 API 工作流。
-- 导出的 API 工作流仍放在 agent-skills/comfyui/workflows/api/；其余 ComfyUI API 与队列约定详见 agent-skills/docs/comfyui_api_rules.md。
+- ComfyUI 工作流统一以 agent-skills/comfyui/workflows/ 作为总入口：01-shared/ 放跨项目正式模板，02-project/<project>/ 放项目专用模板，03-source/ 放 imported、vendor、drafts 与历史归档。
+- 导出的 API 工作流默认进入 agent-skills/comfyui/workflows/01-shared/；其余 ComfyUI API 与队列约定详见 agent-skills/docs/comfyui_api_rules.md。
 
 ## 质量优先生成规则
 

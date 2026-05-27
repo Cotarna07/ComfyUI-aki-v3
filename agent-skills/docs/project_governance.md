@@ -18,6 +18,22 @@
 
 **未判定类型之前，不允许落文件。**
 
+### 工作流总目录三层规则
+
+ComfyUI 工作流统一以 `agent-skills/comfyui/workflows/` 作为总入口，不再按“哪个项目顺手放哪里”处理：
+
+| 层级 | 路径 | 用途 |
+|---|---|---|
+| **共享正式层** | `agent-skills/comfyui/workflows/01-shared/` | 跨项目复用、已验证、可直接自动化调用的正式模板 |
+| **项目模板层** | `agent-skills/comfyui/workflows/02-project/<project>/` | 仅服务某个项目的稳定模板与 mapping |
+| **来源草稿层** | `agent-skills/comfyui/workflows/03-source/` | 外部导入、供应商示例、UI 草稿、待整理生成稿、历史归档 |
+
+补充约束：
+
+- `example_workflows/` 这类目录如果被 ComfyUI 或 custom node 直接扫描，原位可保留兼容入口，但规范化后的管理副本仍进入总目录。
+- 项目代码若需要固定引用工作流，应指向总目录中的 canonical 路径，而不是继续向项目内部新增平行模板副本。
+- `runtime/` 不再作为正式工作流模板的长期存放位置。
+
 ---
 
 ## 二、项目域归属表

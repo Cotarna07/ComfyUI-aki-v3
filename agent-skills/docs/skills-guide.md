@@ -5,7 +5,7 @@
 ## 状态说明
 
 - ready：现在就能通过 generate_video.py 直接执行，不需要先导出 API 工作流
-- export-needed：已经注册好了，但还需要先把 UI 工作流导出一次到 agent-skills/comfyui/workflows/api/
+- export-needed：已经注册好了，但还需要先把 UI 工作流导出一次到 agent-skills/comfyui/workflows/01-shared/
 
 ## 学习路径
 
@@ -211,5 +211,5 @@
 
 1. 在 ComfyUI 界面里打开源工作流。
 2. 从界面导出 API JSON。
-3. 把导出的文件保存到 agent-skills/comfyui/workflows/api/ 中，对应 registry.json 里声明的路径。
+3. 把导出的文件保存到 agent-skills/comfyui/workflows/01-shared/ 中，对应 registry.json 里声明的路径。
 4. 重新运行 generate_video.py --list-skills，确认状态从 export-needed 变成 ready。
