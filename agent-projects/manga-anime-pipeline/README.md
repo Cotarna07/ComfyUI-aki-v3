@@ -4,6 +4,19 @@
 
 当前已接入可选 PaddleOCR、规则型 OCR-based Dialogue、lightweight detection、Grounded-SAM-2/Ultralytics 检测入口、Qwen3-VL director 入口，以及 Wan/VACE 方向的 ComfyUI API 工作流模板。Manga Image Translator、完整口型/音频/BGM 后期链和人工审核台仍未接入。
 
+## 前置预处理（可选）
+
+如果输入图片来自 picaweb 下载，固定高度切块可能导致分镜在图片边界处被截断。
+使用 [`manga-panel-fixer`](../manga-panel-fixer/) 修复后再输入本流水线：
+
+```powershell
+python ..\manga-panel-fixer\scripts\fix_panels.py -i <原始图片目录> -o <修复输出目录> --batch
+```
+
+修复后将输出目录内的图片作为 `pages[].image_path` 写入章节 JSON，再运行 `run_stage1.py`。
+
+---
+
 ## 环境要求
 
 - Windows PowerShell

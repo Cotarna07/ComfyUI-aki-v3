@@ -1,20 +1,40 @@
 # 预检模块：服务器连接、节点清单、模型文件存在性
+# 原实现依赖 requests 库；已重构为 stdlib urllib，与 comfyui-shared 客户端对齐。
 from __future__ import annotations
 
 import json
-import time
+import urllib.error
+import urllib.request
 from pathlib import Path
 from typing import Any
-
-import requests
 
 from .config import MODELS_ROOT, SERVER_URL
 
 
-# ── 服务器检查 ────────────────────────────────────────────
+# ── 内部 HTTP 工具 ────────────────────────────────────────────────────────────
+
+def _get_json(path: str, timeout: float) -> dict[str, Any]:
+    """向 ComfyUI 发 GET 请求，返回 JSON dict；失败抛 RuntimeError。"""
+    url = SERVER_URL.rstrip("/") + path
+    req = urllib.request.Request(url, headers={"Accept": "application/json"})
+    try:
+        with urllib.request.urlopen(req, timeout=timeout) as resp:
+            raw = resp.read().decode("utf-8") or "{}"
+            return json.loads(raw)
+    except urllib.error.HTTPError as exc:
+        detail = exc.read().decode("utf-8", errors="replace")
+        raise RuntimeError(f"GET {path} HTTP {exc.code}: {detail}") from exc
+    except urllib.error.URLError as exc:
+        raise RuntimeError(f"GET {path} 连接失败: {exc.reason}") from exc
+    except json.JSONDecodeError as exc:
+        raise RuntimeError(f"GET {path} 返回非 JSON: {exc}") from exc
+
+
+# ── 服务器检查 ────────────────────────────────────────────────────────────────
+
 def check_server() -> dict[str, Any]:
     """检查 ComfyUI 服务是否可达，返回系统信息。"""
-    result = {
+    result: dict[str, Any] = {
         "online": False,
         "version": None,
         "gpu": None,
@@ -23,36 +43,34 @@ def check_server() -> dict[str, Any]:
         "error": None,
     }
     try:
-        resp = requests.get(f"{SERVER_URL}/system_stats", timeout=5)
-        resp.raise_for_status()
-        stats = resp.json()
+        stats = _get_json("/system_stats", timeout=5)
         result["online"] = True
         result["version"] = stats.get("system", {}).get("comfyui_version", "unknown")
-        devices = stats.get("devices") or [{}]
+        devices = stats.get("devices") or []
         if devices:
-            d = devices[0]
-            result["gpu"] = d.get("name", "unknown")
-            if d.get("vram_total"):
-                result["vram_free_gb"] = round(d["vram_free"] / 1024**3, 2)
-                result["vram_total_gb"] = round(d["vram_total"] / 1024**3, 2)
+            dev = devices[0]
+            result["gpu"] = dev.get("name", "unknown")
+            vram_total = dev.get("vram_total")
+            if vram_total:
+                result["vram_free_gb"] = round(dev.get("vram_free", 0) / 1024**3, 2)
+                result["vram_total_gb"] = round(vram_total / 1024**3, 2)
     except Exception as exc:
         result["error"] = str(exc)
     return result
 
 
-# ── 节点清单 ──────────────────────────────────────────────
+# ── 节点清单 ──────────────────────────────────────────────────────────────────
+
 def get_node_inventory() -> dict[str, Any]:
     """从 /object_info 获取所有已注册节点类型。"""
-    result = {
+    result: dict[str, Any] = {
         "online": False,
         "node_types": {},
         "count": 0,
         "error": None,
     }
     try:
-        resp = requests.get(f"{SERVER_URL}/object_info", timeout=10)
-        resp.raise_for_status()
-        data = resp.json()
+        data = _get_json("/object_info", timeout=10)
         result["online"] = True
         result["node_types"] = {k: {"category": v.get("category", "")} for k, v in data.items()}
         result["count"] = len(result["node_types"])
@@ -61,7 +79,8 @@ def get_node_inventory() -> dict[str, Any]:
     return result
 
 
-# ── 模型文件检查 ──────────────────────────────────────────
+# ── 模型文件检查 ──────────────────────────────────────────────────────────────
+
 def model_exists(directory: str, filename: str) -> bool:
     """检查指定模型文件是否存在。"""
     return (MODELS_ROOT / directory / filename).is_file()
@@ -80,24 +99,23 @@ def check_model_list(models: list[dict[str, str]]) -> list[dict[str, Any]]:
 
 def check_models_by_dir(directory: str, names: list[str]) -> list[dict[str, Any]]:
     """检查某个目录下的一批模型文件是否存在。"""
-    results = []
-    for name in names:
-        exists = model_exists(directory, name)
-        results.append({
+    return [
+        {
             "directory": directory,
             "name": name,
-            "exists": exists,
+            "exists": model_exists(directory, name),
             "full_path": str(MODELS_ROOT / directory / name),
-        })
-    return results
+        }
+        for name in names
+    ]
 
 
 def full_model_census() -> dict[str, Any]:
     """遍历 models/ 下所有子目录，统计文件数和总大小。"""
-    census: dict[str, dict] = {}
     if not MODELS_ROOT.is_dir():
         return {"error": f"Models root not found: {MODELS_ROOT}"}
 
+    census: dict[str, dict[str, Any]] = {}
     for subdir in sorted(MODELS_ROOT.iterdir()):
         if not subdir.is_dir():
             continue

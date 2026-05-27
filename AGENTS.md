@@ -11,6 +11,7 @@
 - 涉及 ComfyUI API 提交、Queue Manager 或自动化执行时，再读 agent-skills/docs/comfyui_api_rules.md。
 - 涉及电商商品图优化、商品广告主视觉、产品视频关键帧或商品真实性验收时，再读 agent-skills/comfyui/skills/comfyui-product-image-integrity/SKILL.md。
 - 涉及独立项目时，再读 agent-projects/README.md。
+- 涉及新建文件归属判断、项目域归属、runtime 内容规范、ComfyUI 客户端选择或共享能力晋升时，再读 agent-skills/docs/project_governance.md。
 
 ## 协作输出约定
 
@@ -45,8 +46,12 @@
 - agent-skills/docs/：技能包说明、技能层规则、与技能层直接相关的文档。
 - agent-skills/scripts/：技能层辅助脚本、适配器、小工具。
 - agent-skills/comfyui/：ComfyUI 专用注册表、工作流导出、技能资产。
+- agent-skills/comfyui/disabled-custom-nodes/：已禁用的 ComfyUI 自定义节点存档（含源码，不是产物）。
 - agent-projects/<project-slug>/：独立项目的代码、测试、项目文档和项目内脚本。
+- agent-projects/comfyui-shared/：跨项目共享的 ComfyUI HTTP 客户端与 LLM 输出解析工具（纯 stdlib，无第三方依赖）。
+- agent-projects/product-media/：商品图 / 商品视频 / 营销创意广告 / 商品真实性验收的代码与运行产物统一宿主。
 - 不要把独立应用、独立 Python 包、独立服务项目放进 agent-skills/。
+- runtime/ 目录只允许放图片、JSON 记录、Markdown 报告、日志等运行产物；Python 源码、依赖包、可复用脚本禁止放入 runtime/。
 - 现有根目录文件 comfyui_skill_utils.py、download_models.py、generate_video.py 属于兼容性保留入口，可作为读取或执行入口使用，但除用户明确允许外，不作为默认修改目标。
 
 ## 文档与临时文件规则

@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "comfyui-shared"
+version = "0.1.0"
+description = "跨项目共享的 ComfyUI HTTP 客户端与 LLM 输出解析工具"
+requires-python = ">=3.10"
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["comfyui_shared*"]
