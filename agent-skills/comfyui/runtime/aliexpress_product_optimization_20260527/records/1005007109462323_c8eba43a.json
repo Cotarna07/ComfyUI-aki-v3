@@ -1,0 +1,57 @@
+{
+  "product_id": "1005007109462323",
+  "source": "Y:\\tiktok_ins_crawl\\aliexpress\\images\\1005007109462323\\03.jpg",
+  "input_uploaded": "agent_aliexpress/20260527/1005007109462323/03.jpg",
+  "client_id": "agent:codex|workflow:kontext_product_edit|run:c8eba43a",
+  "prompt_id": "1ee55273-b57d-455f-8064-38f5d4be44cc",
+  "track": "factual_product",
+  "seed": 1472209031,
+  "workflow": "D:\\ComfyUI-aki-v3\\agent-skills\\comfyui\\workflows\\api\\kontext_product_edit.json",
+  "prompt": "Preserve exactly the same blue-and-white brick-built police car set and exactly one police-officer minifigure shown to its right. Keep the same three-quarter view, four wheels, blue transparent roof light bar, white hood stripes, front bumper guard and lights, blue side body with its existing product marking, and the minifigure uniform and cap. Edit only the non-product background: remove the upper logo and item-number header, and replace the blank white space with a clean light-gray studio display platform with a faint city-showroom gradient, soft daylight and grounded shadows under the car and figure. Keep all plastic brick details crisp and checkable. Do not alter, add, remove, move, relabel or recolor the vehicle, the figure, transparent parts or printed product markings. Do not generate text, logos, packaging, watermark or extra accessories.",
+  "notes": "factual_product; product=1005007109462323; input=03.jpg; model=flux1-dev-kontext_fp8_scaled; seed=1472209031; steps=28; guidance=2.8; sampler=euler; scheduler=simple; edit=non-product-text-removal/background/lighting-only; validation=blue-white police car; roof light bar; front guard; four wheels; exactly one police minifigure",
+  "validation_focus": "blue-white police car; roof light bar; front guard; four wheels; exactly one police minifigure",
+  "submitted": {
+    "prompt_id": "1ee55273-b57d-455f-8064-38f5d4be44cc",
+    "number": 15,
+    "node_errors": {}
+  },
+  "status": {
+    "status_str": "success",
+    "completed": true,
+    "messages": [
+      [
+        "execution_start",
+        {
+          "prompt_id": "1ee55273-b57d-455f-8064-38f5d4be44cc",
+          "timestamp": 1779815972060
+        }
+      ],
+      [
+        "execution_cached",
+        {
+          "nodes": [
+            "10",
+            "11",
+            "12",
+            "14"
+          ],
+          "prompt_id": "1ee55273-b57d-455f-8064-38f5d4be44cc",
+          "timestamp": 1779815972072
+        }
+      ],
+      [
+        "execution_success",
+        {
+          "prompt_id": "1ee55273-b57d-455f-8064-38f5d4be44cc",
+          "timestamp": 1779816068947
+        }
+      ]
+    ]
+  },
+  "outputs": [
+    {
+      "comfyui": "D:\\ComfyUI-aki-v3\\ComfyUI\\output\\agent_runs\\aliexpress_factual_20260527\\1005007109462323\\factual_source03_00001_.png",
+      "runtime": "D:\\ComfyUI-aki-v3\\agent-skills\\comfyui\\runtime\\aliexpress_product_optimization_20260527\\outputs\\1005007109462323\\factual_source03_00001_.png"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "retained_evidenced_features": [
+    "exactly one police minifigure seated inside",
+    "detachable white roof plus blue lightbar floating above cockpit",
+    "recognizable blue-white brick car",
+    "four wheels",
+    "black front guard",
+    "yellow side stripe and POLICE marking"
+  ],
+  "altered_or_missing_features": [],
+  "non_product_catalog_graphics_remaining": [
+    "nighttime city background with bokeh lights",
+    "wet reflective road surface",
+    "rain effects"
+  ],
+  "campaign_quality_notes": [
+    "Creative atmospheric lighting and setting enhance visual appeal for campaign use.",
+    "The floating lightbar and roof are accurately positioned relative to the car's cockpit as in source image."
+  ],
+  "factual_publish_eligible": false,
+  "reason": "The image is a creative campaign candidate, not a factual representation. While it retains all evidenced configuration features, it adds non-product catalog graphics (night scene, rain, reflections) which are allowed for creative campaigns. The audit confirms factual alignment with source, but the campaign's artistic enhancements make it ineligible for factual publication solely based on this audit."
+}

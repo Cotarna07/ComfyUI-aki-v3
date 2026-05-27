@@ -1,0 +1,3 @@
+# stdlib urllib is sufficient for the bundled ComfyClient; install requests only
+# if you plan to replace the HTTP layer.
+requests>=2.32

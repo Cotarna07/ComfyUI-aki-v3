@@ -1,0 +1,49 @@
+{
+  "1": {
+    "class_type": "VHS_LoadVideoFFmpegPath",
+    "inputs": {
+      "video": "D:/ComfyUI-aki-v3/ComfyUI/input/share_8187c3c938e850fad48dcc870b74df4d1776768361225.mp4",
+      "force_rate": 16,
+      "custom_width": 512,
+      "custom_height": 768,
+      "frame_load_cap": 161,
+      "start_time": 0,
+      "format": "Wan"
+    },
+    "_meta": {
+      "title": "Reference Dance Video"
+    }
+  },
+  "2": {
+    "class_type": "DWPreprocessor",
+    "inputs": {
+      "image": [
+        "1",
+        0
+      ],
+      "detect_hand": "enable",
+      "detect_body": "enable",
+      "detect_face": "enable",
+      "resolution": 768,
+      "bbox_detector": "yolox_l.torchscript.pt",
+      "pose_estimator": "dw-ll_ucoco_384_bs5.torchscript.pt",
+      "scale_stick_for_xinsr_cn": "disable"
+    },
+    "_meta": {
+      "title": "DWPose Body Hand Face"
+    }
+  },
+  "3": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "2",
+        0
+      ],
+      "filename_prefix": "pose_extract/reference_dwpose_frame"
+    },
+    "_meta": {
+      "title": "Save DWPose Control Frames"
+    }
+  }
+}

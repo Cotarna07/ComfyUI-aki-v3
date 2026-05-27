@@ -1,60 +1,83 @@
-# Workspace git scope: track only agent-owned areas and fixed entry docs.
+# Track only agent-owned zones and fixed instruction entry points.
 *
 
-# Keep git metadata and this ignore file.
-!.gitignore
+!/.gitignore
+!/.clinerules/
+!/.clinerules/**
+!/.github/
+!/.github/copilot-instructions.md
+!/AGENTS.md
+!/CLAUDE.md
+!/agent-skills/
+!/agent-skills/**
+!/agent-projects/
+!/agent-projects/**
+!/ComfyUI/
+!/ComfyUI/**
+!/comfyui_skill_utils.py
+!/download_models.py
+!/generate_video.py
 
-# Fixed collaboration entry docs.
-!AGENTS.md
-!CLAUDE.md
+# Ignore common project-local Python noise inside agent-owned project folders.
+agent-projects/**/.git/
+agent-projects/**/.git.repo-backup/
+agent-projects/**/.venv/
+agent-projects/**/__pycache__/
+agent-projects/**/.pytest_cache/
+agent-projects/**/.mypy_cache/
+agent-projects/**/.ruff_cache/
+agent-projects/**/build/
+agent-projects/**/dist/
+ComfyUI/.git.repo-backup/
 
-# Agent-owned areas.
-!agent-skills/
-!agent-skills/**
-!agent-projects/
-!agent-projects/**
+# Ignore runtime outputs in agent-owned areas, but keep placeholders/docs.
+agent-skills/runtime/**
+!agent-skills/runtime/**/
+!agent-skills/runtime/**/README.md
+!agent-skills/runtime/**/.gitkeep
+agent-skills/scripts/generated/**/runtime/**
+!agent-skills/scripts/generated/**/runtime/**/
+!agent-skills/scripts/generated/**/runtime/**/README.md
+!agent-skills/scripts/generated/**/runtime/**/.gitkeep
+agent-projects/**/runtime/**
+!agent-projects/**/runtime/**/
+!agent-projects/**/runtime/**/README.md
+!agent-projects/**/runtime/**/.gitkeep
 
-# Collaboration and skill instructions.
-!.github/
-!.github/**
+# Ignore transient database and lock artifacts in agent-owned areas.
+agent-skills/**/*.db
+agent-skills/**/*.db.lock
+agent-skills/**/*.lock
+agent-projects/**/runtime/**/*.db
+agent-projects/**/runtime/**/*.db.lock
+agent-projects/**/runtime/**/*.lock
 
-# Common local/runtime noise (still ignored even if under allowed trees unless explicitly re-included).
-**/__pycache__/
-**/*.py[cod]
-**/.pytest_cache/
-**/.mypy_cache/
-**/.ruff_cache/
-**/.venv/
-**/venv/
-**/.cache/
-**/cache/
-**/runtime/
-**/logs/
-**/*.log
-**/*.tmp
-**/*.temp
 
-# Windows/editor noise.
-**/.DS_Store
-**/Thumbs.db
-**/.vscode/
-
-# Model weight files (reference copies should not bloat the repo).
-*.pt
-*.pth
-*.h5
-*.pb
-*.ckpt
-*.weights
-*.safetensors
-*.onnx
-
-# Reference project static images (workflow diagrams, samples, screenshots).
 *.png
 *.jpg
 *.jpeg
 *.gif
 *.bmp
-*.webp
-*.svg
-*.ico
+*.tiff
+*.mp4
+*.log
+!/ComfyUI/**/*.png
+!/ComfyUI/**/*.jpg
+!/ComfyUI/**/*.jpeg
+!/ComfyUI/**/*.gif
+!/ComfyUI/**/*.bmp
+!/ComfyUI/**/*.tiff
+!/ComfyUI/**/*.mp4
+
+# ComfyUI user data is now managed from agent-skills/comfyui/userdata.
+ComfyUI/user/**
+
+# Exclude large model binary files inside workflow folders
+ComfyUI/user/**/*.bin
+ComfyUI/user/**/*.safetensors
+ComfyUI/user/**/*.ckpt
+ComfyUI/user/**/*.pth
+ComfyUI/user/**/*.pt
+agent-projects/manga-anime-pipeline/yolo11n.pt
+agent-projects/manga-anime-pipeline/sam2.1_l.pt
+agent-skills/comfyui/runtime/product_image_optimization/hf_download_deps/*

@@ -1,0 +1,57 @@
+{
+  "product_id": "1005010410824249",
+  "source": "Y:\\tiktok_ins_crawl\\aliexpress\\images\\1005010410824249\\05.jpg",
+  "input_uploaded": "agent_aliexpress/20260527/1005010410824249/05.jpg",
+  "client_id": "agent:codex|workflow:kontext_product_edit|run:490c2e37",
+  "prompt_id": "64771fda-7e92-4c4f-a95c-16787207a340",
+  "track": "factual_product",
+  "seed": 203782451,
+  "workflow": "D:\\ComfyUI-aki-v3\\agent-skills\\comfyui\\workflows\\api\\kontext_product_edit.json",
+  "prompt": "Preserve the identical brick-built Minecraft Creeper display set shown in the reference: one tall green pixelated Creeper with its cubic head, straight body and four splayed feet; keep the exact green, dark-green, black and light-gray pixel pattern; keep exactly one small pink pig figure and one small red-and-white TNT block beside it at the same scale and spacing. Keep every object clearly plastic brick-built and fully visible. Edit only the empty white background and floor into a clean pale-stone tabletop studio with a very soft block-world ambience far in the background, gentle natural daylight and a realistic grounded contact shadow. The product remains bright, sharp, centered and catalog-verifiable. Do not add, remove, redesign, reposition, recolor, relabel, blur or change material of any product component or accessory. Do not generate packaging, title text, brand overlay, watermark or extra props.",
+  "notes": "factual_product; product=1005010410824249; input=05.jpg; model=flux1-dev-kontext_fp8_scaled; seed=203782451; steps=28; guidance=2.8; sampler=euler; scheduler=simple; edit=background-and-lighting-only; validation=creeper+pigglet+TNT count and brick structure",
+  "submitted": {
+    "prompt_id": "64771fda-7e92-4c4f-a95c-16787207a340",
+    "number": 13,
+    "node_errors": {}
+  },
+  "status": {
+    "status_str": "success",
+    "completed": true,
+    "messages": [
+      [
+        "execution_start",
+        {
+          "prompt_id": "64771fda-7e92-4c4f-a95c-16787207a340",
+          "timestamp": 1779815729483
+        }
+      ],
+      [
+        "execution_cached",
+        {
+          "nodes": [
+            "10",
+            "11",
+            "12",
+            "14"
+          ],
+          "prompt_id": "64771fda-7e92-4c4f-a95c-16787207a340",
+          "timestamp": 1779815729496
+        }
+      ],
+      [
+        "execution_success",
+        {
+          "prompt_id": "64771fda-7e92-4c4f-a95c-16787207a340",
+          "timestamp": 1779815800318
+        }
+      ]
+    ]
+  },
+  "outputs": [
+    {
+      "comfyui": "D:\\ComfyUI-aki-v3\\ComfyUI\\output\\agent_runs\\aliexpress_factual_20260527\\1005010410824249\\factual_source05_00001_.png",
+      "runtime": "D:\\ComfyUI-aki-v3\\agent-skills\\comfyui\\runtime\\aliexpress_product_optimization_20260527\\outputs\\1005010410824249\\factual_source05_00001_.png"
+    }
+  ],
+  "validation": "Kontext output retained only as diagnostic preview; factual delivery uses factual_preserved_pixels_01.png."
+}

@@ -1,0 +1,294 @@
+{
+  "prompt_id": "f5307816-4645-4281-b8da-6ac68e4a4e77",
+  "client_id": "agent:codex|workflow:vlm_directed_kontext_campaign_bright_clean|run:d3206b59",
+  "track": "creative_campaign",
+  "source": "02.jpg",
+  "prompt": "Creative campaign hero image based on this exact brick-built police car feature view. Keep the evidenced product configuration: exactly one police officer minifigure visibly seated inside the cockpit; the detached white roof with translucent blue lightbar floating directly above the open car; same blue and white toy-brick vehicle, yellow lower side stripe, four wheels, front black bumper guard and existing POLICE marking. Remove only non-product catalog graphics from the input: remove the red LEGO corner logo, item-number header, and the white upward instructional arrow. Reframe as a close premium toy advertisement with the car filling about 78 percent of the image, viewed from the same side three-quarter orientation. Bright readable blue-hour rainy city street, polished wet asphalt, clean blue and red bokeh light trails, strong soft frontal product key light, subtle cyan rim light and clear grounded reflection. Product must remain bright, sharp, plastic brick-built and inspectable, not lost in darkness. No additional car, figure, text, packaging, watermark or logo overlay. creative_campaign; not for factual SKU verification.",
+  "notes": "creative_campaign; product=1005007109462323; source=02.jpg; director_model=huihui_ai/qwen3-vl-abliterated:8b-instruct-q4_K_M; director_observation=seated_officer_and_detached_roof_evidenced; generator=flux1-dev-kontext_fp8_scaled; seed=2026052715; steps=28; guidance=2.8; sampler=euler; scheduler=simple; size=1024x1024; workflow_fix=EmptySD3LatentImage; visual_edit=bright_rain_city_hero_remove_catalog_graphics; track=creative_campaign not for factual SKU verification",
+  "history": {
+    "prompt": [
+      8,
+      "f5307816-4645-4281-b8da-6ac68e4a4e77",
+      {
+        "1": {
+          "class_type": "LoadImage",
+          "inputs": {
+            "image": "agent_aliexpress_campaign/20260527/1005007109462323/02.jpg"
+          },
+          "_meta": {
+            "title": "Input Product Image"
+          }
+        },
+        "2": {
+          "class_type": "FluxKontextImageScale",
+          "inputs": {
+            "image": [
+              "1",
+              0
+            ]
+          },
+          "_meta": {
+            "title": "Kontext Image Scale"
+          }
+        },
+        "3": {
+          "class_type": "VAEEncode",
+          "inputs": {
+            "pixels": [
+              "2",
+              0
+            ],
+            "vae": [
+              "12",
+              0
+            ]
+          },
+          "_meta": {
+            "title": "VAE Encode Reference"
+          }
+        },
+        "4": {
+          "class_type": "PreviewImage",
+          "inputs": {
+            "images": [
+              "2",
+              0
+            ]
+          },
+          "_meta": {
+            "title": "Preview Scaled Input"
+          }
+        },
+        "5": {
+          "class_type": "CLIPTextEncode",
+          "inputs": {
+            "clip": [
+              "14",
+              0
+            ],
+            "text": "Creative campaign hero image based on this exact brick-built police car feature view. Keep the evidenced product configuration: exactly one police officer minifigure visibly seated inside the cockpit; the detached white roof with translucent blue lightbar floating directly above the open car; same blue and white toy-brick vehicle, yellow lower side stripe, four wheels, front black bumper guard and existing POLICE marking. Remove only non-product catalog graphics from the input: remove the red LEGO corner logo, item-number header, and the white upward instructional arrow. Reframe as a close premium toy advertisement with the car filling about 78 percent of the image, viewed from the same side three-quarter orientation. Bright readable blue-hour rainy city street, polished wet asphalt, clean blue and red bokeh light trails, strong soft frontal product key light, subtle cyan rim light and clear grounded reflection. Product must remain bright, sharp, plastic brick-built and inspectable, not lost in darkness. No additional car, figure, text, packaging, watermark or logo overlay. creative_campaign; not for factual SKU verification."
+          },
+          "_meta": {
+            "title": "Positive Prompt"
+          }
+        },
+        "6": {
+          "class_type": "ReferenceLatent",
+          "inputs": {
+            "conditioning": [
+              "5",
+              0
+            ],
+            "latent": [
+              "3",
+              0
+            ]
+          },
+          "_meta": {
+            "title": "Reference Latent"
+          }
+        },
+        "7": {
+          "class_type": "FluxGuidance",
+          "inputs": {
+            "conditioning": [
+              "6",
+              0
+            ],
+            "guidance": 2.8
+          },
+          "_meta": {
+            "title": "Flux Guidance"
+          }
+        },
+        "8": {
+          "class_type": "ConditioningZeroOut",
+          "inputs": {
+            "conditioning": [
+              "5",
+              0
+            ]
+          },
+          "_meta": {
+            "title": "Negative (Zero Out)"
+          }
+        },
+        "9": {
+          "class_type": "KSampler",
+          "inputs": {
+            "model": [
+              "10",
+              0
+            ],
+            "positive": [
+              "7",
+              0
+            ],
+            "negative": [
+              "8",
+              0
+            ],
+            "latent_image": [
+              "11",
+              0
+            ],
+            "seed": 2026052715,
+            "steps": 28,
+            "cfg": 1.0,
+            "sampler_name": "euler",
+            "scheduler": "simple",
+            "denoise": 1.0
+          },
+          "_meta": {
+            "title": "KSampler"
+          }
+        },
+        "10": {
+          "class_type": "UNETLoader",
+          "inputs": {
+            "unet_name": "flux1-dev-kontext_fp8_scaled.safetensors",
+            "weight_dtype": "default"
+          },
+          "_meta": {
+            "title": "UNET Loader"
+          }
+        },
+        "11": {
+          "class_type": "EmptySD3LatentImage",
+          "inputs": {
+            "width": 1024,
+            "height": 1024,
+            "batch_size": 1
+          },
+          "_meta": {
+            "title": "Empty Flux.1 Kontext Latent"
+          }
+        },
+        "12": {
+          "class_type": "VAELoader",
+          "inputs": {
+            "vae_name": "ae.safetensors"
+          },
+          "_meta": {
+            "title": "VAE Loader"
+          }
+        },
+        "13": {
+          "class_type": "VAEDecode",
+          "inputs": {
+            "samples": [
+              "9",
+              0
+            ],
+            "vae": [
+              "12",
+              0
+            ]
+          },
+          "_meta": {
+            "title": "VAE Decode"
+          }
+        },
+        "14": {
+          "class_type": "DualCLIPLoader",
+          "inputs": {
+            "clip_name1": "clip_l.safetensors",
+            "clip_name2": "t5xxl_fp8_e4m3fn_scaled.safetensors",
+            "type": "flux",
+            "device": "default"
+          },
+          "_meta": {
+            "title": "Dual CLIP Loader"
+          }
+        },
+        "15": {
+          "class_type": "SaveImage",
+          "inputs": {
+            "images": [
+              "13",
+              0
+            ],
+            "filename_prefix": "agent_runs/vlm_directed_campaign_20260527/1005007109462323/rain_city_feature_exploded_inside_bright_clean"
+          },
+          "_meta": {
+            "title": "Save Output"
+          }
+        }
+      },
+      {
+        "agent": "codex",
+        "workflow_name": "vlm_directed_kontext_campaign_bright_clean",
+        "source": "D:\\ComfyUI-aki-v3\\ComfyUI\\input\\agent_aliexpress_campaign\\20260527\\1005007109462323\\02.jpg",
+        "notes": "creative_campaign; product=1005007109462323; source=02.jpg; director_model=huihui_ai/qwen3-vl-abliterated:8b-instruct-q4_K_M; director_observation=seated_officer_and_detached_roof_evidenced; generator=flux1-dev-kontext_fp8_scaled; seed=2026052715; steps=28; guidance=2.8; sampler=euler; scheduler=simple; size=1024x1024; workflow_fix=EmptySD3LatentImage; visual_edit=bright_rain_city_hero_remove_catalog_graphics; track=creative_campaign not for factual SKU verification",
+        "client_id": "agent:codex|workflow:vlm_directed_kontext_campaign_bright_clean|run:d3206b59",
+        "create_time": 1779863580523
+      },
+      [
+        "15",
+        "4"
+      ]
+    ],
+    "outputs": {
+      "4": {
+        "images": [
+          {
+            "filename": "ComfyUI_temp_xvegg_00001_.png",
+            "subfolder": "",
+            "type": "temp"
+          }
+        ]
+      },
+      "15": {
+        "images": [
+          {
+            "filename": "rain_city_feature_exploded_inside_bright_clean_00001_.png",
+            "subfolder": "agent_runs\\vlm_directed_campaign_20260527\\1005007109462323",
+            "type": "output"
+          }
+        ]
+      }
+    },
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "f5307816-4645-4281-b8da-6ac68e4a4e77",
+            "timestamp": 1779863583421
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [],
+            "prompt_id": "f5307816-4645-4281-b8da-6ac68e4a4e77",
+            "timestamp": 1779863583424
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "f5307816-4645-4281-b8da-6ac68e4a4e77",
+            "timestamp": 1779863638565
+          }
+        ]
+      ]
+    },
+    "meta": {
+      "4": {
+        "node_id": "4",
+        "display_node": "4",
+        "parent_node": null,
+        "real_node_id": "4"
+      },
+      "15": {
+        "node_id": "15",
+        "display_node": "15",
+        "parent_node": null,
+        "real_node_id": "15"
+      }
+    }
+  }
+}

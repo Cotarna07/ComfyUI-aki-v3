@@ -1,0 +1,4 @@
+interface:
+  display_name: "ComfyUI 商品图真实性优化"
+  short_description: "优化商品广告主视觉并严格拦截结构、配件、材质、数量与商品身份失真风险"
+  default_prompt: "Use $comfyui-product-image-integrity to optimize product hero images while validating SKU fidelity."

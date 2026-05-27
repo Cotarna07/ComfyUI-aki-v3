@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+
+runtime/windows/
+runtime/structured/
+runtime/manifests/
+runtime/qc/

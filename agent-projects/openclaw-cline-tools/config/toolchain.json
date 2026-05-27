@@ -1,0 +1,10 @@
+{
+  "openclaw_root": "D:\\ComfyUI-aki-v3\\agent-projects\\openclaw-cline-tools",
+  "scrapling_root": "D:\\ComfyUI-aki-v3\\agent-projects\\openclaw-cline-tools\\vendor\\Scrapling",
+  "scrapling_python": "D:\\ComfyUI-aki-v3\\.venv\\Scripts\\python.exe",
+  "scrapling_exe": "D:\\ComfyUI-aki-v3\\.venv\\Scripts\\scrapling.exe",
+  "opencli_root": "D:\\ComfyUI-aki-v3\\agent-projects\\openclaw-cline-tools\\vendor\\opencli",
+  "opencli_main": "D:\\ComfyUI-aki-v3\\agent-projects\\openclaw-cline-tools\\vendor\\opencli\\dist\\main.js",
+  "node_command": "node",
+  "bitbrowser_api": "http://127.0.0.1:54345"
+}

@@ -97,10 +97,18 @@ def score_prompt_pair(pair: PromptPair, config: QualityConfig) -> QualityScore:
 
 
 def _parse_json_object(text: str) -> object | None:
-    candidates = [text]
-    match = re.search(r"\{.*\}", text, flags=re.DOTALL)
-    if match:
-        candidates.append(match.group(0))
+    # 算法与 comfyui-shared/json_utils.parse_json_object 对齐：
+    # 优先代码围栏 → 首尾括号截取 → 原文兜底
+    stripped = text.strip()
+    candidates: list[str] = []
+    fenced = re.search(r"```(?:json)?\s*(\{.*?\})\s*```", stripped, flags=re.DOTALL | re.IGNORECASE)
+    if fenced:
+        candidates.append(fenced.group(1))
+    first = stripped.find("{")
+    last = stripped.rfind("}")
+    if first >= 0 and last > first:
+        candidates.append(stripped[first : last + 1])
+    candidates.append(stripped)
     for candidate in candidates:
         try:
             return json.loads(candidate)

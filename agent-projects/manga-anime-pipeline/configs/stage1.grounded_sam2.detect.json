@@ -1,0 +1,29 @@
+{
+  "providers": {
+    "ocr": "paddleocr",
+    "dialogue": "ocr_based",
+    "detection": "grounded_sam2",
+    "director": "mock"
+  },
+  "dialogue": {
+    "ocr_based": {
+      "min_confidence": 0.3,
+      "max_merge_distance": 48,
+      "min_text_length": 1
+    }
+  },
+  "detection": {
+    "grounded_sam2": {
+      "mode": "auto",
+      "allow_fallback": true,
+      "detector_model": "yolo11n.pt",
+      "sam_model": "sam2.1_l.pt",
+      "model_dir": "runtime/models/detection",
+      "confidence_threshold": 0.25,
+      "iou_threshold": 0.5,
+      "max_objects": 12,
+      "crop_padding_ratio": 0.16,
+      "prompts": ["person", "face", "hand", "weapon", "phone", "vehicle", "room", "background object"]
+    }
+  }
+}

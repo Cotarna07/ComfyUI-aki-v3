@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wan 2.2 Dasiwa 六 LoRA 工作流参数页</title>
+  <style>
+    :root {
+      --bg: #f5f1e8;
+      --panel: #fffaf0;
+      --ink: #1e1d1a;
+      --muted: #6b665c;
+      --line: #d8cfbe;
+      --accent: #165d52;
+      --accent-2: #b86b2b;
+      --tag: #efe5d1;
+      --code: #f0eadc;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(184, 107, 43, 0.12), transparent 32%),
+        radial-gradient(circle at top right, rgba(22, 93, 82, 0.1), transparent 28%),
+        linear-gradient(180deg, #f7f3ea 0%, var(--bg) 100%);
+    }
+
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 20px 56px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, rgba(255, 250, 240, 0.96), rgba(248, 240, 223, 0.96));
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 16px 42px rgba(50, 40, 20, 0.08);
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: 32px;
+      line-height: 1.15;
+      letter-spacing: 0.02em;
+    }
+
+    h2 {
+      font-size: 22px;
+      margin-bottom: 14px;
+    }
+
+    h3 {
+      font-size: 17px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin: 0;
+      line-height: 1.7;
+    }
+
+    .sub {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 16px;
+    }
+
+    .card .label {
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .card .value {
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 1.25fr 0.9fr;
+      gap: 20px;
+      margin-top: 22px;
+    }
+
+    .section {
+      background: rgba(255, 250, 240, 0.92);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: 0 10px 28px rgba(50, 40, 20, 0.05);
+    }
+
+    .stack {
+      display: grid;
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    th, td {
+      padding: 10px 10px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      background: var(--tag);
+      border: 1px solid var(--line);
+      padding: 8px 12px;
+      font-size: 13px;
+    }
+
+    pre {
+      margin: 0;
+      white-space: pre-wrap;
+      word-break: break-word;
+      background: var(--code);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px;
+      font-size: 13px;
+      line-height: 1.6;
+      overflow: auto;
+    }
+
+    .note {
+      margin-top: 14px;
+      padding: 14px;
+      border-radius: 14px;
+      background: rgba(22, 93, 82, 0.08);
+      border: 1px solid rgba(22, 93, 82, 0.18);
+      color: #21453e;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .warn {
+      background: rgba(184, 107, 43, 0.1);
+      border-color: rgba(184, 107, 43, 0.22);
+      color: #6b3f18;
+    }
+
+    code {
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 13px;
+    }
+
+    @media (max-width: 880px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 26px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <h1>Wan 2.2 I2V Dasiwa 六 LoRA 工作流</h1>
+      <p class="sub">这是基于现有 Wan 2.2 I2V 双阶段锚点工作流改出来的定制版，不是随便拼字段。高噪支路换成 Dasiwa 主模型，低噪支路先沿用官方低噪 base，再把你这批 3 对高低噪 LoRA 全部串进去。</p>
+
+      <div class="grid">
+        <div class="card">
+          <div class="label">工作流类型</div>
+          <div class="value">Wan 2.2 图生视频</div>
+        </div>
+        <div class="card">
+          <div class="label">当前档位</div>
+          <div class="value">RTX 4080 保守档</div>
+        </div>
+        <div class="card">
+          <div class="label">分辨率</div>
+          <div class="value">512 × 768</div>
+        </div>
+        <div class="card">
+          <div class="label">时长</div>
+          <div class="value">41 帧 / 16 FPS</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="layout">
+      <section class="section">
+        <h2>1. 这张图是不是我自己设计的</h2>
+        <p>是我自己基于仓库里已有的 Wan 2.2 I2V API 工作流做的定制版，核心结构保留了可运行的双 UNet 两阶段采样，所以不是从零瞎写，也不是照搬原图不改。</p>
+        <div class="pill-row">
+          <span class="pill">锚点: wan22_i2v_portrait_preview.json</span>
+          <span class="pill">高噪: Dasiwa 主模型</span>
+          <span class="pill">低噪: 官方 low noise base</span>
+          <span class="pill">采样: 4 step lightspeed</span>
+        </div>
+
+        <div class="stack">
+          <div>
+            <h3>主模型与核心参数</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>项目</th>
+                  <th>值</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>起始图</td>
+                  <td><code>anime_ref_start_clean_512x768.png</code></td>
+                </tr>
+                <tr>
+                  <td>文本编码器</td>
+                  <td><code>umt5_xxl_fp8_e4m3fn_scaled.safetensors</code></td>
+                </tr>
+                <tr>
+                  <td>VAE</td>
+                  <td><code>wan_2.1_vae.safetensors</code></td>
+                </tr>
+                <tr>
+                  <td>高噪 UNet</td>
+                  <td><code>DasiwaWAN22I2V14BLightspeed_boundbiteHighV10.safetensors</code></td>
+                </tr>
+                <tr>
+                  <td>低噪 UNet</td>
+                  <td><code>wan2.2_i2v_low_noise_14B_fp8_scaled.safetensors</code></td>
+                </tr>
+                <tr>
+                  <td>分辨率</td>
+                  <td><code>512 x 768</code></td>
+                </tr>
+                <tr>
+                  <td>帧数</td>
+                  <td><code>41</code></td>
+                </tr>
+                <tr>
+                  <td>FPS</td>
+                  <td><code>16</code></td>
+                </tr>
+                <tr>
+                  <td>采样器</td>
+                  <td><code>euler / simple / cfg 1.0 / 4 steps</code></td>
+                </tr>
+                <tr>
+                  <td>输出前缀</td>
+                  <td><code>wan22_i2v_dasiwa_six_loras/ComfyUI</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div>
+            <h3>正向提示词</h3>
+            <pre>safe for work cinematic image-to-video, one adult subject, stable face, stable hands, subtle breathing, slow natural head turn, small shoulder and fabric motion, clean lighting, soft camera move, detailed skin and hair separation, no explicit content</pre>
+          </div>
+
+          <div>
+            <h3>负向提示词</h3>
+            <pre>NSFW, nudity, explicit sexual content, erotic, exposed nipples, lingerie, fetish, child, teen, minor, worst quality, bad quality, low quality, missing fingers, extra fingers, deformed hands, deformed face, heavy flicker, subtitles, watermark, text, still image, blurry details</pre>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>2. 这批 LoRA 都用了吗</h2>
+        <p>用了，六个都挂进去了，而且是按高噪三条、低噪三条对应挂载，不是只挑其中两三个。</p>
+        <div class="stack">
+          <div>
+            <h3>高噪支路 LoRA</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>LoRA</th>
+                  <th>强度</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>bounce_test_HighNoise-000005.safetensors</code></td>
+                  <td><code>0.30</code></td>
+                </tr>
+                <tr>
+                  <td><code>NSFW-22-H-e8.safetensors</code></td>
+                  <td><code>0.12</code></td>
+                </tr>
+                <tr>
+                  <td><code>DR34ML4Y_I2V_14B_HIGH_V2.safetensors</code></td>
+                  <td><code>0.32</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div>
+            <h3>低噪支路 LoRA</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>LoRA</th>
+                  <th>强度</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>bounce_test_LowNoise-000005.safetensors</code></td>
+                  <td><code>0.30</code></td>
+                </tr>
+                <tr>
+                  <td><code>NSFW-22-L-e8.safetensors</code></td>
+                  <td><code>0.12</code></td>
+                </tr>
+                <tr>
+                  <td><code>DR34ML4Y_I2V_14B_LOW_V2.safetensors</code></td>
+                  <td><code>0.32</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="note warn">注意：虽然六个 LoRA 全部接进去了，但它们风格和用途并不完全同向，所以这是“全挂载验证版”，不是最终审美最优版。后面通常会继续把强度往下压，或者只保留一到两对主效 LoRA。</div>
+      </section>
+    </div>
+
+    <div class="layout">
+      <section class="section">
+        <h2>3. 这个工作流怎么用</h2>
+        <div class="stack">
+          <div>
+            <h3>在 ComfyUI 网页里运行</h3>
+            <pre>1. 打开 ComfyUI 网页: http://127.0.0.1:8188
+2. 载入工作流 JSON:
+  agent-skills/comfyui/workflows/01-shared/wan22_i2v_dasiwa_six_loras_4080_safe.json
+3. 把 LoadImage 节点的起始图换成你自己的图
+4. 改正向提示词和负向提示词
+5. 先不要放大分辨率，也不要先把 length 改长
+6. 点击 Queue Prompt 运行</pre>
+          </div>
+
+          <div>
+            <h3>最先建议改的 4 个地方</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>节点</th>
+                  <th>字段</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td><code>image</code> 起始图</td>
+                </tr>
+                <tr>
+                  <td>93</td>
+                  <td><code>text</code> 正向提示词</td>
+                </tr>
+                <tr>
+                  <td>98</td>
+                  <td><code>width / height / length</code></td>
+                </tr>
+                <tr>
+                  <td>101-106</td>
+                  <td><code>strength_model</code> 各 LoRA 强度</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>4. 为什么你在 Chrome 里看不清参数</h2>
+        <p>因为你直接打开的是 API JSON，它本来就是给 ComfyUI 后端提交用的，不是给人阅读的 UI 文件。Chrome 能显示文本，但不会帮你把节点关系、模型分支、LoRA 分组和关键参数整理成可读面板。</p>
+        <div class="note">这个 HTML 页就是为了解决这个问题。以后你想先在浏览器里审参数，直接打开这个文件，不要先看原始 JSON。</div>
+        <div class="note warn">如果你想看节点连线和完整画布，还是得把 JSON 导入 ComfyUI 网页。浏览器直接打开原始 JSON，只适合机器，不适合人看。</div>
+      </section>
+    </div>
+
+    <div class="layout">
+      <section class="section">
+        <h2>5. 我可以通过 API 查看到吗</h2>
+        <p>可以。现在这台机的 ComfyUI API 是通的，我已经确认过 <code>/object_info</code> 和 <code>/history</code> 都能访问。你可以用 API 做三件事：</p>
+        <div class="pill-row">
+          <span class="pill">查看节点和可用模型: /object_info</span>
+          <span class="pill">提交任务: /prompt</span>
+          <span class="pill">查看历史与输出: /history</span>
+        </div>
+
+        <div class="stack">
+          <div>
+            <h3>查看历史任务</h3>
+            <pre>GET http://127.0.0.1:8188/history</pre>
+          </div>
+
+          <div>
+            <h3>查看节点注册情况</h3>
+            <pre>GET http://127.0.0.1:8188/object_info</pre>
+          </div>
+
+          <div>
+            <h3>提交这个工作流</h3>
+            <pre>POST http://127.0.0.1:8188/prompt
+Content-Type: application/json
+
+{
+  "prompt": { ...把工作流 JSON 整体放这里... },
+  "client_id": "chrome-preview"
+}</pre>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>6. PowerShell API 示例</h2>
+        <pre>$path = 'D:/ComfyUI-aki-v3/agent-skills/comfyui/workflows/01-shared/wan22_i2v_dasiwa_six_loras_4080_safe.json'
+$workflow = Get-Content -Raw -LiteralPath $path | ConvertFrom-Json
+$body = @{
+  prompt = $workflow
+  client_id = 'wan22-dasiwa-preview'
+} | ConvertTo-Json -Depth 100
+
+Invoke-RestMethod -Uri 'http://127.0.0.1:8188/prompt' `
+  -Method Post `
+  -ContentType 'application/json' `
+  -Body $body</pre>
+        <div class="note">提交后记住返回的 <code>prompt_id</code>，再去 <code>/history</code> 里查这个任务的运行状态和输出文件。</div>
+      </section>
+    </div>
+  </div>
+</body>
+</html>

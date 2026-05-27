@@ -1,0 +1,27 @@
+{
+  "comfy": {
+    "server": "http://127.0.0.1:8188",
+    "timeout_seconds": 60,
+    "poll_interval_seconds": 5,
+    "history_poll_attempts": 120,
+    "max_retries": 1,
+    "dry_run": false,
+    "require_all_templates": false,
+    "require_finished": true,
+    "require_outputs": true,
+    "input_dir": "../../ComfyUI/input",
+    "output_prefix_root": "manga_anime_pipeline"
+  },
+  "workflow_templates": {
+    "establish_scene": null,
+    "dialogue_light_motion": "../../agent-skills/comfyui/workflows/02-project/manga-anime-pipeline/dialogue_light_motion.json",
+    "dialogue_heavy_expression": null,
+    "action_performance": null,
+    "transition_atmosphere": null,
+    "repair_only": null,
+    "skip": null
+  },
+  "workflow_mappings": {
+    "dialogue_light_motion": "../../agent-skills/comfyui/workflows/02-project/manga-anime-pipeline/dialogue_light_motion.mapping.json"
+  }
+}

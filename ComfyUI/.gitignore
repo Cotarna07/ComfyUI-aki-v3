@@ -1,0 +1,42 @@
+__pycache__/
+*.py[cod]
+/output/
+/input/
+!/input/example.png
+/models/
+/temp/
+/custom_nodes/
+!custom_nodes/example_node.py.example
+extra_model_paths.yaml
+/.vs
+.vscode/
+.idea/
+venv*/
+.venv/
+/web/extensions/*
+!/web/extensions/logging.js.example
+!/web/extensions/core/
+/tests-ui/data/object_info.json
+# /user/ excluded above with selective allowing for default/
+*.log
+web_custom_versions/
+.DS_Store
+filtered-openapi.yaml
+uv.lock
+# Allow tracking of user workflows and configs (but exclude logs).
+/user/*
+!/user/default
+!/user/default/**
+/user/**/*.log
+/user/**/logs/
+# Keep raw downloaded workflow archives out of git; track only organized extracts.
+/user/default/workflows/downloaded_civitai/_archive/
+# Keep archived legacy workflow collections out of git; track the new categorized tree instead.
+/user/default/workflows/comfyui_workflow/90_旧结构归档_*/
+# Exclude large model binary files inside workflow folders
+/user/**/*.bin
+/user/**/*.safetensors
+/user/**/*.ckpt
+/user/**/*.pth
+/user/**/*.pt
+# End user/ rules

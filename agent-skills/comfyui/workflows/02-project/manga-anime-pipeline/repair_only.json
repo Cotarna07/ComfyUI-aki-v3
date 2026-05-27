@@ -1,0 +1,227 @@
+{
+  "1": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "example.png"
+    },
+    "_meta": {
+      "title": "Repair Source Image"
+    }
+  },
+  "4": {
+    "class_type": "LoadImageMask",
+    "inputs": {
+      "image": "example_mask.png",
+      "channel": "alpha"
+    },
+    "_meta": {
+      "title": "Repair Mask"
+    }
+  },
+  "84": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+      "type": "wan",
+      "device": "default"
+    }
+  },
+  "90": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "wan_2.1_vae.safetensors"
+    }
+  },
+  "95": {
+    "class_type": "UNETLoader",
+    "inputs": {
+      "unet_name": "wan2.2_i2v_high_noise_14B_fp8_scaled.safetensors",
+      "weight_dtype": "default"
+    }
+  },
+  "96": {
+    "class_type": "UNETLoader",
+    "inputs": {
+      "unet_name": "wan2.2_i2v_low_noise_14B_fp8_scaled.safetensors",
+      "weight_dtype": "default"
+    }
+  },
+  "103": {
+    "class_type": "ModelSamplingSD3",
+    "inputs": {
+      "model": [
+        "96",
+        0
+      ],
+      "shift": 5.0
+    }
+  },
+  "104": {
+    "class_type": "ModelSamplingSD3",
+    "inputs": {
+      "model": [
+        "95",
+        0
+      ],
+      "shift": 5.0
+    }
+  },
+  "89": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "84",
+        0
+      ],
+      "text": "worst quality, low quality, change outside mask, identity drift, warped face, deformed hands, watermark, subtitles"
+    },
+    "_meta": {
+      "title": "Negative Prompt"
+    }
+  },
+  "93": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "84",
+        0
+      ],
+      "text": "localized anime repair, preserve original composition, fix only masked artifact, stable face and hands, seamless texture"
+    },
+    "_meta": {
+      "title": "Positive Prompt"
+    }
+  },
+  "98": {
+    "class_type": "WanVaceToVideo",
+    "inputs": {
+      "positive": [
+        "93",
+        0
+      ],
+      "negative": [
+        "89",
+        0
+      ],
+      "vae": [
+        "90",
+        0
+      ],
+      "width": 512,
+      "height": 768,
+      "length": 41,
+      "batch_size": 1,
+      "strength": 0.72,
+      "control_video": [
+        "1",
+        0
+      ],
+      "control_masks": [
+        "4",
+        0
+      ],
+      "reference_image": [
+        "1",
+        0
+      ]
+    },
+    "_meta": {
+      "title": "VACE Repair Conditioning"
+    }
+  },
+  "86": {
+    "class_type": "KSamplerAdvanced",
+    "inputs": {
+      "model": [
+        "104",
+        0
+      ],
+      "positive": [
+        "98",
+        0
+      ],
+      "negative": [
+        "98",
+        1
+      ],
+      "latent_image": [
+        "98",
+        2
+      ],
+      "add_noise": "enable",
+      "noise_seed": 118111,
+      "steps": 6,
+      "cfg": 1.0,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "start_at_step": 0,
+      "end_at_step": 3,
+      "return_with_leftover_noise": "enable"
+    }
+  },
+  "85": {
+    "class_type": "KSamplerAdvanced",
+    "inputs": {
+      "model": [
+        "103",
+        0
+      ],
+      "positive": [
+        "98",
+        0
+      ],
+      "negative": [
+        "98",
+        1
+      ],
+      "latent_image": [
+        "86",
+        0
+      ],
+      "add_noise": "disable",
+      "noise_seed": 118111,
+      "steps": 6,
+      "cfg": 1.0,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "start_at_step": 3,
+      "end_at_step": 6,
+      "return_with_leftover_noise": "disable"
+    }
+  },
+  "87": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "85",
+        0
+      ],
+      "vae": [
+        "90",
+        0
+      ]
+    }
+  },
+  "117": {
+    "class_type": "CreateVideo",
+    "inputs": {
+      "images": [
+        "87",
+        0
+      ],
+      "fps": 16.0
+    }
+  },
+  "118": {
+    "class_type": "SaveVideo",
+    "inputs": {
+      "video": [
+        "117",
+        0
+      ],
+      "filename_prefix": "manga_anime_pipeline/manual/repair_only",
+      "format": "mp4",
+      "codec": "h264"
+    }
+  }
+}

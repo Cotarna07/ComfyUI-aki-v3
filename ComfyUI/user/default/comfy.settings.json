@@ -1,7 +1,5 @@
 {
-    "Comfy.InstalledVersion": "1.36.14",
-    "Comfy.TutorialCompleted": true,
-    "Comfy.RightSidePanel.IsOpen": true,
+    "Comfy.InstalledVersion": "1.42.15",
     "Comfy.CustomColorPalettes": {
         "obsidian": {
             "version": 112,
@@ -208,5 +206,6 @@
             }
         }
     },
-    "Comfy.Queue.History.Expanded": true
+    "Comfy.Queue.History.Expanded": true,
+    "Comfy.RightSidePanel.IsOpen": true
 }

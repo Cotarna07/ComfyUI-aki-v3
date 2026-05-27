@@ -1,0 +1,142 @@
+[
+  {
+    "product_id": "1005007109462323",
+    "source": "Y:\\tiktok_ins_crawl\\aliexpress\\images\\1005007109462323\\04.jpg",
+    "input_name": "agent_aliexpress_locked/20260527/1005007109462323/04.jpg",
+    "prompt_id": "a500a553-d3d4-45fe-be41-602f1a156e5f",
+    "client_id": "agent:codex|workflow:product_locked_background_sdxl|run:a0dbf412",
+    "notes": "factual_product; product=1005007109462323; original foreground pixel lock via RMBG mask; background_style=staged; input=04.jpg; background_model=juggernautXL_v9Rdphoto2Lightning; background_seed=2026052703; size=1024x1024; steps=8; cfg=2.0; sampler=dpmpp_sde; scheduler=karras; shadow=mask_blur_35_sigma_14_offset_y12_opacity_0.35; identity=blue-white brick police car rear three-quarter view with four wheels and roof blue light bar; exactly one police minifigure holding a light must remain at right",
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "a500a553-d3d4-45fe-be41-602f1a156e5f",
+            "timestamp": 1779818641701
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "4",
+              "6",
+              "7",
+              "11"
+            ],
+            "prompt_id": "a500a553-d3d4-45fe-be41-602f1a156e5f",
+            "timestamp": 1779818641712
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "a500a553-d3d4-45fe-be41-602f1a156e5f",
+            "timestamp": 1779818647565
+          }
+        ]
+      ]
+    },
+    "outputs": {
+      "17": {
+        "images": [
+          {
+            "filename": "foreground_audit_00002_.png",
+            "subfolder": "agent_runs\\aliexpress_locked_staged_20260527\\1005007109462323",
+            "type": "output"
+          }
+        ]
+      },
+      "16": {
+        "images": [
+          {
+            "filename": "background_00002_.png",
+            "subfolder": "agent_runs\\aliexpress_locked_staged_20260527\\1005007109462323",
+            "type": "output"
+          }
+        ]
+      },
+      "15": {
+        "images": [
+          {
+            "filename": "locked_factual_00002_.png",
+            "subfolder": "agent_runs\\aliexpress_locked_staged_20260527\\1005007109462323",
+            "type": "output"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "product_id": "1005009067934624",
+    "source": "Y:\\tiktok_ins_crawl\\aliexpress\\images\\1005009067934624\\02.jpg",
+    "input_name": "agent_aliexpress_locked/20260527/1005009067934624/02.jpg",
+    "prompt_id": "1ed019b8-01f5-4793-97ed-3b86651c6d27",
+    "client_id": "agent:codex|workflow:product_locked_background_sdxl|run:f860dee6",
+    "notes": "factual_product; product=1005009067934624; original foreground pixel lock via RMBG mask; background_style=staged; input=02.jpg; background_model=juggernautXL_v9Rdphoto2Lightning; background_seed=2026052705; size=1024x1024; steps=8; cfg=2.0; sampler=dpmpp_sde; scheduler=karras; shadow=mask_blur_35_sigma_14_offset_y12_opacity_0.35; identity=red-black brick-built Ferrari SF-24 Formula 1 car; four tires, front wing, cockpit and rear wing; whole vehicle must remain in frame",
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "1ed019b8-01f5-4793-97ed-3b86651c6d27",
+            "timestamp": 1779818647893
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "4",
+              "6",
+              "7",
+              "11"
+            ],
+            "prompt_id": "1ed019b8-01f5-4793-97ed-3b86651c6d27",
+            "timestamp": 1779818647907
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "1ed019b8-01f5-4793-97ed-3b86651c6d27",
+            "timestamp": 1779818653412
+          }
+        ]
+      ]
+    },
+    "outputs": {
+      "17": {
+        "images": [
+          {
+            "filename": "foreground_audit_00002_.png",
+            "subfolder": "agent_runs\\aliexpress_locked_staged_20260527\\1005009067934624",
+            "type": "output"
+          }
+        ]
+      },
+      "16": {
+        "images": [
+          {
+            "filename": "background_00002_.png",
+            "subfolder": "agent_runs\\aliexpress_locked_staged_20260527\\1005009067934624",
+            "type": "output"
+          }
+        ]
+      },
+      "15": {
+        "images": [
+          {
+            "filename": "locked_factual_00002_.png",
+            "subfolder": "agent_runs\\aliexpress_locked_staged_20260527\\1005009067934624",
+            "type": "output"
+          }
+        ]
+      }
+    }
+  }
+]

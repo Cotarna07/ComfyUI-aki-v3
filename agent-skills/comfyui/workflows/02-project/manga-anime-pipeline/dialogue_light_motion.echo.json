@@ -1,0 +1,24 @@
+{
+  "1": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "example.png"
+    },
+    "_meta": {
+      "title": "Start Image"
+    }
+  },
+  "2": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "1",
+        0
+      ],
+      "filename_prefix": "manga_anime_pipeline_echo/manual/dialogue_light_motion"
+    },
+    "_meta": {
+      "title": "Echo Save Image"
+    }
+  }
+}

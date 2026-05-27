@@ -1,0 +1,2 @@
+# requests 已移除：preflight.py 已重构为 stdlib urllib（2026-05-27）
+# 如需本地安装共享客户端：pip install -e ../comfyui-shared
