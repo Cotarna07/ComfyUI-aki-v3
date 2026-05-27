@@ -55,6 +55,17 @@ product-media/
 | `agent-skills/comfyui/runtime/chatgpt_hero_video_test/` | `runtime/product_video/hero_test/` |
 | `agent-skills/comfyui/runtime/creative_kontext_runs/` | `runtime/campaign/kontext/` |
 
+## 脚本（scripts/）
+
+| 脚本 | 方法 | 何时用 |
+|---|---|---|
+| `lock_foreground_compose.py` | RMBG-2.0 抠出商品原始像素 + 程序化影棚背景 + 合成接触阴影（`compose`/`detext` 两模式） | **默认方法**，尤其结构复杂、贴纸密集的 SKU（赛车、机甲等）。主体不重绘→保真无幻觉 |
+| `optimize_product_images.py` | Flux.1 Kontext FP8 整图编辑 API 执行器 | 仅结构简单 SKU 的换背景，或明确标注的 `creative_campaign`。复杂结构会被熔化，勿用于真实展示 |
+
+两者都用 jobs-file 驱动：`python <脚本> <jobs.json>`。jobs 示例见
+`runtime/product_image/ferrari_sf24_20260527/jobs.json`（Kontext）与 `jobs_compose.json`（前景锁定）。
+方法选型与失败经验见 `agent-skills/comfyui/skills/comfyui-product-image-integrity/references/tested-patterns.md`。
+
 ## 商品图质量规则
 
 参见 `agent-skills/comfyui/skills/comfyui-product-image-integrity/SKILL.md`。

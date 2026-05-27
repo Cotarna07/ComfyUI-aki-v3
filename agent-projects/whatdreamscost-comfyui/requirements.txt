@@ -1,0 +1,14 @@
+# WhatDreamsCost-ComfyUI 依赖
+# 这些依赖应该已经安装在 ComfyUI 环境中
+
+# 核心依赖（ComfyUI 已包含）
+numpy
+torch
+Pillow
+
+# 音频/视频处理
+av
+
+# 其他可能依赖
+# comfy_api  # ComfyUI API，已包含在 ComfyUI 中
+# folder_paths  # ComfyUI 路径管理，已包含在 ComfyUI 中

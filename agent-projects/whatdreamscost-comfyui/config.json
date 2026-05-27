@@ -1,0 +1,26 @@
+{
+  "project": {
+    "name": "WhatDreamsCost-ComfyUI",
+    "version": "1.3.9",
+    "description": "A variety of custom ComfyUI nodes and workflows for creatives."
+  },
+  "deployment": {
+    "deployed_at": "2026-05-27",
+    "local_path": "D:/ComfyUI-aki-v3/agent-projects/whatdreamscost-comfyui",
+    "comfyui_link": "D:/ComfyUI-aki-v3/ComfyUI/custom_nodes/WhatDreamsCost-ComfyUI",
+    "status": "deployed"
+  },
+  "dependencies": {
+    "comfyui_ltxvideo": "required",
+    "comfyui_kjnodes": "required"
+  },
+  "nodes": [
+    "LTX Director",
+    "Multi Image Loader",
+    "LTX Sequencer",
+    "LTX Keyframer",
+    "Speech Length Calculator",
+    "Load Video UI",
+    "Load Audio UI"
+  ]
+}

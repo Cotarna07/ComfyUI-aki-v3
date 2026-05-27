@@ -106,12 +106,23 @@ class ComfyClient:
 
     # ── 提交与查询 ───────────────────────────────────────────────────────────
 
-    def submit_prompt(self, prompt_payload: dict[str, Any]) -> str:
-        """向 /prompt 提交工作流，返回 prompt_id。"""
-        payload = {
+    def submit_prompt(
+        self,
+        prompt_payload: dict[str, Any],
+        extra_data: dict[str, Any] | None = None,
+        client_id: str | None = None,
+    ) -> str:
+        """向 /prompt 提交工作流，返回 prompt_id。
+
+        ``client_id`` 与 ``extra_data`` 用于 Queue Manager 可见性，缺省时回退到
+        config.client_id 且不携带 extra_data（见 comfyui_api_rules.md）。
+        """
+        payload: dict[str, Any] = {
             "prompt": prompt_payload,
-            "client_id": self.config.client_id,
+            "client_id": client_id or self.config.client_id,
         }
+        if extra_data is not None:
+            payload["extra_data"] = extra_data
         response = self._request("POST", "/prompt", body=payload)
         prompt_id = response.get("prompt_id")
         if not prompt_id:

@@ -90,3 +90,19 @@ creative_campaign; not for factual SKU verification
 - 结论：VLM 导演层能够减少选错视角和虚构产品状态的问题，修复 latent 节点能恢复基础分辨率；但
   `Flux.1 Kontext FP8` 仍不足以达到网页端在镜头亮度、清洁编辑、材质统一和商业成片感上的上限。
   下一项本机生成 A/B 应测试更强编辑模型，而不是继续仅靠提示词压榨同一模型。
+
+## 2026-05-27 F1 赛车（77242）去文案与前景锁定实测
+
+- 输入商品：`1005009067934624`，LEGO Speed Champions Ferrari SF-24 F1（275 pcs）；源图 `01`–`06` 为速卖通模板叠加图（左上 LEGO logo、右上 `#Item`、底部多行营销文案，另有包装与尺寸标注图）。源图实为 WEBP，PIL/`LoadImage` 可正常读。
+- **关键失败**：`Flux.1 Kontext FP8` 整图编辑（去文案 + 留/换背景，`denoise=1.0`）把 F1 的座舱 / halo / 前后翼 / 悬挂熔成红色团块、赞助贴纸糊掉——结构密集 SKU 上属 `factual_product` 一票否决。Kontext 整图重绘只适合结构简单、贴纸少的对象。
+- **改用前景锁定（绝不重绘主体）**：`RMBG-2.0`(BiRefNet) 抠出商品原始像素 → **程序化**影棚渐变背景 + 合成接触阴影(+可选倒影)。商品像素=原图，结构/贴纸 100% 保真；背景程序生成→零幻觉（不再出现旧版 F1 底板多余黑车的问题）。
+- **抠图质量经验**：白底源图（`02` 后 3/4、`03` 侧+俯视）对比度高 → BiRefNet matte 紧致；暗车+暗背景（`06` 深绿灰渐变）对比度低 → matte 变粗（团块、悬空感）。据此分流：
+  - 背景本就高级的暗调原图（`06`）用 `detext` 模式：保留原图与真实阴影，只裁掉底部文案带、对左上/右上角标做区域 `cv2.inpaint(TELEA)`，主体用 RMBG alpha 保护不被涂改。
+  - 白底源图（`02`/`03`）用 `compose` 模式：暗调渐变出戏剧 hero，浅灰渐变出干净目录图；`03` 裁 `[8,58,794,392]` 取纯侧视。
+- **交付**（`agent-projects/product-media/runtime/product_image/ferrari_sf24_20260527/outputs/`，均过 `factual_product`）：`hero_06_detext`、`rear_02_compose_dark`/`_light`、`side_03_compose_dark`/`_light`；失败与被取代样张在 `outputs/_rejected/`，抠图 mask 在 `outputs/masks/`。
+- **可复用脚本**（`agent-projects/product-media/scripts/`，均 jobs-file 驱动）：
+  - `lock_foreground_compose.py`：RMBG 前景锁定 + 程序背景/接触阴影，`compose`/`detext` 两模式。**结构复杂 SKU 的默认方法。** RMBG-2.0 因本机 transformers 版本不兼容 `from_pretrained`，改为以合成包加载自带 `birefnet.py` + `model.safetensors`。
+  - `optimize_product_images.py`：Flux Kontext 整图编辑 API 执行器（按 `class_type` 定位节点、提交前 `/object_info` 校验、`client_id`+`extra_data`、可选 LoRA 注入）。**仅用于简单 SKU 或创意轨道。**
+  - 旧 `agent-skills/scripts/generated/product-image-optimizer/optimize_products.py` 用 UI 图格式 patch API 工作流（找不到节点→提交占位 workflow），实际跑不通，已被上述取代，勿用。
+- **环境坑**：`.venv` 的 `torch.cuda.is_available()=False`（自动化 venv 非 ComfyUI 内嵌 python），RMBG 落 CPU；单张 1024 抠图约 2–4s 可接受，大批量再修 `.venv` CUDA 或改用内嵌 python。
+- `comfyui-shared` 的 `ComfyClient.submit_prompt` 增补可选 `extra_data`/`client_id`（向后兼容），以满足 Queue Manager 可见性规则。
