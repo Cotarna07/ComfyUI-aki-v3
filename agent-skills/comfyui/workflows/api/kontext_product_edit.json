@@ -84,13 +84,13 @@
     "_meta": {"title": "UNET Loader"}
   },
   "11": {
-    "class_type": "EmptyFlux2LatentImage",
+    "class_type": "EmptySD3LatentImage",
     "inputs": {
       "width": 1024,
       "height": 1024,
       "batch_size": 1
     },
-    "_meta": {"title": "Empty Flux Latent"}
+    "_meta": {"title": "Empty Flux.1 Kontext Latent"}
   },
   "12": {
     "class_type": "VAELoader",

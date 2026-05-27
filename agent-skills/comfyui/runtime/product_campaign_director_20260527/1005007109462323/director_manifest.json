@@ -1,0 +1,476 @@
+{
+  "product_id": "1005007109462323",
+  "source_images": [
+    "Y:\\tiktok_ins_crawl\\aliexpress\\images\\1005007109462323\\01.jpg",
+    "Y:\\tiktok_ins_crawl\\aliexpress\\images\\1005007109462323\\02.jpg",
+    "Y:\\tiktok_ins_crawl\\aliexpress\\images\\1005007109462323\\03.jpg",
+    "Y:\\tiktok_ins_crawl\\aliexpress\\images\\1005007109462323\\04.jpg",
+    "Y:\\tiktok_ins_crawl\\aliexpress\\images\\1005007109462323\\05.jpg",
+    "Y:\\tiktok_ins_crawl\\aliexpress\\images\\1005007109462323\\06.jpg"
+  ],
+  "style_references": [
+    "D:\\ComfyUI-aki-v3\\ComfyUI\\input\\产品图\\ChatGPT Image 2026年5月27日 11_32_38 (1).png",
+    "D:\\ComfyUI-aki-v3\\ComfyUI\\input\\产品图\\ChatGPT Image 2026年5月27日 11_32_39 (2).png",
+    "D:\\ComfyUI-aki-v3\\ComfyUI\\input\\产品图\\ChatGPT Image 2026年5月27日 11_32_40 (3).png",
+    "D:\\ComfyUI-aki-v3\\ComfyUI\\input\\产品图\\ChatGPT Image 2026年5月27日 11_32_40 (4).png"
+  ],
+  "model": "huihui_ai/qwen3-vl-abliterated:8b-instruct-q4_K_M",
+  "diagnostic_only": true,
+  "evidence": [
+    {
+      "source_file": "01.jpg",
+      "evidence_role": "standalone_product_view",
+      "product_category": "Police Car",
+      "view_orientation": "side view",
+      "visible_configuration": "Police car with minifigure standing beside it",
+      "minifigure_or_accessory_state": [
+        "Police minifigure standing beside the car"
+      ],
+      "removable_or_exploded_parts": [],
+      "fixed_identity_features": [
+        "Blue and white police car with 'POLICE' text on side",
+        "Blue roof lightbar module installed on top",
+        "Black front bumper",
+        "Yellow stripe on side",
+        "Black wheels"
+      ],
+      "product_surface_marks": [
+        "POLICE"
+      ],
+      "catalog_or_packaging_facts": [
+        "LEGO",
+        "Choice",
+        "CITY",
+        "5+",
+        "94 Pieces",
+        "60312 Item"
+      ],
+      "seller_overlay_text_not_product": [
+        "100% Original And New"
+      ],
+      "suitable_factual_uses": [
+        "Catalog verification",
+        "Product identification",
+        "Age/piece count reference"
+      ],
+      "uncertainty": []
+    },
+    {
+      "source_file": "02.jpg",
+      "evidence_role": "standalone_product_view",
+      "product_category": "玩具车",
+      "view_orientation": "侧面",
+      "visible_configuration": "组装完成状态",
+      "minifigure_or_accessory_state": [
+        "警察小人坐在驾驶座内"
+      ],
+      "removable_or_exploded_parts": [
+        "车顶模块",
+        "警灯模块"
+      ],
+      "fixed_identity_features": [
+        "车身蓝色",
+        "侧面有黄色条纹",
+        "车身印有'POLICE'字样",
+        "车轮为银色",
+        "车头有黑色前保险杠"
+      ],
+      "product_surface_marks": [
+        "POLICE"
+      ],
+      "catalog_or_packaging_facts": [
+        "LEGO",
+        "# Item 60312"
+      ],
+      "seller_overlay_text_not_product": [
+        "LEGO",
+        "# Item 60312"
+      ],
+      "suitable_factual_uses": [
+        "确认产品编号",
+        "确认产品类别",
+        "确认产品颜色和标识",
+        "确认产品组装状态",
+        "确认产品包含的配件"
+      ],
+      "uncertainty": []
+    },
+    {
+      "source_file": "03.jpg",
+      "evidence_role": "standalone_product_view",
+      "product_category": "乐高警车",
+      "view_orientation": "正面",
+      "visible_configuration": "警车与一名警察小人偶并列展示",
+      "minifigure_or_accessory_state": [
+        "警察小人偶站立在警车右侧"
+      ],
+      "removable_or_exploded_parts": [],
+      "fixed_identity_features": [
+        "警车车顶装有蓝色警灯",
+        "车身印有'POLICE'字样",
+        "车头装有黑色防撞杠",
+        "车轮为银色轮毂"
+      ],
+      "product_surface_marks": [
+        "POLICE"
+      ],
+      "catalog_or_packaging_facts": [
+        "LEGO品牌标志",
+        "# Item 60312"
+      ],
+      "seller_overlay_text_not_product": [
+        "# Item 60312"
+      ],
+      "suitable_factual_uses": [],
+      "uncertainty": []
+    },
+    {
+      "source_file": "04.jpg",
+      "evidence_role": "standalone_product_view",
+      "product_category": "玩具车",
+      "view_orientation": "后侧方视角",
+      "visible_configuration": "警车与一名警察小人",
+      "minifigure_or_accessory_state": [
+        "警察小人站立于车旁，手持手电筒"
+      ],
+      "removable_or_exploded_parts": [],
+      "fixed_identity_features": [
+        "车顶警灯模块安装在车顶",
+        "车身印有'POLICE'字样",
+        "车尾有红色尾灯"
+      ],
+      "product_surface_marks": [
+        "POLICE"
+      ],
+      "catalog_or_packaging_facts": [
+        "LEGO品牌标志",
+        "# Item 60312"
+      ],
+      "seller_overlay_text_not_product": [
+        "# Item 60312"
+      ],
+      "suitable_factual_uses": [
+        "确认产品编号",
+        "确认产品类别",
+        "确认包含角色",
+        "确认车辆配置"
+      ],
+      "uncertainty": []
+    },
+    {
+      "source_file": "05.jpg",
+      "evidence_role": "packaging_reference",
+      "product_category": "乐高城市系列警车",
+      "view_orientation": "正面",
+      "visible_configuration": "警车完整组装状态",
+      "minifigure_or_accessory_state": [
+        "警察小人偶坐在驾驶座内"
+      ],
+      "removable_or_exploded_parts": [],
+      "fixed_identity_features": [
+        "车顶警灯模块安装在车顶",
+        "车身印有'POLICE'字样",
+        "车头有黑色防撞杠",
+        "车轮为蓝色"
+      ],
+      "product_surface_marks": [],
+      "catalog_or_packaging_facts": [
+        "LEGO CITY",
+        "5+",
+        "# Item 60312",
+        "14.1cm",
+        "15.7cm",
+        "4.5cm",
+        "* Dimensions for reference only"
+      ],
+      "seller_overlay_text_not_product": [
+        "LEGO",
+        "# Item 60312",
+        "* Dimensions for reference only"
+      ],
+      "suitable_factual_uses": [
+        "验证产品编号",
+        "确认年龄建议",
+        "确认包装尺寸",
+        "确认产品系列"
+      ],
+      "uncertainty": []
+    },
+    {
+      "source_file": "06.jpg",
+      "evidence_role": "packaging_reference",
+      "product_category": "LEGO City Police Car",
+      "view_orientation": "front-side angled",
+      "visible_configuration": "Police car assembled with minifigure standing beside it",
+      "minifigure_or_accessory_state": [
+        "Minifigure standing beside vehicle",
+        "Minifigure holding a megaphone"
+      ],
+      "removable_or_exploded_parts": [
+        "Lightbar module shown detached above vehicle"
+      ],
+      "fixed_identity_features": [
+        "Blue police car with 'POLICE' text",
+        "Minifigure in police uniform"
+      ],
+      "product_surface_marks": [],
+      "catalog_or_packaging_facts": [
+        "LEGO CITY",
+        "Item 60312",
+        "LEGO.com/city",
+        "Age recommendation: 5+",
+        "Piece count: 999"
+      ],
+      "seller_overlay_text_not_product": [
+        "# Item 60312"
+      ],
+      "suitable_factual_uses": [
+        "Catalog verification",
+        "Packaging reference for product identity"
+      ],
+      "uncertainty": []
+    }
+  ],
+  "style_analysis": {
+    "strengths_to_emulate": [
+      "高饱和度的蓝色调营造出强烈的警车氛围",
+      "多角度展示产品细节，增强视觉吸引力",
+      "背景城市夜景与产品形成对比，突出主体"
+    ],
+    "camera_and_scale_patterns": [
+      "多角度展示（正面、侧面、背面）",
+      "保持产品在画面中的中心主导地位"
+    ],
+    "lighting_and_environment_patterns": [
+      "使用蓝色主光源强化警车主题",
+      "背景采用模糊城市光斑和动态光轨增强动感"
+    ],
+    "typography_strategy": [
+      "大号醒目标题突出产品名称",
+      "图标化信息展示（如零件数、年龄）"
+    ],
+    "product_fidelity_risks": [
+      "车顶警灯在不同图中形态略有差异",
+      "警察人偶在不同图中面部表情不一致",
+      "车身侧面“POLICE”字样在部分图中清晰度不同"
+    ]
+  },
+  "plan": {
+    "product_identity_manifest": {
+      "confirmed_constants": {
+        "product_category": "乐高城市系列警车",
+        "item_id": "60312",
+        "brand": "LEGO",
+        "series": "CITY",
+        "age_recommendation": "5+",
+        "piece_count": "94",
+        "fixed_identity_features": [
+          "蓝色车身",
+          "侧面黄色条纹",
+          "车顶蓝色警灯模块",
+          "黑色前保险杠",
+          "车轮为银色轮毂",
+          "车身印有'POLICE'字样",
+          "车尾红色尾灯"
+        ],
+        "minifigure_state": "警察小人偶，可站立于车旁或坐于驾驶座内"
+      },
+      "configuration_variants": [
+        {
+          "view_orientation": "正面",
+          "minifigure_state": "站立于车右侧",
+          "removable_parts": [],
+          "source_file": "03.jpg"
+        },
+        {
+          "view_orientation": "侧面",
+          "minifigure_state": "坐在驾驶座内",
+          "removable_parts": [
+            "车顶模块",
+            "警灯模块"
+          ],
+          "source_file": "02.jpg"
+        },
+        {
+          "view_orientation": "后侧方视角",
+          "minifigure_state": "站立于车旁，手持手电筒",
+          "removable_parts": [],
+          "source_file": "04.jpg"
+        },
+        {
+          "view_orientation": "侧视",
+          "minifigure_state": "站立于车旁",
+          "removable_parts": [],
+          "source_file": "01.jpg"
+        }
+      ],
+      "uncertain_items": [
+        "车轮颜色在部分图中显示为蓝色（如05.jpg）而其他图中为银色",
+        "警灯模块在不同图中安装状态或形态略有差异",
+        "警察人偶面部表情在不同图中不一致"
+      ]
+    },
+    "fixed_workflow_stages": [
+      {
+        "stage": "source_evidence_extraction",
+        "model_role": "VLM",
+        "input": "原始销售图片集合",
+        "output": "结构化证据清单（含配置、部件、文字、尺寸等）",
+        "rejection_rule": "若证据缺失关键身份特征或配置状态，拒绝进入下一阶段"
+      },
+      {
+        "stage": "factual_product_rendering",
+        "model_role": "image-editing model",
+        "input": "选定的源照片 + 保留的构图与角度",
+        "output": "经过背景清理、适度阴影添加、支持面添加后的图像",
+        "rejection_rule": "若改变相机角度、人偶姿态、部件装配状态或文字位置，拒绝"
+      },
+      {
+        "stage": "creative_campaign_rendering",
+        "model_role": "image-editing model",
+        "input": "源照片 + 创意风格指令",
+        "output": "高饱和度蓝色调、城市夜景背景、动态光轨的创意渲染",
+        "rejection_rule": "若改变产品固定身份特征、人偶面部、文字或零件数，拒绝"
+      },
+      {
+        "stage": "deterministic_post_layout",
+        "model_role": "deterministic_post",
+        "input": "生成图像 + 验证过的包装文字与尺寸",
+        "output": "叠加品牌、编号、年龄、尺寸等类型化信息",
+        "rejection_rule": "若类型信息与源证据不符，拒绝"
+      }
+    ],
+    "shot_briefs": [
+      {
+        "id": "rain_city_assembled_outside",
+        "track": "creative_campaign",
+        "base_source_files": [
+          "01.jpg",
+          "03.jpg"
+        ],
+        "evidence_basis": "侧视与正面视角中可见完整组装状态",
+        "render_mode": "image_edit",
+        "source_orientation_preserved": false,
+        "composition": "警车置于雨夜城市街道，背景为模糊光斑与动态光轨，警车居中，人偶站立车旁",
+        "editable_regions": [],
+        "do_not_change": [
+          "车顶警灯模块",
+          "车身'POLICE'字样",
+          "黑色前保险杠",
+          "银色轮毂",
+          "人偶站立姿态"
+        ],
+        "generation_prompt_en": "A LEGO City police car with a minifigure standing beside it, under rainy night city lighting with bokeh and rim light, high saturation blue tone, cinematic composition, product centered, no changes to fixed identity features.",
+        "overlay_text_strategy": "大号标题'乐高城市警车' + 小字'Item 60312 | 5+'，置于画面底部",
+        "validation_checks": [
+          "警灯模块形态与源证据一致",
+          "人偶姿态与源证据一致",
+          "车身文字清晰度达标"
+        ]
+      },
+      {
+        "id": "rain_city_feature_exploded_inside",
+        "track": "creative_campaign",
+        "base_source_files": [
+          "02.jpg",
+          "06.jpg"
+        ],
+        "evidence_basis": "02.jpg显示人偶坐内 + 可拆卸车顶模块；06.jpg显示警灯模块可拆卸",
+        "render_mode": "image_edit",
+        "source_orientation_preserved": false,
+        "composition": "警车正面视角，人偶坐驾驶座，车顶警灯模块悬浮于车顶上方",
+        "editable_regions": [],
+        "do_not_change": [
+          "人偶坐驾驶座",
+          "警灯模块悬浮状态",
+          "车身'POLICE'字样",
+          "黑色前保险杠",
+          "银色轮毂"
+        ],
+        "generation_prompt_en": "A LEGO City police car with minifigure seated inside, lightbar module detached above, rainy night city background with bokeh and dynamic light trails, high saturation blue tone, cinematic composition, product centered, no changes to fixed identity features.",
+        "overlay_text_strategy": "大号标题'乐高城市警车' + 小字'Item 60312 | 5+'，置于画面底部",
+        "validation_checks": [
+          "人偶坐驾驶座状态与源证据一致",
+          "警灯模块悬浮状态与源证据一致",
+          "车身文字清晰度达标"
+        ]
+      },
+      {
+        "id": "catalog_factual_clean",
+        "track": "factual_product",
+        "base_source_files": [
+          "03.jpg"
+        ],
+        "evidence_basis": "正面视角，人偶站立车旁，无可拆卸部件",
+        "render_mode": "image_edit",
+        "source_orientation_preserved": true,
+        "composition": "警车正面，人偶站立车右侧，背景为纯白或浅灰支持面，无城市背景",
+        "editable_regions": [],
+        "do_not_change": [
+          "人偶站立姿态",
+          "车顶警灯模块",
+          "车身'POLICE'字样",
+          "黑色前保险杠",
+          "银色轮毂"
+        ],
+        "generation_prompt_en": "A clean, factual shot of a LEGO City police car with minifigure standing beside it, front-facing, on a neutral support surface, no background elements, high product fidelity, no changes to fixed identity features.",
+        "overlay_text_strategy": "大号标题'乐高城市警车' + 小字'Item 60312 | 5+ | 94件'，置于画面底部",
+        "validation_checks": [
+          "人偶站立姿态与源证据一致",
+          "警灯模块安装状态与源证据一致",
+          "车身文字清晰度达标"
+        ]
+      },
+      {
+        "id": "specification_layout_post",
+        "track": "factual_product",
+        "base_source_files": [
+          "05.jpg"
+        ],
+        "evidence_basis": "包装正面图，含尺寸与年龄信息",
+        "render_mode": "deterministic_post",
+        "source_orientation_preserved": true,
+        "composition": "警车正面，人偶坐驾驶座，背景为纯白或浅灰支持面",
+        "editable_regions": [],
+        "do_not_change": [
+          "人偶坐驾驶座",
+          "车顶警灯模块",
+          "车身'POLICE'字样",
+          "黑色前保险杠",
+          "银色轮毂"
+        ],
+        "generation_prompt_en": "A factual specification layout of LEGO City police car, front-facing, minifigure seated inside, on neutral support surface, no background elements, high product fidelity, no changes to fixed identity features.",
+        "overlay_text_strategy": "大号标题'乐高城市警车' + 小字'Item 60312 | 5+ | 94件 | 14.1cm x 15.7cm x 4.5cm'，置于画面底部",
+        "validation_checks": [
+          "人偶坐驾驶座状态与源证据一致",
+          "警灯模块安装状态与源证据一致",
+          "车身文字清晰度达标",
+          "尺寸与源证据一致"
+        ]
+      }
+    ],
+    "generator_model_requirements": [
+      "支持多角度产品渲染",
+      "支持背景替换与动态光效添加",
+      "支持精确文字叠加（非生成）",
+      "支持固定部件状态保持（如警灯模块、人偶姿态）"
+    ],
+    "vlm_limitations": [
+      "无法自动验证人偶面部表情一致性",
+      "无法自动验证车身文字清晰度",
+      "无法自动验证零件数与构造一致性",
+      "无法自动验证尺寸与包装信息一致性"
+    ]
+  },
+  "plan_validation": {
+    "passed": true,
+    "attempts": 1,
+    "errors": [],
+    "warnings": [
+      "VLM 对件数读取得到冲突值：94 (01.jpg); 999 (06.jpg)；排版前必须人工核对原图。"
+    ],
+    "requires_manual_catalog_verification": true,
+    "note": "Passing this structural gate does not approve factual publication."
+  },
+  "timestamp": "2026-05-27T14:25:12"
+}

@@ -133,23 +133,23 @@ JOBS = (
     ),
     Job(
         product_id="1005009067934624",
-        source=Path(r"Y:\tiktok_ins_crawl\aliexpress\images\1005009067934624\02.jpg"),
+        source=Path(r"Y:\tiktok_ins_crawl\aliexpress\images\1005009067934624\06.jpg"),
         width=1024,
         height=1024,
         seed=2026052705,
         background_prompt=(
-            "completely empty premium racing studio cyclorama, smooth graphite matte floor and gray gradient wall, "
-            "crisp overhead strip light with subtle red bounce light, restrained floor sheen, "
-            "blank advertising background plate only, absolutely no props or objects"
+            "top-down empty matte graphite pit-lane display surface filling the entire frame, no horizon and no wall, "
+            "subtle wet sheen and very faint diagonal red lane accent beneath the product area, soft overhead "
+            "strip-light reflections, clean flat support plane only, absolutely no objects or silhouettes"
         ),
         staged_background_prompt=(
-            "dramatic motorsport advertising studio with no vehicle present, graphite pit-garage backdrop and red "
-            "accent strip lighting, one broad very low dark presentation ramp spanning the lower half diagonally, "
-            "matte top with restrained reflections, strong overhead key light, empty scene, no car, no wheels, no text"
+            "empty abstract red and graphite studio cyclorama with no merchandise present, a broad level matte "
+            "display surface spanning the lower half, soft overhead light and a restrained red edge glow, "
+            "clean empty scene, no vehicles, no wheels, no figures, no logos and no text"
         ),
         identity_notes=(
             "red-black brick-built Ferrari SF-24 Formula 1 car; four tires, front wing, cockpit and rear wing; "
-            "whole vehicle must remain in frame"
+            "red helmet driver seated in the cockpit; whole vehicle must remain in frame"
         ),
     ),
 )

@@ -1,0 +1,292 @@
+{
+  "prompt_id": "0044bbf8-6ef2-4d9a-a52d-ab13e53bb367",
+  "source": "Y:\\tiktok_ins_crawl\\aliexpress\\images\\1005009067934624\\06.jpg",
+  "prompt": "Preserve the recognizable red LEGO Speed Champions Ferrari SF-24 Formula 1 brick-built toy shown in the reference image: retain the open-wheel single-seat F1 silhouette, four exposed black tires with yellow ring accents, long narrow front nose and black front wing, open cockpit with the red-helmet minifigure driver seated inside, red sidepods with visible Shell and Ray-Ban style surface markings, and the tall black rear wing. Keep it visibly a small plastic brick-built collectible toy, not a real car.\n\nRemove the seller header and bottom caption outside the product. Present the same toy as a premium hero photograph on a rain-damp pit-lane display surface at blue hour: subtle red pit-light reflections, soft cool background bokeh, warm key light across the red bricks, delicate rim light on the wing edges, readable product details, restrained depth of field, product occupying about 78 percent of the frame.\n\nDo not convert it into a closed-cockpit sports car, hypercar, road car, or realistic full-size vehicle. Do not add a roof, windshield cabin, extra wheels, spare parts, packaging, title text, logos in the background, watermark, or another vehicle. Do not remove or relocate the driver. creative_campaign; not for factual SKU verification.",
+  "notes": "creative_campaign; not_for_factual_sku_verification; product=1005009067934624; shot=rain_pitlane_openwheel_driver; source=06.jpg; generator=flux1-dev-kontext_fp8_scaled; seed=2026052718; steps=28; guidance=2.8; sampler=euler; scheduler=simple; size=1024x1024; workflow_latent=EmptySD3LatentImage",
+  "history": {
+    "prompt": [
+      12,
+      "0044bbf8-6ef2-4d9a-a52d-ab13e53bb367",
+      {
+        "1": {
+          "class_type": "LoadImage",
+          "inputs": {
+            "image": "agent_aliexpress_campaign/20260527/1005009067934624/06.jpg"
+          },
+          "_meta": {
+            "title": "Input Product Image"
+          }
+        },
+        "2": {
+          "class_type": "FluxKontextImageScale",
+          "inputs": {
+            "image": [
+              "1",
+              0
+            ]
+          },
+          "_meta": {
+            "title": "Kontext Image Scale"
+          }
+        },
+        "3": {
+          "class_type": "VAEEncode",
+          "inputs": {
+            "pixels": [
+              "2",
+              0
+            ],
+            "vae": [
+              "12",
+              0
+            ]
+          },
+          "_meta": {
+            "title": "VAE Encode Reference"
+          }
+        },
+        "4": {
+          "class_type": "PreviewImage",
+          "inputs": {
+            "images": [
+              "2",
+              0
+            ]
+          },
+          "_meta": {
+            "title": "Preview Scaled Input"
+          }
+        },
+        "5": {
+          "class_type": "CLIPTextEncode",
+          "inputs": {
+            "clip": [
+              "14",
+              0
+            ],
+            "text": "Preserve the recognizable red LEGO Speed Champions Ferrari SF-24 Formula 1 brick-built toy shown in the reference image: retain the open-wheel single-seat F1 silhouette, four exposed black tires with yellow ring accents, long narrow front nose and black front wing, open cockpit with the red-helmet minifigure driver seated inside, red sidepods with visible Shell and Ray-Ban style surface markings, and the tall black rear wing. Keep it visibly a small plastic brick-built collectible toy, not a real car.\n\nRemove the seller header and bottom caption outside the product. Present the same toy as a premium hero photograph on a rain-damp pit-lane display surface at blue hour: subtle red pit-light reflections, soft cool background bokeh, warm key light across the red bricks, delicate rim light on the wing edges, readable product details, restrained depth of field, product occupying about 78 percent of the frame.\n\nDo not convert it into a closed-cockpit sports car, hypercar, road car, or realistic full-size vehicle. Do not add a roof, windshield cabin, extra wheels, spare parts, packaging, title text, logos in the background, watermark, or another vehicle. Do not remove or relocate the driver. creative_campaign; not for factual SKU verification."
+          },
+          "_meta": {
+            "title": "Positive Prompt"
+          }
+        },
+        "6": {
+          "class_type": "ReferenceLatent",
+          "inputs": {
+            "conditioning": [
+              "5",
+              0
+            ],
+            "latent": [
+              "3",
+              0
+            ]
+          },
+          "_meta": {
+            "title": "Reference Latent"
+          }
+        },
+        "7": {
+          "class_type": "FluxGuidance",
+          "inputs": {
+            "conditioning": [
+              "6",
+              0
+            ],
+            "guidance": 2.8
+          },
+          "_meta": {
+            "title": "Flux Guidance"
+          }
+        },
+        "8": {
+          "class_type": "ConditioningZeroOut",
+          "inputs": {
+            "conditioning": [
+              "5",
+              0
+            ]
+          },
+          "_meta": {
+            "title": "Negative (Zero Out)"
+          }
+        },
+        "9": {
+          "class_type": "KSampler",
+          "inputs": {
+            "model": [
+              "10",
+              0
+            ],
+            "positive": [
+              "7",
+              0
+            ],
+            "negative": [
+              "8",
+              0
+            ],
+            "latent_image": [
+              "11",
+              0
+            ],
+            "seed": 2026052718,
+            "steps": 28,
+            "cfg": 1.0,
+            "sampler_name": "euler",
+            "scheduler": "simple",
+            "denoise": 1.0
+          },
+          "_meta": {
+            "title": "KSampler"
+          }
+        },
+        "10": {
+          "class_type": "UNETLoader",
+          "inputs": {
+            "unet_name": "flux1-dev-kontext_fp8_scaled.safetensors",
+            "weight_dtype": "default"
+          },
+          "_meta": {
+            "title": "UNET Loader"
+          }
+        },
+        "11": {
+          "class_type": "EmptySD3LatentImage",
+          "inputs": {
+            "width": 1024,
+            "height": 1024,
+            "batch_size": 1
+          },
+          "_meta": {
+            "title": "Empty Flux.1 Kontext Latent"
+          }
+        },
+        "12": {
+          "class_type": "VAELoader",
+          "inputs": {
+            "vae_name": "ae.safetensors"
+          },
+          "_meta": {
+            "title": "VAE Loader"
+          }
+        },
+        "13": {
+          "class_type": "VAEDecode",
+          "inputs": {
+            "samples": [
+              "9",
+              0
+            ],
+            "vae": [
+              "12",
+              0
+            ]
+          },
+          "_meta": {
+            "title": "VAE Decode"
+          }
+        },
+        "14": {
+          "class_type": "DualCLIPLoader",
+          "inputs": {
+            "clip_name1": "clip_l.safetensors",
+            "clip_name2": "t5xxl_fp8_e4m3fn_scaled.safetensors",
+            "type": "flux",
+            "device": "default"
+          },
+          "_meta": {
+            "title": "Dual CLIP Loader"
+          }
+        },
+        "15": {
+          "class_type": "SaveImage",
+          "inputs": {
+            "images": [
+              "13",
+              0
+            ],
+            "filename_prefix": "agent_runs/creative_kontext_20260527/1005009067934624/rain_pitlane_openwheel_driver"
+          },
+          "_meta": {
+            "title": "Save Output"
+          }
+        }
+      },
+      {
+        "agent": "codex",
+        "workflow_name": "creative_kontext_single",
+        "source": "Y:\\tiktok_ins_crawl\\aliexpress\\images\\1005009067934624\\06.jpg",
+        "notes": "creative_campaign; not_for_factual_sku_verification; product=1005009067934624; shot=rain_pitlane_openwheel_driver; source=06.jpg; generator=flux1-dev-kontext_fp8_scaled; seed=2026052718; steps=28; guidance=2.8; sampler=euler; scheduler=simple; size=1024x1024; workflow_latent=EmptySD3LatentImage",
+        "client_id": "agent:codex|workflow:creative_kontext_single|run:59e5b66d",
+        "create_time": 1779874636445
+      },
+      [
+        "15",
+        "4"
+      ]
+    ],
+    "outputs": {
+      "4": {
+        "images": [
+          {
+            "filename": "ComfyUI_temp_epexk_00001_.png",
+            "subfolder": "",
+            "type": "temp"
+          }
+        ]
+      },
+      "15": {
+        "images": [
+          {
+            "filename": "rain_pitlane_openwheel_driver_00001_.png",
+            "subfolder": "agent_runs\\creative_kontext_20260527\\1005009067934624",
+            "type": "output"
+          }
+        ]
+      }
+    },
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "0044bbf8-6ef2-4d9a-a52d-ab13e53bb367",
+            "timestamp": 1779874638208
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [],
+            "prompt_id": "0044bbf8-6ef2-4d9a-a52d-ab13e53bb367",
+            "timestamp": 1779874638212
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "0044bbf8-6ef2-4d9a-a52d-ab13e53bb367",
+            "timestamp": 1779874698404
+          }
+        ]
+      ]
+    },
+    "meta": {
+      "4": {
+        "node_id": "4",
+        "display_node": "4",
+        "parent_node": null,
+        "real_node_id": "4"
+      },
+      "15": {
+        "node_id": "15",
+        "display_node": "15",
+        "parent_node": null,
+        "real_node_id": "15"
+      }
+    }
+  }
+}

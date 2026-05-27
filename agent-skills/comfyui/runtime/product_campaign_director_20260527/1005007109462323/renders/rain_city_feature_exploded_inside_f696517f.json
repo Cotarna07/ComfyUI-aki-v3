@@ -1,0 +1,321 @@
+{
+  "prompt_id": "fa29b5d8-7221-47eb-ab1a-3edef3aafbe0",
+  "client_id": "agent:codex|workflow:vlm_directed_kontext_campaign|run:f696517f",
+  "shot": {
+    "id": "rain_city_feature_exploded_inside",
+    "track": "creative_campaign",
+    "base_source_files": [
+      "02.jpg",
+      "06.jpg"
+    ],
+    "evidence_basis": "02.jpg显示人偶坐内 + 可拆卸车顶模块；06.jpg显示警灯模块可拆卸",
+    "render_mode": "image_edit",
+    "source_orientation_preserved": false,
+    "composition": "警车正面视角，人偶坐驾驶座，车顶警灯模块悬浮于车顶上方",
+    "editable_regions": [],
+    "do_not_change": [
+      "人偶坐驾驶座",
+      "警灯模块悬浮状态",
+      "车身'POLICE'字样",
+      "黑色前保险杠",
+      "银色轮毂"
+    ],
+    "generation_prompt_en": "A LEGO City police car with minifigure seated inside, lightbar module detached above, rainy night city background with bokeh and dynamic light trails, high saturation blue tone, cinematic composition, product centered, no changes to fixed identity features.",
+    "overlay_text_strategy": "大号标题'乐高城市警车' + 小字'Item 60312 | 5+'，置于画面底部",
+    "validation_checks": [
+      "人偶坐驾驶座状态与源证据一致",
+      "警灯模块悬浮状态与源证据一致",
+      "车身文字清晰度达标"
+    ]
+  },
+  "source": "Y:\\tiktok_ins_crawl\\aliexpress\\images\\1005007109462323\\02.jpg",
+  "input_name": "agent_aliexpress_campaign/20260527/1005007109462323/02.jpg",
+  "prompt": "A LEGO City police car with minifigure seated inside, lightbar module detached above, rainy night city background with bokeh and dynamic light trails, high saturation blue tone, cinematic composition, product centered, no changes to fixed identity features. Preserve the evidenced source product configuration exactly: keep all listed do-not-change product features, character count and product surface markings readable. No additional vehicle, figure, packaging, generated title, logo overlay or watermark. creative_campaign; not for factual SKU verification. Remove only non-product catalog graphics from the source, including header logos, item-number header and instructional arrows. Frame a bright close premium hero shot with the product occupying about 78 percent of the image, strong soft frontal fill, readable toy-brick surfaces and restrained cinematic background depth.",
+  "notes": "creative_campaign; product=1005007109462323; shot=rain_city_feature_exploded_inside; source=02.jpg; director_model=huihui_ai/qwen3-vl-abliterated:8b-instruct-q4_K_M; generator=flux1-dev-kontext_fp8_scaled; seed=2026052716; steps=28; guidance=2.8; sampler=euler; scheduler=simple; size=1024x1024; workflow_latent=EmptySD3LatentImage; not_for_factual_sku_verification",
+  "history": {
+    "prompt": [
+      9,
+      "fa29b5d8-7221-47eb-ab1a-3edef3aafbe0",
+      {
+        "1": {
+          "class_type": "LoadImage",
+          "inputs": {
+            "image": "agent_aliexpress_campaign/20260527/1005007109462323/02.jpg"
+          },
+          "_meta": {
+            "title": "Input Product Image"
+          }
+        },
+        "2": {
+          "class_type": "FluxKontextImageScale",
+          "inputs": {
+            "image": [
+              "1",
+              0
+            ]
+          },
+          "_meta": {
+            "title": "Kontext Image Scale"
+          }
+        },
+        "3": {
+          "class_type": "VAEEncode",
+          "inputs": {
+            "pixels": [
+              "2",
+              0
+            ],
+            "vae": [
+              "12",
+              0
+            ]
+          },
+          "_meta": {
+            "title": "VAE Encode Reference"
+          }
+        },
+        "4": {
+          "class_type": "PreviewImage",
+          "inputs": {
+            "images": [
+              "2",
+              0
+            ]
+          },
+          "_meta": {
+            "title": "Preview Scaled Input"
+          }
+        },
+        "5": {
+          "class_type": "CLIPTextEncode",
+          "inputs": {
+            "clip": [
+              "14",
+              0
+            ],
+            "text": "A LEGO City police car with minifigure seated inside, lightbar module detached above, rainy night city background with bokeh and dynamic light trails, high saturation blue tone, cinematic composition, product centered, no changes to fixed identity features. Preserve the evidenced source product configuration exactly: keep all listed do-not-change product features, character count and product surface markings readable. No additional vehicle, figure, packaging, generated title, logo overlay or watermark. creative_campaign; not for factual SKU verification. Remove only non-product catalog graphics from the source, including header logos, item-number header and instructional arrows. Frame a bright close premium hero shot with the product occupying about 78 percent of the image, strong soft frontal fill, readable toy-brick surfaces and restrained cinematic background depth."
+          },
+          "_meta": {
+            "title": "Positive Prompt"
+          }
+        },
+        "6": {
+          "class_type": "ReferenceLatent",
+          "inputs": {
+            "conditioning": [
+              "5",
+              0
+            ],
+            "latent": [
+              "3",
+              0
+            ]
+          },
+          "_meta": {
+            "title": "Reference Latent"
+          }
+        },
+        "7": {
+          "class_type": "FluxGuidance",
+          "inputs": {
+            "conditioning": [
+              "6",
+              0
+            ],
+            "guidance": 2.8
+          },
+          "_meta": {
+            "title": "Flux Guidance"
+          }
+        },
+        "8": {
+          "class_type": "ConditioningZeroOut",
+          "inputs": {
+            "conditioning": [
+              "5",
+              0
+            ]
+          },
+          "_meta": {
+            "title": "Negative (Zero Out)"
+          }
+        },
+        "9": {
+          "class_type": "KSampler",
+          "inputs": {
+            "model": [
+              "10",
+              0
+            ],
+            "positive": [
+              "7",
+              0
+            ],
+            "negative": [
+              "8",
+              0
+            ],
+            "latent_image": [
+              "11",
+              0
+            ],
+            "seed": 2026052716,
+            "steps": 28,
+            "cfg": 1.0,
+            "sampler_name": "euler",
+            "scheduler": "simple",
+            "denoise": 1.0
+          },
+          "_meta": {
+            "title": "KSampler"
+          }
+        },
+        "10": {
+          "class_type": "UNETLoader",
+          "inputs": {
+            "unet_name": "flux1-dev-kontext_fp8_scaled.safetensors",
+            "weight_dtype": "default"
+          },
+          "_meta": {
+            "title": "UNET Loader"
+          }
+        },
+        "11": {
+          "class_type": "EmptySD3LatentImage",
+          "inputs": {
+            "width": 1024,
+            "height": 1024,
+            "batch_size": 1
+          },
+          "_meta": {
+            "title": "Empty Flux.1 Kontext Latent"
+          }
+        },
+        "12": {
+          "class_type": "VAELoader",
+          "inputs": {
+            "vae_name": "ae.safetensors"
+          },
+          "_meta": {
+            "title": "VAE Loader"
+          }
+        },
+        "13": {
+          "class_type": "VAEDecode",
+          "inputs": {
+            "samples": [
+              "9",
+              0
+            ],
+            "vae": [
+              "12",
+              0
+            ]
+          },
+          "_meta": {
+            "title": "VAE Decode"
+          }
+        },
+        "14": {
+          "class_type": "DualCLIPLoader",
+          "inputs": {
+            "clip_name1": "clip_l.safetensors",
+            "clip_name2": "t5xxl_fp8_e4m3fn_scaled.safetensors",
+            "type": "flux",
+            "device": "default"
+          },
+          "_meta": {
+            "title": "Dual CLIP Loader"
+          }
+        },
+        "15": {
+          "class_type": "SaveImage",
+          "inputs": {
+            "images": [
+              "13",
+              0
+            ],
+            "filename_prefix": "agent_runs/vlm_directed_campaign_20260527/1005007109462323/rain_city_feature_exploded_inside_bright_clean"
+          },
+          "_meta": {
+            "title": "Save Output"
+          }
+        }
+      },
+      {
+        "agent": "codex",
+        "workflow_name": "vlm_directed_kontext_campaign",
+        "source": "Y:\\tiktok_ins_crawl\\aliexpress\\images\\1005007109462323\\02.jpg",
+        "notes": "creative_campaign; product=1005007109462323; shot=rain_city_feature_exploded_inside; source=02.jpg; director_model=huihui_ai/qwen3-vl-abliterated:8b-instruct-q4_K_M; generator=flux1-dev-kontext_fp8_scaled; seed=2026052716; steps=28; guidance=2.8; sampler=euler; scheduler=simple; size=1024x1024; workflow_latent=EmptySD3LatentImage; not_for_factual_sku_verification",
+        "client_id": "agent:codex|workflow:vlm_directed_kontext_campaign|run:f696517f",
+        "create_time": 1779863897809
+      },
+      [
+        "15",
+        "4"
+      ]
+    ],
+    "outputs": {
+      "4": {
+        "images": [
+          {
+            "filename": "ComfyUI_temp_xmpdr_00001_.png",
+            "subfolder": "",
+            "type": "temp"
+          }
+        ]
+      },
+      "15": {
+        "images": [
+          {
+            "filename": "rain_city_feature_exploded_inside_bright_clean_00002_.png",
+            "subfolder": "agent_runs\\vlm_directed_campaign_20260527\\1005007109462323",
+            "type": "output"
+          }
+        ]
+      }
+    },
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "fa29b5d8-7221-47eb-ab1a-3edef3aafbe0",
+            "timestamp": 1779863897810
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [],
+            "prompt_id": "fa29b5d8-7221-47eb-ab1a-3edef3aafbe0",
+            "timestamp": 1779863897813
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "fa29b5d8-7221-47eb-ab1a-3edef3aafbe0",
+            "timestamp": 1779863955192
+          }
+        ]
+      ]
+    },
+    "meta": {
+      "4": {
+        "node_id": "4",
+        "display_node": "4",
+        "parent_node": null,
+        "real_node_id": "4"
+      },
+      "15": {
+        "node_id": "15",
+        "display_node": "15",
+        "parent_node": null,
+        "real_node_id": "15"
+      }
+    }
+  }
+}

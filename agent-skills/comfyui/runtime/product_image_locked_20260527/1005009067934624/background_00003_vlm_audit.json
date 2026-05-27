@@ -1,0 +1,19 @@
+{
+  "image": "D:\\ComfyUI-aki-v3\\ComfyUI\\output\\agent_runs\\aliexpress_locked_20260527\\1005009067934624\\background_00003_.png",
+  "product": "red brick-built Ferrari SF-24 Formula 1 toy car with seated driver",
+  "forbidden": "duplicate product, car, vehicle, toy, figure, package, printed text, logo, watermark",
+  "model": "huihui_ai/qwen3-vl-abliterated:8b-instruct-q4_K_M",
+  "diagnostic_only": true,
+  "gate_pass": true,
+  "model_failed": false,
+  "contradiction_warnings": [],
+  "vlm_response": {
+    "has_forbidden_object": false,
+    "detected_forbidden_objects": [],
+    "locations": [],
+    "evidence": [],
+    "action": "Approved"
+  },
+  "raw_content": "{\n  \"has_forbidden_object\": false,\n  \"detected_forbidden_objects\": [],\n  \"locations\": [],\n  \"evidence\": [],\n  \"action\": \"Approved\"\n}",
+  "timestamp": "2026-05-27T17:39:57"
+}
