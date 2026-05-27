@@ -34,9 +34,3 @@ Icon = "https://raw.githubusercontent.com/WhatDreamsCost/MediaSyncer/refs/heads/
 includes = [] 
 # "requires-comfyui" = ">=1.0.0"  # ComfyUI version compatibility
 
-[tool.local-deployment]
-deployed-at = "2026-05-27"
-local-path = "D:/ComfyUI-aki-v3/agent-projects/whatdreamscost-comfyui"
-comfyui-link = "D:/ComfyUI-aki-v3/ComfyUI/custom_nodes/WhatDreamsCost-ComfyUI"
-status = "deployed"
-

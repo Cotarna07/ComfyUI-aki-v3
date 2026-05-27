@@ -6,18 +6,6 @@ Hopefully it will make creating cool stuff easier.
 
 All of my nodes are created with the help of AI, so there may or may not be redundant, messy code.
 
-## 本地部署说明
-本项目已部署到本地工作区，详细部署说明请查看：
-- [DEPLOYMENT.md](DEPLOYMENT.md) - 完整部署说明
-- [LOCAL_README.md](LOCAL_README.md) - 快速参考指南
-- [config.json](config.json) - 项目配置信息
-- [CHANGELOG.md](CHANGELOG.md) - 更新日志
-- [USAGE_GUIDE.md](USAGE_GUIDE.md) - 使用指南
-- [PROJECT_OVERVIEW.md](PROJECT_OVERVIEW.md) - 项目概览
-- [CONTRIBUTING.md](CONTRIBUTING.md) - 贡献指南
-- [PROJECT_STATUS.md](PROJECT_STATUS.md) - 项目状态
-- [ROADMAP.md](ROADMAP.md) - 项目路线图
-
 ## ▶️ YouTube Tutorial Videos
 
 <table>
