@@ -1,0 +1,28 @@
+{
+  "image": "D:\\ComfyUI-aki-v3\\ComfyUI\\output\\agent_runs\\aliexpress_locked_staged_20260527\\1005009067934624\\background_00002_.png",
+  "product": "red brick-built Formula 1 toy car",
+  "forbidden": "vehicle, racing car, sports car, wheel, car body, toy, building block item, package, printed text, logo",
+  "model": "huihui_ai/qwen3-vl-abliterated:8b-instruct-q4_K_M",
+  "diagnostic_only": true,
+  "gate_pass": false,
+  "model_failed": true,
+  "contradiction_warnings": [],
+  "vlm_response": {
+    "has_forbidden_object": true,
+    "detected_forbidden_objects": [
+      "sports car"
+    ],
+    "locations": [
+      "center of image"
+    ],
+    "evidence": [
+      "silver vehicle with aerodynamic body",
+      "black wheels",
+      "red accents",
+      "visible windshield and side mirrors"
+    ],
+    "action": "Reject image for background plate use"
+  },
+  "raw_content": "{\n  \"has_forbidden_object\": true,\n  \"detected_forbidden_objects\": [\"sports car\"],\n  \"locations\": [\"center of image\"],\n  \"evidence\": [\"silver vehicle with aerodynamic body\", \"black wheels\", \"red accents\", \"visible windshield and side mirrors\"],\n  \"action\": \"Reject image for background plate use\"\n}",
+  "timestamp": "2026-05-27T11:48:51"
+}

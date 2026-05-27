@@ -1,0 +1,269 @@
+{
+  "1": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "INPUT_PLACEHOLDER"
+    },
+    "_meta": {
+      "title": "Original Product Source"
+    }
+  },
+  "2": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "1",
+        0
+      ],
+      "upscale_method": "lanczos",
+      "width": 1024,
+      "height": 1024,
+      "crop": "disabled"
+    },
+    "_meta": {
+      "title": "Scale Source Without Repainting"
+    }
+  },
+  "3": {
+    "class_type": "RMBG",
+    "inputs": {
+      "image": [
+        "2",
+        0
+      ],
+      "model": "RMBG-2.0",
+      "sensitivity": 1.0,
+      "process_res": 1536,
+      "mask_blur": 0,
+      "mask_offset": -1,
+      "invert_output": false,
+      "refine_foreground": true,
+      "background": "Alpha",
+      "background_color": "#ffffff"
+    },
+    "_meta": {
+      "title": "Product Mask - Original Subject Only"
+    }
+  },
+  "4": {
+    "class_type": "CheckpointLoaderSimple",
+    "inputs": {
+      "ckpt_name": "juggernautXL_v9Rdphoto2Lightning.safetensors"
+    },
+    "_meta": {
+      "title": "Photographic Background Generator"
+    }
+  },
+  "5": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "4",
+        1
+      ],
+      "text": "BACKGROUND_PROMPT_PLACEHOLDER"
+    },
+    "_meta": {
+      "title": "Background Prompt"
+    }
+  },
+  "6": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "4",
+        1
+      ],
+      "text": "product, toy, car, vehicle, figure, minifigure, model, box, package, text, logo, watermark, label, sign, people, pedestal, plinth, cube, block, rock, bowl, vase, plant, furniture, wall decoration, prop, raised object, foreground object, clutter, low quality, warped geometry, blown highlights"
+    },
+    "_meta": {
+      "title": "Background Negative Prompt"
+    }
+  },
+  "7": {
+    "class_type": "EmptyLatentImage",
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "batch_size": 1
+    },
+    "_meta": {
+      "title": "Background Canvas"
+    }
+  },
+  "8": {
+    "class_type": "KSampler",
+    "inputs": {
+      "model": [
+        "4",
+        0
+      ],
+      "positive": [
+        "5",
+        0
+      ],
+      "negative": [
+        "6",
+        0
+      ],
+      "latent_image": [
+        "7",
+        0
+      ],
+      "seed": 2026052701,
+      "steps": 8,
+      "cfg": 2.0,
+      "sampler_name": "dpmpp_sde",
+      "scheduler": "karras",
+      "denoise": 1.0
+    },
+    "_meta": {
+      "title": "Background Sampling Only"
+    }
+  },
+  "9": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "8",
+        0
+      ],
+      "vae": [
+        "4",
+        2
+      ]
+    },
+    "_meta": {
+      "title": "Decode Background"
+    }
+  },
+  "10": {
+    "class_type": "ImpactGaussianBlurMask",
+    "inputs": {
+      "mask": [
+        "3",
+        1
+      ],
+      "kernel_size": 35,
+      "sigma": 14.0
+    },
+    "_meta": {
+      "title": "Soft Shadow From Locked Product Mask"
+    }
+  },
+  "11": {
+    "class_type": "EmptyImage",
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "batch_size": 1,
+      "color": 0
+    },
+    "_meta": {
+      "title": "Shadow Color"
+    }
+  },
+  "12": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "9",
+        0
+      ],
+      "source": [
+        "11",
+        0
+      ],
+      "x": 0,
+      "y": 12,
+      "resize_source": false,
+      "mask": [
+        "10",
+        0
+      ]
+    },
+    "_meta": {
+      "title": "Composite Soft Shadow"
+    }
+  },
+  "13": {
+    "class_type": "ImageBlend",
+    "inputs": {
+      "image1": [
+        "9",
+        0
+      ],
+      "image2": [
+        "12",
+        0
+      ],
+      "blend_factor": 0.35,
+      "blend_mode": "normal"
+    },
+    "_meta": {
+      "title": "Reduce Shadow Opacity"
+    }
+  },
+  "14": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "13",
+        0
+      ],
+      "source": [
+        "2",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "resize_source": false,
+      "mask": [
+        "3",
+        1
+      ]
+    },
+    "_meta": {
+      "title": "Composite Original Product Pixels Onto Shadowed Background"
+    }
+  },
+  "15": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "14",
+        0
+      ],
+      "filename_prefix": "OUTPUT_COMPOSITE_PLACEHOLDER"
+    },
+    "_meta": {
+      "title": "Final Locked Product Candidate"
+    }
+  },
+  "16": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "9",
+        0
+      ],
+      "filename_prefix": "OUTPUT_BACKGROUND_PLACEHOLDER"
+    },
+    "_meta": {
+      "title": "Background Audit Output"
+    }
+  },
+  "17": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "3",
+        0
+      ],
+      "filename_prefix": "OUTPUT_FOREGROUND_PLACEHOLDER"
+    },
+    "_meta": {
+      "title": "Foreground Extraction Audit Output"
+    }
+  }
+}

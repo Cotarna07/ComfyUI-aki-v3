@@ -1,0 +1,57 @@
+{
+  "product_id": "1005009067934624",
+  "source": "Y:\\tiktok_ins_crawl\\aliexpress\\images\\1005009067934624\\06.jpg",
+  "input_uploaded": "agent_aliexpress/20260527/1005009067934624/06.jpg",
+  "client_id": "agent:codex|workflow:kontext_product_edit|run:679dde0f",
+  "prompt_id": "9c47e3c3-bea4-419e-82ee-796b671eff02",
+  "track": "factual_product",
+  "seed": 180442607,
+  "workflow": "D:\\ComfyUI-aki-v3\\agent-skills\\comfyui\\workflows\\api\\kontext_product_edit.json",
+  "prompt": "Preserve the identical red-and-black brick-built Ferrari SF-24 Formula 1 race-car toy shown in the reference, in the same front three-quarter orientation: retain exactly four tires, the complex black front wing, rear wing, long red nose, side pods, cockpit, and exactly one seated red-helmet driver. Keep the existing livery placements that are part of the product and the unmistakable plastic brick construction. Remove only the upper logo/item-number header and lower marketing copy outside the product. Edit only the surrounding surface and lighting into a clean muted pit-lane display floor with soft daylight and controlled contact shadows, keeping the whole car sharp and readable. Do not add, remove, redesign, reposition, recolor, replace or relabel any wing, tire, driver, badge or brick. Do not turn it into a real race car; do not generate new text, packaging, watermarks or props.",
+  "notes": "factual_product; product=1005009067934624; input=06.jpg; model=flux1-dev-kontext_fp8_scaled; seed=180442607; steps=28; guidance=2.8; sampler=euler; scheduler=simple; edit=non-product-text-removal/background/lighting-only; validation=red-black SF-24 Formula 1 brick car; four tires; front/rear wing; red-helmet driver seated; existing livery only",
+  "validation_focus": "red-black SF-24 Formula 1 brick car; four tires; front/rear wing; red-helmet driver seated; existing livery only",
+  "submitted": {
+    "prompt_id": "9c47e3c3-bea4-419e-82ee-796b671eff02",
+    "number": 17,
+    "node_errors": {}
+  },
+  "status": {
+    "status_str": "success",
+    "completed": true,
+    "messages": [
+      [
+        "execution_start",
+        {
+          "prompt_id": "9c47e3c3-bea4-419e-82ee-796b671eff02",
+          "timestamp": 1779816159047
+        }
+      ],
+      [
+        "execution_cached",
+        {
+          "nodes": [
+            "10",
+            "11",
+            "12",
+            "14"
+          ],
+          "prompt_id": "9c47e3c3-bea4-419e-82ee-796b671eff02",
+          "timestamp": 1779816159066
+        }
+      ],
+      [
+        "execution_success",
+        {
+          "prompt_id": "9c47e3c3-bea4-419e-82ee-796b671eff02",
+          "timestamp": 1779816473653
+        }
+      ]
+    ]
+  },
+  "outputs": [
+    {
+      "comfyui": "D:\\ComfyUI-aki-v3\\ComfyUI\\output\\agent_runs\\aliexpress_factual_20260527\\1005009067934624\\factual_source06_00001_.png",
+      "runtime": "D:\\ComfyUI-aki-v3\\agent-skills\\comfyui\\runtime\\aliexpress_product_optimization_20260527\\outputs\\1005009067934624\\factual_source06_00001_.png"
+    }
+  ]
+}

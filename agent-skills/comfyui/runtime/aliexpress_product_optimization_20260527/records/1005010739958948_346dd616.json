@@ -1,0 +1,57 @@
+{
+  "product_id": "1005010739958948",
+  "source": "Y:\\tiktok_ins_crawl\\aliexpress\\images\\1005010739958948\\02.jpg",
+  "input_uploaded": "agent_aliexpress/20260527/1005010739958948/02.jpg",
+  "client_id": "agent:codex|workflow:kontext_product_edit|run:346dd616",
+  "prompt_id": "83badb39-6be5-4dba-bc79-829c0ac0fbc8",
+  "track": "factual_product",
+  "seed": 782391144,
+  "workflow": "D:\\ComfyUI-aki-v3\\agent-skills\\comfyui\\workflows\\api\\kontext_product_edit.json",
+  "prompt": "Preserve the same red brick-built Ferrari SF90 XX Stradale sports-car toy in the reference, in the same front three-quarter orientation: keep its low angular brick silhouette, four black wheels, black windshield and roof, large black rear spoiler, red panel arrangement, and existing small product livery placements. It must remain visibly a plastic brick-built display model, not a real car. Remove only the headline and subtitle from the non-product sky area. Refine only the surrounding roadway and light into a clean premium race-track product background with gentle overcast daylight, subtle wet-surface reflection and realistic tire contact shadows. Keep the car bright, sharply inspectable and unobstructed. Do not add, remove, redesign, reposition or recolor product pieces, wheels, wing parts, badges or stickers; do not invent text, logos, watermark, driver, packaging or extra objects.",
+  "notes": "factual_product; product=1005010739958948; input=02.jpg; model=flux1-dev-kontext_fp8_scaled; seed=782391144; steps=28; guidance=2.8; sampler=euler; scheduler=simple; edit=non-product-text-removal/background/lighting-only; validation=red SF90 brick car; four black wheels; black roof/windshield and rear spoiler; emblem/livery only as source",
+  "validation_focus": "red SF90 brick car; four black wheels; black roof/windshield and rear spoiler; emblem/livery only as source",
+  "submitted": {
+    "prompt_id": "83badb39-6be5-4dba-bc79-829c0ac0fbc8",
+    "number": 14,
+    "node_errors": {}
+  },
+  "status": {
+    "status_str": "success",
+    "completed": true,
+    "messages": [
+      [
+        "execution_start",
+        {
+          "prompt_id": "83badb39-6be5-4dba-bc79-829c0ac0fbc8",
+          "timestamp": 1779815881719
+        }
+      ],
+      [
+        "execution_cached",
+        {
+          "nodes": [
+            "10",
+            "11",
+            "12",
+            "14"
+          ],
+          "prompt_id": "83badb39-6be5-4dba-bc79-829c0ac0fbc8",
+          "timestamp": 1779815881730
+        }
+      ],
+      [
+        "execution_success",
+        {
+          "prompt_id": "83badb39-6be5-4dba-bc79-829c0ac0fbc8",
+          "timestamp": 1779815969968
+        }
+      ]
+    ]
+  },
+  "outputs": [
+    {
+      "comfyui": "D:\\ComfyUI-aki-v3\\ComfyUI\\output\\agent_runs\\aliexpress_factual_20260527\\1005010739958948\\factual_source02_00001_.png",
+      "runtime": "D:\\ComfyUI-aki-v3\\agent-skills\\comfyui\\runtime\\aliexpress_product_optimization_20260527\\outputs\\1005010739958948\\factual_source02_00001_.png"
+    }
+  ]
+}

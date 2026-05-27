@@ -1,0 +1,128 @@
+{
+  "1": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "INPUT_PLACEHOLDER"
+    },
+    "_meta": {"title": "Input Product Image"}
+  },
+  "2": {
+    "class_type": "FluxKontextImageScale",
+    "inputs": {
+      "image": ["1", 0]
+    },
+    "_meta": {"title": "Kontext Image Scale"}
+  },
+  "3": {
+    "class_type": "VAEEncode",
+    "inputs": {
+      "pixels": ["2", 0],
+      "vae": ["12", 0]
+    },
+    "_meta": {"title": "VAE Encode Reference"}
+  },
+  "4": {
+    "class_type": "PreviewImage",
+    "inputs": {
+      "images": ["2", 0]
+    },
+    "_meta": {"title": "Preview Scaled Input"}
+  },
+  "5": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": ["14", 0],
+      "text": "PROMPT_PLACEHOLDER"
+    },
+    "_meta": {"title": "Positive Prompt"}
+  },
+  "6": {
+    "class_type": "ReferenceLatent",
+    "inputs": {
+      "conditioning": ["5", 0],
+      "latent": ["3", 0]
+    },
+    "_meta": {"title": "Reference Latent"}
+  },
+  "7": {
+    "class_type": "FluxGuidance",
+    "inputs": {
+      "conditioning": ["6", 0],
+      "guidance": 2.8
+    },
+    "_meta": {"title": "Flux Guidance"}
+  },
+  "8": {
+    "class_type": "ConditioningZeroOut",
+    "inputs": {
+      "conditioning": ["5", 0]
+    },
+    "_meta": {"title": "Negative (Zero Out)"}
+  },
+  "9": {
+    "class_type": "KSampler",
+    "inputs": {
+      "model": ["10", 0],
+      "positive": ["7", 0],
+      "negative": ["8", 0],
+      "latent_image": ["11", 0],
+      "seed": 1234567890,
+      "steps": 28,
+      "cfg": 1.0,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1.0
+    },
+    "_meta": {"title": "KSampler"}
+  },
+  "10": {
+    "class_type": "UNETLoader",
+    "inputs": {
+      "unet_name": "flux1-dev-kontext_fp8_scaled.safetensors",
+      "weight_dtype": "default"
+    },
+    "_meta": {"title": "UNET Loader"}
+  },
+  "11": {
+    "class_type": "EmptyFlux2LatentImage",
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "batch_size": 1
+    },
+    "_meta": {"title": "Empty Flux Latent"}
+  },
+  "12": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "ae.safetensors"
+    },
+    "_meta": {"title": "VAE Loader"}
+  },
+  "13": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": ["9", 0],
+      "vae": ["12", 0]
+    },
+    "_meta": {"title": "VAE Decode"}
+  },
+  "14": {
+    "class_type": "DualCLIPLoader",
+    "inputs": {
+      "clip_name1": "clip_l.safetensors",
+      "clip_name2": "t5xxl_fp8_e4m3fn_scaled.safetensors",
+      "type": "flux",
+      "device": "default"
+    },
+    "_meta": {"title": "Dual CLIP Loader"}
+  },
+  "15": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": ["13", 0],
+      "filename_prefix": "OUTPUT_PLACEHOLDER"
+    },
+    "_meta": {"title": "Save Output"}
+  }
+}

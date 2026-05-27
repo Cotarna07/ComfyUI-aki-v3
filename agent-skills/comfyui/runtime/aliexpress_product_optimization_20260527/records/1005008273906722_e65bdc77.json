@@ -1,0 +1,57 @@
+{
+  "product_id": "1005008273906722",
+  "source": "Y:\\tiktok_ins_crawl\\aliexpress\\images\\1005008273906722\\06.jpg",
+  "input_uploaded": "agent_aliexpress/20260527/1005008273906722/06.jpg",
+  "client_id": "agent:codex|workflow:kontext_product_edit|run:e65bdc77",
+  "prompt_id": "47ff0ddf-26f1-40f8-a1d6-1b06ef36e14e",
+  "track": "factual_product",
+  "seed": 981735002,
+  "workflow": "D:\\ComfyUI-aki-v3\\agent-skills\\comfyui\\workflows\\api\\kontext_product_edit.json",
+  "prompt": "Preserve the complete brick-built Hogwarts potions classroom display in the reference: one tan and brown open room diorama with the same three tall pale window/arched recess structures and gray tiled base; exactly one gold statue figure at left; exactly three student minifigures in front; the black cauldron and the small potion accessories at their existing locations. Keep all character identities, colors, brick construction, count and spacing unchanged. Remove only the top brand/item header and the bottom advertising caption outside the product scene. Refine only the room background and tabletop into a softly lit warm study display with clean neutral depth and natural contact shadows. Keep the entire set bright, sharp and fully inspectable. Do not add, remove, redesign, reposition, recolor or relabel any product piece, figure or accessory. Do not generate text, packaging, watermark, extra characters or fantasy effects.",
+  "notes": "factual_product; product=1005008273906722; input=06.jpg; model=flux1-dev-kontext_fp8_scaled; seed=981735002; steps=28; guidance=2.8; sampler=euler; scheduler=simple; edit=non-product-text-removal/background/lighting-only; validation=tan potions-room diorama; three arched/window recesses; golden statue; exactly three student figures; cauldron and potion accessories",
+  "validation_focus": "tan potions-room diorama; three arched/window recesses; golden statue; exactly three student figures; cauldron and potion accessories",
+  "submitted": {
+    "prompt_id": "47ff0ddf-26f1-40f8-a1d6-1b06ef36e14e",
+    "number": 16,
+    "node_errors": {}
+  },
+  "status": {
+    "status_str": "success",
+    "completed": true,
+    "messages": [
+      [
+        "execution_start",
+        {
+          "prompt_id": "47ff0ddf-26f1-40f8-a1d6-1b06ef36e14e",
+          "timestamp": 1779816071532
+        }
+      ],
+      [
+        "execution_cached",
+        {
+          "nodes": [
+            "10",
+            "11",
+            "12",
+            "14"
+          ],
+          "prompt_id": "47ff0ddf-26f1-40f8-a1d6-1b06ef36e14e",
+          "timestamp": 1779816071541
+        }
+      ],
+      [
+        "execution_success",
+        {
+          "prompt_id": "47ff0ddf-26f1-40f8-a1d6-1b06ef36e14e",
+          "timestamp": 1779816157278
+        }
+      ]
+    ]
+  },
+  "outputs": [
+    {
+      "comfyui": "D:\\ComfyUI-aki-v3\\ComfyUI\\output\\agent_runs\\aliexpress_factual_20260527\\1005008273906722\\factual_source06_00001_.png",
+      "runtime": "D:\\ComfyUI-aki-v3\\agent-skills\\comfyui\\runtime\\aliexpress_product_optimization_20260527\\outputs\\1005008273906722\\factual_source06_00001_.png"
+    }
+  ]
+}

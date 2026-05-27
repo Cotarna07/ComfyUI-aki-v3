@@ -1,0 +1,103 @@
+[
+  {
+    "product_id": "1005010410824249",
+    "source": "Y:\\tiktok_ins_crawl\\aliexpress\\images\\1005010410824249\\05.jpg",
+    "input_name": "agent_aliexpress_locked/20260527/1005010410824249/05.jpg",
+    "prompt_id": "275da7dc-9b9a-4f1e-96ad-156a55f079de",
+    "client_id": "agent:codex|workflow:product_locked_background_sdxl|run:bab507c6",
+    "notes": "factual_product; product=1005010410824249; original foreground pixel lock via RMBG mask; input=05.jpg; background_model=juggernautXL_v9Rdphoto2Lightning; background_seed=2026052701; size=768x1024; steps=8; cfg=2.0; sampler=dpmpp_sde; scheduler=karras; identity=green brick-built Creeper statue; four splayed feet; black pixel face; one pink pig and one red-white TNT accessory must remain visible",
+    "status": {
+      "status_str": "error",
+      "completed": false,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "275da7dc-9b9a-4f1e-96ad-156a55f079de",
+            "timestamp": 1779817384116
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [],
+            "prompt_id": "275da7dc-9b9a-4f1e-96ad-156a55f079de",
+            "timestamp": 1779817385593
+          }
+        ],
+        [
+          "execution_error",
+          {
+            "prompt_id": "275da7dc-9b9a-4f1e-96ad-156a55f079de",
+            "node_id": "3",
+            "node_type": "RMBG",
+            "executed": [
+              "1",
+              "2",
+              "4"
+            ],
+            "exception_message": "Error in image processing: Error downloading model files: An error happened while trying to locate the file on the Hub and we cannot find the requested files in the local cache. Please check your connection and try again or make sure your Internet connection is on.\n",
+            "exception_type": "RuntimeError",
+            "traceback": [
+              "  File \"D:\\ComfyUI-aki-v3\\ComfyUI\\execution.py\", line 534, in execute\n    output_data, output_ui, has_subgraph, has_pending_tasks = await get_output_data(prompt_id, unique_id, obj, input_data_all, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)\n                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+              "  File \"D:\\ComfyUI-aki-v3\\ComfyUI\\execution.py\", line 334, in get_output_data\n    return_values = await _async_map_node_over_list(prompt_id, unique_id, obj, input_data_all, obj.FUNCTION, allow_interrupt=True, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+              "  File \"D:\\ComfyUI-aki-v3\\ComfyUI\\execution.py\", line 308, in _async_map_node_over_list\n    await process_inputs(input_dict, i)\n",
+              "  File \"D:\\ComfyUI-aki-v3\\ComfyUI\\execution.py\", line 296, in process_inputs\n    result = f(**inputs)\n",
+              "  File \"D:\\ComfyUI-aki-v3\\ComfyUI\\custom_nodes\\ComfyUI-RMBG\\py\\AILab_RMBG.py\", line 666, in process_image\n    handle_model_error(f\"Error in image processing: {str(e)}\")\n    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+              "  File \"D:\\ComfyUI-aki-v3\\ComfyUI\\custom_nodes\\ComfyUI-RMBG\\py\\AILab_RMBG.py\", line 88, in handle_model_error\n    raise RuntimeError(message)\n"
+            ],
+            "current_inputs": {
+              "image": [
+                "tensor([[[[0.9961, 0.9961, 0.9961],\n          [0.9961, 0.9961, 0.9961],\n          [0.9961, 0.9961, 0.9961],\n          ...,\n          [0.9961, 0.9961, 0.9961],\n          [0.9961, 0.9961, 0.9961],\n          [0.9961, 0.9961, 0.9961]],\n\n         [[0.9961, 0.9961, 0.9961],\n          [0.9961, 0.9961, 0.9961],\n          [0.9961, 0.9961, 0.9961],\n          ...,\n          [0.9961, 0.9961, 0.9961],\n          [0.9961, 0.9961, 0.9961],\n          [0.9961, 0.9961, 0.9961]],\n\n         [[0.9961, 0.9961, 0.9961],\n          [0.9961, 0.9961, 0.9961],\n          [0.9961, 0.9961, 0.9961],\n          ...,\n          [0.9961, 0.9961, 0.9961],\n          [0.9961, 0.9961, 0.9961],\n          [0.9961, 0.9961, 0.9961]],\n\n         ...,\n\n         [[0.9961, 0.9961, 0.9961],\n          [0.9961, 0.9961, 0.9961],\n          [0.9961, 0.9961, 0.9961],\n          ...,\n          [0.9961, 0.9961, 0.9961],\n          [0.9961, 0.9961, 0.9961],\n          [0.9961, 0.9961, 0.9961]],\n\n         [[0.9961, 0.9961, 0.9961],\n          [0.9961, 0.9961, 0.9961],\n          [0.9961, 0.9961, 0.9961],\n          ...,\n          [0.9961, 0.9961, 0.9961],\n          [0.9961, 0.9961, 0.9961],\n          [0.9961, 0.9961, 0.9961]],\n\n         [[0.9961, 0.9961, 0.9961],\n          [0.9961, 0.9961, 0.9961],\n          [0.9961, 0.9961, 0.9961],\n          ...,\n          [0.9961, 0.9961, 0.9961],\n          [0.9961, 0.9961, 0.9961],\n          [0.9961, 0.9961, 0.9961]]]])"
+              ],
+              "model": [
+                "RMBG-2.0"
+              ],
+              "sensitivity": [
+                1.0
+              ],
+              "process_res": [
+                1536
+              ],
+              "mask_blur": [
+                1
+              ],
+              "mask_offset": [
+                1
+              ],
+              "invert_output": [
+                false
+              ],
+              "refine_foreground": [
+                true
+              ],
+              "background": [
+                "Alpha"
+              ],
+              "background_color": [
+                "#ffffff"
+              ]
+            },
+            "current_outputs": [
+              "6",
+              "11",
+              "3",
+              "9",
+              "7",
+              "13",
+              "10",
+              "4",
+              "1",
+              "2",
+              "12",
+              "5",
+              "8"
+            ],
+            "timestamp": 1779817548236
+          }
+        ]
+      ]
+    },
+    "outputs": {}
+  }
+]

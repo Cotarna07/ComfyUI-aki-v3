@@ -1,0 +1,72 @@
+[
+  {
+    "product_id": "1005010410824249",
+    "source": "Y:\\tiktok_ins_crawl\\aliexpress\\images\\1005010410824249\\05.jpg",
+    "input_name": "agent_aliexpress_locked/20260527/1005010410824249/05.jpg",
+    "prompt_id": "83d2eb4a-2029-475c-ab44-8575a8514449",
+    "client_id": "agent:codex|workflow:product_locked_background_sdxl|run:6f3207cf",
+    "notes": "factual_product; product=1005010410824249; original foreground pixel lock via RMBG mask; input=05.jpg; background_model=juggernautXL_v9Rdphoto2Lightning; background_seed=2026052701; size=768x1024; steps=8; cfg=2.0; sampler=dpmpp_sde; scheduler=karras; identity=green brick-built Creeper statue; four splayed feet; black pixel face; one pink pig and one red-white TNT accessory must remain visible",
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "83d2eb4a-2029-475c-ab44-8575a8514449",
+            "timestamp": 1779817920588
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "1",
+              "2",
+              "4",
+              "7"
+            ],
+            "prompt_id": "83d2eb4a-2029-475c-ab44-8575a8514449",
+            "timestamp": 1779817920595
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "83d2eb4a-2029-475c-ab44-8575a8514449",
+            "timestamp": 1779817925480
+          }
+        ]
+      ]
+    },
+    "outputs": {
+      "13": {
+        "images": [
+          {
+            "filename": "foreground_audit_00002_.png",
+            "subfolder": "agent_runs\\aliexpress_locked_20260527\\1005010410824249",
+            "type": "output"
+          }
+        ]
+      },
+      "12": {
+        "images": [
+          {
+            "filename": "background_00002_.png",
+            "subfolder": "agent_runs\\aliexpress_locked_20260527\\1005010410824249",
+            "type": "output"
+          }
+        ]
+      },
+      "11": {
+        "images": [
+          {
+            "filename": "locked_factual_00002_.png",
+            "subfolder": "agent_runs\\aliexpress_locked_20260527\\1005010410824249",
+            "type": "output"
+          }
+        ]
+      }
+    }
+  }
+]

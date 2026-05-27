@@ -1,0 +1,230 @@
+[
+  {
+    "product_id": "1005010739958948",
+    "source": "Y:\\tiktok_ins_crawl\\aliexpress\\images\\1005010739958948\\02.jpg",
+    "input_uploaded": "agent_aliexpress/20260527/1005010739958948/02.jpg",
+    "client_id": "agent:codex|workflow:kontext_product_edit|run:346dd616",
+    "prompt_id": "83badb39-6be5-4dba-bc79-829c0ac0fbc8",
+    "track": "factual_product",
+    "seed": 782391144,
+    "workflow": "D:\\ComfyUI-aki-v3\\agent-skills\\comfyui\\workflows\\api\\kontext_product_edit.json",
+    "prompt": "Preserve the same red brick-built Ferrari SF90 XX Stradale sports-car toy in the reference, in the same front three-quarter orientation: keep its low angular brick silhouette, four black wheels, black windshield and roof, large black rear spoiler, red panel arrangement, and existing small product livery placements. It must remain visibly a plastic brick-built display model, not a real car. Remove only the headline and subtitle from the non-product sky area. Refine only the surrounding roadway and light into a clean premium race-track product background with gentle overcast daylight, subtle wet-surface reflection and realistic tire contact shadows. Keep the car bright, sharply inspectable and unobstructed. Do not add, remove, redesign, reposition or recolor product pieces, wheels, wing parts, badges or stickers; do not invent text, logos, watermark, driver, packaging or extra objects.",
+    "notes": "factual_product; product=1005010739958948; input=02.jpg; model=flux1-dev-kontext_fp8_scaled; seed=782391144; steps=28; guidance=2.8; sampler=euler; scheduler=simple; edit=non-product-text-removal/background/lighting-only; validation=red SF90 brick car; four black wheels; black roof/windshield and rear spoiler; emblem/livery only as source",
+    "validation_focus": "red SF90 brick car; four black wheels; black roof/windshield and rear spoiler; emblem/livery only as source",
+    "submitted": {
+      "prompt_id": "83badb39-6be5-4dba-bc79-829c0ac0fbc8",
+      "number": 14,
+      "node_errors": {}
+    },
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "83badb39-6be5-4dba-bc79-829c0ac0fbc8",
+            "timestamp": 1779815881719
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "10",
+              "11",
+              "12",
+              "14"
+            ],
+            "prompt_id": "83badb39-6be5-4dba-bc79-829c0ac0fbc8",
+            "timestamp": 1779815881730
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "83badb39-6be5-4dba-bc79-829c0ac0fbc8",
+            "timestamp": 1779815969968
+          }
+        ]
+      ]
+    },
+    "outputs": [
+      {
+        "comfyui": "D:\\ComfyUI-aki-v3\\ComfyUI\\output\\agent_runs\\aliexpress_factual_20260527\\1005010739958948\\factual_source02_00001_.png",
+        "runtime": "D:\\ComfyUI-aki-v3\\agent-skills\\comfyui\\runtime\\aliexpress_product_optimization_20260527\\outputs\\1005010739958948\\factual_source02_00001_.png"
+      }
+    ]
+  },
+  {
+    "product_id": "1005007109462323",
+    "source": "Y:\\tiktok_ins_crawl\\aliexpress\\images\\1005007109462323\\03.jpg",
+    "input_uploaded": "agent_aliexpress/20260527/1005007109462323/03.jpg",
+    "client_id": "agent:codex|workflow:kontext_product_edit|run:c8eba43a",
+    "prompt_id": "1ee55273-b57d-455f-8064-38f5d4be44cc",
+    "track": "factual_product",
+    "seed": 1472209031,
+    "workflow": "D:\\ComfyUI-aki-v3\\agent-skills\\comfyui\\workflows\\api\\kontext_product_edit.json",
+    "prompt": "Preserve exactly the same blue-and-white brick-built police car set and exactly one police-officer minifigure shown to its right. Keep the same three-quarter view, four wheels, blue transparent roof light bar, white hood stripes, front bumper guard and lights, blue side body with its existing product marking, and the minifigure uniform and cap. Edit only the non-product background: remove the upper logo and item-number header, and replace the blank white space with a clean light-gray studio display platform with a faint city-showroom gradient, soft daylight and grounded shadows under the car and figure. Keep all plastic brick details crisp and checkable. Do not alter, add, remove, move, relabel or recolor the vehicle, the figure, transparent parts or printed product markings. Do not generate text, logos, packaging, watermark or extra accessories.",
+    "notes": "factual_product; product=1005007109462323; input=03.jpg; model=flux1-dev-kontext_fp8_scaled; seed=1472209031; steps=28; guidance=2.8; sampler=euler; scheduler=simple; edit=non-product-text-removal/background/lighting-only; validation=blue-white police car; roof light bar; front guard; four wheels; exactly one police minifigure",
+    "validation_focus": "blue-white police car; roof light bar; front guard; four wheels; exactly one police minifigure",
+    "submitted": {
+      "prompt_id": "1ee55273-b57d-455f-8064-38f5d4be44cc",
+      "number": 15,
+      "node_errors": {}
+    },
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "1ee55273-b57d-455f-8064-38f5d4be44cc",
+            "timestamp": 1779815972060
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "10",
+              "11",
+              "12",
+              "14"
+            ],
+            "prompt_id": "1ee55273-b57d-455f-8064-38f5d4be44cc",
+            "timestamp": 1779815972072
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "1ee55273-b57d-455f-8064-38f5d4be44cc",
+            "timestamp": 1779816068947
+          }
+        ]
+      ]
+    },
+    "outputs": [
+      {
+        "comfyui": "D:\\ComfyUI-aki-v3\\ComfyUI\\output\\agent_runs\\aliexpress_factual_20260527\\1005007109462323\\factual_source03_00001_.png",
+        "runtime": "D:\\ComfyUI-aki-v3\\agent-skills\\comfyui\\runtime\\aliexpress_product_optimization_20260527\\outputs\\1005007109462323\\factual_source03_00001_.png"
+      }
+    ]
+  },
+  {
+    "product_id": "1005008273906722",
+    "source": "Y:\\tiktok_ins_crawl\\aliexpress\\images\\1005008273906722\\06.jpg",
+    "input_uploaded": "agent_aliexpress/20260527/1005008273906722/06.jpg",
+    "client_id": "agent:codex|workflow:kontext_product_edit|run:e65bdc77",
+    "prompt_id": "47ff0ddf-26f1-40f8-a1d6-1b06ef36e14e",
+    "track": "factual_product",
+    "seed": 981735002,
+    "workflow": "D:\\ComfyUI-aki-v3\\agent-skills\\comfyui\\workflows\\api\\kontext_product_edit.json",
+    "prompt": "Preserve the complete brick-built Hogwarts potions classroom display in the reference: one tan and brown open room diorama with the same three tall pale window/arched recess structures and gray tiled base; exactly one gold statue figure at left; exactly three student minifigures in front; the black cauldron and the small potion accessories at their existing locations. Keep all character identities, colors, brick construction, count and spacing unchanged. Remove only the top brand/item header and the bottom advertising caption outside the product scene. Refine only the room background and tabletop into a softly lit warm study display with clean neutral depth and natural contact shadows. Keep the entire set bright, sharp and fully inspectable. Do not add, remove, redesign, reposition, recolor or relabel any product piece, figure or accessory. Do not generate text, packaging, watermark, extra characters or fantasy effects.",
+    "notes": "factual_product; product=1005008273906722; input=06.jpg; model=flux1-dev-kontext_fp8_scaled; seed=981735002; steps=28; guidance=2.8; sampler=euler; scheduler=simple; edit=non-product-text-removal/background/lighting-only; validation=tan potions-room diorama; three arched/window recesses; golden statue; exactly three student figures; cauldron and potion accessories",
+    "validation_focus": "tan potions-room diorama; three arched/window recesses; golden statue; exactly three student figures; cauldron and potion accessories",
+    "submitted": {
+      "prompt_id": "47ff0ddf-26f1-40f8-a1d6-1b06ef36e14e",
+      "number": 16,
+      "node_errors": {}
+    },
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "47ff0ddf-26f1-40f8-a1d6-1b06ef36e14e",
+            "timestamp": 1779816071532
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "10",
+              "11",
+              "12",
+              "14"
+            ],
+            "prompt_id": "47ff0ddf-26f1-40f8-a1d6-1b06ef36e14e",
+            "timestamp": 1779816071541
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "47ff0ddf-26f1-40f8-a1d6-1b06ef36e14e",
+            "timestamp": 1779816157278
+          }
+        ]
+      ]
+    },
+    "outputs": [
+      {
+        "comfyui": "D:\\ComfyUI-aki-v3\\ComfyUI\\output\\agent_runs\\aliexpress_factual_20260527\\1005008273906722\\factual_source06_00001_.png",
+        "runtime": "D:\\ComfyUI-aki-v3\\agent-skills\\comfyui\\runtime\\aliexpress_product_optimization_20260527\\outputs\\1005008273906722\\factual_source06_00001_.png"
+      }
+    ]
+  },
+  {
+    "product_id": "1005009067934624",
+    "source": "Y:\\tiktok_ins_crawl\\aliexpress\\images\\1005009067934624\\06.jpg",
+    "input_uploaded": "agent_aliexpress/20260527/1005009067934624/06.jpg",
+    "client_id": "agent:codex|workflow:kontext_product_edit|run:679dde0f",
+    "prompt_id": "9c47e3c3-bea4-419e-82ee-796b671eff02",
+    "track": "factual_product",
+    "seed": 180442607,
+    "workflow": "D:\\ComfyUI-aki-v3\\agent-skills\\comfyui\\workflows\\api\\kontext_product_edit.json",
+    "prompt": "Preserve the identical red-and-black brick-built Ferrari SF-24 Formula 1 race-car toy shown in the reference, in the same front three-quarter orientation: retain exactly four tires, the complex black front wing, rear wing, long red nose, side pods, cockpit, and exactly one seated red-helmet driver. Keep the existing livery placements that are part of the product and the unmistakable plastic brick construction. Remove only the upper logo/item-number header and lower marketing copy outside the product. Edit only the surrounding surface and lighting into a clean muted pit-lane display floor with soft daylight and controlled contact shadows, keeping the whole car sharp and readable. Do not add, remove, redesign, reposition, recolor, replace or relabel any wing, tire, driver, badge or brick. Do not turn it into a real race car; do not generate new text, packaging, watermarks or props.",
+    "notes": "factual_product; product=1005009067934624; input=06.jpg; model=flux1-dev-kontext_fp8_scaled; seed=180442607; steps=28; guidance=2.8; sampler=euler; scheduler=simple; edit=non-product-text-removal/background/lighting-only; validation=red-black SF-24 Formula 1 brick car; four tires; front/rear wing; red-helmet driver seated; existing livery only",
+    "validation_focus": "red-black SF-24 Formula 1 brick car; four tires; front/rear wing; red-helmet driver seated; existing livery only",
+    "submitted": {
+      "prompt_id": "9c47e3c3-bea4-419e-82ee-796b671eff02",
+      "number": 17,
+      "node_errors": {}
+    },
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "9c47e3c3-bea4-419e-82ee-796b671eff02",
+            "timestamp": 1779816159047
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "10",
+              "11",
+              "12",
+              "14"
+            ],
+            "prompt_id": "9c47e3c3-bea4-419e-82ee-796b671eff02",
+            "timestamp": 1779816159066
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "9c47e3c3-bea4-419e-82ee-796b671eff02",
+            "timestamp": 1779816473653
+          }
+        ]
+      ]
+    },
+    "outputs": [
+      {
+        "comfyui": "D:\\ComfyUI-aki-v3\\ComfyUI\\output\\agent_runs\\aliexpress_factual_20260527\\1005009067934624\\factual_source06_00001_.png",
+        "runtime": "D:\\ComfyUI-aki-v3\\agent-skills\\comfyui\\runtime\\aliexpress_product_optimization_20260527\\outputs\\1005009067934624\\factual_source06_00001_.png"
+      }
+    ]
+  }
+]
