@@ -16,6 +16,20 @@ from test_harness.runner import run_all_tests
 def main() -> None:
     parser = argparse.ArgumentParser(description="ComfyUI 资源测试框架")
     parser.add_argument("--all", action="store_true", help="全库巡检模式：会包含大量历史工作流，默认不启用")
+    parser.add_argument(
+        "--workflow-dir",
+        action="append",
+        type=Path,
+        default=[],
+        help="额外加入要校验的工作流目录，可重复传入",
+    )
+    parser.add_argument(
+        "--workflow-file",
+        action="append",
+        type=Path,
+        default=[],
+        help="额外加入要校验的单个工作流文件，可重复传入",
+    )
     parser.add_argument("--output", type=Path, default=None, help="指定报告输出路径")
     args = parser.parse_args()
 
@@ -25,7 +39,8 @@ def main() -> None:
     print("╚══════════════════════════════════════════════════╝")
 
     scope = "all" if args.all else "focus"
-    results = run_all_tests(scope=scope)
+    explicit_paths = [*args.workflow_dir, *args.workflow_file]
+    results = run_all_tests(scope=scope, explicit_paths=explicit_paths or None)
 
     # 输出最终结论
     print("\n" + "=" * 60)

@@ -1,0 +1,8 @@
+in MMAudio Node with workflow you'll get error "BigVGAN._from_pretrained() missing 2 required keyword-only arguments: 'proxies' and 'resume_download'"
+
+I put fixed file named bigvgan.py
+
+Put in directory with replacing 
+ComfyUI_windows_portable\ComfyUI\custom_nodes\comfyui-mmaudio\mmaudio\ext\bigvgan_v2
+
+Then restart ComfyUI and that's it - MMAudio is working now
