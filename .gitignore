@@ -58,6 +58,14 @@ agent-projects/**/runtime/**/*.lock
 *.jpeg
 *.gif
 *.bmp
+
+# === 大型参考/运行时目录（已超过 VS Code Git 扫描承受能力）===
+# ComfyUI 官方示例仓库副本 — 仅参考，不参与版本跟踪
+agent-projects/ComfyUI_examples-master/
+# 测试实例运行时（含大量 custom_nodes 克隆）
+agent-projects/comfyui-test-instance/runtime/
+# ComfyUI 已禁用节点存档
+agent-skills/comfyui/disabled-custom-nodes/
 *.tiff
 *.mp4
 *.log
