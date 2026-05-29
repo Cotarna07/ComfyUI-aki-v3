@@ -17,6 +17,7 @@ if TYPE_CHECKING:
     from spandrel import ImageModelDescriptor
     from comfy.clip_vision import ClipVisionModel
     from comfy.clip_vision import Output as ClipVisionOutput_
+    from comfy.bg_removal_model import BackgroundRemovalModel
     from comfy.controlnet import ControlNet
     from comfy.hooks import HookGroup, HookKeyframeGroup
     from comfy.model_patcher import ModelPatcher
@@ -395,7 +396,6 @@ class Combo(ComfyTypeIO):
 @comfytype(io_type="COMBO")
 class MultiCombo(ComfyTypeI):
     '''Multiselect Combo input (dropdown for selecting potentially more than one value).'''
-    # TODO: something is wrong with the serialization, frontend does not recognize it as multiselect
     Type = list[str]
     class Input(Combo.Input):
         def __init__(self, id: str, options: list[str], display_name: str=None, optional=False, tooltip: str=None, lazy: bool=None,
@@ -408,12 +408,14 @@ class MultiCombo(ComfyTypeI):
             self.default: list[str]
 
         def as_dict(self):
-            to_return = super().as_dict() | prune_dict({
-                "multi_select": self.multiselect,
-                "placeholder": self.placeholder,
-                "chip": self.chip,
+            # Frontend expects `multi_select` to be an object config (not a boolean).
+            # Keep top-level `multiselect` from Combo.Input for backwards compatibility.
+            return super().as_dict() | prune_dict({
+                "multi_select": prune_dict({
+                    "placeholder": self.placeholder,
+                    "chip": self.chip,
+                }),
             })
-            return to_return
 
 @comfytype(io_type="IMAGE")
 class Image(ComfyTypeIO):
@@ -613,6 +615,11 @@ class Model(ComfyTypeIO):
     if TYPE_CHECKING:
         Type = ModelPatcher
 
+@comfytype(io_type="BACKGROUND_REMOVAL")
+class BackgroundRemoval(ComfyTypeIO):
+    if TYPE_CHECKING:
+        Type = BackgroundRemovalModel
+
 @comfytype(io_type="CLIP_VISION")
 class ClipVision(ComfyTypeIO):
     if TYPE_CHECKING:
@@ -759,6 +766,13 @@ class Load3DCamera(ComfyTypeIO):
         target: dict[str, float | int]
         zoom: int
         cameraType: str
+        quaternion: NotRequired[dict[str, float | int]]
+        rotation: NotRequired[dict[str, float | int | str]]
+        fov: NotRequired[float | int]
+        aspect: NotRequired[float | int]
+        near: NotRequired[float | int]
+        far: NotRequired[float | int]
+        frustum: NotRequired[dict[str, float | int]]
 
     Type = CameraInfo
 
@@ -2256,6 +2270,7 @@ __all__ = [
     "ModelPatch",
     "ClipVision",
     "ClipVisionOutput",
+    "BackgroundRemoval",
     "AudioEncoder",
     "AudioEncoderOutput",
     "StyleModel",
