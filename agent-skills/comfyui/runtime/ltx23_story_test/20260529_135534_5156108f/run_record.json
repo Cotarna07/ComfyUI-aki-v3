@@ -1,0 +1,96 @@
+{
+  "server": "http://127.0.0.1:8188",
+  "workflow_path": "D:\\ComfyUI-aki-v3\\agent-skills\\comfyui\\workflows\\TEST\\LTX2.3最强漫剧工作流包含音频参考 (1).json",
+  "prompt_pack_path": "D:\\ComfyUI-aki-v3\\agent-projects\\manga-anime-pipeline\\runtime\\2026-05-15_test_projects_short_manga\\review\\optimized_prompt_pack.json",
+  "runtime_dir": "D:\\ComfyUI-aki-v3\\agent-skills\\comfyui\\runtime\\ltx23_story_test\\20260529_135534_5156108f",
+  "client_id": "agent:copilot|workflow:ltx23_story_test|run:5156108f",
+  "prompt_id": "ec052fc1-db25-458c-a7bb-f198b71829a2",
+  "seed": 608936875,
+  "prompt_mode": "original",
+  "segment_lengths": [
+    39,
+    39,
+    39,
+    38,
+    38
+  ],
+  "shot_ids": [
+    "ep001_s0000",
+    "ep001_s0001",
+    "ep001_s0002"
+  ],
+  "image_paths": [
+    "D:\\ComfyUI-aki-v3\\agent-projects\\manga-anime-pipeline\\runtime\\2026-05-15_test_projects_short_manga\\windows\\test_projects_short_manga\\ep001\\p001\\w0000.png",
+    "D:\\ComfyUI-aki-v3\\agent-projects\\manga-anime-pipeline\\runtime\\2026-05-15_test_projects_short_manga\\windows\\test_projects_short_manga\\ep001\\p001\\w0000.png",
+    "D:\\ComfyUI-aki-v3\\agent-projects\\manga-anime-pipeline\\runtime\\2026-05-15_test_projects_short_manga\\windows\\test_projects_short_manga\\ep001\\p002\\w0000.png",
+    "D:\\ComfyUI-aki-v3\\agent-projects\\manga-anime-pipeline\\runtime\\2026-05-15_test_projects_short_manga\\windows\\test_projects_short_manga\\ep001\\p002\\w0000.png",
+    "D:\\ComfyUI-aki-v3\\agent-projects\\manga-anime-pipeline\\runtime\\2026-05-15_test_projects_short_manga\\windows\\test_projects_short_manga\\ep001\\p003\\w0000.png"
+  ],
+  "output_prefix": "agent_skills/ltx23_story_test/20260529_135534_5156108f/ltx23_story_ep001",
+  "output_files": [
+    "D:\\ComfyUI-aki-v3\\ComfyUI\\output\\agent_skills\\ltx23_story_test\\20260529_135534_5156108f\\ltx23_story_ep001_00001_.mp4"
+  ],
+  "status": {
+    "status_str": "success",
+    "completed": true,
+    "messages": [
+      [
+        "execution_start",
+        {
+          "prompt_id": "ec052fc1-db25-458c-a7bb-f198b71829a2",
+          "timestamp": 1780034134519
+        }
+      ],
+      [
+        "execution_cached",
+        {
+          "nodes": [
+            "23",
+            "44",
+            "39",
+            "442",
+            "446",
+            "447",
+            "459",
+            "460",
+            "461",
+            "463",
+            "478",
+            "480",
+            "482",
+            "492",
+            "542",
+            "573",
+            "38",
+            "36",
+            "351",
+            "301",
+            "465",
+            "489",
+            "464",
+            "479",
+            "477",
+            "481",
+            "483",
+            "491",
+            "297",
+            "296"
+          ],
+          "prompt_id": "ec052fc1-db25-458c-a7bb-f198b71829a2",
+          "timestamp": 1780034136908
+        }
+      ],
+      [
+        "execution_success",
+        {
+          "prompt_id": "ec052fc1-db25-458c-a7bb-f198b71829a2",
+          "timestamp": 1780034325375
+        }
+      ]
+    ]
+  },
+  "patched_api_workflow": "D:\\ComfyUI-aki-v3\\agent-skills\\comfyui\\runtime\\ltx23_story_test\\20260529_135534_5156108f\\patched_api_workflow.json",
+  "global_prompt": null,
+  "segment_prompts": null,
+  "negative_prompt": null
+}

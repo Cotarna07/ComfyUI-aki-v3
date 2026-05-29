@@ -1,0 +1,102 @@
+{
+  "server": "http://127.0.0.1:8188",
+  "workflow_path": "D:\\ComfyUI-aki-v3\\agent-skills\\comfyui\\workflows\\TEST\\LTX2.3最强漫剧工作流包含音频参考 (1).json",
+  "prompt_pack_path": "D:\\ComfyUI-aki-v3\\agent-projects\\manga-anime-pipeline\\runtime\\2026-05-15_test_projects_short_manga\\review\\optimized_prompt_pack.json",
+  "runtime_dir": "D:\\ComfyUI-aki-v3\\agent-skills\\comfyui\\runtime\\ltx23_story_test\\20260529_134859_8cb393d5",
+  "client_id": "agent:copilot|workflow:ltx23_story_test|run:8cb393d5",
+  "prompt_id": "8318bb54-6fc8-4bbc-8863-ac241b214b79",
+  "seed": 608936875,
+  "segment_lengths": [
+    39,
+    39,
+    39,
+    38,
+    38
+  ],
+  "shot_ids": [
+    "ep001_s0000",
+    "ep001_s0001",
+    "ep001_s0002"
+  ],
+  "image_paths": [
+    "D:\\ComfyUI-aki-v3\\agent-projects\\manga-anime-pipeline\\runtime\\2026-05-15_test_projects_short_manga\\windows\\test_projects_short_manga\\ep001\\p001\\w0000.png",
+    "D:\\ComfyUI-aki-v3\\agent-projects\\manga-anime-pipeline\\runtime\\2026-05-15_test_projects_short_manga\\windows\\test_projects_short_manga\\ep001\\p001\\w0000.png",
+    "D:\\ComfyUI-aki-v3\\agent-projects\\manga-anime-pipeline\\runtime\\2026-05-15_test_projects_short_manga\\windows\\test_projects_short_manga\\ep001\\p002\\w0000.png",
+    "D:\\ComfyUI-aki-v3\\agent-projects\\manga-anime-pipeline\\runtime\\2026-05-15_test_projects_short_manga\\windows\\test_projects_short_manga\\ep001\\p002\\w0000.png",
+    "D:\\ComfyUI-aki-v3\\agent-projects\\manga-anime-pipeline\\runtime\\2026-05-15_test_projects_short_manga\\windows\\test_projects_short_manga\\ep001\\p003\\w0000.png"
+  ],
+  "output_prefix": "agent_skills/ltx23_story_test/20260529_134859_8cb393d5/ltx23_story_ep001",
+  "output_files": [
+    "D:\\ComfyUI-aki-v3\\ComfyUI\\output\\agent_skills\\ltx23_story_test\\20260529_134859_8cb393d5\\ltx23_story_ep001_00001_.mp4"
+  ],
+  "status": {
+    "status_str": "success",
+    "completed": true,
+    "messages": [
+      [
+        "execution_start",
+        {
+          "prompt_id": "8318bb54-6fc8-4bbc-8863-ac241b214b79",
+          "timestamp": 1780033740043
+        }
+      ],
+      [
+        "execution_cached",
+        {
+          "nodes": [
+            "23",
+            "44",
+            "39",
+            "442",
+            "445",
+            "446",
+            "447",
+            "459",
+            "460",
+            "461",
+            "463",
+            "478",
+            "480",
+            "482",
+            "492",
+            "542",
+            "573",
+            "38",
+            "36",
+            "351",
+            "465",
+            "489",
+            "464",
+            "294",
+            "479",
+            "477",
+            "481",
+            "483",
+            "491",
+            "297",
+            "296"
+          ],
+          "prompt_id": "8318bb54-6fc8-4bbc-8863-ac241b214b79",
+          "timestamp": 1780033742319
+        }
+      ],
+      [
+        "execution_success",
+        {
+          "prompt_id": "8318bb54-6fc8-4bbc-8863-ac241b214b79",
+          "timestamp": 1780033887086
+        }
+      ]
+    ]
+  },
+  "patched_api_workflow": "D:\\ComfyUI-aki-v3\\agent-skills\\comfyui\\runtime\\ltx23_story_test\\20260529_134859_8cb393d5\\patched_api_workflow.json",
+  "global_prompt": "High quality anime short film, Japanese school slice of life romance, strong character consistency across all shots, expressive but restrained facial acting, clean line art, soft cel shading, cinematic continuity, subtle motion, stable anatomy, no readable generated text, character continuity: 深紫高马尾角色, dark_purple hair, high_ponytail, purple eyes, school_uniform, height 172cm; 里绪奈, silver_white hair, long_hair, 绿色 eyes, school_uniform, height 142cm",
+  "segment_prompts": [
+    "深紫高马尾角色 and 里绪奈, school courtyard, two girls interacting, dark_purple high ponytail girl teasing, silver long hair girl smiling gently, dialogue bubbles retained from source, subtle breathing, slight eye blink, minimal hair sway, stable faces, calm camera drift, anime style, soft lighting, clean lines, consistent character design, high quality, sharp focus., story beat: 两位女学生在校园相遇, 黑发角色调侃白发角色的眼神, 白发角色则礼貌问候并表达开心之情。, use the source manga panel as storyboard composition guide, retain original character placement and height difference, preserve source speech bubble layout only if already present, do not generate new readable text, light dialogue animation, tiny eye blink, slight hair sway, stable face, stable hands, consistent school uniform colors, no identity drift, gentle parallax, anime keyframe quality, clean line art, soft cel shading",
+    "深紫高马尾角色 and 里绪奈, school courtyard, two girls interacting, dark_purple high ponytail girl teasing, silver long hair girl smiling gently, dialogue bubbles retained from source, subtle breathing, slight eye blink, minimal hair sway, stable faces, calm camera drift, anime style, soft lighting, clean lines, consistent character design, high quality, sharp focus., story beat: 两位女学生在校园相遇, 黑发角色调侃白发角色的眼神, 白发角色则礼貌问候并表达开心之情。, use the source manga panel as storyboard composition guide, retain original character placement and height difference, preserve source speech bubble layout only if already present, do not generate new readable text, light dialogue animation, tiny eye blink, slight hair sway, stable face, stable hands, consistent school uniform colors, no identity drift, gentle parallax, anime keyframe quality, clean line art, soft cel shading, closer emotional beat, sustained eye contact, gentle continuation, no scene cut",
+    "里绪奈 and 深紫高马尾角色, 深紫高马尾角色 lifting 里绪奈, surprised cute expressions, light interaction, subtle breathing, small eye and hair movement, stable hands, calm camera drift, anime style, soft colors, clean lineart, consistent character design, high quality, sharp focus., story beat: 高个子角色抱着矮个子角色, 感叹其轻盈, 矮个子角色则请求放下。, use the source manga panel as storyboard composition guide, retain original character placement and height difference, preserve source speech bubble layout only if already present, do not generate new readable text, light dialogue animation, tiny eye blink, slight hair sway, stable face, consistent school uniform colors, no identity drift, gentle parallax, anime keyframe quality, clean line art, soft cel shading",
+    "里绪奈 and 深紫高马尾角色, 深紫高马尾角色 lifting 里绪奈, surprised cute expressions, light interaction, subtle breathing, small eye and hair movement, stable hands, calm camera drift, anime style, soft colors, clean lineart, consistent character design, high quality, sharp focus., story beat: 高个子角色抱着矮个子角色, 感叹其轻盈, 矮个子角色则请求放下。, use the source manga panel as storyboard composition guide, retain original character placement and height difference, preserve source speech bubble layout only if already present, do not generate new readable text, light dialogue animation, tiny eye blink, slight hair sway, stable face, consistent school uniform colors, no identity drift, gentle parallax, anime keyframe quality, clean line art, soft cel shading, maintain the lifting pose, restrained movement, gentle emotional transition, no scene cut",
+    "里绪奈 and 深紫高马尾角色, indoor cozy scene, 里绪奈 offering strawberry to 深紫高马尾角色, 深紫高马尾角色 surprised with mouth slightly open, holding chopsticks, subtle sparkle effects, subtle breathing, small eye and hair movement, stable hands, calm camera drift, anime style, soft pastel colors, clean lineart, consistent character design, high quality, sharp focus., story beat: 里绪奈将草莓递向黑发角色, 黑发角色惊讶地张嘴, 场景充满甜蜜氛围。, use the source manga panel as storyboard composition guide, retain original character placement and height difference, preserve source speech bubble layout only if already present, do not generate new readable text, light dialogue animation, tiny eye blink, slight hair sway, stable face, consistent school uniform colors, no identity drift, gentle parallax, anime keyframe quality, clean line art, soft cel shading"
+  ],
+  "negative_prompt": "large mouth movement, extreme expression, fast action, identity drift, face melting, hand distortion, subtitles, watermark, unreadable text, inconsistent hairstyle, inconsistent eye color, wrong school uniform, changed age, changed body proportions, extra fingers, bad anatomy, motion blur., worst quality, low quality, lowres, blurry, jpeg artifacts, bad hands, missing fingers, fused fingers, deformed face, asymmetrical eyes, logo, signature, new subtitles, random text, unreadable generated text, cropped head, out of frame, photorealistic, 3D render, heavy body motion"
+}

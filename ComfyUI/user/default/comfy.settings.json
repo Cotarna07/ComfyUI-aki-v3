@@ -207,5 +207,7 @@
         }
     },
     "Comfy.Queue.History.Expanded": true,
-    "Comfy.RightSidePanel.IsOpen": true
+    "Comfy.RightSidePanel.IsOpen": true,
+    "Comfy.TutorialCompleted": true,
+    "Comfy.Minimap.Visible": false
 }
