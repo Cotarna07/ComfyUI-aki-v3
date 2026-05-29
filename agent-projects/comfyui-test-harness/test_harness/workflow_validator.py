@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import re
 from functools import lru_cache
 from pathlib import Path
 from typing import Any
@@ -11,7 +12,18 @@ from .config import CUSTOM_NODES_ROOT, MODELS_ROOT
 
 IGNORED_UI_NODE_TYPES = {
     "Note",
+    "MarkdownNote",
+    "PrimitiveNode",
+    "Reroute",
+    "SetNode",
+    "GetNode",
+    "SamplerSelector",
+    "SchedulerSelector",
+    "Label (rgthree)",
+    "Fast Groups Bypasser (rgthree)",
 }
+
+UUID_LIKE_NODE_TYPE = re.compile(r"^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$", re.IGNORECASE)
 
 NODE_TYPE_ALIASES = {
     "Text Concatenate": "CR Text Concatenate",
@@ -221,6 +233,10 @@ def validate_node_types(workflow: dict[str, Any], node_inventory: dict[str, Any]
             continue
 
         if node_type in IGNORED_UI_NODE_TYPES:
+            continue
+
+        # 某些 UI-only 组/辅助节点不会出现在 /object_info 中，不能按缺插件处理。
+        if UUID_LIKE_NODE_TYPE.fullmatch(node_type):
             continue
 
         effective_type = NODE_TYPE_ALIASES.get(node_type, node_type)

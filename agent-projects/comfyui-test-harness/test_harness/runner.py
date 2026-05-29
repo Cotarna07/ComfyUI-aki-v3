@@ -1,7 +1,6 @@
 # 测试编排器：协调预检、校验、模型测试、报告生成
 from __future__ import annotations
 
-import json
 from pathlib import Path
 from typing import Any
 
@@ -34,9 +33,22 @@ def _is_probable_workflow(path: Path) -> bool:
     return True
 
 
-def collect_workflow_paths(scope: str = "focus") -> list[Path]:
+def _collect_from_explicit_path(path: Path) -> list[Path]:
+    if path.is_file():
+        return [path] if _is_probable_workflow(path) else []
+    if path.is_dir():
+        return [item for item in sorted(path.rglob("*.json")) if _is_probable_workflow(item)]
+    return []
+
+
+def collect_workflow_paths(scope: str = "focus", explicit_paths: list[Path] | None = None) -> list[Path]:
     """收集需要校验的工作流路径。focus 只测近期重点；all 才做全库巡检。"""
     paths: list[Path] = []
+
+    if explicit_paths:
+        for explicit_path in explicit_paths:
+            paths.extend(_collect_from_explicit_path(explicit_path))
+        return list(dict.fromkeys(paths))
 
     if scope == "focus":
         for path in FOCUS_WORKFLOWS:
@@ -79,7 +91,7 @@ def collect_workflow_paths(scope: str = "focus") -> list[Path]:
     return list(dict.fromkeys(paths))
 
 
-def run_all_tests(scope: str = "focus") -> dict[str, Any]:
+def run_all_tests(scope: str = "focus", explicit_paths: list[Path] | None = None) -> dict[str, Any]:
     """执行完整测试流程，返回结果字典。"""
     results: dict[str, Any] = {
         "timestamp": "",
@@ -111,7 +123,7 @@ def run_all_tests(scope: str = "focus") -> dict[str, Any]:
     # ── 2. 工作流校验 ──
     print("📋 正在校验工作流...")
     node_types = results["node_inventory"].get("node_types", {})
-    workflow_paths = collect_workflow_paths(scope=scope)
+    workflow_paths = collect_workflow_paths(scope=scope, explicit_paths=explicit_paths)
 
     for wf_path in workflow_paths:
         result = validate_workflow(wf_path, node_types if node_types else None)
