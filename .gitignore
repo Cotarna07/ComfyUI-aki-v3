@@ -90,3 +90,4 @@ agent-projects/manga-anime-pipeline/yolo11n.pt
 agent-projects/manga-anime-pipeline/sam2.1_l.pt
 agent-skills/comfyui/runtime/product_image_optimization/hf_download_deps/
 agent-skills/comfyui/workflows/TEST/26-5-29/*.zip
+agent-skills/comfyui/workflows/TEST/*.zip

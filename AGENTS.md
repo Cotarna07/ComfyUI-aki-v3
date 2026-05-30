@@ -9,6 +9,7 @@
 - 涉及 Git 管理、根目录兼容入口或子仓库边界时，再读 agent-skills/docs/workspace_git_rules.md。
 - 涉及 Windows 文本编辑、编码或验证时，再读 agent-skills/docs/windows_dev_defaults.md。
 - 涉及 ComfyUI API 提交、Queue Manager 或自动化执行时，再读 agent-skills/docs/comfyui_api_rules.md。
+- 涉及 ComfyUI 多实例、不同模型系列测试环境、端口切换或依赖隔离时，再读 agent-skills/docs/comfyui_runtime_environments.md 和 agent-projects/comfyui-test-instance/README.md。
 - 涉及电商商品图优化、商品广告主视觉、产品视频关键帧或商品真实性验收时，再读 agent-skills/comfyui/skills/comfyui-product-image-integrity/SKILL.md。
 - 涉及独立项目时，再读 agent-projects/README.md。
 - 涉及新建文件归属判断、项目域归属、runtime 内容规范、ComfyUI 客户端选择或共享能力晋升时，再读 agent-skills/docs/project_governance.md。
@@ -96,6 +97,8 @@
 
 - 使用 D:/ComfyUI-aki-v3/ComfyUI/models 作为主模型目录。
 - 本地自动化优先使用 D:/ComfyUI-aki-v3/.venv/Scripts/python.exe。
+- 当前主 ComfyUI 环境命名为 `aki-main-py313-cu130`，路径为 D:/ComfyUI-aki-v3/python/python.exe + D:/ComfyUI-aki-v3/ComfyUI，默认端口 8188。
+- 不同模型系列或高风险依赖测试优先使用 agent-projects/comfyui-test-instance/config/environments.json 中登记的命名环境；不要把 PMRF、llama-cpp、IndexTTS 等高风险依赖先装进主环境。
 - 可重复执行的 ComfyUI 自动化优先使用 API 工作流。
 - ComfyUI 工作流统一以 agent-skills/comfyui/workflows/ 作为总入口：01-shared/ 放跨项目正式模板，02-project/<project>/ 放项目专用模板，03-source/ 放 imported、vendor、drafts 与历史归档。
 - 导出的 API 工作流默认进入 agent-skills/comfyui/workflows/01-shared/；其余 ComfyUI API 与队列约定详见 agent-skills/docs/comfyui_api_rules.md。

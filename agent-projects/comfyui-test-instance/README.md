@@ -1,57 +1,86 @@
-# ComfyUI 第二测试实例
+# ComfyUI 测试实例与多环境管理
 
-这个项目用于在当前工作区里启动一套与主实例并行的 ComfyUI 测试实例。
+这个项目用于在当前工作区里启动与主实例并行的 ComfyUI 测试环境。它最早只管理一套“第二实例”，现在扩展为按环境名管理多套测试实例。
 
-目标是隔离以下内容：
+目标是隔离这些内容：
 
 - 端口
 - user 目录
 - input / output / temp 目录
 - custom_nodes 启用集合
+- 可选 overlay `.venv`
 
 默认共享以下内容：
 
 - ComfyUI 主代码：`D:\ComfyUI-aki-v3\ComfyUI`
 - 模型目录：`D:\ComfyUI-aki-v3\ComfyUI\models`
 
+## 当前命名环境
+
+| 环境名 | 端口 | 用途 |
+|---|---:|---|
+| `aki-main-py313-cu130` | 8188 | 当前秋叶主环境，只登记，不由本项目创建 |
+| `wan-video-py313-cu130` | 8189 | Wan/LTX/视频工作流测试 |
+| `flux-kontext-py313-cu130` | 8190 | FLUX/Kontext/商品图编辑测试 |
+| `legacy-pmrf-py311-cu124` | 8191 | PMRF/NATTEN/RealESRGAN 旧依赖沙箱，需外部 Python |
+| `api-bridge-py313` | 8192 | 调用局域网 TTS/LLM/翻译/字幕 API |
+
 ## 目录说明
 
 - `config/plugins.json`
-  测试实例要启用的插件清单。
+  旧版第二实例要启用的插件清单，保留兼容。
+- `config/environments.json`
+  多环境清单：环境名、端口、运行根目录、Python 策略、插件集合。
 - `scripts/setup_instance.ps1`
-  初始化测试实例目录、模型共享链接、插件链接；可选创建项目自己的 overlay `.venv`。
+  旧版单实例初始化脚本，保留兼容。
 - `scripts/start_instance.ps1`
-  启动测试实例，默认监听 `127.0.0.1:8190`。
+  旧版单实例启动脚本，保留兼容。默认端口也是 `8190`，不要和 `flux-kontext-py313-cu130` 同时启动。
+- `scripts/setup_environment.ps1`
+  按环境名初始化运行根目录、模型共享链接、插件链接；可选创建环境自己的 overlay `.venv`。
+- `scripts/start_environment.ps1`
+  按环境名启动 ComfyUI。
+- `scripts/list_environments.ps1`
+  打印当前登记的环境清单。
 - `scripts/install_plugin_requirements.ps1`
-  把清单里的插件依赖安装到项目自己的 `.venv`，不污染主实例运行时。
-- `runtime/instance/`
-  第二实例的实际 base directory。
+  旧版单实例依赖安装脚本，保留兼容。
+- `runtime/environments/<env-name>/`
+  多环境实际 base directory。该目录被 Git 忽略，允许包含 `.venv`、`custom_nodes` Junction、独立数据库和运行产物。
 
 ## 推荐用法
 
-首次初始化：
+列出环境：
 
 ```powershell
-pwsh -File .\agent-projects\comfyui-test-instance\scripts\setup_instance.ps1
+powershell -ExecutionPolicy Bypass -File .\agent-projects\comfyui-test-instance\scripts\list_environments.ps1
 ```
 
-如果你要给第二实例单独准备一个 overlay Python 环境：
+初始化所有可管理环境：
 
 ```powershell
-pwsh -File .\agent-projects\comfyui-test-instance\scripts\setup_instance.ps1 -CreateOverlayVenv
-pwsh -File .\agent-projects\comfyui-test-instance\scripts\install_plugin_requirements.ps1 -ContinueOnError
+powershell -ExecutionPolicy Bypass -File .\agent-projects\comfyui-test-instance\scripts\setup_all_environments.ps1
 ```
 
-启动第二实例：
+如果要同时创建 overlay `.venv`：
 
 ```powershell
-pwsh -File .\agent-projects\comfyui-test-instance\scripts\start_instance.ps1
+powershell -ExecutionPolicy Bypass -File .\agent-projects\comfyui-test-instance\scripts\setup_all_environments.ps1 -CreateVenvs
 ```
 
-启动后默认地址：
+启动环境：
 
-- 主实例：`http://127.0.0.1:8188`
-- 第二实例：`http://127.0.0.1:8190`
+```powershell
+powershell -ExecutionPolicy Bypass -File .\agent-projects\comfyui-test-instance\scripts\start_environment.ps1 -Name wan-video-py313-cu130
+powershell -ExecutionPolicy Bypass -File .\agent-projects\comfyui-test-instance\scripts\start_environment.ps1 -Name flux-kontext-py313-cu130
+powershell -ExecutionPolicy Bypass -File .\agent-projects\comfyui-test-instance\scripts\start_environment.ps1 -Name api-bridge-py313
+```
+
+便捷启动入口：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\agent-projects\comfyui-test-instance\scripts\start-wan-video.ps1
+powershell -ExecutionPolicy Bypass -File .\agent-projects\comfyui-test-instance\scripts\start-flux-kontext.ps1
+powershell -ExecutionPolicy Bypass -File .\agent-projects\comfyui-test-instance\scripts\start-api-bridge.ps1
+```
 
 ## 当前已验证状态（2026-05-17）
 
@@ -82,3 +111,12 @@ pwsh -File .\agent-projects\comfyui-test-instance\scripts\start_instance.ps1
 - 可选 overlay `.venv`
 
 如果后续需要更强隔离，可以把第二实例再迁移到单独的 Python 解释器或单独的 ComfyUI 副本，但当前这一步已经足够做插件测试和工作流冒烟。
+
+## 多环境规则（2026-05-30）
+
+- `aki-main-py313-cu130` 是当前主环境，不作为新节点试验场。
+- `wan-video-py313-cu130` 用来测 Wan/LTX/视频类工作流。
+- `flux-kontext-py313-cu130` 用来测 FLUX/Kontext/商品图编辑类工作流。
+- `api-bridge-py313` 用来接局域网音频、LLM、翻译、字幕服务，不重复部署本地 `IndexTTSRun` 或 `llama_cpp_*`。
+- `legacy-pmrf-py311-cu124` 只先创建目录和插件链接；必须准备好兼容 Python/Torch/CUDA 后再配置 `external_python` 启动。
+- 详细规则见 `agent-skills/docs/comfyui_runtime_environments.md`。

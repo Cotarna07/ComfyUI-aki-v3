@@ -72,6 +72,12 @@ ComfyUI 工作流统一以 `agent-skills/comfyui/workflows/` 作为总入口。*
 | LM Studio 大模型 × ComfyUI 测评 | `lmstudio-comfyui-benchmark` | 多模型提示词质量 / 速度基准，产物为 CSV 报告 |
 | Civitai 模型资源（下载 / 元数据） | `civitai-data-manager` | 下载脚本亦统一归入此项目 |
 
+### ComfyUI 多环境例外
+
+`comfyui-test-instance` 的 `runtime/environments/` 是测试实例运行根目录，允许包含 `.venv`、`custom_nodes` Junction、独立 `user/input/output/temp/logs` 与共享 `models` Junction。这是为了隔离 ComfyUI 节点依赖和端口，不按普通业务 runtime 的“只放产物”规则处理。
+
+环境名称、端口、插件集合和 Python 策略统一登记在 `agent-projects/comfyui-test-instance/config/environments.json`。后续 agent 不要临时发明端口或环境名。
+
 ---
 
 ## 三、共享基础能力：晋升门槛

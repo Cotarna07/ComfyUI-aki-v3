@@ -1,0 +1,155 @@
+{
+  "version": 1,
+  "workspace_root": "D:/ComfyUI-aki-v3",
+  "main_comfy_root": "D:/ComfyUI-aki-v3/ComfyUI",
+  "embedded_python": "D:/ComfyUI-aki-v3/python/python.exe",
+  "shared_model_root": "D:/ComfyUI-aki-v3/ComfyUI/models",
+  "default_listen": "127.0.0.1",
+  "default_extra_args": [
+    "--preview-method",
+    "auto",
+    "--disable-cuda-malloc"
+  ],
+  "environments": [
+    {
+      "name": "aki-main-py313-cu130",
+      "managed": false,
+      "port": 8188,
+      "python_mode": "embedded-main",
+      "runtime_root": "D:/ComfyUI-aki-v3/ComfyUI",
+      "venv_path": "",
+      "status": "existing-main",
+      "purpose": "Current Aki main ComfyUI runtime for stable daily work.",
+      "notes": [
+        "This environment already exists and is not created by the test-instance scripts.",
+        "Do not install high-risk experimental dependencies here first."
+      ],
+      "plugins": []
+    },
+    {
+      "name": "wan-video-py313-cu130",
+      "managed": true,
+      "port": 8189,
+      "python_mode": "overlay-venv",
+      "runtime_root": "runtime/environments/wan-video-py313-cu130",
+      "venv_path": "runtime/environments/wan-video-py313-cu130/.venv",
+      "status": "bootstrapped",
+      "purpose": "Wan/LTX/video workflow testing with a video-oriented custom node set.",
+      "notes": [
+        "Use this before touching the main environment when testing Wan 2.x, LTX, interpolation, or video post-processing workflows.",
+        "Shares the main model directory through a junction."
+      ],
+      "plugins": [
+        "ComfyUI-Manager",
+        "comfyui-queue-manager",
+        "ComfyUI-KJNodes",
+        "rgthree-comfy",
+        "ComfyUI-VideoHelperSuite",
+        "ComfyUI-WanVideoWrapper",
+        "ComfyUI-WanStartEndFramesNative",
+        "ComfyUI-LTXVideo",
+        "ComfyUI-JakeUpgrade",
+        "ComfyUI-VFI",
+        "ComfyUI-Frame-Interpolation",
+        "ComfyUI-GIMM-VFI",
+        "comfyui-mmaudio",
+        "SaveVideoRGBA",
+        "ComfyUI-Easy-Use",
+        "ComfyUI_Comfyroll_CustomNodes",
+        "ControlFlowUtils",
+        "CRT-Nodes",
+        "comfyui-workflow-to-api-converter-endpoint"
+      ]
+    },
+    {
+      "name": "flux-kontext-py313-cu130",
+      "managed": true,
+      "port": 8190,
+      "python_mode": "overlay-venv",
+      "runtime_root": "runtime/environments/flux-kontext-py313-cu130",
+      "venv_path": "runtime/environments/flux-kontext-py313-cu130/.venv",
+      "status": "bootstrapped",
+      "purpose": "FLUX/Kontext/product-image edit testing with image, mask, background, and upscale nodes.",
+      "notes": [
+        "Use this for FLUX Fill/Redux/Kontext, product background, RMBG, LayerStyle, and image-edit workflows.",
+        "Keep PMRF and llama-cpp experiments out of this environment until they have their own compatibility plan."
+      ],
+      "plugins": [
+        "ComfyUI-Manager",
+        "comfyui-queue-manager",
+        "ComfyUI-KJNodes",
+        "rgthree-comfy",
+        "ComfyUI_Fill-Nodes",
+        "ComfyUI_LayerStyle",
+        "ComfyUI-BRIA_AI-RMBG",
+        "ComfyUI-RMBG",
+        "ComfyUI-Inspyrenet-Rembg",
+        "ComfyUI-segment-anything-2",
+        "ComfyUI-UmeAiRT-Toolkit",
+        "ComfyUI_essentials",
+        "ComfyUI_IPAdapter_plus",
+        "ComfyUI-Impact-Pack",
+        "ComfyUI-Inspire-Pack",
+        "ComfyUI-GGUF",
+        "ComfyUI_UltimateSDUpscale",
+        "Comfyui-PainterFLF2V",
+        "ComfyUI-VideoHelperSuite",
+        "ComfyUI-Easy-Use",
+        "ComfyUI_Comfyroll_CustomNodes",
+        "ComfyUI-Custom-Scripts",
+        "comfyui-workflow-to-api-converter-endpoint"
+      ]
+    },
+    {
+      "name": "api-bridge-py313",
+      "managed": true,
+      "port": 8192,
+      "python_mode": "overlay-venv",
+      "runtime_root": "runtime/environments/api-bridge-py313",
+      "venv_path": "runtime/environments/api-bridge-py313/.venv",
+      "status": "bootstrapped",
+      "purpose": "Lightweight API-calling environment for LAN TTS/LLM/translation services.",
+      "notes": [
+        "Use this when another LAN machine hosts IndexTTS, LLM, subtitle, or translator services.",
+        "Prefer HTTP/OpenAI-compatible/Ollama-compatible client nodes over local llama-cpp or local TTS nodes."
+      ],
+      "plugins": [
+        "ComfyUI-Manager",
+        "comfyui-queue-manager",
+        "ComfyUI_RH_OpenAPI",
+        "ComfyUI_RH_LLM_API",
+        "Comfyui-YK-runninghub-PRO",
+        "comfyui-ollama",
+        "ComfyUI_Custom_Nodes_AlekPet",
+        "ComfyUI-PromptRelay",
+        "ComfyUI-VideoHelperSuite",
+        "rgthree-comfy",
+        "comfyui-workflow-to-api-converter-endpoint"
+      ]
+    },
+    {
+      "name": "legacy-pmrf-py311-cu124",
+      "managed": true,
+      "port": 8191,
+      "python_mode": "external-python",
+      "runtime_root": "runtime/environments/legacy-pmrf-py311-cu124",
+      "venv_path": "",
+      "external_python": "",
+      "status": "directory-only",
+      "purpose": "Compatibility sandbox for PMRF/NATTEN/RealESRGAN/BasicSR-style legacy dependencies.",
+      "notes": [
+        "This profile creates the instance directory and plugin links only.",
+        "Fill external_python after a Python 3.11/CUDA 12.4 compatible runtime is prepared.",
+        "Do not start this profile with the main Python 3.13/CUDA 13 runtime."
+      ],
+      "plugins": [
+        "ComfyUI-Manager",
+        "comfyui-queue-manager",
+        "ComfyUI-PMRF",
+        "ComfyUI-KJNodes",
+        "rgthree-comfy",
+        "ComfyUI-VideoHelperSuite"
+      ]
+    }
+  ]
+}
