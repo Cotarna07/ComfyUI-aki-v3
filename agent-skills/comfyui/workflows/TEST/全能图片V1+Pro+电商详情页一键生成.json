@@ -102,9 +102,7 @@
 					"localized_name":"匹配上一层大小"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"HAIGC_Layer",
 			"mode":0,
 			"bgcolor":"#535",
@@ -118,9 +116,7 @@
 			],
 			"id":212,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"HAIGC_Layer",
 				"ttNbgOverride":{
 					"bgcolor":"#535",
@@ -174,9 +170,7 @@
 					"localized_name":"间隔符"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"easy promptConcat",
 			"mode":0,
 			"bgcolor":"#535",
@@ -190,9 +184,7 @@
 			],
 			"id":190,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"easy promptConcat"
 			},
 			"order":8
@@ -202,17 +194,13 @@
 				{
 					"shape":6,
 					"name":"text",
-					"links":[
-						
-					],
+					"links":[],
 					"type":"STRING",
 					"localized_name":"text"
 				}
 			],
 			"color":"#323",
-			"widgets_values":[
-				
-			],
+			"widgets_values":[],
 			"inputs":[
 				{
 					"name":"text",
@@ -221,9 +209,7 @@
 					"localized_name":"text"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"ShowText|pysssss",
 			"mode":0,
 			"bgcolor":"#535",
@@ -237,9 +223,7 @@
 			],
 			"id":207,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"ShowText|pysssss"
 			},
 			"order":13
@@ -288,9 +272,7 @@
 					"localized_name":"间隔符"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"easy promptConcat",
 			"mode":0,
 			"bgcolor":"#535",
@@ -304,9 +286,7 @@
 			],
 			"id":200,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"easy promptConcat"
 			},
 			"order":10
@@ -355,9 +335,7 @@
 					"localized_name":"间隔符"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"easy promptConcat",
 			"mode":0,
 			"bgcolor":"#535",
@@ -371,9 +349,7 @@
 			],
 			"id":191,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"easy promptConcat"
 			},
 			"order":9
@@ -417,9 +393,7 @@
 					"localized_name":"option"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"ProcessString",
 			"mode":0,
 			"bgcolor":"#535",
@@ -433,9 +407,7 @@
 			],
 			"id":193,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"ProcessString"
 			},
 			"order":12
@@ -495,9 +467,7 @@
 					"localized_name":"最大行数"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"easy promptLine",
 			"mode":0,
 			"bgcolor":"#535",
@@ -511,9 +481,7 @@
 			],
 			"id":202,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"easy promptLine"
 			},
 			"order":14
@@ -522,9 +490,7 @@
 			"outputs":[
 				{
 					"name":"output",
-					"links":[
-						
-					],
+					"links":[],
 					"label":"output",
 					"type":"*",
 					"localized_name":"output"
@@ -550,9 +516,7 @@
 					"localized_name":"anything"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"easy showAnything",
 			"mode":0,
 			"bgcolor":"#535",
@@ -566,9 +530,7 @@
 			],
 			"id":195,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"easy showAnything"
 			},
 			"order":15
@@ -627,9 +589,7 @@
 					"localized_name":"间距颜色"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"HAIGC_CombineUnits",
 			"mode":0,
 			"bgcolor":"#535",
@@ -643,9 +603,7 @@
 			],
 			"id":213,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"HAIGC_CombineUnits",
 				"ttNbgOverride":{
 					"bgcolor":"#535",
@@ -685,9 +643,7 @@
 					"localized_name":"文件名前缀"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"SaveImage",
 			"mode":0,
 			"bgcolor":"#535",
@@ -734,9 +690,7 @@
 					"localized_name":"text"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"Text",
 			"mode":0,
 			"bgcolor":"#353",
@@ -750,9 +704,7 @@
 			],
 			"id":198,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"Text"
 			},
 			"order":0
@@ -783,9 +735,7 @@
 					"localized_name":"text"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"Text",
 			"mode":0,
 			"bgcolor":"#353",
@@ -799,9 +749,7 @@
 			],
 			"id":187,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"Text"
 			},
 			"order":1
@@ -832,9 +780,7 @@
 					"localized_name":"text"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"Text",
 			"mode":0,
 			"bgcolor":"#353",
@@ -848,9 +794,7 @@
 			],
 			"id":201,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"Text"
 			},
 			"order":2
@@ -961,9 +905,7 @@
 					"localized_name":"seed"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"RH_LLMAPI_Pro_Node",
 			"mode":0,
 			"bgcolor":"#535",
@@ -977,17 +919,13 @@
 			],
 			"id":192,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"RH_LLMAPI_Pro_Node"
 			},
 			"order":11
 		},
 		{
-			"outputs":[
-				
-			],
+			"outputs":[],
 			"color":"#323",
 			"widgets_values":[
 				"ComfyUI_PSD"
@@ -1032,9 +970,7 @@
 					"localized_name":"文件名前缀"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"HAIGC_SavePSD",
 			"mode":0,
 			"bgcolor":"#535",
@@ -1048,9 +984,7 @@
 			],
 			"id":214,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"HAIGC_SavePSD",
 				"ttNbgOverride":{
 					"bgcolor":"#535",
@@ -1073,9 +1007,7 @@
 				}
 			],
 			"color":"#323",
-			"widgets_values":[
-				
-			],
+			"widgets_values":[],
 			"inputs":[
 				{
 					"name":"text",
@@ -1084,9 +1016,7 @@
 					"localized_name":"text"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"ShowText|pysssss",
 			"mode":0,
 			"bgcolor":"#535",
@@ -1100,9 +1030,7 @@
 			],
 			"id":206,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"ShowText|pysssss"
 			},
 			"order":7
@@ -1145,9 +1073,7 @@
 					"localized_name":"选择文件上传"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"LoadImage",
 			"mode":0,
 			"bgcolor":"#535",
@@ -1161,9 +1087,7 @@
 			],
 			"id":245,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"LoadImage",
 				"ttNbgOverride":{
 					"bgcolor":"#535",
@@ -1211,9 +1135,7 @@
 					"localized_name":"选择文件上传"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"LoadImage",
 			"mode":0,
 			"bgcolor":"#535",
@@ -1227,9 +1149,7 @@
 			],
 			"id":246,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"LoadImage",
 				"ttNbgOverride":{
 					"bgcolor":"#535",
@@ -1344,9 +1264,7 @@
 					"localized_name":"seed"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"RH_LLMAPI_Pro_Node",
 			"mode":0,
 			"bgcolor":"#353",
@@ -1360,9 +1278,7 @@
 			],
 			"id":189,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"RH_LLMAPI_Pro_Node"
 			},
 			"order":6
@@ -1381,9 +1297,7 @@
 				},
 				{
 					"name":"MASK",
-					"links":[
-						
-					],
+					"links":[],
 					"label":"遮罩",
 					"type":"MASK",
 					"localized_name":"遮罩"
@@ -1413,9 +1327,7 @@
 					"localized_name":"选择文件上传"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"LoadImage",
 			"mode":0,
 			"bgcolor":"#353",
@@ -1582,9 +1494,7 @@
 					"localized_name":"channel"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"RH_Nano_Banana2_Image2Image",
 			"mode":0,
 			"bgcolor":"#535",
@@ -1598,9 +1508,7 @@
 			],
 			"id":211,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"RH_Nano_Banana2_Image2Image",
 				"ttNbgOverride":{
 					"bgcolor":"#535",
@@ -1612,12 +1520,8 @@
 		}
 	],
 	"extra":{
-		"links_added_by_ue":[
-			
-		],
-		"ue_links":[
-			
-		],
+		"links_added_by_ue":[],
+		"ue_links":[],
 		"0246.VERSION":[
 			0,
 			0,
@@ -1635,9 +1539,7 @@
 		{
 			"color":"#8A8",
 			"font_size":24,
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":15,
 			"title":"Group",
 			"bounding":[
@@ -1650,9 +1552,7 @@
 		{
 			"color":"#a1309b",
 			"font_size":24,
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":18,
 			"title":"RH NanoBanana2 pro方案",
 			"bounding":[
@@ -1665,9 +1565,7 @@
 		{
 			"color":"#8A8",
 			"font_size":24,
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":20,
 			"title":"提示词输入",
 			"bounding":[
@@ -1680,9 +1578,7 @@
 		{
 			"color":"#a1309b",
 			"font_size":24,
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":22,
 			"title":"运行区",
 			"bounding":[
@@ -1695,9 +1591,7 @@
 		{
 			"color":"#a1309b",
 			"font_size":24,
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":24,
 			"title":"合并长图",
 			"bounding":[
@@ -1863,9 +1757,7 @@
 		]
 	],
 	"id":"c2cb200b-93e6-497b-8bde-dc003c02b138",
-	"config":{
-		
-	},
+	"config":{},
 	"version":0.4,
 	"last_node_id":246,
 	"revision":0

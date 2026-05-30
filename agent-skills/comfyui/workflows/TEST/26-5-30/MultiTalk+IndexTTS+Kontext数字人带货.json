@@ -28,12 +28,8 @@
 				"offload_device",
 				"fp8_e4m3fn"
 			],
-			"inputs":[
-				
-			],
-			"flags":{
-				
-			},
+			"inputs":[],
+			"flags":{},
 			"id":1,
 			"type":"LoadWanVideoT5TextEncoder",
 			"properties":{
@@ -103,9 +99,7 @@
 					"localized_name":"negative_image"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":2,
 			"type":"WanVideoClipVisionEncode",
 			"properties":{
@@ -153,9 +147,7 @@
 					"localized_name":"samples"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"WanVideoDecode",
 			"mode":0,
 			"bgcolor":"#533",
@@ -228,9 +220,7 @@
 					"localized_name":"audio"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":4,
 			"type":"AudioSeparation",
 			"properties":{
@@ -264,12 +254,8 @@
 			"widgets_values":[
 				"clip_vision_h.safetensors"
 			],
-			"inputs":[
-				
-			],
-			"flags":{
-				
-			},
+			"inputs":[],
+			"flags":{},
 			"id":5,
 			"type":"CLIPVisionLoader",
 			"properties":{
@@ -314,9 +300,7 @@
 					"localized_name":"audio"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":6,
 			"type":"AudioCrop",
 			"properties":{
@@ -356,12 +340,8 @@
 				true,
 				128
 			],
-			"inputs":[
-				
-			],
-			"flags":{
-				
-			},
+			"inputs":[],
+			"flags":{},
 			"id":7,
 			"type":"WanVideoTorchCompileSettings",
 			"properties":{
@@ -413,9 +393,7 @@
 					"localized_name":"blocks"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":8,
 			"type":"WanVideoLoraSelect",
 			"properties":{
@@ -450,12 +428,8 @@
 				"WanVideo_2_1_Multitalk_14B_fp8_e4m3fn.safetensors",
 				"fp16"
 			],
-			"inputs":[
-				
-			],
-			"flags":{
-				
-			},
+			"inputs":[],
+			"flags":{},
 			"id":9,
 			"type":"MultiTalkModelLoader",
 			"properties":{
@@ -584,9 +558,7 @@
 					"type":"INT"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":10,
 			"type":"WanVideoImageToVideoEncode",
 			"properties":{
@@ -745,9 +717,7 @@
 					"localized_name":"multitalk_embeds"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":11,
 			"type":"WanVideoSampler",
 			"properties":{
@@ -838,9 +808,7 @@
 					"localized_name":"multitalk_model"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":12,
 			"type":"WanVideoModelLoader",
 			"properties":{
@@ -864,9 +832,7 @@
 				},
 				{
 					"name":"audio",
-					"links":[
-						
-					],
+					"links":[],
 					"label":"audio",
 					"type":"AUDIO",
 					"localized_name":"audio"
@@ -912,9 +878,7 @@
 					"type":"INT"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":13,
 			"type":"MultiTalkWav2VecEmbeds",
 			"properties":{
@@ -950,12 +914,8 @@
 				"fp16",
 				"main_device"
 			],
-			"inputs":[
-				
-			],
-			"flags":{
-				
-			},
+			"inputs":[],
+			"flags":{},
 			"id":14,
 			"type":"DownloadAndLoadWav2VecModel",
 			"properties":{
@@ -984,12 +944,8 @@
 				"Wan2_1_VAE_bf16.safetensors",
 				"bf16"
 			],
-			"inputs":[
-				
-			],
-			"flags":{
-				
-			},
+			"inputs":[],
+			"flags":{},
 			"type":"WanVideoVAELoader",
 			"mode":0,
 			"bgcolor":"#533",
@@ -1037,12 +993,8 @@
 				true,
 				15
 			],
-			"inputs":[
-				
-			],
-			"flags":{
-				
-			},
+			"inputs":[],
+			"flags":{},
 			"id":16,
 			"type":"WanVideoBlockSwap",
 			"properties":{
@@ -1126,9 +1078,7 @@
 					"localized_name":"vae"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":17,
 			"type":"VHS_VideoCombine",
 			"properties":{
@@ -1139,9 +1089,7 @@
 			"order":34
 		},
 		{
-			"outputs":[
-				
-			],
+			"outputs":[],
 			"color":"#2a363b",
 			"widgets_values":[
 				""
@@ -1155,9 +1103,7 @@
 					"localized_name":"images"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"PreviewImage",
 			"mode":0,
 			"bgcolor":"#3f5159",
@@ -1209,9 +1155,7 @@
 					"localized_name":"image2"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"ImageConcanate",
 			"mode":0,
 			"bgcolor":"#3f5159",
@@ -1231,9 +1175,7 @@
 		},
 		{
 			"mode":0,
-			"outputs":[
-				
-			],
+			"outputs":[],
 			"size":[
 				210,
 				246
@@ -1254,9 +1196,7 @@
 					"localized_name":"images"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":20,
 			"type":"PreviewImage",
 			"properties":{
@@ -1330,9 +1270,7 @@
 					"localized_name":"mask"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"LayerUtility: ImageScaleByAspectRatio V2",
 			"mode":0,
 			"bgcolor":"#3f5159",
@@ -1351,9 +1289,7 @@
 			"order":20
 		},
 		{
-			"outputs":[
-				
-			],
+			"outputs":[],
 			"color":"#2a363b",
 			"widgets_values":[
 				"ComfyUI",
@@ -1368,9 +1304,7 @@
 					"localized_name":"images"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"SaveImage",
 			"mode":0,
 			"bgcolor":"#3f5159",
@@ -1447,9 +1381,7 @@
 					"type":"STRING"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"RH_ComfyFluxKontext",
 			"mode":0,
 			"bgcolor":"#3f5159",
@@ -1491,12 +1423,8 @@
 				"image",
 				""
 			],
-			"inputs":[
-				
-			],
-			"flags":{
-				
-			},
+			"inputs":[],
+			"flags":{},
 			"type":"LoadImage",
 			"mode":0,
 			"bgcolor":"#3f5159",
@@ -1538,12 +1466,8 @@
 				"image",
 				""
 			],
-			"inputs":[
-				
-			],
-			"flags":{
-				
-			},
+			"inputs":[],
+			"flags":{},
 			"type":"LoadImage",
 			"mode":0,
 			"bgcolor":"#3f5159",
@@ -1580,12 +1504,8 @@
 				"randomize",
 				"force_english"
 			],
-			"inputs":[
-				
-			],
-			"flags":{
-				
-			},
+			"inputs":[],
+			"flags":{},
 			"type":"RH_Translator",
 			"mode":0,
 			"bgcolor":"#353",
@@ -1654,9 +1574,7 @@
 					"type":"STRING"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":27,
 			"type":"WanVideoTextEncode",
 			"properties":{
@@ -1690,12 +1608,8 @@
 			"widgets_values":[
 				"一个女性正在介绍着产品，“”"
 			],
-			"inputs":[
-				
-			],
-			"flags":{
-				
-			},
+			"inputs":[],
+			"flags":{},
 			"id":28,
 			"type":"String Literal",
 			"title":"MultiTalk",
@@ -1721,12 +1635,8 @@
 			"widgets_values":[
 				200
 			],
-			"inputs":[
-				
-			],
-			"flags":{
-				
-			},
+			"inputs":[],
+			"flags":{},
 			"type":"INTConstant",
 			"mode":0,
 			"bgcolor":"#29699c",
@@ -1805,9 +1715,7 @@
 					"localized_name":"image"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":31,
 			"type":"ImageResizeKJv2",
 			"properties":{
@@ -1849,9 +1757,7 @@
 					"localized_name":"anything"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":32,
 			"type":"LayerUtility: PurgeVRAM V2",
 			"properties":{
@@ -1861,9 +1767,7 @@
 		},
 		{
 			"mode":0,
-			"outputs":[
-				
-			],
+			"outputs":[],
 			"size":[
 				433.8606262207031,
 				167.7429962158203
@@ -1884,9 +1788,7 @@
 					"localized_name":"audio"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":33,
 			"type":"PreviewAudio",
 			"properties":{
@@ -1956,9 +1858,7 @@
 					"type":"STRING"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":35,
 			"type":"IndexTTSRun",
 			"properties":{
@@ -1990,12 +1890,8 @@
 			"widgets_values":[
 				"这款香水的前调是清新的意大利柑橘与格拉斯紫罗兰叶的完美邂逅，就像清晨第一缕阳光穿透露珠的瞬间。"
 			],
-			"inputs":[
-				
-			],
-			"flags":{
-				
-			},
+			"inputs":[],
+			"flags":{},
 			"id":34,
 			"type":"String Literal",
 			"title":"语言",
@@ -2031,12 +1927,8 @@
 				"",
 				""
 			],
-			"inputs":[
-				
-			],
-			"flags":{
-				
-			},
+			"inputs":[],
+			"flags":{},
 			"id":36,
 			"type":"LoadAudio",
 			"properties":{
@@ -2046,9 +1938,7 @@
 		}
 	],
 	"extra":{
-		"ue_links":[
-			
-		],
+		"ue_links":[],
 		"0246.VERSION":[
 			0,
 			0,
@@ -2062,9 +1952,7 @@
 			"scale":0.13513057093103997
 		}
 	},
-	"groups":[
-		
-	],
+	"groups":[],
 	"links":[
 		[
 			1,
@@ -2388,9 +2276,7 @@
 		]
 	],
 	"id":"41613987-b717-427f-aba7-318bf1623790",
-	"config":{
-		
-	},
+	"config":{},
 	"version":0.4,
 	"last_node_id":36,
 	"revision":0

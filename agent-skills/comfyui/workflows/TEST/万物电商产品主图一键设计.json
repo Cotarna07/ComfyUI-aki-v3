@@ -46,9 +46,7 @@
 					"localized_name":"choose file to upload"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"LoadImage",
 			"mode":0,
 			"bgcolor":"#353",
@@ -62,9 +60,7 @@
 			],
 			"id":3,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"LoadImage"
 			},
 			"order":0
@@ -73,9 +69,7 @@
 			"outputs":[
 				{
 					"name":"IMAGE",
-					"links":[
-						
-					],
+					"links":[],
 					"label":"IMAGE",
 					"type":"IMAGE",
 					"localized_name":"IMAGE"
@@ -112,9 +106,7 @@
 					"localized_name":"choose file to upload"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"LoadImage",
 			"mode":0,
 			"bgcolor":"#353",
@@ -128,9 +120,7 @@
 			],
 			"id":32,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"LoadImage"
 			},
 			"order":1
@@ -179,9 +169,7 @@
 			],
 			"id":8,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"JjkText"
 			},
 			"order":2
@@ -348,9 +336,7 @@
 					"localized_name":"seed"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"RH_RhartImageNG31FlashImageToImage",
 			"mode":0,
 			"bgcolor":"#653",
@@ -364,9 +350,7 @@
 			],
 			"id":33,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"RH_RhartImageNG31FlashImageToImage"
 			},
 			"order":5
@@ -376,9 +360,7 @@
 			"outputs":[
 				{
 					"name":"IMAGE",
-					"links":[
-						
-					],
+					"links":[],
 					"label":"IMAGE",
 					"type":"IMAGE",
 					"localized_name":"IMAGE"
@@ -451,15 +433,11 @@
 					"localized_name":"spacing_color"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":28,
 			"type":"ImageStitch",
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"ImageStitch"
 			},
 			"order":7
@@ -503,15 +481,11 @@
 					"localized_name":"filename_prefix"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":19,
 			"type":"SaveImage",
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"SaveImage"
 			},
 			"order":4
@@ -555,33 +529,23 @@
 					"localized_name":"filename_prefix"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":31,
 			"type":"SaveImage",
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"SaveImage"
 			},
 			"order":6
 		},
 		{
-			"outputs":[
-				
-			],
+			"outputs":[],
 			"color":"#432",
 			"widgets_values":[
 				"领取1000积分免费用，用验证码登录，注册过了可以绑定邀请码rh-v1124，也送1000积分每天送100积分，nano2每天各免费生成3次，4.18-5.1期间送3元体验金\nhttps://www.runninghub.cn/?inviteCode=rh-v1124\n\n\nT8大佬的创作平台：\nhttps://aix.studio/?partnerCode=16561\n通过链接注册送300积分，如果注册只有100积分，右上角有个礼盒图标，点击输入绑定邀请码16561，就会有300点积分\n\n免费工作流教程、免费生图、AI工作流整合包\nhttps://cxpzdfgevg9.feishu.cn/wiki/VNVBwFLpjiPftbkoejsct13CnCb?from=from_copylink\n\n云端镜像：\n网页所搜仙宫云或复制网址即可https://www.xiangongyun.com/register/IN42M7\n邀请码输入IN42M7，实名注册平台会赠送8元使用金额"
 			],
-			"inputs":[
-				
-			],
-			"flags":{
-				
-			},
+			"inputs":[],
+			"flags":{},
 			"type":"Note",
 			"mode":0,
 			"bgcolor":"#653",
@@ -594,20 +558,14 @@
 				468.6352233886719
 			],
 			"id":34,
-			"properties":{
-				
-			},
+			"properties":{},
 			"order":3
 		}
 	],
 	"extra":{
-		"links_added_by_ue":[
-			
-		],
+		"links_added_by_ue":[],
 		"VHS_KeepIntermediate":true,
-		"ue_links":[
-			
-		],
+		"ue_links":[],
 		"VHS_MetadataImage":true,
 		"0246.VERSION":[
 			0,
@@ -629,9 +587,7 @@
 		{
 			"color":"#3f789e",
 			"font_size":50,
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":1,
 			"title":"如需批量生成可联系本人",
 			"bounding":[
@@ -644,9 +600,7 @@
 		{
 			"color":"#3f789e",
 			"font_size":60,
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":2,
 			"title":"      全平台统一名称，B站可铯创意cosaer",
 			"bounding":[
@@ -659,9 +613,7 @@
 		{
 			"color":"#3f789e",
 			"font_size":50,
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":3,
 			"title":"     万物电商主图设计，本地可实现批量运行",
 			"bounding":[
@@ -723,9 +675,7 @@
 		]
 	],
 	"id":"0531fc78-9a58-458d-9545-c12a6ec4fa42",
-	"config":{
-		
-	},
+	"config":{},
 	"version":0.4,
 	"last_node_id":34,
 	"revision":0

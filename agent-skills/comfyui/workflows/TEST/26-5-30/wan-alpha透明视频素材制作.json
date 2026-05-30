@@ -43,9 +43,7 @@
 					"localized_name":"模型强度"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"LoraLoaderModelOnly",
 			"mode":0,
 			"bgcolor":"#355",
@@ -59,9 +57,7 @@
 			],
 			"id":59,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"LoraLoaderModelOnly"
 			},
 			"order":6
@@ -102,9 +98,7 @@
 					"localized_name":"剪枝类型"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"UNETLoader",
 			"mode":0,
 			"bgcolor":"#355",
@@ -118,9 +112,7 @@
 			],
 			"id":37,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"UNETLoader"
 			},
 			"order":0
@@ -167,9 +159,7 @@
 					"localized_name":"模型强度"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"LoraLoaderModelOnly",
 			"mode":0,
 			"bgcolor":"#355",
@@ -183,9 +173,7 @@
 			],
 			"id":65,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"LoraLoaderModelOnly"
 			},
 			"order":9
@@ -237,9 +225,7 @@
 					"localized_name":"设备"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"CLIPLoader",
 			"mode":0,
 			"bgcolor":"#355",
@@ -253,9 +239,7 @@
 			],
 			"id":38,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"CLIPLoader"
 			},
 			"order":1
@@ -286,9 +270,7 @@
 					"localized_name":"vae名称"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"VAELoader",
 			"mode":0,
 			"bgcolor":"#355",
@@ -302,9 +284,7 @@
 			],
 			"id":51,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"VAELoader"
 			},
 			"order":2
@@ -335,9 +315,7 @@
 					"localized_name":"vae名称"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"VAELoader",
 			"mode":0,
 			"bgcolor":"#355",
@@ -351,9 +329,7 @@
 			],
 			"id":39,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"VAELoader"
 			},
 			"order":3
@@ -392,9 +368,7 @@
 					"localized_name":"偏移"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"ModelSamplingSD3",
 			"mode":0,
 			"bgcolor":"#355",
@@ -408,9 +382,7 @@
 			],
 			"id":48,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"ModelSamplingSD3"
 			},
 			"order":10
@@ -517,9 +489,7 @@
 					"localized_name":"降噪"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"KSampler",
 			"mode":0,
 			"bgcolor":"#355",
@@ -533,9 +503,7 @@
 			],
 			"id":3,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"KSampler"
 			},
 			"order":11
@@ -554,9 +522,7 @@
 				}
 			],
 			"color":"#233",
-			"widgets_values":[
-				
-			],
+			"widgets_values":[],
 			"inputs":[
 				{
 					"name":"samples",
@@ -573,9 +539,7 @@
 					"localized_name":"vae"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"VAEDecode",
 			"mode":0,
 			"bgcolor":"#355",
@@ -589,9 +553,7 @@
 			],
 			"id":8,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"VAEDecode"
 			},
 			"order":12
@@ -629,9 +591,7 @@
 					"localized_name":"通道"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"ImageToMask",
 			"mode":0,
 			"bgcolor":"#355",
@@ -645,9 +605,7 @@
 			],
 			"id":76,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"ImageToMask"
 			},
 			"order":14
@@ -665,9 +623,7 @@
 				}
 			],
 			"color":"#233",
-			"widgets_values":[
-				
-			],
+			"widgets_values":[],
 			"inputs":[
 				{
 					"name":"mask",
@@ -677,9 +633,7 @@
 					"localized_name":"遮罩"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"InvertMask",
 			"mode":0,
 			"bgcolor":"#355",
@@ -693,9 +647,7 @@
 			],
 			"id":75,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"InvertMask"
 			},
 			"order":15
@@ -705,9 +657,7 @@
 				{
 					"name":"CONDITIONING",
 					"slot_index":0,
-					"links":[
-						
-					],
+					"links":[],
 					"label":"条件",
 					"type":"CONDITIONING",
 					"localized_name":"条件"
@@ -733,9 +683,7 @@
 					"localized_name":"文本"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"CLIPTextEncode",
 			"mode":0,
 			"bgcolor":"#355",
@@ -749,9 +697,7 @@
 			],
 			"id":81,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"CLIPTextEncode"
 			},
 			"order":4
@@ -813,9 +759,7 @@
 					"localized_name":"only_preview"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"SaveVideoRGBA",
 			"mode":0,
 			"bgcolor":"#355",
@@ -829,9 +773,7 @@
 			],
 			"id":79,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"SaveVideoRGBA"
 			},
 			"order":17
@@ -870,9 +812,7 @@
 					"localized_name":"文本"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"CLIPTextEncode",
 			"mode":0,
 			"bgcolor":"#355",
@@ -886,9 +826,7 @@
 			],
 			"id":6,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"CLIPTextEncode"
 			},
 			"order":8
@@ -927,9 +865,7 @@
 					"localized_name":"文本"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"CLIPTextEncode",
 			"mode":0,
 			"bgcolor":"#355",
@@ -943,9 +879,7 @@
 			],
 			"id":7,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"CLIPTextEncode"
 			},
 			"order":7
@@ -964,9 +898,7 @@
 				}
 			],
 			"color":"#233",
-			"widgets_values":[
-				
-			],
+			"widgets_values":[],
 			"inputs":[
 				{
 					"name":"samples",
@@ -983,9 +915,7 @@
 					"localized_name":"vae"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"VAEDecode",
 			"mode":0,
 			"bgcolor":"#355",
@@ -999,9 +929,7 @@
 			],
 			"id":52,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"VAEDecode"
 			},
 			"order":13
@@ -1020,9 +948,7 @@
 				}
 			],
 			"color":"#233",
-			"widgets_values":[
-				
-			],
+			"widgets_values":[],
 			"inputs":[
 				{
 					"name":"image",
@@ -1039,9 +965,7 @@
 					"localized_name":"阿尔法"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"JoinImageWithAlpha",
 			"mode":0,
 			"bgcolor":"#355",
@@ -1055,9 +979,7 @@
 			],
 			"id":74,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"JoinImageWithAlpha"
 			},
 			"order":16
@@ -1120,9 +1042,7 @@
 					"localized_name":"批量大小"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"EmptyHunyuanLatentVideo",
 			"mode":0,
 			"bgcolor":"#355",
@@ -1136,17 +1056,13 @@
 			],
 			"id":40,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"EmptyHunyuanLatentVideo"
 			},
 			"order":5
 		},
 		{
-			"outputs":[
-				
-			],
+			"outputs":[],
 			"color":"#233",
 			"widgets_values":[
 				"ComfyUI"
@@ -1168,9 +1084,7 @@
 					"localized_name":"文件名前缀"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"SaveImage",
 			"mode":0,
 			"bgcolor":"#355",
@@ -1184,9 +1098,7 @@
 			],
 			"id":83,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"SaveImage"
 			},
 			"order":18
@@ -1194,13 +1106,9 @@
 	],
 	"extra":{
 		"VHS_KeepIntermediate":true,
-		"links_added_by_ue":[
-			
-		],
+		"links_added_by_ue":[],
 		"VHS_MetadataImage":true,
-		"ue_links":[
-			
-		],
+		"ue_links":[],
 		"0246.VERSION":[
 			0,
 			0,
@@ -1221,9 +1129,7 @@
 		{
 			"color":"#b06634",
 			"font_size":120,
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":1,
 			"title":"🐼B站、YouTube、公众号：嘟嘟AI绘画趣味学🐼",
 			"bounding":[
@@ -1389,9 +1295,7 @@
 		]
 	],
 	"id":"c265fdcc-11cd-4a1d-9a0d-bc37c45667d6",
-	"config":{
-		
-	},
+	"config":{},
 	"version":0.4,
 	"last_node_id":83,
 	"revision":0

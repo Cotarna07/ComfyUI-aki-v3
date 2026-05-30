@@ -107,15 +107,11 @@
 					"localized_name":"seed"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":95,
 			"type":"RH_LLMAPI_NODE",
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"RH_LLMAPI_NODE"
 			},
 			"order":15
@@ -172,9 +168,7 @@
 			"id":102,
 			"type":"ProcessString",
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"ProcessString"
 			},
 			"order":19
@@ -200,9 +194,7 @@
 				-285.2393798828125,
 				314.9074401855469
 			],
-			"widgets_values":[
-				
-			],
+			"widgets_values":[],
 			"inputs":[
 				{
 					"name":"pixels",
@@ -228,14 +220,10 @@
 				"hasSecondTab":false,
 				"ver":"0.3.50",
 				"ue_properties":{
-					"widget_ue_connectable":{
-						
-					},
+					"widget_ue_connectable":{},
 					"version":"7.0.1"
 				},
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"secondTabText":"Send Back",
 				"enableTabs":false,
 				"secondTabOffset":80,
@@ -304,9 +292,7 @@
 					"localized_name":"max_rows"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"easy promptLine",
 			"mode":0,
 			"bgcolor":"#355",
@@ -323,12 +309,8 @@
 				"cnr_id":"comfyui-easy-use",
 				"ver":"8ecc929cd41cf0f7ef6fcc45d4bbc5729c6f287f",
 				"ue_properties":{
-					"widget_ue_connectable":{
-						
-					},
-					"input_ue_unconnectable":{
-						
-					},
+					"widget_ue_connectable":{},
+					"input_ue_unconnectable":{},
 					"version":"7.2.2"
 				},
 				"widget_ue_connectable":{
@@ -377,9 +359,7 @@
 					"localized_name":"weight_dtype"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"UNETLoader",
 			"mode":0,
 			"bgcolor":"#353",
@@ -393,9 +373,7 @@
 			],
 			"id":106,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"UNETLoader",
 				"ttNbgOverride":{
 					"bgcolor":"#533",
@@ -406,13 +384,9 @@
 			"order":0
 		},
 		{
-			"outputs":[
-				
-			],
+			"outputs":[],
 			"color":"#232",
-			"widgets_values":[
-				
-			],
+			"widgets_values":[],
 			"inputs":[
 				{
 					"shape":7,
@@ -442,9 +416,7 @@
 					"localized_name":"anything"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"Anything Everywhere3",
 			"mode":0,
 			"bgcolor":"#353",
@@ -459,9 +431,7 @@
 			"id":111,
 			"properties":{
 				"color_restricted":0,
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"Anything Everywhere3",
 				"group_restricted":0
 			},
@@ -494,9 +464,7 @@
 					"localized_name":"value"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"Int",
 			"mode":0,
 			"bgcolor":"#353",
@@ -510,9 +478,7 @@
 			],
 			"id":104,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"Int"
 			},
 			"order":1
@@ -551,9 +517,7 @@
 					"localized_name":"anything"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"easy showAnything",
 			"mode":0,
 			"bgcolor":"#353",
@@ -567,9 +531,7 @@
 			],
 			"id":99,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"easy showAnything"
 			},
 			"order":24
@@ -688,9 +650,7 @@
 					"localized_name":"denoise"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":56,
 			"type":"KSampler",
 			"properties":{
@@ -698,9 +658,7 @@
 				"hasSecondTab":false,
 				"ver":"0.3.48",
 				"ue_properties":{
-					"widget_ue_connectable":{
-						
-					},
+					"widget_ue_connectable":{},
 					"version":"7.0.1"
 				},
 				"widget_ue_connectable":{
@@ -800,9 +758,7 @@
 				"cnr_id":"comfy-core",
 				"ver":"0.3.59",
 				"ue_properties":{
-					"widget_ue_connectable":{
-						
-					},
+					"widget_ue_connectable":{},
 					"version":"7.0.1"
 				},
 				"widget_ue_connectable":{
@@ -835,9 +791,7 @@
 				1036.8310546875,
 				1460.766357421875
 			],
-			"widgets_values":[
-				
-			],
+			"widgets_values":[],
 			"inputs":[
 				{
 					"name":"samples",
@@ -863,14 +817,10 @@
 				"hasSecondTab":false,
 				"ver":"0.3.48",
 				"ue_properties":{
-					"widget_ue_connectable":{
-						
-					},
+					"widget_ue_connectable":{},
 					"version":"7.0.1"
 				},
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"secondTabText":"Send Back",
 				"enableTabs":false,
 				"secondTabOffset":80,
@@ -882,9 +832,7 @@
 			"order":26
 		},
 		{
-			"outputs":[
-				
-			],
+			"outputs":[],
 			"color":"#223",
 			"widgets_values":[
 				"ComfyUI"
@@ -923,9 +871,7 @@
 			],
 			"id":105,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"SaveImage"
 			},
 			"order":27
@@ -974,9 +920,7 @@
 					"localized_name":"strength_model"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"LoraLoaderModelOnly",
 			"mode":0,
 			"bgcolor":"#353",
@@ -993,9 +937,7 @@
 				"cnr_id":"comfy-core",
 				"ver":"0.3.64",
 				"ue_properties":{
-					"widget_ue_connectable":{
-						
-					},
+					"widget_ue_connectable":{},
 					"version":"7.0.1"
 				},
 				"widget_ue_connectable":{
@@ -1050,9 +992,7 @@
 					"localized_name":"strength_model"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"LoraLoaderModelOnly",
 			"mode":0,
 			"bgcolor":"#353",
@@ -1086,9 +1026,7 @@
 				"Node name for S&R":"LoraLoaderModelOnly",
 				"tabWidth":65,
 				"secondTabWidth":65,
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"secondTabText":"Send Back",
 				"enableTabs":false,
 				"ttNbgOverride":{
@@ -1149,9 +1087,7 @@
 					"localized_name":"device"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"CLIPLoader",
 			"mode":0,
 			"bgcolor":"#353",
@@ -1179,9 +1115,7 @@
 				"Node name for S&R":"CLIPLoader",
 				"tabWidth":65,
 				"secondTabWidth":65,
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"secondTabText":"Send Back",
 				"enableTabs":false,
 				"ttNbgOverride":{
@@ -1220,9 +1154,7 @@
 					"localized_name":"vae_name"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"VAELoader",
 			"mode":0,
 			"bgcolor":"#353",
@@ -1236,18 +1168,14 @@
 			],
 			"id":110,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"VAELoader"
 			},
 			"order":3
 		},
 		{
 			"mode":0,
-			"outputs":[
-				
-			],
+			"outputs":[],
 			"size":[
 				411.56988525390625,
 				109.11063385009766
@@ -1281,15 +1209,11 @@
 					"localized_name":"output_name"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":132,
 			"type":"ShellAgentPluginOutputText",
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"ShellAgentPluginOutputText"
 			},
 			"order":20
@@ -1338,9 +1262,7 @@
 					"localized_name":"choose file to upload"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"LoadImage",
 			"mode":0,
 			"bgcolor":"#353",
@@ -1411,9 +1333,7 @@
 					"localized_name":"choose file to upload"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"LoadImage",
 			"mode":0,
 			"bgcolor":"#355",
@@ -1428,9 +1348,7 @@
 			"id":143,
 			"properties":{
 				"hasSecondTab":false,
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"secondTabText":"Send Back",
 				"enableTabs":false,
 				"secondTabOffset":80,
@@ -1442,19 +1360,13 @@
 			"order":5
 		},
 		{
-			"outputs":[
-				
-			],
+			"outputs":[],
 			"color":"#233",
 			"widgets_values":[
 				"```\n欢迎进入我的主页\nQQ交流群：821194069\n可定制工作流和模型和远程部署！\n\n```\n---\n\n### 公众号直达：[AIGC特异点](https://mp.weixin.qq.com/s/HPH9c0lymUxKDipVcw7PCQ)👈\n### B站直达：[AIGC特异点](https://space.bilibili.com/49766729?spm_id_from=333.1007.0.0 )👈\n### 闲鱼店铺直达：[AI服务](https://www.goofish.com/personal?spm=a21ybx.home.nav.1.4c053da6H5SqxH)👈\n### runninghub主页：[AIGC特异点](https://www.runninghub.cn/?inviteCode=sdhs0trb)👈\n### LIBLIBAI主页：[模型Lora](https://www.liblib.art/userpage/4230c933675a4170a1c9e7b4273325d5/publish )👈\n### Youtube主页：[AIGC-Singularity](https://www.youtube.com/@AIGC-Singularity)👈\n### 微博：[热血啊ban](https://weibo.com/u/8018389779)👈\n### civitai：[AIGC_Singularity](https://civitai.green/user/AIGC_Singularity)👈\n\n# 🐧请联系VX：pppp520218\n"
 			],
-			"inputs":[
-				
-			],
-			"flags":{
-				
-			},
+			"inputs":[],
+			"flags":{},
 			"type":"MarkdownNote",
 			"title":"傲雪AICG工作流使用介绍",
 			"mode":0,
@@ -1469,9 +1381,7 @@
 			],
 			"id":144,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				}
+				"widget_ue_connectable":{}
 			},
 			"order":6
 		},
@@ -1480,9 +1390,7 @@
 			"outputs":[
 				{
 					"name":"text",
-					"links":[
-						
-					],
+					"links":[],
 					"label":"text",
 					"type":"STRING",
 					"localized_name":"text"
@@ -1510,15 +1418,11 @@
 					"localized_name":"text"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":149,
 			"type":"JjkText",
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"JjkText"
 			},
 			"order":7
@@ -1528,9 +1432,7 @@
 			"outputs":[
 				{
 					"name":"text",
-					"links":[
-						
-					],
+					"links":[],
 					"label":"text",
 					"type":"STRING",
 					"localized_name":"text"
@@ -1558,15 +1460,11 @@
 					"localized_name":"text"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":153,
 			"type":"JjkText",
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"JjkText"
 			},
 			"order":8
@@ -1576,9 +1474,7 @@
 			"outputs":[
 				{
 					"name":"IMAGE",
-					"links":[
-						
-					],
+					"links":[],
 					"label":"IMAGE",
 					"type":"IMAGE",
 					"localized_name":"IMAGE"
@@ -1622,9 +1518,7 @@
 					"localized_name":"choose file to upload"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":147,
 			"type":"LoadImage",
 			"properties":{
@@ -1803,27 +1697,19 @@
 					"localized_name":"background_color"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":91,
 			"type":"LayerUtility: ImageScaleByAspectRatio V2",
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"LayerUtility: ImageScaleByAspectRatio V2"
 			},
 			"order":14
 		},
 		{
-			"outputs":[
-				
-			],
+			"outputs":[],
 			"color":"#2a363b",
-			"widgets_values":[
-				
-			],
+			"widgets_values":[],
 			"inputs":[
 				{
 					"name":"images",
@@ -1849,9 +1735,7 @@
 			],
 			"id":134,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"PreviewImage"
 			},
 			"order":28
@@ -1861,9 +1745,7 @@
 			"outputs":[
 				{
 					"name":"text",
-					"links":[
-						
-					],
+					"links":[],
 					"label":"text",
 					"type":"STRING",
 					"localized_name":"text"
@@ -1891,15 +1773,11 @@
 					"localized_name":"text"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":151,
 			"type":"JjkText",
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"JjkText"
 			},
 			"order":11
@@ -1931,9 +1809,7 @@
 					"localized_name":"text"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"JjkText",
 			"mode":0,
 			"bgcolor":"#353",
@@ -1947,9 +1823,7 @@
 			],
 			"id":103,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"JjkText"
 			},
 			"order":10
@@ -1959,9 +1833,7 @@
 			"outputs":[
 				{
 					"name":"text",
-					"links":[
-						
-					],
+					"links":[],
 					"label":"text",
 					"type":"STRING",
 					"localized_name":"text"
@@ -1989,15 +1861,11 @@
 					"localized_name":"text"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":155,
 			"type":"JjkText",
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"JjkText"
 			},
 			"order":12
@@ -2082,9 +1950,7 @@
 				"cnr_id":"comfy-core",
 				"ver":"0.3.59",
 				"ue_properties":{
-					"widget_ue_connectable":{
-						
-					},
+					"widget_ue_connectable":{},
 					"version":"7.0.1"
 				},
 				"widget_ue_connectable":{
@@ -2185,9 +2051,7 @@
 		{
 			"color":"#3f789e",
 			"font_size":50,
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":4,
 			"title":"第一步：加载图片",
 			"bounding":[
@@ -2200,9 +2064,7 @@
 		{
 			"color":"#3f789e",
 			"font_size":50,
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":6,
 			"title":"核心工作区",
 			"bounding":[
@@ -2215,9 +2077,7 @@
 		{
 			"color":"#3f789e",
 			"font_size":50,
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":9,
 			"title":"模型",
 			"bounding":[
@@ -2230,9 +2090,7 @@
 		{
 			"color":"#3f789e",
 			"font_size":50,
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":11,
 			"title":"输入提示词",
 			"bounding":[
@@ -2245,9 +2103,7 @@
 		{
 			"color":"#3f789e",
 			"font_size":50,
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":12,
 			"title":"成片区",
 			"bounding":[
@@ -2260,9 +2116,7 @@
 		{
 			"color":"#14b7cc",
 			"font_size":40,
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":13,
 			"title":"AI赋能,一起持续成长",
 			"bounding":[
@@ -2275,9 +2129,7 @@
 		{
 			"color":"#A88",
 			"font_size":100,
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":14,
 			"title":"Qwen Next Scene影视剧情分镜制作",
 			"bounding":[
@@ -2290,9 +2142,7 @@
 		{
 			"color":"#A88",
 			"font_size":80,
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":15,
 			"title":"案例：",
 			"bounding":[
@@ -2490,9 +2340,7 @@
 		]
 	],
 	"id":"908d0bfb-e192-4627-9b57-147496e6e2dd",
-	"config":{
-		
-	},
+	"config":{},
 	"version":0.4,
 	"last_node_id":155,
 	"revision":0

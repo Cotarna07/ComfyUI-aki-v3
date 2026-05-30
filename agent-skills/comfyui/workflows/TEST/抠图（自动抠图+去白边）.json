@@ -53,15 +53,11 @@
 					"localized_name":"choose file to upload"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":44,
 			"type":"LoadImage",
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"LoadImage"
 			},
 			"order":0
@@ -84,9 +80,7 @@
 				-3993.3232421875,
 				1763.92919921875
 			],
-			"widgets_values":[
-				
-			],
+			"widgets_values":[],
 			"inputs":[
 				{
 					"name":"images",
@@ -96,15 +90,11 @@
 					"localized_name":"images"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":46,
 			"type":"PreviewImage",
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"PreviewImage"
 			},
 			"order":9
@@ -188,33 +178,23 @@
 					"localized_name":"bottom"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":45,
 			"type":"Image Crop Location",
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"Image Crop Location"
 			},
 			"order":7
 		},
 		{
-			"outputs":[
-				
-			],
+			"outputs":[],
 			"color":"#432",
 			"widgets_values":[
 				"当图像中有多个人物的时候可以先裁剪"
 			],
-			"inputs":[
-				
-			],
-			"flags":{
-				
-			},
+			"inputs":[],
+			"flags":{},
 			"type":"Note",
 			"mode":4,
 			"bgcolor":"#653",
@@ -228,9 +208,7 @@
 			],
 			"id":48,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"text":""
 			},
 			"order":1
@@ -271,15 +249,11 @@
 					"localized_name":"version"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":3,
 			"type":"LayerMask: LoadBiRefNetModelV2",
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"LayerMask: LoadBiRefNetModelV2"
 			},
 			"order":2
@@ -290,9 +264,7 @@
 				{
 					"name":"image",
 					"slot_index":0,
-					"links":[
-						
-					],
+					"links":[],
 					"label":"image",
 					"type":"IMAGE",
 					"localized_name":"image"
@@ -332,9 +304,7 @@
 				-2464.539794921875,
 				1039.1314697265625
 			],
-			"widgets_values":[
-				
-			],
+			"widgets_values":[],
 			"inputs":[
 				{
 					"name":"image",
@@ -344,15 +314,11 @@
 					"localized_name":"image"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":75,
 			"type":"GetImageSizeAndCount",
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"GetImageSizeAndCount"
 			},
 			"order":15
@@ -419,9 +385,7 @@
 				{
 					"name":"width_int",
 					"slot_index":6,
-					"links":[
-						
-					],
+					"links":[],
 					"label":"width_int",
 					"type":"INT",
 					"localized_name":"width_int"
@@ -429,9 +393,7 @@
 				{
 					"name":"height_int",
 					"slot_index":7,
-					"links":[
-						
-					],
+					"links":[],
 					"label":"height_int",
 					"type":"INT",
 					"localized_name":"height_int"
@@ -476,15 +438,11 @@
 					"localized_name":"region_type"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":59,
 			"type":"Mask Crop Region",
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"Mask Crop Region"
 			},
 			"order":10
@@ -507,9 +465,7 @@
 				-2946.477294921875,
 				1245.340087890625
 			],
-			"widgets_values":[
-				
-			],
+			"widgets_values":[],
 			"inputs":[
 				{
 					"name":"mask",
@@ -519,15 +475,11 @@
 					"localized_name":"mask"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":60,
 			"type":"MaskPreview+",
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"MaskPreview+"
 			},
 			"order":11
@@ -618,9 +570,7 @@
 					"localized_name":"bottom"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":69,
 			"type":"Image Crop Location",
 			"properties":{
@@ -666,9 +616,7 @@
 				-2051.31103515625,
 				1439.916259765625
 			],
-			"widgets_values":[
-				
-			],
+			"widgets_values":[],
 			"inputs":[
 				{
 					"name":"image",
@@ -678,33 +626,23 @@
 					"localized_name":"image"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":96,
 			"type":"SplitImageWithAlpha",
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"SplitImageWithAlpha"
 			},
 			"order":16
 		},
 		{
-			"outputs":[
-				
-			],
+			"outputs":[],
 			"color":"#432",
 			"widgets_values":[
 				"可以修改为任意颜色的底"
 			],
-			"inputs":[
-				
-			],
-			"flags":{
-				
-			},
+			"inputs":[],
+			"flags":{},
 			"type":"Note",
 			"mode":0,
 			"bgcolor":"#653",
@@ -718,9 +656,7 @@
 			],
 			"id":101,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"text":""
 			},
 			"order":3
@@ -863,9 +799,7 @@
 					"localized_name":"bg_color_hex"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"CR Draw Shape",
 			"mode":0,
 			"bgcolor":"#653",
@@ -926,15 +860,11 @@
 					"localized_name":"filename_prefix"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":72,
 			"type":"SaveImage",
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"SaveImage"
 			},
 			"order":13
@@ -1017,15 +947,11 @@
 					"localized_name":"resize_source"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":99,
 			"type":"ImageCompositeMasked",
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"ImageCompositeMasked"
 			},
 			"order":19
@@ -1069,15 +995,11 @@
 					"localized_name":"filename_prefix"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":102,
 			"type":"SaveImage",
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"SaveImage"
 			},
 			"order":17
@@ -1121,33 +1043,23 @@
 					"localized_name":"filename_prefix"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":103,
 			"type":"SaveImage",
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"SaveImage"
 			},
 			"order":20
 		},
 		{
-			"outputs":[
-				
-			],
+			"outputs":[],
 			"color":"#432",
 			"widgets_values":[
 				"生成的图像分辨率是8的倍数，遮罩与图像可能会有几个像素的差别"
 			],
-			"inputs":[
-				
-			],
-			"flags":{
-				
-			},
+			"inputs":[],
+			"flags":{},
 			"type":"Note",
 			"mode":0,
 			"bgcolor":"#653",
@@ -1161,27 +1073,19 @@
 			],
 			"id":71,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"text":""
 			},
 			"order":4
 		},
 		{
-			"outputs":[
-				
-			],
+			"outputs":[],
 			"color":"#432",
 			"widgets_values":[
 				"- b站主页（虚幻1024）：https://space.bilibili.com/383893362\n- liblib：https://www.liblib.art/userpage/54021b109b7a40258e58c95ea57a1177/publish/workflow\n- 往期工作流下载：https://pan.quark.cn/s/b20dbac8c7f3\n\n- qq交流群：995012625\n\n- 知识星球（技术分享 91536747）\n  - 目录：https://www.linyy.site/article/detail?id=294\n  - 链接：https://t.zsxq.com/eqGN8"
 			],
-			"inputs":[
-				
-			],
-			"flags":{
-				
-			},
+			"inputs":[],
+			"flags":{},
 			"type":"Note",
 			"mode":0,
 			"bgcolor":"#653",
@@ -1195,9 +1099,7 @@
 			],
 			"id":104,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"text":""
 			},
 			"order":5
@@ -1218,9 +1120,7 @@
 				{
 					"name":"MASK",
 					"slot_index":1,
-					"links":[
-						
-					],
+					"links":[],
 					"label":"MASK",
 					"type":"MASK",
 					"localized_name":"MASK"
@@ -1363,15 +1263,11 @@
 					"localized_name":"num_blocks_bottom"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":73,
 			"type":"TTP_Expand_And_Mask",
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"TTP_Expand_And_Mask"
 			},
 			"order":14
@@ -1420,9 +1316,7 @@
 					"localized_name":"choose file to upload"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"LoadImage",
 			"mode":0,
 			"bgcolor":"#533",
@@ -1436,9 +1330,7 @@
 			],
 			"id":1,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"LoadImage"
 			},
 			"order":6
@@ -1574,15 +1466,11 @@
 					"localized_name":"max_megapixels"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":2,
 			"type":"LayerMask: BiRefNetUltraV2",
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"LayerMask: BiRefNetUltraV2"
 			},
 			"order":8
@@ -1590,12 +1478,8 @@
 	],
 	"extra":{
 		"VHS_KeepIntermediate":true,
-		"links_added_by_ue":[
-			
-		],
-		"ue_links":[
-			
-		],
+		"links_added_by_ue":[],
+		"ue_links":[],
 		"VHS_MetadataImage":true,
 		"0246.VERSION":[
 			0,
@@ -1616,9 +1500,7 @@
 		{
 			"color":"#3f789e",
 			"font_size":24,
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":1,
 			"title":"透明背景",
 			"bounding":[
@@ -1631,9 +1513,7 @@
 		{
 			"color":"#3f789e",
 			"font_size":24,
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":2,
 			"title":"裁剪",
 			"bounding":[
@@ -1646,9 +1526,7 @@
 		{
 			"color":"#3f789e",
 			"font_size":24,
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":3,
 			"title":"白底",
 			"bounding":[
@@ -1661,9 +1539,7 @@
 		{
 			"color":"#3f789e",
 			"font_size":24,
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":4,
 			"title":"黑底",
 			"bounding":[
@@ -1853,9 +1729,7 @@
 		]
 	],
 	"id":"560f77bf-5cbc-4922-8a64-fc71589435f7",
-	"config":{
-		
-	},
+	"config":{},
 	"version":0.4,
 	"last_node_id":104,
 	"revision":0

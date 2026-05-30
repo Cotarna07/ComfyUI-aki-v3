@@ -49,9 +49,7 @@
 					"localized_name":"weight_dtype"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"VAELoaderKJ",
 			"title":"Audio VAELoader",
 			"mode":0,
@@ -68,9 +66,7 @@
 			"properties":{
 				"cnr_id":"comfyui-kjnodes",
 				"ver":"487c7d86a0230aae3d8c0a37d517159b73834f85",
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"VAELoaderKJ"
 			},
 			"order":0
@@ -125,9 +121,7 @@
 					"localized_name":"weight_dtype"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"VAELoaderKJ",
 			"title":"Video VAELoader",
 			"mode":0,
@@ -144,9 +138,7 @@
 			"properties":{
 				"cnr_id":"comfyui-kjnodes",
 				"ver":"1.2.5",
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"VAELoaderKJ"
 			},
 			"order":1
@@ -173,9 +165,7 @@
 				}
 			],
 			"color":"#222",
-			"widgets_values":[
-				
-			],
+			"widgets_values":[],
 			"inputs":[
 				{
 					"name":"av_latent",
@@ -185,9 +175,7 @@
 					"localized_name":"av_latent"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"LTXVSeparateAVLatent",
 			"mode":0,
 			"bgcolor":"#000",
@@ -203,9 +191,7 @@
 			"properties":{
 				"cnr_id":"comfy-core",
 				"ver":"0.16.0",
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"LTXVSeparateAVLatent"
 			},
 			"order":23
@@ -264,9 +250,7 @@
 					"localized_name":"denoise"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"BasicScheduler",
 			"mode":0,
 			"bgcolor":"#000",
@@ -282,9 +266,7 @@
 			"properties":{
 				"cnr_id":"comfy-core",
 				"ver":"0.16.4",
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"BasicScheduler"
 			},
 			"order":16
@@ -316,9 +298,7 @@
 					"localized_name":"sampler_name"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"KSamplerSelect",
 			"mode":0,
 			"bgcolor":"#000",
@@ -335,9 +315,7 @@
 				"cnr_id":"comfy-core",
 				"hasSecondTab":false,
 				"ver":"0.3.56",
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"secondTabText":"Send Back",
 				"enableTabs":false,
 				"secondTabOffset":80,
@@ -361,18 +339,14 @@
 				},
 				{
 					"name":"denoised_output",
-					"links":[
-						
-					],
+					"links":[],
 					"label":"denoised_output",
 					"type":"LATENT",
 					"localized_name":"denoised_output"
 				}
 			],
 			"color":"#222",
-			"widgets_values":[
-				
-			],
+			"widgets_values":[],
 			"inputs":[
 				{
 					"name":"noise",
@@ -410,9 +384,7 @@
 					"localized_name":"latent_image"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"SamplerCustomAdvanced",
 			"mode":0,
 			"bgcolor":"#000",
@@ -429,9 +401,7 @@
 				"cnr_id":"comfy-core",
 				"hasSecondTab":false,
 				"ver":"0.3.60",
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"secondTabText":"Send Back",
 				"enableTabs":false,
 				"secondTabOffset":80,
@@ -455,9 +425,7 @@
 				}
 			],
 			"color":"#222",
-			"widgets_values":[
-				
-			],
+			"widgets_values":[],
 			"inputs":[
 				{
 					"name":"samples",
@@ -481,9 +449,7 @@
 					"localized_name":"vae"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"LTXVLatentUpsampler",
 			"mode":0,
 			"bgcolor":"#000",
@@ -500,9 +466,7 @@
 				"cnr_id":"comfy-core",
 				"hasSecondTab":false,
 				"ver":"0.14.1",
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"secondTabText":"Send Back",
 				"enableTabs":false,
 				"secondTabOffset":80,
@@ -526,9 +490,7 @@
 				}
 			],
 			"color":"#222",
-			"widgets_values":[
-				
-			],
+			"widgets_values":[],
 			"inputs":[
 				{
 					"name":"video_latent",
@@ -545,9 +507,7 @@
 					"localized_name":"audio_latent"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"LTXVConcatAVLatent",
 			"mode":0,
 			"bgcolor":"#000",
@@ -564,9 +524,7 @@
 				"cnr_id":"comfy-core",
 				"hasSecondTab":false,
 				"ver":"0.7.0",
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"secondTabText":"Send Back",
 				"enableTabs":false,
 				"secondTabOffset":80,
@@ -624,9 +582,7 @@
 					"localized_name":"weight_dtype"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"VAELoaderKJ",
 			"title":"Tiny VAELoader KJ",
 			"mode":0,
@@ -643,9 +599,7 @@
 			"properties":{
 				"cnr_id":"comfyui-kjnodes",
 				"ver":"1.2.5",
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"VAELoaderKJ"
 			},
 			"order":3
@@ -663,18 +617,14 @@
 				},
 				{
 					"name":"denoised_output",
-					"links":[
-						
-					],
+					"links":[],
 					"label":"denoised_output",
 					"type":"LATENT",
 					"localized_name":"denoised_output"
 				}
 			],
 			"color":"#222",
-			"widgets_values":[
-				
-			],
+			"widgets_values":[],
 			"inputs":[
 				{
 					"name":"noise",
@@ -712,9 +662,7 @@
 					"localized_name":"latent_image"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"SamplerCustomAdvanced",
 			"mode":0,
 			"bgcolor":"#000",
@@ -731,9 +679,7 @@
 				"cnr_id":"comfy-core",
 				"hasSecondTab":false,
 				"ver":"0.3.60",
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"secondTabText":"Send Back",
 				"enableTabs":false,
 				"secondTabOffset":80,
@@ -771,9 +717,7 @@
 					"localized_name":"sampler_name"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"KSamplerSelect",
 			"mode":0,
 			"bgcolor":"#000",
@@ -790,9 +734,7 @@
 				"cnr_id":"comfy-core",
 				"hasSecondTab":false,
 				"ver":"0.3.56",
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"secondTabText":"Send Back",
 				"enableTabs":false,
 				"secondTabOffset":80,
@@ -857,9 +799,7 @@
 					"localized_name":"denoise"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"BasicScheduler",
 			"mode":0,
 			"bgcolor":"#000",
@@ -875,9 +815,7 @@
 			"properties":{
 				"cnr_id":"comfy-core",
 				"ver":"0.16.4",
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"BasicScheduler"
 			},
 			"order":15
@@ -930,9 +868,7 @@
 					"localized_name":"cfg"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"CFGGuider",
 			"mode":0,
 			"bgcolor":"#000",
@@ -949,9 +885,7 @@
 				"cnr_id":"comfy-core",
 				"hasSecondTab":false,
 				"ver":"0.3.64",
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"secondTabText":"Send Back",
 				"enableTabs":false,
 				"secondTabOffset":80,
@@ -975,9 +909,7 @@
 				}
 			],
 			"color":"#222",
-			"widgets_values":[
-				
-			],
+			"widgets_values":[],
 			"inputs":[
 				{
 					"name":"video_latent",
@@ -994,9 +926,7 @@
 					"localized_name":"audio_latent"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"LTXVConcatAVLatent",
 			"mode":0,
 			"bgcolor":"#000",
@@ -1012,9 +942,7 @@
 			"properties":{
 				"cnr_id":"comfy-core",
 				"ver":"0.16.0",
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"LTXVConcatAVLatent"
 			},
 			"order":21
@@ -1041,9 +969,7 @@
 				}
 			],
 			"color":"#222",
-			"widgets_values":[
-				
-			],
+			"widgets_values":[],
 			"inputs":[
 				{
 					"name":"av_latent",
@@ -1053,9 +979,7 @@
 					"localized_name":"av_latent"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"LTXVSeparateAVLatent",
 			"mode":0,
 			"bgcolor":"#000",
@@ -1072,9 +996,7 @@
 				"cnr_id":"comfy-core",
 				"hasSecondTab":false,
 				"ver":"0.5.1",
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"secondTabText":"Send Back",
 				"enableTabs":false,
 				"secondTabOffset":80,
@@ -1112,9 +1034,7 @@
 					"localized_name":"model_name"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"LatentUpscaleModelLoader",
 			"mode":0,
 			"bgcolor":"#000",
@@ -1130,9 +1050,7 @@
 			"properties":{
 				"cnr_id":"comfy-core",
 				"ver":"0.16.4",
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"LatentUpscaleModelLoader"
 			},
 			"order":5
@@ -1231,9 +1149,7 @@
 					"localized_name":"upscale_method"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"LTXDirectorGuide",
 			"mode":0,
 			"bgcolor":"#000",
@@ -1249,9 +1165,7 @@
 			"properties":{
 				"cnr_id":"whatdreamscost-comfyui",
 				"ver":"5cae3c00186ff2eb79771070f05a2c4e02f329bb",
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"aux_id":"kijai/ComfyUI-PromptRelay",
 				"Node name for S&R":"LTXDirectorGuide"
 			},
@@ -1305,9 +1219,7 @@
 					"localized_name":"cfg"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"CFGGuider",
 			"mode":0,
 			"bgcolor":"#000",
@@ -1324,9 +1236,7 @@
 				"cnr_id":"comfy-core",
 				"hasSecondTab":false,
 				"ver":"0.3.64",
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"secondTabText":"Send Back",
 				"enableTabs":false,
 				"secondTabOffset":80,
@@ -1368,9 +1278,7 @@
 				}
 			],
 			"color":"#222",
-			"widgets_values":[
-				
-			],
+			"widgets_values":[],
 			"inputs":[
 				{
 					"name":"positive",
@@ -1394,9 +1302,7 @@
 					"localized_name":"latent"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"LTXVCropGuides",
 			"mode":0,
 			"bgcolor":"#000",
@@ -1412,9 +1318,7 @@
 			"properties":{
 				"cnr_id":"comfy-core",
 				"ver":"0.16.4",
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"LTXVCropGuides"
 			},
 			"order":24
@@ -1509,9 +1413,7 @@
 					"localized_name":"upscale_method"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"LTXDirectorGuide",
 			"mode":0,
 			"bgcolor":"#000",
@@ -1527,9 +1429,7 @@
 			"properties":{
 				"cnr_id":"whatdreamscost-comfyui",
 				"ver":"5cae3c00186ff2eb79771070f05a2c4e02f329bb",
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"aux_id":"kijai/ComfyUI-PromptRelay",
 				"Node name for S&R":"LTXDirectorGuide"
 			},
@@ -1560,9 +1460,7 @@
 				}
 			],
 			"color":"#222",
-			"widgets_values":[
-				
-			],
+			"widgets_values":[],
 			"inputs":[
 				{
 					"name":"positive",
@@ -1586,9 +1484,7 @@
 					"localized_name":"latent"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"LTXVCropGuides",
 			"mode":0,
 			"bgcolor":"#000",
@@ -1604,9 +1500,7 @@
 			"properties":{
 				"cnr_id":"comfy-core",
 				"ver":"0.19.3",
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"LTXVCropGuides"
 			},
 			"order":31
@@ -1615,18 +1509,14 @@
 			"outputs":[
 				{
 					"name":"Audio",
-					"links":[
-						
-					],
+					"links":[],
 					"label":"Audio",
 					"type":"AUDIO",
 					"localized_name":"Audio"
 				}
 			],
 			"color":"#222",
-			"widgets_values":[
-				
-			],
+			"widgets_values":[],
 			"inputs":[
 				{
 					"name":"samples",
@@ -1643,9 +1533,7 @@
 					"localized_name":"audio_vae"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"LTXVAudioVAEDecode",
 			"mode":0,
 			"bgcolor":"#000",
@@ -1661,9 +1549,7 @@
 			"properties":{
 				"cnr_id":"comfy-core",
 				"ver":"0.16.0",
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"LTXVAudioVAEDecode"
 			},
 			"order":32
@@ -1719,9 +1605,7 @@
 					"localized_name":"frame_rate"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"LTXVConditioning",
 			"mode":0,
 			"bgcolor":"#000",
@@ -1764,9 +1648,7 @@
 				}
 			],
 			"color":"#222",
-			"widgets_values":[
-				
-			],
+			"widgets_values":[],
 			"inputs":[
 				{
 					"name":"conditioning",
@@ -1776,9 +1658,7 @@
 					"localized_name":"conditioning"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"ConditioningZeroOut",
 			"mode":0,
 			"bgcolor":"#000",
@@ -1794,9 +1674,7 @@
 			"properties":{
 				"cnr_id":"comfy-core",
 				"ver":"0.19.3",
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"ConditioningZeroOut"
 			},
 			"order":17
@@ -1859,9 +1737,7 @@
 					"localized_name":"device"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"DualCLIPLoader",
 			"mode":0,
 			"bgcolor":"#000",
@@ -1877,9 +1753,7 @@
 			"properties":{
 				"cnr_id":"comfy-core",
 				"ver":"0.19.3",
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"DualCLIPLoader"
 			},
 			"order":6
@@ -1923,9 +1797,7 @@
 					"localized_name":"ckpt_name"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"CheckpointLoaderSimple",
 			"mode":0,
 			"bgcolor":"#000",
@@ -1941,9 +1813,7 @@
 			"properties":{
 				"cnr_id":"comfy-core",
 				"ver":"0.17.2",
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"CheckpointLoaderSimple"
 			},
 			"order":7
@@ -1991,9 +1861,7 @@
 					"localized_name":"fps"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"CreateVideo",
 			"mode":0,
 			"bgcolor":"#000",
@@ -2087,9 +1955,7 @@
 					"localized_name":"temporal_overlap"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"VAEDecodeTiled",
 			"mode":0,
 			"bgcolor":"#000",
@@ -2103,27 +1969,19 @@
 			],
 			"id":94,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"VAEDecodeTiled"
 			},
 			"order":33
 		},
 		{
-			"outputs":[
-				
-			],
+			"outputs":[],
 			"color":"#322",
 			"widgets_values":[
 				"# FAQ\n\n**How do I use this??**\n\nI'll be posting tutorials on my YouTube channel soon!\n<https://www.youtube.com/@WhatDreamsCost/>\n\n**Where do I download these models??**\n\nThere is a good list of models and download links here: <https://github.com/wildminder/awesome-ltx2?tab=readme-ov-file>\n\nAlso the latest v1.1 spatial upscaler can be found here: <https://huggingface.co/Lightricks/LTX-2.3/tree/main>\n\nThe tiny vae (taeltx2_3.safetensors) is found here:\n<https://huggingface.co/Kijai/LTX2.3_comfy/blob/main/vae/taeltx2_3.safetensors>\n\n**I'm getting errors when running this workflow!**\n\nDouble check that you have all of the correct models loaded. This is using the newest version of 2x upscaler (v1.1). You can change it to the older one under the Model Loader.\n\n**How can I support you?**\n\nHelp me get a job. I'm unemployed and literally broke. (seriously, i'll even scrub toilets for minimum wage)\n\nOr follow me on my socials :)\n\n<https://x.com/WhatDreamsCost>\n\n<https://www.instagram.com/whatdreamscost/>\n\n<https://www.youtube.com/@WhatDreamsCost/>\n"
 			],
-			"inputs":[
-				
-			],
-			"flags":{
-				
-			},
+			"inputs":[],
+			"flags":{},
 			"type":"MarkdownNote",
 			"title":"FAQ",
 			"mode":0,
@@ -2138,9 +1996,7 @@
 			],
 			"id":92,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				}
+				"widget_ue_connectable":{}
 			},
 			"order":8
 		},
@@ -2188,9 +2044,7 @@
 					"localized_name":"strength_model"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"LoraLoaderModelOnly",
 			"mode":0,
 			"bgcolor":"#000",
@@ -2214,9 +2068,7 @@
 					}
 				],
 				"ver":"0.3.75",
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"secondTabText":"Send Back",
 				"enableTabs":false,
 				"secondTabOffset":80,
@@ -2276,9 +2128,7 @@
 					"localized_name":"preview_rate"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"LTX2SamplingPreviewOverride",
 			"mode":0,
 			"bgcolor":"#000",
@@ -2294,9 +2144,7 @@
 			"properties":{
 				"cnr_id":"comfyui-kjnodes",
 				"ver":"1.3.4",
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"LTX2SamplingPreviewOverride"
 			},
 			"order":10
@@ -2345,9 +2193,7 @@
 					"localized_name":"strength_model"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"LoraLoaderModelOnly",
 			"mode":0,
 			"bgcolor":"#000",
@@ -2371,9 +2217,7 @@
 					}
 				],
 				"ver":"0.3.75",
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"secondTabText":"Send Back",
 				"enableTabs":false,
 				"secondTabOffset":80,
@@ -2428,9 +2272,7 @@
 					"localized_name":"strength_model"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"LoraLoaderModelOnly",
 			"mode":0,
 			"bgcolor":"#000",
@@ -2454,9 +2296,7 @@
 					}
 				],
 				"ver":"0.3.75",
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"secondTabText":"Send Back",
 				"enableTabs":false,
 				"secondTabOffset":80,
@@ -2518,9 +2358,7 @@
 					"localized_name":"codec"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"SaveVideo",
 			"mode":0,
 			"bgcolor":"#000",
@@ -2536,9 +2374,7 @@
 			"properties":{
 				"cnr_id":"comfy-core",
 				"ver":"0.19.3",
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"SaveVideo"
 			},
 			"order":35
@@ -2572,9 +2408,7 @@
 					"localized_name":"noise_seed"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"RandomNoise",
 			"mode":0,
 			"bgcolor":"#000",
@@ -2590,9 +2424,7 @@
 			"properties":{
 				"cnr_id":"comfy-core",
 				"ver":"0.19.3",
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"RandomNoise"
 			},
 			"order":9
@@ -2880,17 +2712,13 @@
 					"localized_name":"img_compression"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":46,
 			"type":"LTXDirector",
 			"properties":{
 				"cnr_id":"whatdreamscost-comfyui",
 				"ver":"5cae3c00186ff2eb79771070f05a2c4e02f329bb",
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"aux_id":"kijai/ComfyUI-PromptRelay",
 				"Node name for S&R":"LTXDirector"
 			},
@@ -2899,13 +2727,9 @@
 	],
 	"extra":{
 		"VHS_KeepIntermediate":true,
-		"links_added_by_ue":[
-			
-		],
+		"links_added_by_ue":[],
 		"VHS_MetadataImage":true,
-		"ue_links":[
-			
-		],
+		"ue_links":[],
 		"0246.VERSION":[
 			0,
 			0,
@@ -2926,9 +2750,7 @@
 		{
 			"color":"#3f789e",
 			"font_size":24,
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":3,
 			"title":"Models",
 			"bounding":[
@@ -2941,9 +2763,7 @@
 		{
 			"color":"#3f789e",
 			"font_size":24,
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":4,
 			"title":"Stage #1",
 			"bounding":[
@@ -2956,9 +2776,7 @@
 		{
 			"color":"#3f789e",
 			"font_size":24,
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":5,
 			"title":"Stage #2 Upscale",
 			"bounding":[
@@ -2971,9 +2789,7 @@
 		{
 			"color":"#3f789e",
 			"font_size":24,
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":6,
 			"title":"Process Video",
 			"bounding":[
@@ -3491,9 +3307,7 @@
 		]
 	],
 	"id":"64b81755-dd7d-4e01-9e14-9b2ad6ab4341",
-	"config":{
-		
-	},
+	"config":{},
 	"version":0.4,
 	"last_node_id":95,
 	"revision":0

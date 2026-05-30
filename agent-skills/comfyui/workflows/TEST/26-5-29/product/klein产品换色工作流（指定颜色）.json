@@ -36,18 +36,14 @@
 					"localized_name":"sampler_name"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":120,
 			"type":"KSamplerSelect",
 			"properties":{
 				"cnr_id":"comfy-core",
 				"hasSecondTab":false,
 				"ver":"0.8.2",
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"secondTabText":"Send Back",
 				"enableTabs":false,
 				"secondTabOffset":80,
@@ -72,9 +68,7 @@
 				},
 				{
 					"name":"denoised_output",
-					"links":[
-						
-					],
+					"links":[],
 					"label":"denoised_output",
 					"type":"LATENT",
 					"localized_name":"denoised_output"
@@ -88,9 +82,7 @@
 				-707.8682250976562,
 				1474.63427734375
 			],
-			"widgets_values":[
-				
-			],
+			"widgets_values":[],
 			"inputs":[
 				{
 					"name":"noise",
@@ -128,18 +120,14 @@
 					"localized_name":"latent_image"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":121,
 			"type":"SamplerCustomAdvanced",
 			"properties":{
 				"cnr_id":"comfy-core",
 				"hasSecondTab":false,
 				"ver":"0.8.2",
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"secondTabText":"Send Back",
 				"enableTabs":false,
 				"secondTabOffset":80,
@@ -207,9 +195,7 @@
 					"localized_name":"batch_size"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":126,
 			"type":"EmptyFlux2LatentImage",
 			"properties":{
@@ -287,9 +273,7 @@
 					"localized_name":"height"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":132,
 			"type":"Flux2Scheduler",
 			"properties":{
@@ -346,9 +330,7 @@
 					"localized_name":"text"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"CLIPTextEncode",
 			"title":"CLIP Text Encode (Positive Prompt)",
 			"mode":0,
@@ -401,9 +383,7 @@
 				-436.3293151855469,
 				1516.61474609375
 			],
-			"widgets_values":[
-				
-			],
+			"widgets_values":[],
 			"inputs":[
 				{
 					"name":"samples",
@@ -420,18 +400,14 @@
 					"localized_name":"vae"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":122,
 			"type":"VAEDecode",
 			"properties":{
 				"cnr_id":"comfy-core",
 				"hasSecondTab":false,
 				"ver":"0.8.2",
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"secondTabText":"Send Back",
 				"enableTabs":false,
 				"secondTabOffset":80,
@@ -498,18 +474,14 @@
 					"localized_name":"cfg"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":131,
 			"type":"CFGGuider",
 			"properties":{
 				"cnr_id":"comfy-core",
 				"hasSecondTab":false,
 				"ver":"0.8.2",
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"secondTabText":"Send Back",
 				"enableTabs":false,
 				"secondTabOffset":80,
@@ -554,9 +526,7 @@
 					"localized_name":"text"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"CLIPTextEncode",
 			"title":"CLIP Text Encode ( Negative Prompt)",
 			"mode":0,
@@ -574,9 +544,7 @@
 				"cnr_id":"comfy-core",
 				"hasSecondTab":false,
 				"ver":"0.9.1",
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"secondTabText":"Send Back",
 				"enableTabs":false,
 				"secondTabOffset":80,
@@ -623,18 +591,14 @@
 					"localized_name":"noise_seed"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":123,
 			"type":"RandomNoise",
 			"properties":{
 				"cnr_id":"comfy-core",
 				"hasSecondTab":false,
 				"ver":"0.8.2",
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"secondTabText":"Send Back",
 				"enableTabs":false,
 				"secondTabOffset":80,
@@ -667,9 +631,7 @@
 				-1482.0103759765625,
 				2034.4947509765625
 			],
-			"widgets_values":[
-				
-			],
+			"widgets_values":[],
 			"inputs":[
 				{
 					"name":"pixels",
@@ -686,15 +648,11 @@
 					"localized_name":"vae"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":166,
 			"type":"VAEEncode",
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"VAEEncode"
 			},
 			"order":11
@@ -735,9 +693,7 @@
 					"localized_name":"vae_name"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":125,
 			"type":"VAELoader",
 			"properties":{
@@ -752,9 +708,7 @@
 					}
 				],
 				"ver":"0.8.2",
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"secondTabText":"Send Back",
 				"enableTabs":false,
 				"secondTabOffset":80,
@@ -786,9 +740,7 @@
 				-1269.5576171875,
 				1996.320068359375
 			],
-			"widgets_values":[
-				
-			],
+			"widgets_values":[],
 			"inputs":[
 				{
 					"name":"conditioning",
@@ -806,15 +758,11 @@
 					"localized_name":"latent"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":167,
 			"type":"ReferenceLatent",
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"ReferenceLatent"
 			},
 			"order":18
@@ -840,9 +788,7 @@
 				-1263.5362548828125,
 				2103.492431640625
 			],
-			"widgets_values":[
-				
-			],
+			"widgets_values":[],
 			"inputs":[
 				{
 					"name":"conditioning",
@@ -860,15 +806,11 @@
 					"localized_name":"latent"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":168,
 			"type":"ReferenceLatent",
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"ReferenceLatent"
 			},
 			"order":15
@@ -912,18 +854,14 @@
 					"localized_name":"filename_prefix"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":94,
 			"type":"SaveImage",
 			"properties":{
 				"cnr_id":"comfy-core",
 				"hasSecondTab":false,
 				"ver":"0.8.2",
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"secondTabText":"Send Back",
 				"enableTabs":false,
 				"secondTabOffset":80,
@@ -985,18 +923,14 @@
 					"localized_name":"choose file to upload"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":76,
 			"type":"LoadImage",
 			"properties":{
 				"cnr_id":"comfy-core",
 				"hasSecondTab":false,
 				"ver":"0.8.2",
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"secondTabText":"Send Back",
 				"enableTabs":false,
 				"secondTabOffset":80,
@@ -1070,18 +1004,14 @@
 					"localized_name":"resolution_steps"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":135,
 			"type":"ImageScaleToTotalPixels",
 			"properties":{
 				"cnr_id":"comfy-core",
 				"hasSecondTab":false,
 				"ver":"0.8.2",
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"secondTabText":"Send Back",
 				"enableTabs":false,
 				"secondTabOffset":80,
@@ -1127,16 +1057,12 @@
 					"localized_name":"text"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":163,
 			"type":"ttN text",
 			"properties":{
 				"ttNnodeVersion":"1.0.0",
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"ttN text"
 			},
 			"order":4
@@ -1217,17 +1143,13 @@
 					"localized_name":"clean_whitespace"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":162,
 			"type":"Text Concatenate",
 			"properties":{
 				"cnr_id":"was-node-suite-comfyui",
 				"ver":"ea935d1044ae5a26efa54ebeb18fe9020af49a45",
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"Text Concatenate"
 			},
 			"order":10
@@ -1269,9 +1191,7 @@
 			"id":182,
 			"type":"easy showAnything",
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"easy showAnything"
 			},
 			"order":14
@@ -1301,9 +1221,7 @@
 				},
 				{
 					"name":"batch_size",
-					"links":[
-						
-					],
+					"links":[],
 					"label":"batch_size",
 					"type":"INT",
 					"localized_name":"batch_size"
@@ -1317,9 +1235,7 @@
 				-970.0725708007812,
 				2008.3060302734375
 			],
-			"widgets_values":[
-				
-			],
+			"widgets_values":[],
 			"inputs":[
 				{
 					"name":"image",
@@ -1329,18 +1245,14 @@
 					"localized_name":"image"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":133,
 			"type":"GetImageSize",
 			"properties":{
 				"cnr_id":"comfy-core",
 				"hasSecondTab":false,
 				"ver":"0.8.2",
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"secondTabText":"Send Back",
 				"enableTabs":false,
 				"secondTabOffset":80,
@@ -1408,9 +1320,7 @@
 					"localized_name":"device"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":128,
 			"type":"CLIPLoader",
 			"properties":{
@@ -1425,9 +1335,7 @@
 					}
 				],
 				"ver":"0.8.2",
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"secondTabText":"Send Back",
 				"enableTabs":false,
 				"secondTabOffset":80,
@@ -1483,9 +1391,7 @@
 					"localized_name":"weight_dtype"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":124,
 			"type":"UNETLoader",
 			"properties":{
@@ -1499,9 +1405,7 @@
 					}
 				],
 				"ver":"0.8.2",
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"secondTabText":"Send Back",
 				"enableTabs":false,
 				"secondTabOffset":80,
@@ -1545,9 +1449,7 @@
 					"localized_name":"selected_color"
 				}
 			],
-			"flags":{
-				
-			},
+			"flags":{},
 			"type":"FL_ColorPicker",
 			"mode":0,
 			"bgcolor":"#4F0074",
@@ -1561,9 +1463,7 @@
 			],
 			"id":183,
 			"properties":{
-				"widget_ue_connectable":{
-					
-				},
+				"widget_ue_connectable":{},
 				"Node name for S&R":"FL_ColorPicker"
 			},
 			"order":7
@@ -1571,13 +1471,9 @@
 	],
 	"extra":{
 		"VHS_KeepIntermediate":true,
-		"links_added_by_ue":[
-			
-		],
+		"links_added_by_ue":[],
 		"VHS_MetadataImage":true,
-		"ue_links":[
-			
-		],
+		"ue_links":[],
 		"0246.VERSION":[
 			0,
 			0,
@@ -1599,9 +1495,7 @@
 		{
 			"color":"#3f789e",
 			"font_size":24,
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":1,
 			"title":"Models",
 			"bounding":[
@@ -1614,9 +1508,7 @@
 		{
 			"color":"#3f789e",
 			"font_size":24,
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":2,
 			"title":"Prompt",
 			"bounding":[
@@ -1629,9 +1521,7 @@
 		{
 			"color":"#3f789e",
 			"font_size":24,
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":3,
 			"title":"Sampler",
 			"bounding":[
@@ -1644,9 +1534,7 @@
 		{
 			"color":"#8AA",
 			"font_size":36,
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":4,
 			"title":"2.拖动小圆点，选取一个颜色",
 			"bounding":[
@@ -1659,9 +1547,7 @@
 		{
 			"color":"#8AA",
 			"font_size":36,
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":5,
 			"title":"1.上传原图",
 			"bounding":[
@@ -1674,9 +1560,7 @@
 		{
 			"color":"#8AA",
 			"font_size":36,
-			"flags":{
-				
-			},
+			"flags":{},
 			"id":6,
 			"title":"3.运行得到结果",
 			"bounding":[
@@ -1922,9 +1806,7 @@
 		]
 	],
 	"id":"92112d97-bb64-4b44-86f2-ea5691ef8f6e",
-	"config":{
-		
-	},
+	"config":{},
 	"version":0.4,
 	"last_node_id":183,
 	"revision":0
