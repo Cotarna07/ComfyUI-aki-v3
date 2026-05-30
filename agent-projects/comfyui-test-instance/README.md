@@ -41,6 +41,10 @@
   按环境名启动 ComfyUI。
 - `scripts/list_environments.ps1`
   打印当前登记的环境清单。
+- `scripts/launch_environment_panel.ps1`
+  Windows 按钮式启动面板。
+- `scripts/install_environment_requirements.ps1`
+  用指定环境的 Python 安装该环境插件清单中的 `requirements.txt`，避免误装到主环境。
 - `scripts/install_plugin_requirements.ps1`
   旧版单实例依赖安装脚本，保留兼容。
 - `runtime/environments/<env-name>/`
@@ -76,10 +80,30 @@ powershell -ExecutionPolicy Bypass -File .\agent-projects\comfyui-test-instance\
 
 便捷启动入口：
 
+双击这个文件可以打开按钮式启动面板：
+
+```text
+agent-projects/comfyui-test-instance/ComfyUI-Environment-Launcher.vbs
+```
+
+命令行启动方式仍然保留：
+
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\agent-projects\comfyui-test-instance\scripts\start-wan-video.ps1
 powershell -ExecutionPolicy Bypass -File .\agent-projects\comfyui-test-instance\scripts\start-flux-kontext.ps1
 powershell -ExecutionPolicy Bypass -File .\agent-projects\comfyui-test-instance\scripts\start-api-bridge.ps1
+```
+
+给指定环境安装插件依赖：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\agent-projects\comfyui-test-instance\scripts\install_environment_requirements.ps1 -Name flux-kontext-py313-cu130 -PluginName ComfyUI_LayerStyle
+```
+
+先只打印会安装到哪里，不真正执行 pip：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\agent-projects\comfyui-test-instance\scripts\install_environment_requirements.ps1 -Name flux-kontext-py313-cu130 -PluginName ComfyUI_LayerStyle -DryRun
 ```
 
 ## 当前已验证状态（2026-05-17）
@@ -119,4 +143,5 @@ powershell -ExecutionPolicy Bypass -File .\agent-projects\comfyui-test-instance\
 - `flux-kontext-py313-cu130` 用来测 FLUX/Kontext/商品图编辑类工作流。
 - `api-bridge-py313` 用来接局域网音频、LLM、翻译、字幕服务，不重复部署本地 `IndexTTSRun` 或 `llama_cpp_*`。
 - `legacy-pmrf-py311-cu124` 只先创建目录和插件链接；必须准备好兼容 Python/Torch/CUDA 后再配置 `external_python` 启动。
+- 从 ComfyUI Manager 或插件 prestartup 触发的自动安装，会安装到“当前正在运行的 ComfyUI 使用的 Python”。要装到测试环境，必须先启动对应端口的环境，再在那个页面里安装。
 - 详细规则见 `agent-skills/docs/comfyui_runtime_environments.md`。

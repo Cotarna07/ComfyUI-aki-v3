@@ -64,6 +64,29 @@ powershell -ExecutionPolicy Bypass -File .\agent-projects\comfyui-test-instance\
 powershell -ExecutionPolicy Bypass -File .\agent-projects\comfyui-test-instance\scripts\start-api-bridge.ps1
 ```
 
+给指定环境安装插件依赖：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\agent-projects\comfyui-test-instance\scripts\install_environment_requirements.ps1 -Name flux-kontext-py313-cu130 -PluginName ComfyUI_LayerStyle
+```
+
+先检查目标 Python，不真正安装：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\agent-projects\comfyui-test-instance\scripts\install_environment_requirements.ps1 -Name flux-kontext-py313-cu130 -PluginName ComfyUI_LayerStyle -DryRun
+```
+
+## 自动安装装到哪里
+
+ComfyUI Manager、custom node 的 `prestartup_script.py` 或插件自己的安装按钮，通常会调用当前 ComfyUI 进程里的 `sys.executable -m pip`。因此：
+
+- 在 `http://127.0.0.1:8188` 主环境里点安装，会装到 `aki-main-py313-cu130`。
+- 在 `http://127.0.0.1:8189` 里点安装，会装到 `wan-video-py313-cu130`。
+- 在 `http://127.0.0.1:8190` 里点安装，会装到 `flux-kontext-py313-cu130`。
+- 在 `http://127.0.0.1:8192` 里点安装，会装到 `api-bridge-py313`。
+
+不要直接运行 `D:/ComfyUI-aki-v3/python/python.exe -m pip install ...`，除非明确要改主环境。要手动安装依赖时，优先使用 `install_environment_requirements.ps1 -Name <环境名>`。
+
 ## 给后续 agent 的判断顺序
 
 1. 先查 `environments.json`，不要临时创造环境名或端口。
