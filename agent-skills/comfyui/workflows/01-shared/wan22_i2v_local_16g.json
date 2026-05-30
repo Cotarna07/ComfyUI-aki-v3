@@ -1,8 +1,8 @@
 {
   "id": "ec7da562-7e21-4dac-a0d2-f4441e1efd3b",
   "revision": 0,
-  "last_node_id": 119,
-  "last_link_id": 231,
+  "last_node_id": 120,
+  "last_link_id": 232,
   "nodes": [
     {
       "id": 116,
@@ -118,7 +118,7 @@
         {
           "name": "VIDEO",
           "type": "VIDEO",
-          "links": null
+          "links": [232]
         }
       ],
       "properties": {
@@ -189,9 +189,50 @@
         "umt5_xxl_fp8_e4m3fn_scaled.safetensors",
         "wan_2.1_vae.safetensors"
       ]
+    },
+    {
+      "id": 120,
+      "type": "SaveVideo",
+      "pos": [
+        1560,
+        -268
+      ],
+      "size": [
+        300,
+        82
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "link": 232
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.11.0",
+        "Node name for S&R": "SaveVideo"
+      },
+      "widgets_values": [
+        "ComfyUI",
+        "video/h264-mp4"
+      ]
     }
   ],
-  "links": [],
+  "links": [
+    {
+      "id": 232,
+      "origin_id": 116,
+      "origin_slot": 0,
+      "target_id": 120,
+      "target_slot": 0,
+      "type": "VIDEO"
+    }
+  ],
   "groups": [],
   "definitions": {
     "subgraphs": [

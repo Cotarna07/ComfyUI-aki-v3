@@ -1,0 +1,741 @@
+{
+  "id": "1e5bdefd-32b1-46a7-b7b9-39e830db9166",
+  "revision": 0,
+  "last_node_id": 30,
+  "last_link_id": 32,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "UmeAiRT_VideoGenerator",
+      "pos": [
+        2930,
+        530
+      ],
+      "size": [
+        500,
+        610
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model_bundle",
+          "type": "UME_BUNDLE",
+          "link": 11
+        },
+        {
+          "name": "positive",
+          "type": "POSITIVE",
+          "link": 2
+        },
+        {
+          "name": "video_settings",
+          "type": "UME_VIDEO_SETTINGS",
+          "link": 3
+        },
+        {
+          "name": "negative",
+          "shape": 7,
+          "type": "NEGATIVE",
+          "link": 4
+        },
+        {
+          "name": "loras",
+          "shape": 7,
+          "type": "UME_LORA_STACK",
+          "link": 27
+        },
+        {
+          "name": "source_image",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 5
+        }
+      ],
+      "outputs": [
+        {
+          "name": "video_pipe",
+          "type": "UME_VIDEO_PIPELINE",
+          "links": [
+            20
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-umeairt-toolkit",
+        "ver": "a7223eb4a034a109b67bbdac354d11d9e341ab54",
+        "Node name for S&R": "UmeAiRT_VideoGenerator",
+        "aux_id": "ComfyUI-UmeAiRT-Toolkit"
+      },
+      "widgets_values": [],
+      "color": "#2C3E50",
+      "bgcolor": "#1A252F",
+      "shape": 1
+    },
+    {
+      "id": 3,
+      "type": "UmeAiRT_Positive_Input",
+      "pos": [
+        1910,
+        370
+      ],
+      "size": [
+        500,
+        200
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "positive",
+          "type": "POSITIVE",
+          "links": [
+            2
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-umeairt-toolkit",
+        "ver": "a7223eb4a034a109b67bbdac354d11d9e341ab54",
+        "Node name for S&R": "UmeAiRT_Positive_Input",
+        "aux_id": "ComfyUI-UmeAiRT-Toolkit"
+      },
+      "widgets_values": [
+        "Slow and small Movements."
+      ],
+      "color": "#145A32",
+      "bgcolor": "#0A2D19",
+      "shape": 1
+    },
+    {
+      "id": 4,
+      "type": "UmeAiRT_VideoSettings",
+      "pos": [
+        1910,
+        830
+      ],
+      "size": [
+        500,
+        350
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "video_settings",
+          "type": "UME_VIDEO_SETTINGS",
+          "links": [
+            3
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-umeairt-toolkit",
+        "ver": "a7223eb4a034a109b67bbdac354d11d9e341ab54",
+        "Node name for S&R": "UmeAiRT_VideoSettings",
+        "aux_id": "ComfyUI-UmeAiRT-Toolkit"
+      },
+      "widgets_values": [
+        1024,
+        1024,
+        3,
+        20,
+        6,
+        6,
+        "euler",
+        "sgm_uniform",
+        96792991812758,
+        "randomize"
+      ],
+      "color": "#935116",
+      "bgcolor": "#4A290B",
+      "shape": 1
+    },
+    {
+      "id": 5,
+      "type": "UmeAiRT_Negative_Input",
+      "pos": [
+        1910,
+        610
+      ],
+      "size": [
+        500,
+        180
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "negative",
+          "type": "NEGATIVE",
+          "links": [
+            4
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-umeairt-toolkit",
+        "ver": "a7223eb4a034a109b67bbdac354d11d9e341ab54",
+        "Node name for S&R": "UmeAiRT_Negative_Input",
+        "aux_id": "ComfyUI-UmeAiRT-Toolkit"
+      },
+      "widgets_values": [
+        "色调艳丽，过曝，静态，细节模糊不清，字幕，风格，作品，画作，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走, fast movements, blurry, mouth moving, talking, teeth visible, strong blush, zoom out, zoom in"
+      ],
+      "color": "#641E16",
+      "bgcolor": "#3B100C",
+      "shape": 1
+    },
+    {
+      "id": 6,
+      "type": "LoadImage",
+      "pos": [
+        1910,
+        1220
+      ],
+      "size": [
+        500,
+        420
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            5
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.21.1",
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "2fba04b7-14a5-45d6-9f7f-74cc1940f475.jpeg",
+        "image"
+      ],
+      "color": "#322",
+      "bgcolor": "#533",
+      "shape": 1
+    },
+    {
+      "id": 9,
+      "type": "UmeAiRT_VideoLightningAccelerator",
+      "pos": [
+        2420,
+        530
+      ],
+      "size": [
+        500,
+        110
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "showAdvanced": false,
+      "inputs": [
+        {
+          "name": "model_bundle",
+          "type": "UME_BUNDLE",
+          "link": 32
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model_bundle",
+          "type": "UME_BUNDLE",
+          "links": [
+            10
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-umeairt-toolkit",
+        "ver": "a7223eb4a034a109b67bbdac354d11d9e341ab54",
+        "Node name for S&R": "UmeAiRT_VideoLightningAccelerator",
+        "aux_id": "ComfyUI-UmeAiRT-Toolkit"
+      },
+      "widgets_values": [
+        "4 Steps",
+        1,
+        "euler",
+        "sgm_uniform"
+      ],
+      "color": "#4A235A",
+      "bgcolor": "#25122D",
+      "shape": 1
+    },
+    {
+      "id": 10,
+      "type": "UmeAiRT_VideoOptimization",
+      "pos": [
+        2930,
+        370
+      ],
+      "size": [
+        500,
+        120
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model_bundle",
+          "type": "UME_BUNDLE",
+          "link": 10
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model_bundle",
+          "type": "UME_BUNDLE",
+          "links": [
+            11
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-umeairt-toolkit",
+        "ver": "a7223eb4a034a109b67bbdac354d11d9e341ab54",
+        "Node name for S&R": "UmeAiRT_VideoOptimization",
+        "aux_id": "ComfyUI-UmeAiRT-Toolkit"
+      },
+      "widgets_values": [
+        0,
+        true
+      ],
+      "color": "#2C3E50",
+      "bgcolor": "#1A252F",
+      "shape": 1
+    },
+    {
+      "id": 11,
+      "type": "UmeAiRT_VideoOutput",
+      "pos": [
+        3440,
+        370
+      ],
+      "size": [
+        1150,
+        1280
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "showAdvanced": false,
+      "inputs": [
+        {
+          "name": "video_pipe",
+          "type": "UME_VIDEO_PIPELINE",
+          "link": 17
+        }
+      ],
+      "outputs": [
+        {
+          "name": "frames",
+          "type": "IMAGE",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-umeairt-toolkit",
+        "ver": "a7223eb4a034a109b67bbdac354d11d9e341ab54",
+        "Node name for S&R": "UmeAiRT_VideoOutput",
+        "aux_id": "ComfyUI-UmeAiRT-Toolkit"
+      },
+      "widgets_values": [
+        "WAN/%date/%time_%seed",
+        "mp4",
+        "Visually Lossless",
+        true,
+        false
+      ],
+      "color": "#1A5653",
+      "bgcolor": "#0D2B29",
+      "shape": 1
+    },
+    {
+      "id": 14,
+      "type": "UmeAiRT_VideoFrameInterpolation",
+      "pos": [
+        2930,
+        1480
+      ],
+      "size": [
+        500,
+        160
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "video_pipe",
+          "type": "UME_VIDEO_PIPELINE",
+          "link": 21
+        }
+      ],
+      "outputs": [
+        {
+          "name": "video_pipe",
+          "type": "UME_VIDEO_PIPELINE",
+          "links": [
+            17
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-umeairt-toolkit",
+        "ver": "a7223eb4a034a109b67bbdac354d11d9e341ab54",
+        "Node name for S&R": "UmeAiRT_VideoFrameInterpolation",
+        "aux_id": "ComfyUI-UmeAiRT-Toolkit"
+      },
+      "widgets_values": [
+        false,
+        "rife_v4.26.safetensors",
+        2
+      ],
+      "color": "#2471A3",
+      "bgcolor": "#123851",
+      "shape": 1
+    },
+    {
+      "id": 17,
+      "type": "UmeAiRT_VideoSmartUpscale",
+      "pos": [
+        2930,
+        1180
+      ],
+      "size": [
+        500,
+        260
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "video_pipe",
+          "type": "UME_VIDEO_PIPELINE",
+          "link": 20
+        }
+      ],
+      "outputs": [
+        {
+          "name": "video_pipe",
+          "type": "UME_VIDEO_PIPELINE",
+          "links": [
+            21
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-umeairt-toolkit",
+        "ver": "a7223eb4a034a109b67bbdac354d11d9e341ab54",
+        "Node name for S&R": "UmeAiRT_VideoSmartUpscale"
+      },
+      "widgets_values": [
+        false,
+        "Auto",
+        2,
+        "4x_NMKD-Siax_200k.pth",
+        "seedvr2_ema_3b_fp8_e4m3fn.safetensors",
+        8,
+        2
+      ],
+      "color": "#2471A3",
+      "bgcolor": "#123851",
+      "shape": 1
+    },
+    {
+      "id": 23,
+      "type": "UmeAiRT_WanLoraBlock_3",
+      "pos": [
+        2420,
+        680
+      ],
+      "size": [
+        500,
+        461.328125
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "loras",
+          "shape": 7,
+          "type": "UME_LORA_STACK",
+          "link": 28
+        }
+      ],
+      "outputs": [
+        {
+          "name": "loras",
+          "type": "UME_LORA_STACK",
+          "links": [
+            27
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-umeairt-toolkit",
+        "ver": "2af29cfea4966f13ac17361c7a738c1e3fa4c347",
+        "Node name for S&R": "UmeAiRT_WanLoraBlock_3"
+      },
+      "widgets_values": [
+        false,
+        "None",
+        1,
+        "Both",
+        false,
+        "None",
+        1,
+        "Both",
+        false,
+        "None",
+        1,
+        "Both"
+      ],
+      "color": "#4A235A",
+      "bgcolor": "#25122D",
+      "shape": 1
+    },
+    {
+      "id": 24,
+      "type": "UmeAiRT_WanLoraBlock_3",
+      "pos": [
+        2420,
+        1180
+      ],
+      "size": [
+        500,
+        461.328125
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "loras",
+          "shape": 7,
+          "type": "UME_LORA_STACK",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "loras",
+          "type": "UME_LORA_STACK",
+          "links": [
+            28
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-umeairt-toolkit",
+        "ver": "2af29cfea4966f13ac17361c7a738c1e3fa4c347",
+        "Node name for S&R": "UmeAiRT_WanLoraBlock_3"
+      },
+      "widgets_values": [
+        false,
+        "None",
+        1,
+        "Both",
+        false,
+        "None",
+        1,
+        "Both",
+        false,
+        "None",
+        1,
+        "Both"
+      ],
+      "color": "#4A235A",
+      "bgcolor": "#25122D",
+      "shape": 1
+    },
+    {
+      "id": 30,
+      "type": "UmeAiRT_FilesSettings_WAN",
+      "pos": [
+        2420,
+        270
+      ],
+      "size": [
+        500,
+        220.65625
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "model_bundle",
+          "type": "UME_BUNDLE",
+          "links": [
+            32
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-umeairt-toolkit",
+        "ver": "2af29cfea4966f13ac17361c7a738c1e3fa4c347",
+        "Node name for S&R": "UmeAiRT_FilesSettings_WAN"
+      },
+      "widgets_values": [
+        "Wan2.2-I2V-HighNoise-14B-Q4_K_S.gguf",
+        "umt5-xxl-encoder-Q4_K_S.gguf",
+        "wan_2.1_vae.safetensors",
+        "Wan2.2-I2V-LowNoise-14B-Q4_K_S.gguf",
+        "clip_vision_h.safetensors"
+      ],
+      "color": "#154360",
+      "bgcolor": "#0A2130",
+      "shape": 1
+    }
+  ],
+  "links": [
+    [
+      2,
+      3,
+      0,
+      1,
+      1,
+      "POSITIVE"
+    ],
+    [
+      3,
+      4,
+      0,
+      1,
+      2,
+      "UME_VIDEO_SETTINGS"
+    ],
+    [
+      4,
+      5,
+      0,
+      1,
+      3,
+      "NEGATIVE"
+    ],
+    [
+      5,
+      6,
+      0,
+      1,
+      5,
+      "IMAGE"
+    ],
+    [
+      10,
+      9,
+      0,
+      10,
+      0,
+      "UME_BUNDLE"
+    ],
+    [
+      11,
+      10,
+      0,
+      1,
+      0,
+      "UME_BUNDLE"
+    ],
+    [
+      17,
+      14,
+      0,
+      11,
+      0,
+      "UME_VIDEO_PIPELINE"
+    ],
+    [
+      20,
+      1,
+      0,
+      17,
+      0,
+      "UME_VIDEO_PIPELINE"
+    ],
+    [
+      21,
+      17,
+      0,
+      14,
+      0,
+      "UME_VIDEO_PIPELINE"
+    ],
+    [
+      27,
+      23,
+      0,
+      1,
+      4,
+      "UME_LORA_STACK"
+    ],
+    [
+      28,
+      24,
+      0,
+      23,
+      0,
+      "UME_LORA_STACK"
+    ],
+    [
+      32,
+      30,
+      0,
+      9,
+      0,
+      "UME_BUNDLE"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "title": "UmeAiRT - WAN2.2 - Image to video",
+      "bounding": [
+        1900,
+        300,
+        2700,
+        1350
+      ],
+      "color": "#444",
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.7513148009015777,
+      "offset": [
+        -1442.9975253006703,
+        -60.47622219752845
+      ]
+    },
+    "frontendVersion": "1.43.18"
+  },
+  "version": 0.4
+}
