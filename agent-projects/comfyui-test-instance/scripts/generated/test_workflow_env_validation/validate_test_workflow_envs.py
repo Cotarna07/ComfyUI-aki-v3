@@ -88,13 +88,15 @@ DEFAULT_REPORT_DIR = PROJECT_ROOT / "runtime" / "test_workflow_env_validation"
 
 
 def read_json_text(raw: bytes) -> Any:
-    for encoding in ("utf-8", "utf-8-sig"):
+    last_error: Exception | None = None
+    for encoding in ("utf-8-sig", "utf-8"):
         try:
             return json.loads(raw.decode(encoding))
-        except UnicodeDecodeError:
+        except (UnicodeDecodeError, json.JSONDecodeError) as exc:
+            last_error = exc
             continue
-        except json.JSONDecodeError as exc:
-            raise ValueError(f"JSON 解析失败: {exc}") from exc
+    if last_error is not None:
+        raise ValueError(f"JSON 解析失败: {last_error}") from last_error
     raise ValueError("无法按 UTF-8/UTF-8-SIG 解码 JSON。")
 
 
@@ -134,7 +136,9 @@ def parse_doc_sections(doc_path: Path, env_names: list[str]) -> list[SectionSpec
             continue
 
         if current and line.startswith("- "):
-            current.patterns.append(line[2:].strip())
+            candidate = line[2:].strip()
+            if candidate.startswith("agent-skills/"):
+                current.patterns.append(candidate)
 
     return sections
 
@@ -228,7 +232,14 @@ def iter_sources(path: Path, workspace_root: Path):
 
     try:
         with zipfile.ZipFile(path) as archive:
-            members = [member for member in archive.namelist() if member.lower().endswith(".json")]
+            members = [
+                member
+                for member in archive.namelist()
+                if member.lower().endswith(".json")
+                and not member.startswith("__MACOSX/")
+                and "/._" not in member
+                and not Path(member).name.startswith("._")
+            ]
             if not members:
                 yield relative_path, "zip", None, "archive_without_json"
                 return

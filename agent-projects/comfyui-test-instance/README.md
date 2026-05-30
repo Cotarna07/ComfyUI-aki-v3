@@ -20,10 +20,11 @@
 | 环境名 | 端口 | 用途 |
 |---|---:|---|
 | `aki-main-py313-cu130` | 8188 | 当前秋叶主环境，只登记，不由本项目创建 |
-| `wan-video-py313-cu130` | 8189 | Wan/LTX/视频工作流测试 |
+| `wan-video-py313-cu130` | 8189 | Wan 视频工作流测试 |
 | `flux-kontext-py313-cu130` | 8190 | FLUX/Kontext/商品图编辑测试 |
 | `legacy-pmrf-py311-cu124` | 8191 | PMRF/NATTEN/RealESRGAN 旧依赖沙箱，需外部 Python |
 | `api-bridge-py313` | 8192 | 调用局域网 TTS/LLM/翻译/字幕 API |
+| `ltx-video-py313-cu130` | 8193 | LTX/LX 视频、导演、修复、音频潜空间工作流测试 |
 
 ## 目录说明
 
@@ -90,6 +91,7 @@ agent-projects/comfyui-test-instance/ComfyUI-Environment-Launcher.vbs
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\agent-projects\comfyui-test-instance\scripts\start-wan-video.ps1
+powershell -ExecutionPolicy Bypass -File .\agent-projects\comfyui-test-instance\scripts\start-ltx-video.ps1
 powershell -ExecutionPolicy Bypass -File .\agent-projects\comfyui-test-instance\scripts\start-flux-kontext.ps1
 powershell -ExecutionPolicy Bypass -File .\agent-projects\comfyui-test-instance\scripts\start-api-bridge.ps1
 ```
@@ -139,7 +141,8 @@ powershell -ExecutionPolicy Bypass -File .\agent-projects\comfyui-test-instance\
 ## 多环境规则（2026-05-30）
 
 - `aki-main-py313-cu130` 是当前主环境，不作为新节点试验场。
-- `wan-video-py313-cu130` 用来测 Wan/LTX/视频类工作流。
+- `wan-video-py313-cu130` 用来测 Wan 视频类工作流。
+- `ltx-video-py313-cu130` 用来测 LTX/LX 视频、导演、IC-LoRA、音频潜空间和修复类工作流。
 - `flux-kontext-py313-cu130` 用来测 FLUX/Kontext/商品图编辑类工作流。
 - `api-bridge-py313` 用来接局域网音频、LLM、翻译、字幕服务，不重复部署本地 `IndexTTSRun` 或 `llama_cpp_*`。
 - `legacy-pmrf-py311-cu124` 只先创建目录和插件链接；必须准备好兼容 Python/Torch/CUDA 后再配置 `external_python` 启动。

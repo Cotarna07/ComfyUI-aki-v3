@@ -60,7 +60,7 @@ $launcherExe = Join-Path $workspaceRoot "绘世启动器.exe"
 $form = New-Object System.Windows.Forms.Form
 $form.Text = "ComfyUI Environment Launcher"
 $form.Width = 420
-$form.Height = 380
+$form.Height = 430
 $form.StartPosition = "CenterScreen"
 $form.FormBorderStyle = "FixedDialog"
 $form.MaximizeBox = $false
@@ -97,17 +97,22 @@ Add-Button -Form $form -Text "Wan Video 8189" -Top 126 -OnClick {
     Open-Url "http://127.0.0.1:8189"
 }
 
-Add-Button -Form $form -Text "Flux / Kontext 8190" -Top 174 -OnClick {
+Add-Button -Form $form -Text "LTX / LX Video 8193" -Top 174 -OnClick {
+    Start-PowerShellScript -ScriptPath (Join-Path $PSScriptRoot "start-ltx-video.ps1") -WorkingDirectory $workspaceRoot
+    Open-Url "http://127.0.0.1:8193"
+}
+
+Add-Button -Form $form -Text "Flux / Kontext 8190" -Top 222 -OnClick {
     Start-PowerShellScript -ScriptPath (Join-Path $PSScriptRoot "start-flux-kontext.ps1") -WorkingDirectory $workspaceRoot
     Open-Url "http://127.0.0.1:8190"
 }
 
-Add-Button -Form $form -Text "API Bridge 8192" -Top 222 -OnClick {
+Add-Button -Form $form -Text "API Bridge 8192" -Top 270 -OnClick {
     Start-PowerShellScript -ScriptPath (Join-Path $PSScriptRoot "start-api-bridge.ps1") -WorkingDirectory $workspaceRoot
     Open-Url "http://127.0.0.1:8192"
 }
 
-Add-Button -Form $form -Text "List Environments" -Top 270 -OnClick {
+Add-Button -Form $form -Text "List Environments" -Top 318 -OnClick {
     Start-PowerShellScript -ScriptPath (Join-Path $PSScriptRoot "list_environments.ps1") -WorkingDirectory $workspaceRoot
 }
 
@@ -116,7 +121,7 @@ $closeButton.Text = "Close"
 $closeButton.Width = 100
 $closeButton.Height = 30
 $closeButton.Left = 280
-$closeButton.Top = 318
+$closeButton.Top = 366
 $closeButton.Add_Click({ $form.Close() })
 $form.Controls.Add($closeButton)
 
