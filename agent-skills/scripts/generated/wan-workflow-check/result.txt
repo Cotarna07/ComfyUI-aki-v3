@@ -1,0 +1,510 @@
+
+===== Wan 2.1 - seamless loop workflow v1.2.json =====
+-- NODE TYPES (39) --
+BasicScheduler
+CFGGuider
+CLIPLoaderMultiGPU
+CLIPTextEncode
+CLIPVisionEncode
+CLIPVisionLoader
+ColorMatchImage
+Fast Groups Bypasser (rgthree)
+GetImageRangeFromBatch
+ImageCropByMask
+ImageFromBatch+
+ImageResizeKJ
+JWImageExtractFromBatch
+KSamplerSelect
+LoadImage
+LoraLoaderModelOnly
+MathExpression|pysssss
+ModelSamplingSD3
+Note
+PatchModelPatcherOrder
+PathchSageAttentionKJ
+PreviewImage
+RIFE VFI
+RandomNoise
+SamplerCustomAdvanced
+Seed Everywhere
+SplitSigmas
+UnetLoaderGGUFDisTorchMultiGPU
+VAEDecode
+VAELoaderMultiGPU
+VHS_GetImageCount
+VHS_VideoCombine
+WanImageToVideo_F2
+WanSkipEndFrameImages_F2
+WanVideoEnhanceAVideoKJ
+WanVideoTeaCacheKJ
+easy batchAnything
+easy cleanGpuUsed
+mxSlider
+-- MODEL FILES (7) --
+WAN\BouncyWalkV01.safetensors
+WAN\bounceV_01.safetensors
+clip_vision_h.safetensors
+rife47.pth
+umt5_xxl_fp8_e4m3fn_scaled.safetensors
+wan2.1-i2v-14b-720p-Q4_K_S.gguf
+wan_2.1_vae.safetensors
+
+===== WAN2.2 I2V Only - K3NK v2.5.4.json =====
+-- NODE TYPES (79) --
+Any Switch (rgthree)
+BasicScheduler
+Bookmark (rgthree)
+CM_FloatToInt
+CM_IntToFloat
+ColorCorrect
+CreateCFGScheduleFloatList
+DownloadAndLoadFlorence2Model
+DummyComfyWanModelObject
+EG_WXZ_QH
+FL_RIFE
+Fast Groups Bypasser (rgthree)
+Fast Groups Muter (rgthree)
+Florence2Run
+FramePackFindNearestBucket
+GetImageSizeAndCount
+INTConstant
+ImageResizeKJv2
+ImpactWildcardProcessor
+Incrementer 🪴
+K3NKFindNearestBucket
+K3NKImageGrab
+K3NKImageLoaderWithBlending
+K3NKSaveLatentPassThrought
+Label (rgthree)
+LoadImage
+MMAudioFeatureUtilsLoader
+MMAudioModelLoader
+MMAudioSampler
+MarkdownNote
+MathExpression|pysssss
+MelBandRoFormerModelLoader
+MelBandRoFormerSampler
+Mute / Bypass Relay (rgthree)
+Mute / Bypass Repeater (rgthree)
+NormalizeAudioLoudness
+Note
+NovaSR
+PauseWorkflowNode
+PlaySound|pysssss
+PreviewAny
+PreviewAudio
+PreviewBridge
+PreviewImage
+PrimitiveFloat
+PrimitiveInt
+Reroute
+SEGSSwitch
+SaveImage
+Seed (rgthree)
+SetNode
+Sigmas Split Value
+StringConcatenate
+VHS_VideoCombine
+WanVideoApplyNAG
+WanVideoBlockSwap
+WanVideoDecode
+WanVideoEncode
+WanVideoImageToVideoEncode
+WanVideoLoraSelect
+WanVideoLoraSelectMulti
+WanVideoModelLoader
+WanVideoSVIProEmbeds
+WanVideoSampler
+WanVideoScheduler
+WanVideoSetBlockSwap
+WanVideoSetLoRAs
+WanVideoTextEncodeCached
+WanVideoTorchCompileSettings
+WanVideoVAELoader
+easy cleanGpuUsed
+easy mathFloat
+easy mathInt
+easy promptReplace
+easy showAnything
+mxStop
+ttN concat
+ttN int
+ttN text
+-- MODEL FILES (16) --
+MelBandRoformer_fp32.safetensors
+NovaSR.safetensors
+SVI_Wan2.2-I2V-A14B_high_noise_lora_v2.0_pro.safetensors
+SVI_Wan2.2-I2V-A14B_low_noise_lora_v2.0_pro.safetensors
+Wan_2_2_I2V_A14B_HIGH_lightx2v_4step_lora_v1030_rank_64_bf16.safetensors
+apple_DFN5B-CLIP-ViT-H-14-384_fp16.safetensors
+lightx2v_I2V_14B_480p_cfg_step_distill_rank256_bf16.safetensors
+mmaudio_nsfw_large_44k_v2_fp16.safetensors
+mmaudio_synchformer_fp16.safetensors
+mmaudio_vae_44k_fp16.safetensors
+umt5_xxl_fp16.safetensors
+wan2.2_i2v_high_noise_14B_fp16.safetensors
+wan2.2_i2v_low_noise_14B_fp16.safetensors
+wan22-G4GG1NGv6-11epoc-high-i2v-k3nk.safetensors
+wan22-G4GG1NGv6-11epoc-low-i2v-k3nk.safetensors
+wan_2.1_vae.safetensors
+
+===== WAN2.2 T2V-I2V-T2I-S2V K3NK v2.5.4 SVI.json =====
+-- NODE TYPES (120) --
+340f324c-f8b3-46e1-a35b-4561ecd7027c
+977c7e27-5039-4102-86b6-9848cf06b99a
+Any Switch (rgthree)
+BasicScheduler
+Bookmark (rgthree)
+CLIPTextEncode
+CLIPVisionLoader
+CM_FloatToInt
+CM_IntToFloat
+CR String To Combo
+CR Text
+ColorCorrect
+ColorMatchToReference
+CreateCFGScheduleFloatList
+DF_Int_to_Float
+Display Int (rgthree)
+DownloadAndLoadFlorence2Model
+DummyComfyWanModelObject
+FL_RIFE
+Fast Groups Bypasser (rgthree)
+Fast Groups Muter (rgthree)
+FastFilmGrain
+FloatConstant
+Florence2Run
+FramePackFindNearestBucket
+GetImageSizeAndCount
+INTConstant
+ImageFromBatch+
+ImageResizeKJv2
+ImageScaleBy
+ImageSharpen
+ImageUpscaleWithModelBatched
+ImpactWildcardProcessor
+Incrementer 🪴
+JWFloatToInteger
+K3NKFindNearestBucket
+K3NKImageGrab
+K3NKImageLoaderWithBlending
+K3NKImageOverlay
+K3NKSaveLatentPassThrought
+Label (rgthree)
+LatentMultiply
+LoadImage
+LoadImagesFromDir //Inspire
+MMAudioFeatureUtilsLoader
+MMAudioModelLoader
+MMAudioSampler
+MarkdownNote
+MathExpression|pysssss
+MelBandRoFormerModelLoader
+MelBandRoFormerSampler
+Mute / Bypass Relay (rgthree)
+Mute / Bypass Repeater (rgthree)
+NormalizeAudioLoudness
+Note
+NovaSR
+PauseWorkflowNode
+PlaySound|pysssss
+Power Lora Loader (rgthree)
+PreviewAny
+PreviewAudio
+PreviewBridge
+PreviewImage
+PrimitiveFloat
+PrimitiveInt
+PrimitiveNode
+Reroute
+Resolutions by Ratio (WLSH)
+SEGSSwitch
+SaveImage
+SaveLatent
+Seed (rgthree)
+Sigmas Split Value
+SimpleMath+
+StringConcatenate
+UpscaleModelLoader
+VHS_LoadAudio
+VHS_LoadVideo
+VHS_LoadVideoFFmpeg
+VHS_SelectEveryNthImage
+VHS_VideoCombine
+WanVideoApplyNAG
+WanVideoBlockList
+WanVideoBlockSwap
+WanVideoClipVisionEncode
+WanVideoContextOptions
+WanVideoDecode
+WanVideoEmptyEmbeds
+WanVideoEncode
+WanVideoEncodeLatentBatch
+WanVideoEnhanceAVideo
+WanVideoExperimentalArgs
+WanVideoImageToVideoEncode
+WanVideoLoraSelect
+WanVideoLoraSelectMulti
+WanVideoModelLoader
+WanVideoSVIProEmbeds
+WanVideoSampler
+WanVideoScheduler
+WanVideoSetBlockSwap
+WanVideoSetLoRAs
+WanVideoSetRadialAttention
+WanVideoSigmaToStep
+WanVideoTextEncodeCached
+WanVideoTorchCompileSettings
+WanVideoVAELoader
+a7d2f0d7-ff69-400d-aa64-ca94fcff6246
+c7b2a9fc-a78e-4638-ab98-6ee92ecc3067
+da3621ec-a45e-4c41-9bb8-c5892f8b3175
+easy cleanGpuUsed
+easy mathFloat
+easy mathInt
+easy promptReplace
+easy showAnything
+easy textIndexSwitch
+mxSlider2D
+mxStop
+ttN concat
+ttN int
+ttN text
+-- MODEL FILES (36) --
+2x_NMKD-UpgifLiteV2_210k.pth
+MelBandRoformer_fp32.safetensors
+NovaSR.safetensors
+SVI_Wan2.2-I2V-A14B_high_noise_lora_v2.0_pro.safetensors
+SVI_Wan2.2-I2V-A14B_low_noise_lora_v2.0_pro.safetensors
+Wan22_A14B_T2V_HIGH_Lightning_4steps_lora_250928_rank128_fp16.safetensors
+Wan2_1-HuMo-14B_fp16.safetensors
+Wan_2_2_I2V_A14B_HIGH_lightx2v_4step_lora_v1030_rank_64_bf16.safetensors
+apple_DFN5B-CLIP-ViT-H-14-384_fp16.safetensors
+clip_vision_h.safetensors
+lightx2v_14B_T2V_cfg_step_distill_lora_adaptive_rank_quantile_0.15_bf16.safetensors
+lightx2v_I2V_14B_480p_cfg_step_distill_rank256_bf16.safetensors
+mmaudio_nsfw_large_44k_v2_fp16.safetensors
+mmaudio_synchformer_fp16.safetensors
+mmaudio_vae_44k_fp16.safetensors
+umt5_xxl_fp16.safetensors
+wan2.2_i2v_high_noise_14B_fp16.safetensors
+wan2.2_i2v_low_noise_14B_fp16.safetensors
+wan2.2_t2v_high_noise_14B_fp16.safetensors
+wan2.2_t2v_low_noise_14B_fp16.safetensors
+wan22-5uck1t-v2-1epoc-low-k3nk.safetensors
+wan22-5uck1t-v2-2epoc-high-k3nk.safetensors
+wan22-G4GG1NGv4-101epoc-low-i2v-k3nk.safetensors
+wan22-G4GG1NGv4-127epoc-high-i2v-k3nk.safetensors
+wan22-G4GG1NGv6-11epoc-high-i2v-k3nk.safetensors
+wan22-G4GG1NGv6-11epoc-low-i2v-k3nk.safetensors
+wan22-f4c3spl4sh-100epoc-high-k3nk.safetensors
+wan22-f4c3spl4sh-154epoc-low-k3nk.safetensors
+wan22-gu4d4lup3-23epoc-low-k3nk.safetensors
+wan22-m4crom4sti4-12epoc-high-k3nk.safetensors
+wan22-m4rici3lo-212epoc-low-k3nk.safetensors
+wan22-spitonanother-54epoc-i2v-high.safetensors
+wan22-spitonanother-55epoc-i2v-low.safetensors
+wan22-ultimatedeepthroat-I2V-102epoc-low-k3nk.safetensors
+wan22-ultimatedeepthroat-i2v-102epoc-high-k3nk.safetensors
+wan_2.1_vae.safetensors
+
+===== WAN2.2_Img2video_auto.json =====
+-- NODE TYPES (12) --
+LoadImage
+UmeAiRT_BundleLoader
+UmeAiRT_Negative_Input
+UmeAiRT_Positive_Input
+UmeAiRT_VideoFrameInterpolation
+UmeAiRT_VideoGenerator
+UmeAiRT_VideoLightningAccelerator
+UmeAiRT_VideoOptimization
+UmeAiRT_VideoOutput
+UmeAiRT_VideoSettings
+UmeAiRT_VideoSmartUpscale
+UmeAiRT_WanLoraBlock_3
+-- MODEL FILES (3) --
+4x_NMKD-Siax_200k.pth
+rife_v4.26.safetensors
+seedvr2_ema_3b_fp8_e4m3fn.safetensors
+
+===== WAN2.2_Img2video_manual.json =====
+-- NODE TYPES (12) --
+LoadImage
+UmeAiRT_FilesSettings_WAN
+UmeAiRT_Negative_Input
+UmeAiRT_Positive_Input
+UmeAiRT_VideoFrameInterpolation
+UmeAiRT_VideoGenerator
+UmeAiRT_VideoLightningAccelerator
+UmeAiRT_VideoOptimization
+UmeAiRT_VideoOutput
+UmeAiRT_VideoSettings
+UmeAiRT_VideoSmartUpscale
+UmeAiRT_WanLoraBlock_3
+-- MODEL FILES (8) --
+4x_NMKD-Siax_200k.pth
+Wan2.2-I2V-HighNoise-14B-Q4_K_S.gguf
+Wan2.2-I2V-LowNoise-14B-Q4_K_S.gguf
+clip_vision_h.safetensors
+rife_v4.26.safetensors
+seedvr2_ema_3b_fp8_e4m3fn.safetensors
+umt5-xxl-encoder-Q4_K_S.gguf
+wan_2.1_vae.safetensors
+
+===== WAN2.2_LOOP_NATIVE_UPSCALER_GGUF.json =====
+-- NODE TYPES (42) --
+CFGZeroStar
+CLIPLoader
+CLIPTextEncode
+ClownsharKSampler_Beta
+ColorMatch
+DownloadAndLoadFlorence2Model
+DownloadAndLoadGIMMVFIModel
+Fast Groups Bypasser (rgthree)
+Fast Groups Muter (rgthree)
+Florence2Run
+GIMMVFI_interpolate
+GetImageRangeFromBatch
+ImageFromBatch+
+ImageResize+
+ImageScaleBy
+ImageUpscaleWithModel
+JWImageExtractFromBatch
+LoadImage
+MathExpression|pysssss
+ModelSamplingSD3
+PainterFLF2V
+Power Lora Loader (rgthree)
+PrimitiveStringMultiline
+RIFE VFI
+Seed (rgthree)
+StringConcatenate
+Text Find and Replace
+UnetLoaderGGUF
+UpscaleModelLoader
+VAEDecode
+VAELoader
+VHS_GetImageCount
+VHS_VideoCombine
+WanVideoEnhanceAVideoKJ
+WanVideoNAG
+easy batchAnything
+easy cleanGpuUsed
+easy convertAnything
+easy mathFloat
+easy mathInt
+easy showAnything
+mxSlider
+-- MODEL FILES (7) --
+4x-AnimeSharp.pth
+DasiwaWAN22I2V14BTastysinV8_q4High.gguf
+DasiwaWAN22I2V14BTastysinV8_q4Low.gguf
+gimmvfi_f_arb_lpips_fp32.safetensors
+rife47.pth
+umt5_xxl_fp8_e4m3fn_scaled.safetensors
+wan_2.1_vae.safetensors
+
+===== WAN2.2_LOOP_NATIVE_UPSCALER.json =====
+-- NODE TYPES (42) --
+CFGZeroStar
+CLIPLoader
+CLIPTextEncode
+ClownsharKSampler_Beta
+ColorMatch
+DownloadAndLoadFlorence2Model
+DownloadAndLoadGIMMVFIModel
+Fast Groups Bypasser (rgthree)
+Fast Groups Muter (rgthree)
+Florence2Run
+GIMMVFI_interpolate
+GetImageRangeFromBatch
+ImageFromBatch+
+ImageResize+
+ImageScaleBy
+ImageUpscaleWithModel
+JWImageExtractFromBatch
+LoadImage
+MathExpression|pysssss
+ModelSamplingSD3
+PainterFLF2V
+Power Lora Loader (rgthree)
+PrimitiveStringMultiline
+RIFE VFI
+Seed (rgthree)
+StringConcatenate
+Text Find and Replace
+UnetLoaderGGUF
+UpscaleModelLoader
+VAEDecode
+VAELoader
+VHS_GetImageCount
+VHS_VideoCombine
+WanVideoEnhanceAVideoKJ
+WanVideoNAG
+easy batchAnything
+easy cleanGpuUsed
+easy convertAnything
+easy mathFloat
+easy mathInt
+easy showAnything
+mxSlider
+-- MODEL FILES (7) --
+4x-AnimeSharp.pth
+DasiwaWAN22I2V14BTastysinV8_q4High.gguf
+DasiwaWAN22I2V14BTastysinV8_q4Low.gguf
+gimmvfi_f_arb_lpips_fp32.safetensors
+rife47.pth
+umt5_xxl_fp8_e4m3fn_scaled.safetensors
+wan_2.1_vae.safetensors
+
+===== WAN2.2_LOOP.json =====
+-- NODE TYPES (42) --
+CFGZeroStar
+CLIPLoader
+CLIPTextEncode
+ClownsharKSampler_Beta
+ColorMatch
+DownloadAndLoadFlorence2Model
+DownloadAndLoadGIMMVFIModel
+Fast Groups Bypasser (rgthree)
+Fast Groups Muter (rgthree)
+Florence2Run
+GIMMVFI_interpolate
+GetImageRangeFromBatch
+ImageFromBatch+
+ImageResize+
+ImageScaleBy
+JWImageExtractFromBatch
+LoadImage
+LoadUpscalerTensorrtModel
+MathExpression|pysssss
+ModelSamplingSD3
+PainterFLF2V
+Power Lora Loader (rgthree)
+PrimitiveStringMultiline
+RIFE VFI
+Seed (rgthree)
+StringConcatenate
+Text Find and Replace
+UNETLoader
+UpscalerTensorrt
+VAEDecode
+VAELoader
+VHS_GetImageCount
+VHS_VideoCombine
+WanVideoEnhanceAVideoKJ
+WanVideoNAG
+easy batchAnything
+easy cleanGpuUsed
+easy convertAnything
+easy mathFloat
+easy mathInt
+easy showAnything
+mxSlider
+-- MODEL FILES (6) --
+DasiwaWAN22I2V14BLightspeed_synthseductionHighV9.safetensors
+DasiwaWAN22I2V14BLightspeed_synthseductionLowV9.safetensors
+gimmvfi_f_arb_lpips_fp32.safetensors
+rife47.pth
+umt5_xxl_fp8_e4m3fn_scaled.safetensors
+wan_2.1_vae.safetensors

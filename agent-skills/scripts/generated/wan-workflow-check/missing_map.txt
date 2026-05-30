@@ -1,0 +1,62 @@
+CLIPLoaderMultiGPU                  -> https://github.com/pollockjj/ComfyUI-MultiGPU
+CM_FloatToInt                       -> https://github.com/evanspearman/ComfyMath
+CM_IntToFloat                       -> https://github.com/evanspearman/ComfyMath
+ColorCorrect                        -> https://github.com/EllangoK/ComfyUI-post-processing-nodes | https://github.com/sipherxyz/comfyui-art-venture
+ColorMatchImage                     -> ??? NOT IN MANAGER DB
+ColorMatchToReference               -> https://github.com/ZhiHui6/zhihui_nodes_comfyui | https://github.com/vrgamegirl19/comfyui-vrgamedevgirl
+DF_Int_to_Float                     -> ??? NOT IN MANAGER DB
+EG_WXZ_QH                           -> https://github.com/11dogzi/Comfyui-ergouzi-Nodes
+FL_RIFE                             -> https://github.com/filliptm/ComfyUI_Fill-Nodes
+FastFilmGrain                       -> https://github.com/vrgamegirl19/comfyui-vrgamedevgirl
+FramePackFindNearestBucket          -> https://github.com/ShmuelRonen/ComfyUI-FramePackWrapper_Plus | https://github.com/xhiroga/ComfyUI-FramePackWrapper_PlusOne
+Incrementer 🪴                       -> https://github.com/Eagle-CN/ComfyUI-Addoor | https://github.com/fofr/comfyui-fofr-toolkit
+K3NKFindNearestBucket               -> ??? NOT IN MANAGER DB
+K3NKImageGrab                       -> https://github.com/K3NK3/ComfyUI-K3NKImageGrab
+K3NKImageLoaderWithBlending         -> ??? NOT IN MANAGER DB
+K3NKImageOverlay                    -> ??? NOT IN MANAGER DB
+K3NKSaveLatentPassThrought          -> ??? NOT IN MANAGER DB
+NovaSR                              -> ??? NOT IN MANAGER DB
+PauseWorkflowNode                   -> https://github.com/wywywywy/ComfyUI-pause
+Resolutions by Ratio (WLSH)         -> https://github.com/wallish77/wlsh_nodes
+Sigmas Split Value                  -> https://github.com/ClownsharkBatwing/RES4LYF
+UmeAiRT_BundleLoader                -> ??? NOT IN MANAGER DB
+UmeAiRT_FilesSettings_WAN           -> ??? NOT IN MANAGER DB
+UmeAiRT_Negative_Input              -> ??? NOT IN MANAGER DB
+UmeAiRT_Positive_Input              -> ??? NOT IN MANAGER DB
+UmeAiRT_VideoFrameInterpolation     -> ??? NOT IN MANAGER DB
+UmeAiRT_VideoGenerator              -> ??? NOT IN MANAGER DB
+UmeAiRT_VideoLightningAccelerator   -> ??? NOT IN MANAGER DB
+UmeAiRT_VideoOptimization           -> ??? NOT IN MANAGER DB
+UmeAiRT_VideoOutput                 -> ??? NOT IN MANAGER DB
+UmeAiRT_VideoSettings               -> ??? NOT IN MANAGER DB
+UmeAiRT_VideoSmartUpscale           -> ??? NOT IN MANAGER DB
+UmeAiRT_WanLoraBlock_3              -> ??? NOT IN MANAGER DB
+UnetLoaderGGUFDisTorchMultiGPU      -> ??? NOT IN MANAGER DB
+VAELoaderMultiGPU                   -> https://github.com/pollockjj/ComfyUI-MultiGPU
+WanImageToVideo_F2                  -> https://github.com/Flow-two/ComfyUI-WanStartEndFramesNative
+WanSkipEndFrameImages_F2            -> https://github.com/Flow-two/ComfyUI-WanStartEndFramesNative
+ttN concat                          -> https://github.com/TinyTerra/ComfyUI_tinyterraNodes
+ttN int                             -> https://github.com/TinyTerra/ComfyUI_tinyterraNodes
+ttN text                            -> https://github.com/TinyTerra/ComfyUI_tinyterraNodes
+
+--- UNRESOLVED (20) ---
+ColorMatchImage
+DF_Int_to_Float
+K3NKFindNearestBucket
+K3NKImageLoaderWithBlending
+K3NKImageOverlay
+K3NKSaveLatentPassThrought
+NovaSR
+UmeAiRT_BundleLoader
+UmeAiRT_FilesSettings_WAN
+UmeAiRT_Negative_Input
+UmeAiRT_Positive_Input
+UmeAiRT_VideoFrameInterpolation
+UmeAiRT_VideoGenerator
+UmeAiRT_VideoLightningAccelerator
+UmeAiRT_VideoOptimization
+UmeAiRT_VideoOutput
+UmeAiRT_VideoSettings
+UmeAiRT_VideoSmartUpscale
+UmeAiRT_WanLoraBlock_3
+UnetLoaderGGUFDisTorchMultiGPU

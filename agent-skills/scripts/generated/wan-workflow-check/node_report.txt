@@ -1,0 +1,203 @@
+==== MISSING NODE TYPES (4) ====
+Fast Groups Bypasser (rgthree)   <- Wan 2.1 - seamless loop workflow v1.2, WAN2.2 I2V Only - K3NK v2.5.4, WAN2.2 T2V-I2V-T2I-S2V K3NK v2.5.4 SVI, WAN2.2_LOOP_NATIVE_UPSCALER_GGUF, WAN2.2_LOOP_NATIVE_UPSCALER, WAN2.2_LOOP
+Fast Groups Muter (rgthree)   <- WAN2.2 I2V Only - K3NK v2.5.4, WAN2.2 T2V-I2V-T2I-S2V K3NK v2.5.4 SVI, WAN2.2_LOOP_NATIVE_UPSCALER_GGUF, WAN2.2_LOOP_NATIVE_UPSCALER, WAN2.2_LOOP
+Mute / Bypass Relay (rgthree)   <- WAN2.2 I2V Only - K3NK v2.5.4, WAN2.2 T2V-I2V-T2I-S2V K3NK v2.5.4 SVI
+Mute / Bypass Repeater (rgthree)   <- WAN2.2 I2V Only - K3NK v2.5.4, WAN2.2 T2V-I2V-T2I-S2V K3NK v2.5.4 SVI
+
+==== AVAILABLE NODE TYPES (161) ====
+Any Switch (rgthree)   [rgthree-comfy]
+BasicScheduler   [ComfyUI-Easy-Use,ComfyUI-Lora-Manager,[ComfyUI-core]]
+CFGGuider   [ComfyUI-Easy-Use,ComfyUI-Lora-Manager,[ComfyUI-core]]
+CFGZeroStar   [ComfyUI-UmeAiRT-Toolkit,[ComfyUI-core]]
+CLIPLoader   [ComfyUI-Inspire-Pack,ComfyUI-MultiGPU,[ComfyUI-core]]
+CLIPLoaderMultiGPU   [ComfyUI-MultiGPU]
+CLIPTextEncode   [ComfyUI-Custom-Scripts,ComfyUI-Lora-Manager,ComfyUI_Fill-Nodes,ComfyUI_UltimateSDUpscale,[ComfyUI-core],comfy-mtb,comfyui-queue-manager,rgthree-comfy]
+CLIPVisionEncode   [[ComfyUI-core]]
+CLIPVisionLoader   [ComfyUI-MultiGPU,[ComfyUI-core]]
+CM_FloatToInt   [ComfyMath]
+CM_IntToFloat   [ComfyMath]
+CR String To Combo   [ComfyUI_Comfyroll_CustomNodes]
+CR Text   [ComfyUI_Comfyroll_CustomNodes]
+ClownsharKSampler_Beta   [ComfyUI-Lora-Manager,RES4LYF]
+ColorCorrect   [ComfyUI-post-processing-nodes]
+ColorMatch   [ComfyUI-KJNodes,ComfyUI_Swwan]
+ColorMatchImage   [ComfyUI-Image-Filters]
+ColorMatchToReference   [comfyui-vrgamedevgirl]
+CreateCFGScheduleFloatList   [ComfyUI-WanVideoWrapper]
+DF_Int_to_Float   [Derfuu_ComfyUI_ModdedNodes]
+Display Int (rgthree)   [rgthree-comfy]
+DownloadAndLoadFlorence2Model   [ComfyUI-Florence2,ComfyUI-MultiGPU]
+DownloadAndLoadGIMMVFIModel   [ComfyUI-GIMM-VFI]
+DummyComfyWanModelObject   [ComfyUI-WanVideoWrapper]
+EG_WXZ_QH   [Comfyui-ergouzi-Nodes]
+FL_RIFE   [ComfyUI_Fill-Nodes]
+FastFilmGrain   [comfyui-vrgamedevgirl]
+FloatConstant   [ComfyUI-KJNodes]
+Florence2Run   [ComfyUI-Florence2]
+FramePackFindNearestBucket   [ComfyUI-FramePackWrapper_Plus]
+GIMMVFI_interpolate   [ComfyUI-GIMM-VFI]
+GetImageRangeFromBatch   [ComfyUI-KJNodes,ComfyUI_Swwan]
+GetImageSizeAndCount   [ComfyUI-KJNodes,ComfyUI_Swwan]
+INTConstant   [ComfyUI-KJNodes,WhatDreamsCost-ComfyUI]
+ImageCropByMask   [ComfyUI-KJNodes,ComfyUI_Swwan]
+ImageFromBatch+   [ComfyUI_essentials]
+ImageResize+   [ComfyUI_essentials]
+ImageResizeKJ   [ComfyUI-KJNodes,ComfyUI_Swwan]
+ImageResizeKJv2   [ComfyUI-KJNodes,ComfyUI_Swwan]
+ImageScaleBy   [[ComfyUI-core]]
+ImageSharpen   [[ComfyUI-core]]
+ImageUpscaleWithModel   [ComfyUI-Impact-Pack,[ComfyUI-core],rgthree-comfy]
+ImageUpscaleWithModelBatched   [ComfyUI-KJNodes,ComfyUI_Swwan]
+ImpactWildcardProcessor   [ComfyUI-Impact-Pack,ComfyUI-Inspire-Pack]
+Incrementer 🪴   [comfyui-fofr-toolkit]
+JWFloatToInteger   [comfyui-various]
+JWImageExtractFromBatch   [comfyui-various]
+K3NKFindNearestBucket   [ComfyUI-K3NKImageGrab]
+K3NKImageGrab   [ComfyUI-K3NKImageGrab]
+K3NKImageLoaderWithBlending   [ComfyUI-K3NKImageGrab]
+K3NKImageOverlay   [ComfyUI-K3NKImageGrab]
+K3NKSaveLatentPassThrought   [ComfyUI-K3NKImageGrab]
+KSamplerSelect   [ComfyUI-Easy-Use,ComfyUI-Lora-Manager,ComfyUI_UltimateSDUpscale,[ComfyUI-core]]
+LatentMultiply   [[ComfyUI-core]]
+LoadImage   [ComfyUI-Custom-Scripts,ComfyUI-Easy-Use,[ComfyUI-core],comfy-mtb,comfyui-queue-manager,comfyui_controlnet_aux]
+LoadImagesFromDir //Inspire   [ComfyUI-Inspire-Pack]
+LoadUpscalerTensorrtModel   [ComfyUI-Upscaler-Tensorrt]
+LoraLoaderModelOnly   [ComfyUI-Easy-Use,[ComfyUI-core]]
+MMAudioFeatureUtilsLoader   [ComfyUI-MultiGPU,comfyui-mmaudio]
+MMAudioModelLoader   [ComfyUI-MultiGPU,comfyui-mmaudio]
+MMAudioSampler   [ComfyUI-MultiGPU,comfyui-mmaudio]
+MathExpression|pysssss   [ComfyUI-Custom-Scripts]
+MelBandRoFormerModelLoader   [ComfyUI-MelBandRoFormer]
+MelBandRoFormerSampler   [ComfyUI-MelBandRoFormer]
+ModelSamplingSD3   [[ComfyUI-core]]
+NormalizeAudioLoudness   [ComfyUI-WanVideoWrapper]
+NovaSR   [ComfyUI-NovaSR]
+PainterFLF2V   [Comfyui-PainterFLF2V]
+PatchModelPatcherOrder   [ComfyUI-KJNodes]
+PathchSageAttentionKJ   [ComfyUI-KJNodes]
+PauseWorkflowNode   [ComfyUI-pause]
+PlaySound|pysssss   [ComfyUI-Custom-Scripts]
+Power Lora Loader (rgthree)   [CRT-Nodes]
+PreviewAny   [ComfyUI-KJNodes,[ComfyUI-core]]
+PreviewAudio   [[ComfyUI-core]]
+PreviewBridge   [ComfyUI-Impact-Pack]
+PreviewImage   [ComfyUI-Custom-Scripts,ComfyUI-Easy-Use,ComfyUI-Manager,ComfyUI_Custom_Nodes_AlekPet,ComfyUI_Fill-Nodes,[ComfyUI-core]]
+RIFE VFI   [ComfyUI-Frame-Interpolation]
+RandomNoise   [[ComfyUI-core]]
+Resolutions by Ratio (WLSH)   [wlsh_nodes]
+SEGSSwitch   [ComfyUI-Impact-Pack]
+SamplerCustomAdvanced   [ComfyUI-Lora-Manager,[ComfyUI-core]]
+SaveImage   [ComfyUI-Custom-Scripts,ComfyUI-Easy-Use,ComfyUI-Manager,ComfyUI_Fill-Nodes,[ComfyUI-core],comfyui-queue-manager,rgthree-comfy]
+SaveLatent   [[ComfyUI-core]]
+Seed (rgthree)   [ComfyUI-Impact-Pack,ComfyUI-Inspire-Pack,ComfyUI_Swwan]
+SetNode   [ComfyUI-KJNodes,ComfyUI-Lora-Manager]
+Sigmas Split Value   [RES4LYF]
+SimpleMath+   [ComfyUI_essentials]
+SplitSigmas   [ComfyUI-Easy-Use,[ComfyUI-core]]
+StringConcatenate   [[ComfyUI-core]]
+Text Find and Replace   [was-node-suite-comfyui]
+UNETLoader   [ComfyUI-Lora-Manager,ComfyUI-MultiGPU,[ComfyUI-core]]
+UmeAiRT_BundleLoader   [ComfyUI-UmeAiRT-Toolkit]
+UmeAiRT_FilesSettings_WAN   [ComfyUI-UmeAiRT-Toolkit]
+UmeAiRT_Negative_Input   [ComfyUI-UmeAiRT-Toolkit]
+UmeAiRT_Positive_Input   [ComfyUI-UmeAiRT-Toolkit]
+UmeAiRT_VideoFrameInterpolation   [ComfyUI-UmeAiRT-Toolkit]
+UmeAiRT_VideoGenerator   [ComfyUI-UmeAiRT-Toolkit]
+UmeAiRT_VideoLightningAccelerator   [ComfyUI-UmeAiRT-Toolkit]
+UmeAiRT_VideoOptimization   [ComfyUI-UmeAiRT-Toolkit]
+UmeAiRT_VideoOutput   [ComfyUI-UmeAiRT-Toolkit]
+UmeAiRT_VideoSettings   [ComfyUI-UmeAiRT-Toolkit]
+UmeAiRT_VideoSmartUpscale   [ComfyUI-UmeAiRT-Toolkit]
+UmeAiRT_WanLoraBlock_3   [ComfyUI-UmeAiRT-Toolkit]
+UnetLoaderGGUF   [CWK_Checkpoints_Preset_Manager,ComfyUI-GGUF,ComfyUI-Lora-Manager,ComfyUI-MultiGPU,ComfyUI-UmeAiRT-Toolkit]
+UnetLoaderGGUFDisTorchMultiGPU   [ComfyUI-MultiGPU]
+UpscaleModelLoader   [ComfyUI_UltimateSDUpscale,[ComfyUI-core],rgthree-comfy]
+UpscalerTensorrt   [ComfyUI-Upscaler-Tensorrt]
+VAEDecode   [ComfyUI-Custom-Scripts,ComfyUI-Lora-Manager,ComfyUI_Fill-Nodes,ComfyUI_UltimateSDUpscale,[ComfyUI-core],comfyui-queue-manager,rgthree-comfy]
+VAELoader   [ComfyUI-Custom-Scripts,ComfyUI-MultiGPU,[ComfyUI-core],rgthree-comfy]
+VAELoaderMultiGPU   [ComfyUI-MultiGPU]
+VHS_GetImageCount   [ComfyUI-VideoHelperSuite]
+VHS_LoadAudio   [ComfyUI-VideoHelperSuite]
+VHS_LoadVideo   [ComfyUI-VideoHelperSuite,comfy-mtb]
+VHS_LoadVideoFFmpeg   [ComfyUI-VideoHelperSuite]
+VHS_SelectEveryNthImage   [ComfyUI-VideoHelperSuite]
+VHS_VideoCombine   [ComfyUI-Manager,ComfyUI-VideoHelperSuite,WhatDreamsCost-ComfyUI]
+WanImageToVideo_F2   [ComfyUI-WanStartEndFramesNative]
+WanSkipEndFrameImages_F2   [ComfyUI-WanStartEndFramesNative]
+WanVideoApplyNAG   [ComfyUI-WanVideoWrapper]
+WanVideoBlockList   [ComfyUI-WanVideoWrapper]
+WanVideoBlockSwap   [ComfyUI-MultiGPU,ComfyUI-WanVideoWrapper]
+WanVideoClipVisionEncode   [ComfyUI-MultiGPU,ComfyUI-WanVideoWrapper]
+WanVideoContextOptions   [ComfyUI-WanVideoWrapper,WhatDreamsCost-ComfyUI]
+WanVideoDecode   [ComfyUI-MultiGPU,ComfyUI-WanVideoWrapper,WhatDreamsCost-ComfyUI]
+WanVideoEmptyEmbeds   [ComfyUI-WanVideoWrapper]
+WanVideoEncode   [ComfyUI-MultiGPU,ComfyUI-WanVideoWrapper]
+WanVideoEncodeLatentBatch   [ComfyUI-WanVideoWrapper]
+WanVideoEnhanceAVideo   [ComfyUI-WanVideoWrapper]
+WanVideoEnhanceAVideoKJ   [ComfyUI-KJNodes]
+WanVideoExperimentalArgs   [ComfyUI-WanVideoWrapper]
+WanVideoImageToVideoEncode   [ComfyUI-MultiGPU,ComfyUI-WanVideoWrapper,WhatDreamsCost-ComfyUI]
+WanVideoLoraSelect   [ComfyUI-WanVideoWrapper]
+WanVideoLoraSelectMulti   [ComfyUI-WanVideoWrapper]
+WanVideoModelLoader   [ComfyUI-MultiGPU,ComfyUI-WanVideoWrapper,WhatDreamsCost-ComfyUI]
+WanVideoNAG   [ComfyUI-KJNodes]
+WanVideoSVIProEmbeds   [ComfyUI-WanVideoWrapper]
+WanVideoSampler   [ComfyUI-MultiGPU,ComfyUI-WanVideoWrapper,WhatDreamsCost-ComfyUI]
+WanVideoScheduler   [ComfyUI-WanVideoWrapper]
+WanVideoSetBlockSwap   [ComfyUI-WanVideoWrapper]
+WanVideoSetLoRAs   [ComfyUI-WanVideoWrapper]
+WanVideoSetRadialAttention   [ComfyUI-WanVideoWrapper]
+WanVideoSigmaToStep   [ComfyUI-WanVideoWrapper]
+WanVideoTeaCacheKJ   [ComfyUI-KJNodes]
+WanVideoTextEncodeCached   [ComfyUI-MultiGPU,ComfyUI-WanVideoWrapper]
+WanVideoTorchCompileSettings   [ComfyUI-WanVideoWrapper]
+WanVideoVAELoader   [ComfyUI-MultiGPU,ComfyUI-WanVideoWrapper,WhatDreamsCost-ComfyUI]
+easy batchAnything   [ComfyUI-Easy-Use]
+easy cleanGpuUsed   [ComfyUI-Easy-Use]
+easy convertAnything   [ComfyUI-Easy-Use]
+easy mathFloat   [ComfyUI-Easy-Use]
+easy mathInt   [ComfyUI-Easy-Use]
+easy promptReplace   [ComfyUI-Easy-Use]
+easy showAnything   [ComfyUI-Easy-Use]
+easy textIndexSwitch   [ComfyUI-Easy-Use]
+mxSlider   [comfyui-mxtoolkit]
+mxSlider2D   [comfyui-mxtoolkit]
+mxStop   [comfyui-mxtoolkit]
+ttN concat   [ComfyUI_tinyterraNodes]
+ttN int   [ComfyUI_tinyterraNodes]
+ttN text   [ComfyUI_tinyterraNodes]
+
+==== PER-WORKFLOW MISSING ====
+
+# Wan 2.1 - seamless loop workflow v1.2.json
+   MISSING: Fast Groups Bypasser (rgthree)
+
+# WAN2.2 I2V Only - K3NK v2.5.4.json
+   MISSING: Fast Groups Bypasser (rgthree)
+   MISSING: Fast Groups Muter (rgthree)
+   MISSING: Mute / Bypass Relay (rgthree)
+   MISSING: Mute / Bypass Repeater (rgthree)
+
+# WAN2.2 T2V-I2V-T2I-S2V K3NK v2.5.4 SVI.json
+   MISSING: Fast Groups Bypasser (rgthree)
+   MISSING: Fast Groups Muter (rgthree)
+   MISSING: Mute / Bypass Relay (rgthree)
+   MISSING: Mute / Bypass Repeater (rgthree)
+
+# WAN2.2_Img2video_auto.json
+   (all node types resolved)
+
+# WAN2.2_Img2video_manual.json
+   (all node types resolved)
+
+# WAN2.2_LOOP_NATIVE_UPSCALER_GGUF.json
+   MISSING: Fast Groups Bypasser (rgthree)
+   MISSING: Fast Groups Muter (rgthree)
+
+# WAN2.2_LOOP_NATIVE_UPSCALER.json
+   MISSING: Fast Groups Bypasser (rgthree)
+   MISSING: Fast Groups Muter (rgthree)
+
+# WAN2.2_LOOP.json
+   MISSING: Fast Groups Bypasser (rgthree)
+   MISSING: Fast Groups Muter (rgthree)

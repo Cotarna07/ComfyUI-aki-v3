@@ -81,8 +81,8 @@
 
 | 设备标识 | GPU | 显存 | Python | Node.js | PyTorch | CUDA | 备注 |
 |---------|-----|------|--------|---------|---------|------|------|
-| 设备 A（当前） | NVIDIA GeForce RTX 5070 Ti | 16 GB | 3.13.11 | v22.14.0 | 2.9.1+cu130 | 13.0 | — |
-| 设备 B | NVIDIA GeForce RTX 4080 | 16 GB | 3.13.11 | v22.14.0 | 2.9.1+cu130 | 13.0 | — |
+| 设备 A | NVIDIA GeForce RTX 5070 Ti | 16 GB | 3.13.11 | v22.14.0 | 2.9.1+cu130 | 13.0 | — |
+| 设备 B（当前） | NVIDIA GeForce RTX 4080 | 16 GB | 3.13.11 | v22.14.0 | 2.9.1+cu128 | 12.8 | ComfyUI 运行时为 D:\ComfyUI-aki-v3\python\python.exe |
 | *(待补充)* | | | | | | | 代理探测到新设备时填写此行 |
 
 ### 代理设备探测指引
