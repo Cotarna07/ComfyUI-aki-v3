@@ -22355,7 +22355,7 @@
 				}
 			},
 			"widgets_values":[
-				"UMT5\\umt5_xxl_fp16.safetensors",
+				"umt5_xxl_fp8_e4m3fn_scaled.safetensors",
 				"wan",
 				"default"
 			],

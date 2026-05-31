@@ -12,6 +12,18 @@ param(
 
 $ErrorActionPreference = "Stop"
 
+# 强制 UTF-8 控制台与 Python IO 编码。
+# 否则在简体中文系统（GBK/cp936）下，部分自定义节点启动时打印 emoji（如 ComfyUI-JakeUpgrade 的 "🔶"）
+# 会触发 UnicodeEncodeError，并在 ComfyUI 日志处理链中二次抛错，导致整个进程在加载自定义节点阶段崩溃、端口无法监听。
+$env:PYTHONIOENCODING = "utf-8"
+$env:PYTHONUTF8 = "1"
+try {
+    [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+    [Console]::InputEncoding = [System.Text.Encoding]::UTF8
+} catch {
+    # 非交互/重定向场景下可能不支持设置控制台编码，忽略即可，PYTHONUTF8 已足够。
+}
+
 function Get-ProjectRoot {
     return (Resolve-Path (Join-Path $PSScriptRoot "..")).Path
 }
