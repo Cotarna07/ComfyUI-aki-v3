@@ -69,14 +69,14 @@ def pin_memory(module, subset="weights", size=None):
         return
 
     pin = get_pin(module, subset)
-    if pin is not None:
+    if pin is not None or pin_state["failed"]:
         return
 
     hostbuf, stack, stack_split, pinned_size, counter, buckets = pin_state[subset]
     if size is None:
         size = comfy.memory_management.vram_aligned_size([ module.weight, module.bias ])
     offset = hostbuf.size
-    registerable_size = size
+    registerable_size = size + max(0, hostbuf.size - pinned_size[0])
     priority = getattr(module, "_pin_balancer_priority", None)
 
     if priority is None:
@@ -87,12 +87,20 @@ def pin_memory(module, subset="weights", size=None):
     comfy.memory_management.extra_ram_release(comfy.memory_management.RAM_CACHE_HEADROOM)
     if (not comfy.model_management.ensure_pin_budget(size) or
         not comfy.model_management.ensure_pin_registerable(registerable_size)):
-        return _steal_pin(module, stack, buckets, size, priority)
+        if _steal_pin(module, stack, buckets, size, priority):
+            pin_state["failed"] = False
+            return True
+        pin_state["failed"] = True
+        return False
 
     try:
         hostbuf.extend(size=size)
     except RuntimeError:
-        return _steal_pin(module, stack, buckets, size, priority)
+        if _steal_pin(module, stack, buckets, size, priority):
+            pin_state["failed"] = False
+            return True
+        pin_state["failed"] = True
+        return False
 
     module._pin = comfy_aimdo.torch.hostbuf_to_tensor(hostbuf)[offset:offset + size]
     module._pin.untyped_storage()._comfy_hostbuf = hostbuf
@@ -102,5 +110,6 @@ def pin_memory(module, subset="weights", size=None):
     stack_split[0] = max(stack_split[0], module._pin_stack_index)
     comfy.model_management.TOTAL_PINNED_MEMORY += size
     pinned_size[0] += size
+    pin_state["failed"] = False
     _add_to_bucket(module, buckets, size, priority)
     return True

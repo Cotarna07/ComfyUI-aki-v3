@@ -12,8 +12,7 @@
 !/agent-skills/**
 !/agent-projects/
 !/agent-projects/**
-!/ComfyUI/
-!/ComfyUI/**
+
 !/comfyui_skill_utils.py
 !/download_models.py
 !/generate_video.py

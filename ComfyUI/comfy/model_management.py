@@ -651,7 +651,7 @@ def ensure_pin_budget(size, evict_active=False):
     to_free = shortfall + PIN_PRESSURE_HYSTERESIS
     return free_pins(to_free, evict_active=evict_active) >= shortfall
 
-def ensure_pin_registerable(size, evict_active=True):
+def ensure_pin_registerable(size, evict_active=False):
     shortfall = TOTAL_PINNED_MEMORY + size - MAX_PINNED_MEMORY
     if MAX_PINNED_MEMORY <= 0:
         return False
@@ -1301,6 +1301,7 @@ STREAM_CAST_BUFFERS = {}
 LARGEST_CASTED_WEIGHT = (None, 0)
 STREAM_AIMDO_CAST_BUFFERS = {}
 LARGEST_AIMDO_CASTED_WEIGHT = (None, 0)
+STREAM_PIN_BUFFERS = {}
 
 DEFAULT_AIMDO_CAST_BUFFER_RESERVATION_SIZE = 16 * 1024 ** 3
 
@@ -1343,13 +1344,42 @@ def get_aimdo_cast_buffer(offload_stream, device):
         STREAM_AIMDO_CAST_BUFFERS[offload_stream] = cast_buffer
     return cast_buffer
 
+def get_pin_buffer(offload_stream):
+    pin_buffer = STREAM_PIN_BUFFERS.get(offload_stream, None)
+    if pin_buffer is None:
+        pin_buffer = comfy_aimdo.host_buffer.HostBuffer(0, 0, pinned_hostbuf_size(8 * 1024**3), mark_cold=False)
+        STREAM_PIN_BUFFERS[offload_stream] = pin_buffer
+    elif offload_stream is not None:
+        event = getattr(pin_buffer, "_comfy_event", None)
+        if event is not None:
+            event.synchronize()
+            delattr(pin_buffer, "_comfy_event")
+    return pin_buffer
+
+def resize_pin_buffer(pin_buffer, size):
+    global TOTAL_PINNED_MEMORY
+    old_size = pin_buffer.size
+    if size <= old_size:
+        return True
+    growth = size - old_size
+    comfy.memory_management.extra_ram_release(comfy.memory_management.RAM_CACHE_HEADROOM)
+    ensure_pin_budget(growth, evict_active=True)
+    ensure_pin_registerable(growth, evict_active=True)
+    try:
+        pin_buffer.extend(size=size, reallocate=True)
+    except RuntimeError:
+        return False
+    TOTAL_PINNED_MEMORY += pin_buffer.size - old_size
+    return True
+
 def reset_cast_buffers():
+    global TOTAL_PINNED_MEMORY
     global LARGEST_CASTED_WEIGHT
     global LARGEST_AIMDO_CASTED_WEIGHT
 
     LARGEST_CASTED_WEIGHT = (None, 0)
     LARGEST_AIMDO_CASTED_WEIGHT = (None, 0)
-    for offload_stream in set(STREAM_CAST_BUFFERS) | set(STREAM_AIMDO_CAST_BUFFERS):
+    for offload_stream in set(STREAM_CAST_BUFFERS) | set(STREAM_AIMDO_CAST_BUFFERS) | set(STREAM_PIN_BUFFERS):
         if offload_stream is not None:
             offload_stream.synchronize()
     synchronize()
@@ -1357,6 +1387,10 @@ def reset_cast_buffers():
     for mmap_obj in DIRTY_MMAPS:
         mmap_obj.bounce()
     DIRTY_MMAPS.clear()
+
+    for pin_buffer in STREAM_PIN_BUFFERS.values():
+        TOTAL_PINNED_MEMORY -= pin_buffer.size
+    TOTAL_PINNED_MEMORY = max(0, TOTAL_PINNED_MEMORY)
 
     for loaded_model in current_loaded_models:
         model = loaded_model.model
@@ -1376,6 +1410,7 @@ def reset_cast_buffers():
 
     STREAM_CAST_BUFFERS.clear()
     STREAM_AIMDO_CAST_BUFFERS.clear()
+    STREAM_PIN_BUFFERS.clear()
     soft_empty_cache()
 
 def get_offload_stream(device):

@@ -18,6 +18,17 @@ class TensorFileSlice(NamedTuple):
 def read_tensor_file_slice_into(tensor, destination, stream=None, destination2=None):
 
     if isinstance(tensor, QuantizedTensor):
+        if destination is not None:
+            if not isinstance(destination, QuantizedTensor):
+                return False
+            if tensor._layout_cls != destination._layout_cls:
+                return False
+        if destination2 is not None:
+            if not isinstance(destination2, QuantizedTensor):
+                return False
+            if tensor._layout_cls != destination2._layout_cls:
+                return False
+
         if not read_tensor_file_slice_into(tensor._qdata,
                                            destination._qdata if destination is not None else None, stream=stream,
                                            destination2=(destination2._qdata if destination2 is not None else None)):
@@ -61,7 +72,6 @@ def read_tensor_file_slice_into(tensor, destination, stream=None, destination2=N
                                                     destination2.device.index,
                                                     mark_cold=False)
         return True
-
     hostbuf = getattr(destination.untyped_storage(), "_comfy_hostbuf", None)
     if hostbuf is not None:
         stream_ptr = getattr(stream, "cuda_stream", 0) if stream is not None else 0
@@ -76,7 +86,6 @@ def read_tensor_file_slice_into(tensor, destination, stream=None, destination2=N
 
     if not hasattr(file_obj, "seek") or not hasattr(file_obj, "readinto"):
         return False
-
     buf_type = ctypes.c_ubyte * info.size
     view = memoryview(buf_type.from_address(destination.data_ptr()))
 
