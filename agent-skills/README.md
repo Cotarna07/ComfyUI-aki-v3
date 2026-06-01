@@ -2,6 +2,14 @@
 
 这个目录只负责跨代理技能层，不再作为所有代理生成文件的总兜底目录。
 
+## 和 agent-projects 的关系
+
+`agent-skills/` 不和 `agent-projects/` 合并。
+
+- 这里放跨项目可复用的技能资产、ComfyUI 工作流模板、技能规则、技能维护脚本和维护产物。
+- 独立业务项目、项目脚本、项目测试和项目产物放 `agent-projects/<project-slug>/`。
+- 业务项目可以引用这里的工作流模板，但不要把项目产物写回这里。
+
 ## 这个目录适合放什么
 
 - comfyui/
@@ -9,7 +17,7 @@
 - docs/
   放技能包说明、技能层规则、ComfyUI 自动化相关文档。
 - scripts/
-  放技能层辅助脚本、适配器或小工具。
+  放技能层辅助脚本、适配器、小工具，或一次性技能维护测试脚本。
 
 ## 这个目录不该放什么
 
@@ -22,6 +30,9 @@
 
 - 独立项目一律放到 agent-projects/<project-slug>/。
 - 只有和技能层直接耦合、需要跨代理复用的资产，才放到 agent-skills/。
+- ComfyUI 工作流拆解、节点兼容冒烟、模型/LoRA 参数矩阵等技能维护任务，可以放在 agent-skills/scripts/generated/<topic>/，报告和 manifest 放在 agent-skills/comfyui/runtime/<topic>/。
+- 如果同一套测试脚本演变成长期测试平台或项目级 CLI，再迁入 agent-projects/comfyui-test-harness/。
+- 代理自己的新工作流草稿放 agent-skills/comfyui/workflows/03-source/drafts/<topic>/；不要写入 workflows/TEST/、workflows/api/、workflows/imported/ 等用户区，除非用户明确点名。
 - 现有根目录兼容入口文件不是后续新增文件的默认落点。
 - 秋叶启动器原区默认只读；没有用户明确允许，不要改 agent-skills/ 之外的原项目文件。
 - 人类可读文档默认使用简体中文，除非用户明确要求别的语言。

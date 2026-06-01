@@ -12,13 +12,17 @@ def review_with_ollama(
     model: str,
     base_url: str,
     timeout_seconds: int,
+    options: dict | None = None,
 ) -> str:
     encoded_images = [base64.b64encode(path.read_bytes()).decode("ascii") for path in images]
+    merged_options = {"temperature": 0, "num_predict": 1800}
+    if options:
+        merged_options.update(options)
     payload = {
         "model": model,
         "stream": False,
         "messages": [{"role": "user", "content": prompt, "images": encoded_images}],
-        "options": {"temperature": 0, "num_predict": 1800},
+        "options": merged_options,
     }
     request = Request(
         f"{base_url.rstrip('/')}/api/chat",

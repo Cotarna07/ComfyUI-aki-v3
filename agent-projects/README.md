@@ -2,12 +2,34 @@
 
 这个目录是后续与 Copilot、Codex 或其他 agent 协作生成独立项目代码的专用区，用来和秋叶启动器原区、agent-skills 技能层分开。
 
+## 和 agent-skills 的关系
+
+`agent-projects/` 不和 `agent-skills/` 合并。
+
+- 这里放独立项目：业务代码、项目测试、项目脚本、项目文档和项目运行产物。
+- `agent-skills/` 放技能层：ComfyUI 注册表、工作流模板、技能规则、技能维护脚本和维护产物。
+- 项目可以调用 `agent-skills/comfyui/workflows/` 里的模板；调用结果、业务报告和项目批次产物仍写回本项目 `runtime/`。
+
 ## 使用方式
 
 - 每个独立项目单独建一个子目录，统一使用 agent-projects/<project-slug>/。
 - 未来的新 Python 项目默认建在这里，不要再放进 agent-skills/。
 - 项目自己的 README、requirements.txt 或 pyproject.toml、源码目录、tests、scripts 都放在各自项目子目录内部。
 - 如果项目已经有 requirements.txt、pyproject.toml 或 .venv，优先沿用现有方式，不要再平行造一套新配置。
+
+## 宿主项目优先级
+
+新任务先找已有宿主项目，找到就扩展，找不到才新建：
+
+| 任务类型 | 优先宿主 |
+|---|---|
+| 速卖通 / 电商商品图、商品视频、营销主视觉、真实性验收 | `product-media/` |
+| 商品图 VLM 事实核验、不可改清单、双模型审核 | `product-vlm-review/` |
+| ComfyUI 节点体检、工作流校验、模型清单、长期测试平台 | `comfyui-test-harness/` |
+| ComfyUI 多实例、隔离依赖、端口和环境配置 | `comfyui-test-instance/` |
+| 跨项目复用的 stdlib ComfyUI 客户端和 JSON 解析 | `comfyui-shared/` |
+
+如果只是一次 ComfyUI 技能维护测试，例如工作流拆解、节点兼容冒烟或模型/LoRA 参数矩阵，先放 `agent-skills/scripts/generated/<topic>/` 与 `agent-skills/comfyui/runtime/<topic>/`；只有它变成长期工具或平台时，才迁入本目录下的项目。
 
 ## 推荐结构
 

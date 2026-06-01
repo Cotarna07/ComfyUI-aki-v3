@@ -5,16 +5,34 @@
 
 ---
 
+## 零、目录结论：不合并
+
+`agent-skills/` 和 `agent-projects/` 不合并。它们解决的是两类问题：
+
+- `agent-skills/` 是技能层：放跨代理规则、ComfyUI 注册表、工作流模板、技能维护脚本和技能维护产物。
+- `agent-projects/` 是项目层：放独立业务项目、项目代码、项目测试、项目文档和项目运行产物。
+
+两者通过引用协作，而不是通过合并目录协作。典型关系是：项目代码调用 `agent-skills/comfyui/workflows/` 里的模板，项目产物仍写入自己的 `runtime/`。
+
+判断时先问一句：这个文件离开某个业务项目后是否仍然是跨项目技能资产？
+
+- 是：放 `agent-skills/`。
+- 否：放对应的 `agent-projects/<project>/`。
+
+例如，WAN2.2/CMS 工作流拆解、节点兼容测试、模型/LoRA 参数矩阵属于 ComfyUI 技能维护，可以放 `agent-skills/scripts/generated/<topic>/` 与 `agent-skills/comfyui/runtime/<topic>/`。速卖通商品图优化、商品视频、营销图和真实性验收属于商品媒体业务，放 `agent-projects/product-media/`。
+
+---
+
 ## 一、四类资产，先判后放
 
 每次新建文件前，必须先确认归属类型：
 
 | 类型 | 放哪里 | 判定标准 |
 |---|---|---|
-| **技能层资产** | `agent-skills/comfyui/` | ComfyUI 注册表、工作流模板、跨项目适配器、技能文档 |
+| **技能层资产** | `agent-skills/` | ComfyUI 注册表、工作流模板、技能规则、节点/模型/工作流维护测试 |
 | **共享基础能力** | `agent-projects/comfyui-shared/` | 已被 2 个以上不同项目实际复用的逻辑（首次实现先留在业务项目） |
 | **独立业务代码** | `agent-projects/<project>/` | 只服务于某一个业务域的代码 |
-| **运行产物** | `agent-projects/<project>/runtime/` 或 `agent-skills/comfyui/runtime/` | 图片、JSON 记录、Markdown 报告、日志、快照输入 |
+| **运行产物** | `agent-projects/<project>/runtime/` 或 `agent-skills/comfyui/runtime/` | 项目产物进项目 runtime；技能维护产物进技能 runtime |
 
 **未判定类型之前，不允许落文件。**
 
@@ -36,6 +54,7 @@ ComfyUI 工作流统一以 `agent-skills/comfyui/workflows/` 作为总入口。*
 - 代理**不得**将用户区的文件"整理"到管理区
 - 只有用户**明确指示**操作某个用户区路径时，代理才可执行
 - 用户新建的任何目录自动受此规则保护，无需更新本文档
+- 代理自己的新测试工作流不要继续写入 `TEST/`、`api/`、`imported/` 等用户区；草稿写入 `03-source/drafts/<topic>/`，外部导入写入 `03-source/imported/<topic>/`，稳定项目模板写入 `02-project/<project>/`
 
 当前已知用户区目录（示例，非完整列表）：`TEST/`、`api/`、`imported/`
 
@@ -64,6 +83,7 @@ ComfyUI 工作流统一以 `agent-skills/comfyui/workflows/` 作为总入口。*
 |---|---|---|
 | 商品图 / 商品视频 / 营销创意 / 商品验收 | `product-media` | 新批次产物写入 `runtime/`；业务脚本写入 `scripts/` |
 | 商品图 VLM 预审核（SKU 特征提取 / 不可改清单） | `product-vlm-review` | 独立 VLM 双模型审核，调用方是 `product-media` |
+| ComfyUI 工作流拆解 / 节点兼容 / 模型参数矩阵 | `agent-skills/comfyui/` + `agent-skills/scripts/generated/<topic>/` | 技能维护任务；若演变为长期测试平台，再迁入 `comfyui-test-harness` |
 | 漫画前置预处理（分镜割裂修复） | `manga-panel-fixer` | 修复 picaweb 固定高度切图；输出接 `manga-anime-pipeline` 输入 |
 | 漫画动画化（OCR / 分格 / 翻译 / 动画） | `manga-anime-pipeline` | 子功能加模块，不单独建新项目 |
 | 漫画流水线参考资源 | `manga-pipeline-reference` | 纯档案库：15 个第三方仓库元数据 + 设计文档；无业务代码，不扩展，只维护 manifest |
@@ -124,6 +144,11 @@ ComfyUI 工作流统一以 `agent-skills/comfyui/workflows/` 作为总入口。*
 | 允许的主题 | 说明 |
 |---|---|
 | `cms_missing_nodes_smoke/` | 节点兼容性冒烟测试产物 |
+| `cms_wan22_loop_matrix/` | WAN2.2/CMS 工作流参数、模型和 LoRA 矩阵测试报告 |
+| `workflow_api_validation/<topic>/` | API 工作流导出、图结构校验和自动化提交验证产物 |
+| `model_inventory/<topic>/` | 模型清单、缺失模型检查和节点可用性记录 |
+
+如果主题产物开始服务某个业务项目，而不是维护工作流或技能层，应从下一批次起迁入对应项目的 `runtime/`。
 
 以下商品媒体业务产物**后续新批次**统一写入 `agent-projects/product-media/runtime/`：
 

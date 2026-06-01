@@ -26,6 +26,7 @@
 
 - agent-skills/：只放跨代理技能包、ComfyUI 自动化资产、与技能层直接相关的小型脚本和说明。
 - agent-projects/：只放独立项目代码。未来新建的 Python 项目、工具项目、实验项目都应按 agent-projects/<project-slug>/ 单独落目录。
+- agent-skills/ 与 agent-projects/ 不合并：前者是技能层，后者是项目层；项目可引用技能层资产，但项目代码和业务产物仍放回项目目录。
 - 秋叶启动器原区：除上述 agent 自有区及固定入口文件外的其他路径，默认都视为启动器或上游项目管理区，包括 ComfyUI/、现有根目录脚本、启动器资源和已有业务文件。
 
 ## 修改权限规则
@@ -48,6 +49,9 @@
 - agent-skills/scripts/：技能层辅助脚本、适配器、小工具。
 - agent-skills/comfyui/：ComfyUI 专用注册表、工作流导出、技能资产。
 - agent-skills/comfyui/disabled-custom-nodes/：已禁用的 ComfyUI 自定义节点存档（含源码，不是产物）。
+- agent-skills/scripts/generated/<topic>/：ComfyUI 工作流拆解、节点兼容冒烟、模型 / LoRA 参数矩阵等一次性技能维护测试脚本。
+- agent-skills/comfyui/runtime/<topic>/：技能维护测试报告、manifest、日志和工作流验证产物；业务项目产物不要写到这里。
+- agent-skills/comfyui/workflows/03-source/drafts/<topic>/：代理新建的工作流草稿；workflows/TEST/、api/、imported/ 等用户区默认只读，除非用户明确点名。
 - agent-projects/<project-slug>/：独立项目的代码、测试、项目文档和项目内脚本。
 - agent-projects/comfyui-shared/：跨项目共享的 ComfyUI HTTP 客户端与 LLM 输出解析工具（纯 stdlib，无第三方依赖）。
 - agent-projects/product-media/：商品图 / 商品视频 / 营销创意广告 / 商品真实性验收的代码与运行产物统一宿主。
@@ -82,8 +86,8 @@
 
 | 设备标识 | GPU | 显存 | Python | Node.js | PyTorch | CUDA | 备注 |
 |---------|-----|------|--------|---------|---------|------|------|
-| 设备 A | NVIDIA GeForce RTX 5070 Ti | 16 GB | 3.13.11 | v22.14.0 | 2.9.1+cu130 | 13.0 | — |
-| 设备 B（当前） | NVIDIA GeForce RTX 4080 | 16 GB | 3.13.11 | v24.14.0 | 2.9.1+cu128 | 12.8 | shell Python 3.10.11 |
+| 设备 A（当前） | NVIDIA GeForce RTX 5070 Ti | 16 GB | 3.13.11 | v22.14.0 | 2.9.1+cu130 | 13.0 | shell Python 3.13.2 |
+| 设备 B | NVIDIA GeForce RTX 4080 | 16 GB | 3.13.11 | v24.14.0 | 2.9.1+cu128 | 12.8 | shell Python 3.10.11 |
 | *(待补充)* | | | | | | | 代理探测到新设备时填写此行 |
 
 ### 代理设备探测指引
