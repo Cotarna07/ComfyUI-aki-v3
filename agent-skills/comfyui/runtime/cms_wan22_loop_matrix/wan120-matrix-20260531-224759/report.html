@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CMS Wan2.2 Loop 测试报表 - wan120-matrix-20260531-224759</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #101214;
+      --panel: #181c20;
+      --line: #2a3138;
+      --text: #eef2f5;
+      --muted: #9ba7b2;
+      --accent: #74d3ae;
+      --accent-2: #e7c46c;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    main {
+      width: min(1480px, calc(100vw - 40px));
+      margin: 0 auto;
+      padding: 28px 0 44px;
+    }
+    h1 { margin: 0 0 8px; font-size: 28px; }
+    .meta { color: var(--muted); margin: 0 0 22px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+      gap: 18px;
+    }
+    .case {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      padding: 16px;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: flex-start;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 12px;
+    }
+    h2 { margin: 0 0 6px; font-size: 20px; }
+    p { margin: 0; color: var(--muted); line-height: 1.5; }
+    .status {
+      color: #101214;
+      background: var(--accent);
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .params {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+      padding: 0;
+      margin: 14px 0;
+    }
+    .params li {
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 8px;
+      min-width: 0;
+    }
+    .params span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 4px;
+    }
+    .params strong {
+      display: block;
+      font-size: 14px;
+      overflow-wrap: anywhere;
+    }
+    .videos {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+    figure { margin: 0; }
+    video {
+      display: block;
+      width: 100%;
+      max-height: 420px;
+      background: #000;
+      border-radius: 6px;
+      border: 1px solid var(--line);
+    }
+    figcaption {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 5px;
+      overflow-wrap: anywhere;
+    }
+    details {
+      margin-top: 12px;
+      border-top: 1px solid var(--line);
+      padding-top: 10px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    summary { cursor: pointer; color: var(--accent-2); }
+    .muted, .missing { color: var(--muted); }
+    @media (max-width: 760px) {
+      main { width: calc(100vw - 24px); padding-top: 18px; }
+      .grid { grid-template-columns: 1fr; }
+      .params { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>CMS Wan2.2 Loop 参数测试报表</h1>
+    <p class="meta">run_id: wan120-matrix-20260531-224759 · submit: True · cases: 3</p>
+    <div class="grid">
+      
+            <section class="case">
+              <header>
+                <div>
+                  <h2>p03_detail_push</h2>
+                  <p>More steps, stronger CFG, and stronger enhancement for detail.</p>
+                </div>
+                <span class="status">success</span>
+              </header>
+              <ul class="params"><li><span>长度</span><strong>120</strong></li><li><span>fps</span><strong>16.0</strong></li><li><span>seed</span><strong>260531120</strong></li><li><span>steps</span><strong>10</strong></li><li><span>cfg</span><strong>1.35</strong></li><li><span>speed</span><strong>5.0</strong></li><li><span>motion</span><strong>1.0</strong></li><li><span>NAG</span><strong>11.5 / 0.25 / 2.6</strong></li><li><span>enhance</span><strong>1.2</strong></li><li><span>插帧</span><strong>2</strong></li><li><span>upscale</span><strong>1.0</strong></li><li><span>crf</span><strong>18</strong></li></ul>
+              <div class="videos"><figure><video controls preload="metadata" src="../../../../../ComfyUI/output/WAN/agent_tests/cms_wan22_loop_120/wan120-matrix-20260531-224759/p03_detail_push_OG_00001.mp4"></video><figcaption>output:WAN/agent_tests/cms_wan22_loop_120/wan120-matrix-20260531-224759/p03_detail_push_OG_00001.mp4</figcaption></figure>
+<figure><video controls preload="metadata" src="../../../../../ComfyUI/temp/WAN/agent_tests/cms_wan22_loop_120/wan120-matrix-20260531-224759/p03_detail_push_FS_00001.mp4"></video><figcaption>temp:WAN/agent_tests/cms_wan22_loop_120/wan120-matrix-20260531-224759/p03_detail_push_FS_00001.mp4</figcaption></figure></div>
+              <details>
+                <summary>运行记录</summary>
+                <p>prompt_id: 231343dc-3a8e-4655-99b8-3b6b182e962f</p>
+                <p>UI workflow: </p>
+                <p>API prompt: </p>
+              </details>
+            </section>
+            
+            <section class="case">
+              <header>
+                <div>
+                  <h2>p04_motion_push</h2>
+                  <p>Higher sampling speed and motion amplitude for stronger movement.</p>
+                </div>
+                <span class="status">success</span>
+              </header>
+              <ul class="params"><li><span>长度</span><strong>120</strong></li><li><span>fps</span><strong>16.0</strong></li><li><span>seed</span><strong>260531120</strong></li><li><span>steps</span><strong>8</strong></li><li><span>cfg</span><strong>1.15</strong></li><li><span>speed</span><strong>7.0</strong></li><li><span>motion</span><strong>1.4</strong></li><li><span>NAG</span><strong>11.0 / 0.25 / 2.373</strong></li><li><span>enhance</span><strong>1.0</strong></li><li><span>插帧</span><strong>2</strong></li><li><span>upscale</span><strong>1.0</strong></li><li><span>crf</span><strong>19</strong></li></ul>
+              <div class="videos"><figure><video controls preload="metadata" src="../../../../../ComfyUI/output/WAN/agent_tests/cms_wan22_loop_120/wan120-matrix-20260531-224759/p04_motion_push_OG_00001.mp4"></video><figcaption>output:WAN/agent_tests/cms_wan22_loop_120/wan120-matrix-20260531-224759/p04_motion_push_OG_00001.mp4</figcaption></figure>
+<figure><video controls preload="metadata" src="../../../../../ComfyUI/temp/WAN/agent_tests/cms_wan22_loop_120/wan120-matrix-20260531-224759/p04_motion_push_FS_00001.mp4"></video><figcaption>temp:WAN/agent_tests/cms_wan22_loop_120/wan120-matrix-20260531-224759/p04_motion_push_FS_00001.mp4</figcaption></figure></div>
+              <details>
+                <summary>运行记录</summary>
+                <p>prompt_id: 84e302c6-9b8e-4e9f-b572-558690060717</p>
+                <p>UI workflow: </p>
+                <p>API prompt: </p>
+              </details>
+            </section>
+            
+            <section class="case">
+              <header>
+                <div>
+                  <h2>p05_smooth_motion</h2>
+                  <p>Lower speed and motion amplitude to test smoother, steadier movement.</p>
+                </div>
+                <span class="status">success</span>
+              </header>
+              <ul class="params"><li><span>长度</span><strong>120</strong></li><li><span>fps</span><strong>16.0</strong></li><li><span>seed</span><strong>260531120</strong></li><li><span>steps</span><strong>8</strong></li><li><span>cfg</span><strong>1.05</strong></li><li><span>speed</span><strong>4.0</strong></li><li><span>motion</span><strong>0.8</strong></li><li><span>NAG</span><strong>9.5 / 0.22 / 2.2</strong></li><li><span>enhance</span><strong>1.05</strong></li><li><span>插帧</span><strong>2</strong></li><li><span>upscale</span><strong>1.0</strong></li><li><span>crf</span><strong>18</strong></li></ul>
+              <div class="videos"><figure><video controls preload="metadata" src="../../../../../ComfyUI/output/WAN/agent_tests/cms_wan22_loop_120/wan120-matrix-20260531-224759/p05_smooth_motion_OG_00001.mp4"></video><figcaption>output:WAN/agent_tests/cms_wan22_loop_120/wan120-matrix-20260531-224759/p05_smooth_motion_OG_00001.mp4</figcaption></figure>
+<figure><video controls preload="metadata" src="../../../../../ComfyUI/temp/WAN/agent_tests/cms_wan22_loop_120/wan120-matrix-20260531-224759/p05_smooth_motion_FS_00001.mp4"></video><figcaption>temp:WAN/agent_tests/cms_wan22_loop_120/wan120-matrix-20260531-224759/p05_smooth_motion_FS_00001.mp4</figcaption></figure></div>
+              <details>
+                <summary>运行记录</summary>
+                <p>prompt_id: b61e1cbf-ff0e-4768-aaa5-e0ff06b55896</p>
+                <p>UI workflow: </p>
+                <p>API prompt: </p>
+              </details>
+            </section>
+            
+    </div>
+  </main>
+</body>
+</html>
